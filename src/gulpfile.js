@@ -22,38 +22,44 @@ gulp.task('copyIndex', async () => {
 });
 
 const compileTypeScript = () => {
-  //--|🠋| Build reference map for compiler |🠋|--//
+  //--|🠋| Task to build a reference map for the TypeScript compiler |🠋|--//
   const reference = () => {
-    //--|🠋| Reference 'tsconfig.json' |🠋|--//
+    //--|🠋| Reference 'tsconfig.json' to configure TypeScript project |🠋|--//
     const typeScriptProject = typescript.createProject('tsconfig.json');
+
     //--|🠋| Get TypeScript source code |🠋|--//
     const sourceCode = typeScriptProject.src();
-    //--|🠋| Initialize TypeScript map for export |🠋|--//
+
+    //--|🠋| Initialize TypeScript source map for export |🠋|--//
     const initializeSourcemaps = sourcemaps.init();
-    //--|🠋| Give source files its JavaScript identity |🠋|--//
-    const IdentityMap = sourcemaps.identityMap();
-    //--|🠋| Return code for compiling |🠋|--//
-    return sourceCode.pipe(initializeSourcemaps).pipe(IdentityMap).pipe(typeScriptProject());
+
+    //--|🠋| Give source files their JavaScript identity |🠋|--//
+    const identityMap = sourcemaps.identityMap();
+
+    //--|🠋| Return the code for compiling |🠋|--//
+    return sourceCode.pipe(initializeSourcemaps).pipe(identityMap).pipe(typeScriptProject());
   };
 
-  //--|🠋| Map out TypeScript to dist folder |🠋|--//
+  //--|🠋| Map out TypeScript files to the 'dist' folder |🠋|--//
   let srcUrlMapper = (file) => {
     let distFolder = gulp.dest('dist/');
     return distFolder + file.relative.toString().split('\\').join('/') + '.map';
   };
 
-  //--|🠋| Compile TypeScript |🠋|--//
+  //--|🠋| Task to compile TypeScript files |🠋|--//
   let compileTypes = () => {
+    //--|🠋| Define the destination folder for TypeScript declaration files |🠋|--//
     let typesFolder = gulp.dest('types/');
+
+    //--|🠋| Get the compiled TypeScript code using the reference task |🠋|--//
     let typeScriptCompiled = reference();
 
-    typeScriptCompiled.dts
-      //--|🠋| Description Here |🠋|--//
-      .pipe(typesFolder)
-      .on('error', function (err) {
-        console.log('Gulp says: ' + err.message);
-      });
+    //--|🠋| Handle TypeScript declaration files |🠋|--//
+    typeScriptCompiled.dts.pipe(typesFolder).on('error', function (err) {
+      console.log('Gulp says: ' + err.message);
+    });
 
+    //--|🠋| Write source maps and minify the compiled JavaScript files |🠋|--//
     typeScriptCompiled.js
       .pipe(
         sourcemaps
@@ -67,12 +73,15 @@ const compileTypeScript = () => {
       )
       .pipe(dest('dist/'));
   };
-  compileTypes();
 
+  //--|🠋| Task to delete the 'types' folder |🠋|--//
   let remove = () => {
-    console.log('|🠊 Deleting types folder');
-    //--|🠋| Delete types folder |🠋|--//
     return gulp.src('types', { read: false }).pipe(clean());
   };
+
+  //--|🠋| Execute the TypeScript compilation task |🠋|--//
+  compileTypes();
+
+  //--|🠋| Set a timeout to remove the 'types' folder after 7.5 seconds |🠋|--//
   setTimeout(remove, 7500);
 };
