@@ -1,6 +1,5 @@
 .git
 ~bin
-dist
 types
 desktop.ini
 node_modules
