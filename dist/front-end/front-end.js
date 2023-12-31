@@ -1,0 +1,1 @@
+require(["front-end"],()=>{window.location.href.split("/").pop().split(".")[0];require(["dist/front-end/pages/index/index.js"]),console.log("🠊 front-end.js Loaded 🠈")});

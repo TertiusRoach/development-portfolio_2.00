@@ -1,0 +1,1 @@
+define(["require","exports","utilities/GetSection"],function(e,o,t){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.Index=void 0,o.Index={},console.log("🠊 ".concat("index",".js Loaded 🠈")),new t.GetSection.forSection("🠊 GetSection.js Loaded 🠈")});
