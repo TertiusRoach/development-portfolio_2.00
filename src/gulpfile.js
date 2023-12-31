@@ -75,7 +75,7 @@ const compileSASS = (pageName) => {
       //--| Combine the selected *.scss files |--//
       .pipe(concat('style.scss'))
       //--| Export the combined files as style.scss |--//
-      .pipe(dest('../'));
+      .pipe(dest('./'));
 
     console.log(`|🠊 Merged SASS stylesheets for ${pageName}.html`);
   };
@@ -84,7 +84,7 @@ const compileSASS = (pageName) => {
   let compile = (pageName) => {
     gulp
       //--| Select style.scss |--//
-      .src(['../style.scss'])
+      .src(['style.scss'])
       //--| Convert to file to CSS |--//
       .pipe(sass().on('error', sass.logError))
       //--| Compress style.css document |--//
@@ -104,7 +104,7 @@ const compileSASS = (pageName) => {
   let remove = () => {
     gulp
       //--| The style.scss file is stored in the root parent |--//
-      .src(['../style.scss'])
+      .src(['style.scss'])
       //--| Delete style.scss file using Regex |--//
       .pipe(
         deletefile({
