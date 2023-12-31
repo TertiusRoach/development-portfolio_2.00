@@ -5,9 +5,8 @@
 - [x] Compile SASS to CSS with Gulp
 - [x] Combine Bootstrap with Stylesheet using Gulp
 - [x] Compile TypeScript with Gulp
-- [ ] Implement RequireJS or switch to [Webpack](https://webpack.js.org/)
-- [ ] Animate each element and set as default
-- [ ] Document README.md files
+- [x] Implement RequireJS with Gulp
+- [ ] Animate each element inside global-styling.scss
 
 ---
 
