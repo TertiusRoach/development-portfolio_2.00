@@ -1,14 +1,7 @@
-import { GetSection } from 'utilities/GetSection';
+import { Get } from 'utilities/Get';
 
-export namespace Index {
-  console.log(`🠊 ${'index'}.js Loaded 🠈`);
+namespace Index {
+  new Get.page('default-body');
 
-  $(function () {
-    // Your jQuery operations
-
-    // Example of using console.log
-    console.log('Hello, this is a message logged with jQuery!');
-  });
-
-  new GetSection.forSection('🠊 GetSection.js Loaded 🠈');
+  //--|🠊| console.log(`🠊 ${pageName}.js Loaded 🠈`); |🠈|--//
 }
