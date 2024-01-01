@@ -1,1 +1,1 @@
-define(["require","exports"],function(e,t){"use strict";var r;Object.defineProperty(t,"__esModule",{value:!0}),t.DefaultRightbar=void 0,(r||(t.DefaultRightbar={})).events=function(e){console.log("default-rightbar.js Loaded!")}});
+define(["require","exports"],function(e,t){"use strict";var r;Object.defineProperty(t,"__esModule",{value:!0}),t.IndexDefaultRightbar=void 0,(r||(t.IndexDefaultRightbar={})).events=function(e){console.log("default-rightbar.js Loaded!")}});

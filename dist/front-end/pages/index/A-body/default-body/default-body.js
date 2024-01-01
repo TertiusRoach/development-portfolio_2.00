@@ -1,1 +1,1 @@
-define(["require","exports"],function(e,o){"use strict";var t;Object.defineProperty(o,"__esModule",{value:!0}),o.DefaultBody=void 0,(t||(o.DefaultBody={})).events=function(e){console.log("default-body.js Loaded!")}});
+define(["require","exports"],function(e,o){"use strict";var d;Object.defineProperty(o,"__esModule",{value:!0}),o.IndexDefaultBody=void 0,(d||(o.IndexDefaultBody={})).events=function(e){console.log("default-body.js Loaded!")}});
