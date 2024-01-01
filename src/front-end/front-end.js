@@ -1,7 +1,9 @@
-//--|►| RequireJS (Workflow Setup) |◄|--//
+//--|🠊| Front-end Development |🠈|--//
 require(['front-end'], () => {
-  //--|▼| Find pageName |▼|--//
-  const pageName = window.location.href.split('/').pop().split('.')[0];
+  //--|🠋| Find pageName |🠋|--//
+  const pageName = window.location.pathname.split('/').pop().split('.')[0] || 'index';
+
+  console.log(pageName);
 
   let main = 'dist/front-end/pages/index/index.js';
 
