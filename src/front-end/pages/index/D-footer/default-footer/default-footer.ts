@@ -1,6 +1,5 @@
-export namespace IndexDefaultFooter {
-  export function eventsFor(blockName: String | 'default-footer') {
-    console.log(`--${blockName} Loaded`);
-    //--► console.log(`--${pageName} Loaded`); ◄--//
+export namespace DefaultFooter {
+  export function events(components: Array<HTMLElement>) {
+    console.log('default-body.js Loaded!');
   }
 }

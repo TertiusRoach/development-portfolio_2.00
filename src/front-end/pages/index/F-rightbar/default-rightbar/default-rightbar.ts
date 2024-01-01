@@ -1,7 +1,5 @@
-namespace Index {}
-// export namespace IndexDefaultRightbar {
-//   export function eventsFor(blockName: String | 'default-rightbar') {
-//     console.log(`--${blockName} Loaded`);
-//     //--► console.log(`--${pageName} Loaded`); ◄--//
-//   }
-// }
+export namespace DefaultRightbar {
+  export function events(components: Array<HTMLElement>) {
+    console.log('default-rightbar.js Loaded!');
+  }
+}

@@ -1,7 +1,5 @@
-namespace Index {}
-// export namespace IndexDefaultLeftbar {
-//   export function eventsFor(blockName: String | 'default-leftbar') {
-//     console.log(`--${blockName} Loaded`);
-//     //--► console.log(`--${pageName} Loaded`); ◄--//
-//   }
-// }
+export namespace DefaultLeftbar {
+  export function events(components: Array<HTMLElement>) {
+    console.log('default-leftbar.js Loaded!');
+  }
+}

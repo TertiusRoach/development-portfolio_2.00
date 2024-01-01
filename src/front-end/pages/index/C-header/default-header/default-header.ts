@@ -1,7 +1,5 @@
-namespace Index {}
-// export namespace IndexDefaultHeader {
-//   export function eventsFor(blockName: String | 'default-header') {
-//     console.log(`--${blockName} Loaded`);
-//     //--► console.log(`--${pageName} Loaded`); ◄--//
-//   }
-// }
+export namespace DefaultHeader {
+  export function events(components: Array<HTMLElement>) {
+    console.log('default-header.js Loaded!');
+  }
+}

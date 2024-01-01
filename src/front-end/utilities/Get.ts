@@ -1,15 +1,16 @@
-import { Index } from 'front-end/pages/index/index';
+import { Find } from './Find';
+
 export namespace Get {
   export function page(blockName: String) {
-    let path = Get.info(blockName).directory;
-    let item = Get.info(blockName).element;
+    let path: any = Get.info(blockName).directory;
+    let element: any = Get.info(blockName).element;
     fetch(path)
       .then((response) => response.text())
       .then((data) => {
         //--|🠋| Replace Element with HTML file |🠋|--//
-        item.innerHTML = data;
+        element.innerHTML = data;
         //--|🠋| Retrieve JavaScript file containing events |🠋|--//
-        new Index.include(blockName);
+        new Get.items(element);
       })
       .catch((error) => {
         //--|🠋| Error Handling |🠋|--//
@@ -54,10 +55,17 @@ export namespace Get {
       directory: `dist/front-end/pages/${page}/${order}-${block}/${blockName}/${blockName}.html`,
       element: document.querySelector(`#${page}-${block}`),
     };
-
     //--|🠊| console.log(`🠊 new Get.info(${blockName}); 🠈`); 🠈'); |🠈|--//
   }
-  export function items(blockName: String) {}
+  export function items(blockItem: HTMLElement) {
+    let elements: any = [];
+    elements.push(blockItem);
+
+    for (let i = 0; i < blockItem.childElementCount; i++) {
+      elements.push(blockItem.children[i]);
+    }
+    Find.page(elements);
+  }
 }
 
 /*

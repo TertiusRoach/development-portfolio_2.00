@@ -1,7 +1,5 @@
-namespace Index {}
-// export namespace IndexDefaultData {
-//   export function eventsFor(blockName: String | 'default-data') {
-//     console.log(`--${blockName} Loaded`);
-//     //--► console.log(`--${pageName} Loaded`); ◄--//
-//   }
-// }
+export namespace DefaultData {
+  export function events(components: Array<HTMLElement>) {
+    console.log('default-data.js Loaded!');
+  }
+}
