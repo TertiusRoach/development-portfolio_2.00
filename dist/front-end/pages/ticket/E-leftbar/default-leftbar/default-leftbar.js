@@ -1,1 +1,0 @@
-define(["require","exports"],function(e,t){"use strict";var o;Object.defineProperty(t,"__esModule",{value:!0}),t.IndexDefaultLeftbar=void 0,(o||(t.IndexDefaultLeftbar={})).eventsFor=function(e){console.log(`--${e} Loaded`)}});
