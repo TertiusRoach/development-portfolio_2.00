@@ -1,1 +1,1 @@
-require(["front-end"],()=>{var e=window.location.pathname.split("/").pop().split(".")[0]||"index";require([`dist/front-end/pages/${e}/${e}.js`]),console.log("🠊 front-end.js Loaded 🠈")});
+require(["front-end"],()=>{var e=window.location.pathname.split("/").pop().split(".")[0]||"index";require(["dist/front-end/vendors/jQuery.js","dist/front-end/vendors/Font Awesome.js",`dist/front-end/pages/${e}/${e}.js`])});
