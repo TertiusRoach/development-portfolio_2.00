@@ -22,19 +22,12 @@ gulp.task('copyIndex', async () => {
   compileSASS(pageName);
   compileCode('front-end');
 });
-
 gulp.task('copyTicket', async () => {
   let pageName = 'ticket';
 
   copyHTML(pageName);
   compileSASS(pageName);
   compileCode('front-end');
-});
-
-gulp.task('cleanDist', function () {
-  //--🠋 Delete Directories in 'dist' directory 🠋--//
-  gulp.src(['dist/back-end', 'dist/front-end'], { read: false }).pipe(clean());
-  //--🠊 This does give an Error but still works for some reason 🠈--//
 });
 
 const copyHTML = (pageName) => {
@@ -151,8 +144,6 @@ const compileCode = (stackType) => {
 };
 
 function duplicateVendors(stackType) {
-  let fullStack = ['back-end', 'front-end'];
-
   //--🠋 Combine all vendor files 🠋--//
   let copy = (dependency) => {
     switch (dependency) {
@@ -160,6 +151,16 @@ function duplicateVendors(stackType) {
       case '':
         break;
       //--🠋 Front-end 🠋--//
+      case 'jQuery':
+        //--🠋 Copy jQuery 🠋--//
+        gulp
+          //--| Find jQuery |--//
+          .src('src/front-end/vendors/jquery/3.7.1/3.7.1.min.js')
+          //--| Rename File |--//
+          .pipe(rename({ basename: 'jQuery' }))
+          //--| Copy jQuery to 'dist' folder |--//
+          .pipe(gulp.dest('dist/front-end/vendors/'));
+        break;
       case 'RequireJS':
         //--🠋 Copy RequireJS 🠋--//
         gulp
@@ -182,8 +183,18 @@ function duplicateVendors(stackType) {
         break;
     }
   };
+  switch (stackType) {
+    case 'back-end':
+      break;
+    case 'front-end':
+      copy('jQuery');
+      copy('RequireJS');
+      copy('Font Awesome');
+      break;
+  }
 
-  //--🠋 Copy full-stack.js Files 🠋--//
+  //--🠋 Copy main.js Files 🠋--//
+  let fullStack = ['back-end', 'front-end'];
   for (let i = 0; i < fullStack.length; i++) {
     gulp
       //--| Points to file location |--//
@@ -192,15 +203,6 @@ function duplicateVendors(stackType) {
       .pipe(uglify())
       //--| Output to 'dist' directory |--//
       .pipe(gulp.dest(`dist/${fullStack[i]}/`));
-  }
-
-  switch (stackType) {
-    case 'back-end':
-      break;
-    case 'front-end':
-      copy('RequireJS');
-      copy('Font Awesome');
-      break;
   }
 }
 function compileTypeScript() {
@@ -258,3 +260,9 @@ function compileTypeScript() {
   compileTypes();
   setTimeout(deleteTypes, 7500);
 }
+
+gulp.task('cleanDist', function () {
+  //--🠋 Delete Directories in 'dist' directory 🠋--//
+  gulp.src(['dist/back-end', 'dist/front-end'], { read: false }).pipe(clean());
+  //--🠊 This does give an Error but still works for some reason 🠈--//
+});
