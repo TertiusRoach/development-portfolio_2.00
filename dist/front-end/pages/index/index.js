@@ -1,1 +1,1 @@
-define(["require","exports","utilities/Get"],function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),new i.Get.page("default-body")});
+define(["require","exports","utilities/Get","./A-body/default-body/default-body"],function(e,t,d,o){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.Index=void 0;t=t.Index={};d.Get.page("default-body"),t.include=class{constructor(e){"default-body"===e&&new o.DefaultBody.events([])}}});

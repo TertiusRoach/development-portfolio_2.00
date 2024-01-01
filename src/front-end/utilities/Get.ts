@@ -1,24 +1,63 @@
+import { Index } from 'front-end/pages/index/index';
 export namespace Get {
-  export class page {
-    constructor(blockName: String) {
-      let page: String = window.location.pathname.split('/').pop().split('.')[0] || 'index';
-      let block: String = blockName.split('-')[1];
-      let element: HTMLElement = document.querySelector(`#${page}-${block}`);
+  export function page(blockName: String) {
+    let path = Get.info(blockName).directory;
+    let item = Get.info(blockName).element;
+    fetch(path)
+      .then((response) => response.text())
+      .then((data) => {
+        //--|🠋| Replace Element with HTML file |🠋|--//
+        item.innerHTML = data;
+        //--|🠋| Retrieve JavaScript file containing events |🠋|--//
+        new Index.include(blockName);
+      })
+      .catch((error) => {
+        //--|🠋| Error Handling |🠋|--//
+        console.error('|🠊 Error:', error);
+      });
 
-      fetch(`dist/front-end/pages/${page}/A-${block}/${blockName}/${blockName}.html`)
-        .then((response) => response.text())
-        .then((data) => {
-          //--|🠋| Replace Element with HTML file |🠋|--//
-          element.innerHTML = data;
-        })
-        .catch((error) => {
-          //--|🠋| Error Handling |🠋|--//
-          console.error('|🠊 Error:', error);
-        });
-
-      //--|🠊| console.log(`🠊 new Get.page(${blockName}); 🠈`); 🠈'); |🠈|--//
-    }
+    //--|🠊| console.log(`🠊 new Get.page(${blockName}); 🠈`); 🠈'); |🠈|--//
   }
+  export function info(blockName: String) {
+    let page: String = window.location.pathname.split('/').pop().split('.')[0] || 'index';
+    let block: String = blockName.split('-')[1];
+    let order: String;
+
+    switch (block) {
+      case 'body':
+        order = 'A';
+        break;
+      case 'overlay':
+        order = 'B';
+        break;
+      case 'header':
+        order = 'C';
+        break;
+      case 'footer':
+        order = 'D';
+        break;
+      case 'leftbar':
+        order = 'E';
+        break;
+      case 'rightbar':
+        order = 'F';
+        break;
+      case 'main':
+        order = 'G';
+        break;
+      case 'data':
+        order = 'H';
+        break;
+    }
+
+    return {
+      directory: `dist/front-end/pages/${page}/${order}-${block}/${blockName}/${blockName}.html`,
+      element: document.querySelector(`#${page}-${block}`),
+    };
+
+    //--|🠊| console.log(`🠊 new Get.info(${blockName}); 🠈`); 🠈'); |🠈|--//
+  }
+  export function items(blockName: String) {}
 }
 
 /*
