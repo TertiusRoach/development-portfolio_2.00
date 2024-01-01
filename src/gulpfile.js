@@ -22,6 +22,15 @@ gulp.task('copyIndex', async () => {
   compileSASS(pageName);
   compileCode('front-end');
 });
+
+gulp.task('copyTicket', async () => {
+  let pageName = 'ticket';
+
+  copyHTML(pageName);
+  compileSASS(pageName);
+  compileCode('front-end');
+});
+
 gulp.task('cleanDist', function () {
   //--🠋 Delete Directories in 'dist' directory 🠋--//
   gulp.src(['dist/back-end', 'dist/front-end'], { read: false }).pipe(clean());
