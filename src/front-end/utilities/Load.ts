@@ -4,11 +4,10 @@ import { Index } from 'pages/index/index';
 import { Resume } from 'pages/resume/resume';
 export namespace Load {
   export function index(blockName: String) {
-    let information: any = new Tool.info(blockName);
-    let path: any = information.directory;
-    let element: any = information.element;
+    let info: any = new Tool.info(blockName);
+    let element: HTMLElement = info.element;
 
-    fetch(path)
+    fetch(info.directory)
       .then((response) => response.text())
       .then((data) => {
         //--|🠋| Replace Element with HTML file |🠋|--//
@@ -24,11 +23,10 @@ export namespace Load {
   }
 
   export function resume(blockName: String) {
-    let information: any = new Tool.info(blockName);
-    let path: any = information.directory;
-    let element: any = information.element;
+    let info: any = new Tool.info(blockName);
+    let element: HTMLElement = info.element;
 
-    fetch(path)
+    fetch(info.directory)
       .then((response) => response.text())
       .then((data) => {
         //--|🠋| Replace Element with HTML file |🠋|--//

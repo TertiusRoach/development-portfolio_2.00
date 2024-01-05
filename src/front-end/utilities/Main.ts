@@ -3,6 +3,8 @@ export namespace Main {
   //--|🠋| Get pageName |🠋|--//
   let pageName: String = window.location.pathname.split('/').pop().split('.')[0] || 'index';
 
+  console.log(pageName);
+
   switch (pageName) {
     case 'resume':
       Load.resume('default-body');
