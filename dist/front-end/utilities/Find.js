@@ -1,0 +1,1 @@
+define(["require","exports","utilities/Load"],function(i,e,n){"use strict";var o;Object.defineProperty(e,"__esModule",{value:!0}),e.Find=void 0,(o||(e.Find={})).block=function(i){var e=window.location.pathname.split("/").pop().split(".")[0]||"index";"index"===e&&n.Load.index(e,i)}});

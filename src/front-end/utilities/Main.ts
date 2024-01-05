@@ -1,7 +1,7 @@
 import { Load } from 'utilities/Load';
 export namespace Main {
   //--|🠋| Get pageName |🠋|--//
-  const pageName: String = window.location.pathname.split('/').pop().split('.')[0] || 'index';
+  let pageName: String = window.location.pathname.split('/').pop().split('.')[0] || 'index';
 
   switch (pageName) {
     case 'index':
