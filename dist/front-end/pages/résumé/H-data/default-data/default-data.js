@@ -1,1 +1,0 @@
-define(["require","exports"],function(e,t){"use strict";var a;Object.defineProperty(t,"__esModule",{value:!0}),t.DefaultData=void 0,(a||(t.DefaultData={})).events=function(){console.log("default-data.js Detected!")}});
