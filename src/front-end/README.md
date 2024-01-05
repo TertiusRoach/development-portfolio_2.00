@@ -6,7 +6,8 @@
 - [x] Combine Bootstrap with Stylesheet using Gulp
 - [x] Compile TypeScript with Gulp
 - [x] Implement RequireJS with Gulp
-- [ ] Re-organize Utilities to import everything in index.js
+- [x] Re-organize Utilities to import everything in index.js
+- [ ] Place each element inside default-body.html
 - [ ] Animate each element inside global-styling.scss
 
 ---
