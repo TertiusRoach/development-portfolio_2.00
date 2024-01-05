@@ -7,6 +7,7 @@
 - [x] Compile TypeScript with Gulp
 - [x] Implement RequireJS with Gulp
 - [x] Re-organize Utilities to import everything in index.js
+- [x] Build [Résumé](https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLejxfgwRYhwC0ffw3dtP-p-lKD2mYkD2r&index=1&t=128s): `<script>` = resume
 - [ ] Place each element inside default-body.html
 - [ ] Animate each element inside global-styling.scss
 

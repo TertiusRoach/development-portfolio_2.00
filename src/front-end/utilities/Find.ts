@@ -7,7 +7,10 @@ export namespace Find {
 
     switch (pageName) {
       case 'index':
-        Load.index(pageName, blockName);
+        Load.index(blockName);
+        break;
+      case 'resume':
+        Load.resume(blockName);
         break;
       case 'ticket':
         // Load.page('default-body');
