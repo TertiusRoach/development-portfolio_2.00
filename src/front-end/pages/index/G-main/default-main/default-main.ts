@@ -1,5 +1,5 @@
-export namespace IndexDefaultMain {
-  export function events(components: Array<HTMLElement>) {
+export namespace DefaultMain {
+  export function events() {
     console.log('default-main.js Loaded!');
   }
 }

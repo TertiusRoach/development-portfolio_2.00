@@ -1,5 +1,5 @@
-export namespace IndexBackupRightbar {
-  export function events(components: Array<HTMLElement>) {
+export namespace BackupRightbar {
+  export function events() {
     console.log('backup-rightbar.js Loaded!');
   }
 }

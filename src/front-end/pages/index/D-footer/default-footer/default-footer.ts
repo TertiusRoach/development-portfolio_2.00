@@ -1,5 +1,5 @@
-export namespace IndexDefaultFooter {
-  export function events(components: Array<HTMLElement>) {
+export namespace DefaultFooter {
+  export function events() {
     console.log('default-body.js Loaded!');
   }
 }

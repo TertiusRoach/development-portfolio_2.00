@@ -1,5 +1,5 @@
-export namespace IndexDefaultLeftbar {
-  export function events(components: Array<HTMLElement>) {
+export namespace DefaultLeftbar {
+  export function events() {
     console.log('default-leftbar.js Loaded!');
   }
 }

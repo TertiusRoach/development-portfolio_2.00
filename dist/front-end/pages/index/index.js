@@ -1,1 +1,0 @@
-define(["require","exports","utilities/Get"],function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.Index=void 0,t.Index={},i.Get.page("default-body")});

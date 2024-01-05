@@ -1,5 +1,5 @@
-export namespace IndexDefaultData {
-  export function events(components: Array<HTMLElement>) {
+export namespace DefaultData {
+  export function events() {
     console.log('default-data.js Loaded!');
   }
 }

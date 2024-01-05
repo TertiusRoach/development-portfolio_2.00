@@ -1,5 +1,5 @@
-export namespace IndexBackupHeader {
-  export function events(components: Array<HTMLElement>) {
+export namespace BackupHeader {
+  export function events() {
     console.log('backup-header.js Loaded!');
   }
 }

@@ -1,5 +1,5 @@
-export namespace IndexDefaultBody {
-  export function events(components: Array<HTMLElement>) {
-    console.log('default-body.js Loaded!');
+export namespace DefaultBody {
+  export function events() {
+    console.log('default-body.js Detected!');
   }
 }

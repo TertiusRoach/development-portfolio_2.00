@@ -1,5 +1,5 @@
-export namespace IndexBackupBody {
-  export function events(components: Array<HTMLElement>) {
+export namespace BackupBody {
+  export function events() {
     console.log('backup-body.js Loaded!');
   }
 }

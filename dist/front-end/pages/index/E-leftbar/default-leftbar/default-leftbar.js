@@ -1,1 +1,0 @@
-define(["require","exports"],function(e,t){"use strict";var f;Object.defineProperty(t,"__esModule",{value:!0}),t.IndexDefaultLeftbar=void 0,(f||(t.IndexDefaultLeftbar={})).events=function(e){console.log("default-leftbar.js Loaded!")}});

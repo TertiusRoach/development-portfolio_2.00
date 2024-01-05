@@ -1,5 +1,5 @@
-export namespace IndexDefaultHeader {
-  export function events(components: Array<HTMLElement>) {
+export namespace DefaultHeader {
+  export function events() {
     console.log('default-header.js Loaded!');
   }
 }

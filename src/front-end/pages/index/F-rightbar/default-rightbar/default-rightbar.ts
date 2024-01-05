@@ -1,5 +1,5 @@
-export namespace IndexDefaultRightbar {
-  export function events(components: Array<HTMLElement>) {
+export namespace DefaultRightbar {
+  export function events() {
     console.log('default-rightbar.js Loaded!');
   }
 }

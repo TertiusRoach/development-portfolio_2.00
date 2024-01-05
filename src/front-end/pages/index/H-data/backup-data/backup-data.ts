@@ -1,5 +1,5 @@
-export namespace IndexBackupData {
-  export function events(components: Array<HTMLElement>) {
+export namespace BackupData {
+  export function events() {
     console.log('backup-data.js Loaded!');
   }
 }

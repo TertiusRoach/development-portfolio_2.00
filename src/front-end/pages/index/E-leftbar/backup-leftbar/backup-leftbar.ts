@@ -1,5 +1,5 @@
-export namespace IndexBackupLeftbar {
-  export function events(components: Array<HTMLElement>) {
+export namespace BackupLeftbar {
+  export function events() {
     console.log('backup-leftbar.js Loaded!');
   }
 }

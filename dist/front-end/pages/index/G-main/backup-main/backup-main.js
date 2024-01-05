@@ -1,1 +1,0 @@
-define(["require","exports"],function(e,n){"use strict";var i;Object.defineProperty(n,"__esModule",{value:!0}),n.IndexBackupMain=void 0,(i||(n.IndexBackupMain={})).events=function(e){console.log("backup-main.js Loaded!")}});

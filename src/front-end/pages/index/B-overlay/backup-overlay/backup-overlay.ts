@@ -1,5 +1,5 @@
-export namespace IndexBackupOverlay {
-  export function events(components: Array<HTMLElement>) {
+export namespace BackupOverlay {
+  export function events() {
     console.log('backup-overlay.js Loaded!');
   }
 }
