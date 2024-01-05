@@ -15,6 +15,14 @@ const deletefile = require('gulp-delete-file');
 const sass = require('gulp-sass')(require('sass'));
 const removeHtmlComments = require('gulp-remove-html-comments');
 
+gulp.task('copyRésumé', async () => {
+  let pageName = 'resume';
+
+  copyHTML(pageName);
+  compileSASS(pageName);
+  compileCode('front-end');
+});
+
 gulp.task('copyIndex', async () => {
   let pageName = 'index';
 
