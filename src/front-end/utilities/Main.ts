@@ -11,10 +11,10 @@ export namespace Main {
       Load.index('default-body');
       break;
     case 'ticket':
-      // Load.page('default-body');
+      // Load.ticket('default-body');
       break;
     case 'university':
-      // Load.page('default-body');
+      // Load.university('default-body');
       break;
   }
   /* console.log('🠊 Main.js Detected! 🠈'); */
