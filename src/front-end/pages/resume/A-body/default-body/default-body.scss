@@ -1,9 +1,22 @@
 .default-body {
   display: grid;
+  height: 100vh;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 25px 1fr 25px;
+
+  .default-header {
+    grid-row-end: 2;
+    grid-row-start: 1;
+    grid-column-end: 4;
+    grid-column-start: 1;
+  }
+  background: $primary-dark;
+  /*
   //--▼ Desktop (Landscape) ▼--//
   @media screen and (orientation: landscape) {
   }
   //--▼ Mobile (Portrait) ▼--//
   @media screen and (orientation: portrait) {
   }
+  */
 }

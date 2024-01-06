@@ -50,6 +50,10 @@ Named [override-bootstrap.scss](https://github.com/TertiusRoach/development-port
 
 In addition, there's another [Sass file](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/pages/index/index.scss) tailored specifically for individual pages, applying styles exclusively to the page it occupies. This file encapsulates default values for a company's registered colors and logos, operating within a non-global scope. It also defines defaults for CSS margins and padding on HTML elements, typically initialized to zero. This meticulous initialization ensures that modifications adhere to the unique design requirements of each specific page without impacting the entire portfolio.
 
+> 🠋 default-body.scss
+
+Dedicated to grid placements for child elements. The rest is a combination of CSS flexbox and CSS Grid.
+
 ### Content
 
 Within the [~content](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index/~content) directory is a repository designed to empower designers. The tilde (~) prefix at the beginning of the folder signifies its nature, expanding beyond front-end development into the field of graphics. This interdisciplinary approach requires additional proficiency, covering skills from image manipulation to visual effects and drawing. Displayed below are various graphical files, including ico, gif, svg, jpg, png, mp3, psd, and mp4, stored in this location. Each format contributes to a specific purpose, shaping the ultimate outcome of the final page.

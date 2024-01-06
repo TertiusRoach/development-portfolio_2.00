@@ -1,9 +1,53 @@
 .default-header {
-  display: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 25px 0 25px;
+  justify-content: space-between;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+  .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: $primary-light;
+  }
+  #menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $primary-light;
+  }
+
+  .navbar {
+    a {
+      font-weight: 400;
+      font-size: 1.5rem;
+      transition: 0.25s;
+      margin: 0 0 0 3rem;
+      text-decoration: none;
+      color: $primary-light;
+    }
+    a:hover,
+    .active {
+      color: $primary-medium;
+    }
+    .active {
+      cursor: default;
+    }
+  }
+
+  /*
   //--▼ Desktop (Landscape) ▼--//
   @media screen and (orientation: landscape) {
   }
   //--▼ Mobile (Portrait) ▼--//
   @media screen and (orientation: portrait) {
   }
+  */
 }
