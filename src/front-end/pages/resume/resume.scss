@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Rubik', arial;
-}
-
 //--|▼| Color Setup |▼|--//
 $primary-dark: #1f3131; //--► rgba(31,49,49,1) ◄--//
 $primary-medium: #3d6262; //--► rgba(61,98,98,1) ◄--//
@@ -17,3 +11,8 @@ $tertiary-dark: #392319; //--► rgba(57,35,25,1) ◄--//
 $tertiary-medium: #714631; //--► rgba(113,70,49,1) ◄--//
 $tertiary-light: #b8a298; //--► rgba(184,162,152,1) ◄--//
 //--|▲| Color Setup |▲|--//
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', arial;
+}
