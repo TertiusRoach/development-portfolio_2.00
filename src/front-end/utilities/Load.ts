@@ -5,13 +5,13 @@ import { Resume } from 'pages/resume/resume';
 export namespace Load {
   export function index(blockName: String) {
     let info: any = new Tool.info(blockName);
-    let element: HTMLElement = info.element;
+    let item: HTMLElement = info.element;
 
     fetch(info.directory)
       .then((response) => response.text())
       .then((data) => {
-        //--|🠋| Replace Element with HTML file |🠋|--//
-        element.innerHTML = data;
+        //--|🠋| Replace HTML |🠋|--//
+        item.innerHTML = data;
 
         //--|🠋| Run Page |🠋|--//
         Index.run(blockName);
@@ -24,13 +24,12 @@ export namespace Load {
 
   export function resume(blockName: String) {
     let info: any = new Tool.info(blockName);
-    let element: HTMLElement = info.element;
-
+    let item: HTMLElement = info.element;
     fetch(info.directory)
       .then((response) => response.text())
       .then((data) => {
         //--|🠋| Replace Element with HTML file |🠋|--//
-        element.innerHTML = data;
+        item.innerHTML = data;
         Resume.run(blockName);
       })
       .catch((error) => {

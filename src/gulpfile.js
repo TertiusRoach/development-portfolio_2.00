@@ -71,7 +71,7 @@ const compileSASS = (pageName) => {
     gulp
       //--| Find all the *.scss files |--//
       .src([
-        'src/front-end/pages/corporate-identity.scss',
+        `src/front-end/pages/${pageName}/${pageName}.scss`,
         `src/front-end/pages/${pageName}/A-body/**/*.scss`,
         `src/front-end/pages/${pageName}/B-overlay/**/*.scss`,
         `src/front-end/pages/${pageName}/C-header/**/*.scss`,
@@ -80,7 +80,7 @@ const compileSASS = (pageName) => {
         `src/front-end/pages/${pageName}/F-rightbar/**/*.scss`,
         `src/front-end/pages/${pageName}/G-main/**/*.scss`,
         `src/front-end/pages/${pageName}/H-data/**/*.scss`,
-        'src/front-end/pages/global-styling.scss',
+        'src/front-end/pages/override-bootstrap.scss',
       ])
       //--| Combine the selected *.scss files |--//
       .pipe(concat('style.scss'))
