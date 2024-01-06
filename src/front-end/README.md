@@ -1,18 +1,3 @@
-## My Checklist
-
-- [x] Get Gulp to work
-- [x] Copy HTML with Gulp
-- [x] Compile SASS to CSS with Gulp
-- [x] Combine Bootstrap with Stylesheet using Gulp
-- [x] Compile TypeScript with Gulp
-- [x] Implement RequireJS with Gulp
-- [x] Re-organize Utilities to import everything in index.js
-- [x] Build [Résumé](https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLejxfgwRYhwC0ffw3dtP-p-lKD2mYkD2r&index=1&t=128s): `<script>` = resume
-- [ ] Place each element inside default-body.html
-- [ ] Animate each element inside global-styling.scss
-
----
-
 # [Front-end Documentation](https://github.com/TertiusRoach/development-portfolio_2.00)
 
 This directory functions as the [User Interface](https://en.wikipedia.org/wiki/User_interface) component of the application. The purpose of this documentation is to offer a detailed insight into the organization of files and folders, with the goal of promoting clarity to support smooth scalability in projects. The structure is meticulously crafted to reduce the chances of introducing errors in the code. Files are arranged strategically to minimize unnecessary code and ensure a clear understanding of each document's role. The categorization of files is designed to be intuitive, making it easier for both novice and experienced developers to comprehend, particularly as the project's complexity grows.
@@ -23,16 +8,13 @@ This directory functions as the [User Interface](https://en.wikipedia.org/wiki/U
   <summary>Table of Contents</summary>
     <ol>
         <li>
-            <a href="#pages-folder">Pages Folder</a>
+            <a href="#pages-directory">Pages Directory</a>
             <ul>
                 <li>
-                    <a href="#global-styling">Global Styling</a>
+                    <a href="#designing">Designing</a>
                 </li>
                 <li>
-                    <a href="#corporate-identity">Corporate Identity</a>
-                </li>
-                <li>
-                    <a href="#content-directory">Content Directory</a>
+                    <a href="#content">Content</a>
                 </li>
             </ul>
         </li>
@@ -58,53 +40,45 @@ This directory functions as the [User Interface](https://en.wikipedia.org/wiki/U
 
 ---
 
-## Pages Folder
+## Pages Directory
 
-This specifically concerns the [front-end](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end) structure. The [page directory](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages) is at the heart of front-end functionality, and the [index](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index) folder serves as the default testing location. The **~content** folder offers insightful recommendations on optimal resolutions for various file formats, providing rationale for specific image resolutions to maintain consistency. Crafted with meticulous attention to detail, this document prioritizes clear navigation and delivers comprehensive references for each file format, contributing to heightened efficiency and quality in the front-end development process.
+This specifically concerns the [front-end](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end) structure. The [page directory](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages) is at the heart of front-end functionality, and the [index](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index) folder serves as the default testing location. Crafted with meticulous attention to detail, this document prioritizes clear navigation and delivers comprehensive references for each file format, contributing to heightened efficiency and quality in the front-end development process.
 
-### Global Styling
+### Designing
 
-This [SASS file](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/pages/global-styling.scss) acts as an override, enabling the modification of specific designs within the Bootstrap framework. A foundational structure is already established, providing flexibility in adjusting default values.
+This [Sass file](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/pages/override-bootstrap.scss) acts as an override, enabling the modification of specific designs within the Bootstrap framework. A foundational structure is already established, providing flexibility in adjusting default values. This [SASS file](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/pages/index/index.scss) encapsulates the default values for a company's registered colors and logos. It also defines global defaults for CSS margins and padding of HTML elements. Typically, I initialize these defaults to zero and then customize them based on the specific design requirements.
 
-### Corporate Identity
+### Content
 
-This [SASS file](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/pages/corporate-identity.scss) encapsulates the default values for a company's registered colors and logos. It also defines global defaults for CSS margins and padding of HTML elements. Typically, I initialize these defaults to zero and then customize them based on the specific design requirements.
+The **~content** folder offers insightful recommendations on optimal resolutions for various file formats, providing rationale for specific image resolutions to maintain consistency. The [content directory](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index/~content) houses all the graphical with the following extensions, ico, gif, svg, jpg,png, mp3 and mp4 files. Each file format has a distinct purpose, and through experience, I've discovered that the choice of format significantly influences the outcome based on specific requirements and below this paragraph is a description along with the resolution metadata of the placeholder documents stored in this project.
 
-### [Content Directory](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index/~content)
+> 🠋 ICO Files
 
-Each file format has a distinct purpose, and through experience, I've discovered that the choice of format significantly influences the outcome based on specific requirements.
+Placeholder Resolution = **256x256**: Ideal for small graphical representations, typically used as website or application icons.
 
-### ICO Files: Default Resolution = **256x256**
+> 🠋 GIF Files
 
-Ideal for small graphical representations, typically used as website or application icons.
+Placeholder Resolution = **500x500**: Suited for simple animations, logos, and images with limited colors, providing a lightweight solution.
 
-### GIF Files: Default Resolution = **500x500**
+> 🠋 SVG Files
 
-Suited for simple animations, logos, and images with limited colors, providing a lightweight solution.
+Placeholder Resolution = **500x500**: Perfect for scalable graphics, such as logos and icons, as it maintains clarity at various sizes without loss of quality.
 
-### SVG Files: Default Resolution = **500x500**
+> 🠋 JPG Files
 
-Perfect for scalable graphics, such as logos and icons, as it maintains clarity at various sizes without loss of quality.
+Placeholder Resolution = **1280x720 (720p)**: Well-suited for photographs and images with complex details, balancing quality and compression for efficient storage.
 
-### JPG Files: Default Resolution = **1280x720 (720p)**
+> 🠋 PNG Files
 
-Well-suited for photographs and images with complex details, balancing quality and compression for efficient storage.
+Placeholder Resolution = **3840x2160 (2160p)**: Well-suited for images requiring transparency and sharp details, commonly used for web graphics and logos.
 
-### PNG Files: Default Resolution = **3840x2160 (2160p)**
+> 🠋 MP4 Files
 
-Well-suited for images requiring transparency and sharp details, commonly used for web graphics and logos.
-
-### MP4 Files: Default Specifications = **1920x1080 (1080p)**
-
-Excellent for video content, supporting high-quality compression with broad compatibility across platforms. I usually set my videos to 25 frames per second.
+Placeholder Specifications = **1920x1080 (1080p)**: Excellent for video content, supporting high-quality compression with broad compatibility across platforms. I usually set my videos to 25 frames per second.
 
 ---
 
 ## Utilities Folder
-
-Description Here
-
-### Tools Folder
 
 Description Here
 
@@ -119,6 +93,21 @@ Description Here
 ## Subject Here
 
 Description Here
+
+---
+
+## My Checklist
+
+- [x] Get Gulp to work
+- [x] Copy HTML with Gulp
+- [x] Compile SASS to CSS with Gulp
+- [x] Combine Bootstrap with Stylesheet using Gulp
+- [x] Compile TypeScript with Gulp
+- [x] Implement RequireJS with Gulp
+- [x] Re-organize Utilities to import everything in index.js
+- [x] Build [Résumé](https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLejxfgwRYhwC0ffw3dtP-p-lKD2mYkD2r&index=1&t=128s): `<script>` = resume
+- [ ] Place each element inside default-body.html
+- [ ] Animate each element inside global-styling.scss
 
 ---
 
