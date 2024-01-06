@@ -52,7 +52,7 @@ In addition, there's another [SASS file](https://github.com/TertiusRoach/develop
 
 ### Content
 
-The [~content](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index/~content) folder is a valuable resource offering thoughtful recommendations on optimal resolutions for various file formats, accompanied by a rationale for maintaining consistency in image resolutions. Within the content directory, a diverse array of graphical files with extensions such as ico, gif, svg, jpg, png, mp3, and mp4 are housed. Each file format serves a distinct purpose, and through accumulated experience, I have found that the choice of format significantly impacts the final outcome based on specific requirements. Following this paragraph, you will find detailed descriptions along with resolution metadata for the placeholder files stored in this project.
+Within the [~content](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index/~content) directory is a repository designed to empower graphic designers. The tilde (~) prefix at the beginning of the folder signifies its nature, expanding beyond front-end development into the field of graphic design. This interdisciplinary approach requires additional proficiency, covering skills from image manipulation to visual effects and drawing. Displayed below are various graphical files, including ico, gif, svg, jpg, png, mp3, psd, and mp4, stored in this location. Each format contributes to a specific purpose, shaping the ultimate outcome of the final page.
 
 > 🠋 ICO Files
 
