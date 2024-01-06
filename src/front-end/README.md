@@ -52,7 +52,7 @@ In addition, there's another [SASS file](https://github.com/TertiusRoach/develop
 
 ### Content
 
-The **~content** folder offers insightful recommendations on optimal resolutions for various file formats, providing rationale for specific image resolutions to maintain consistency. The [content directory](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index/~content) houses all the graphical with the following extensions, ico, gif, svg, jpg,png, mp3 and mp4 files. Each file format has a distinct purpose, and through experience, I've discovered that the choice of format significantly influences the outcome based on specific requirements and below this paragraph is a description along with the resolution metadata of the placeholder documents stored in this project.
+The [~content](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index/~content) folder is a valuable resource offering thoughtful recommendations on optimal resolutions for various file formats, accompanied by a rationale for maintaining consistency in image resolutions. Within the content directory, a diverse array of graphical files with extensions such as ico, gif, svg, jpg, png, mp3, and mp4 are housed. Each file format serves a distinct purpose, and through accumulated experience, I have found that the choice of format significantly impacts the final outcome based on specific requirements. Following this paragraph, you will find detailed descriptions along with resolution metadata for the placeholder files stored in this project.
 
 > 🠋 ICO Files
 
