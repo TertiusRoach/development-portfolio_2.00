@@ -5,6 +5,7 @@ const { src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
+const ignore = require('gulp-ignore');
 const htmlmin = require('gulp-htmlmin');
 const gap = require('gulp-append-prepend');
 const uglifycss = require('gulp-uglifycss');
@@ -13,38 +14,41 @@ const sourcemaps = require('gulp-sourcemaps');
 const replace = require('gulp-string-replace');
 const deletefile = require('gulp-delete-file');
 const sass = require('gulp-sass')(require('sass'));
-const removeHtmlComments = require('gulp-remove-html-comments');
+const cleanHTML = require('gulp-remove-html-comments');
 
 gulp.task('copyRésumé', async () => {
   let pageName = 'resume';
 
   copyHTML(pageName);
   compileSASS(pageName);
+  copyContent(pageName);
   compileCode('front-end');
 });
-
 gulp.task('copyIndex', async () => {
   let pageName = 'index';
 
   copyHTML(pageName);
   compileSASS(pageName);
+  copyContent(pageName);
   compileCode('front-end');
 });
+/*
 gulp.task('copyTicket', async () => {
   let pageName = 'ticket';
 
   copyHTML(pageName);
   compileSASS(pageName);
+  copyContent(pageName);
   compileCode('front-end');
 });
-
+*/
 const copyHTML = (pageName) => {
   //--🠋 Copy main HTML file into root folder 🠋--//
   gulp
     //--| Find *.html reference files in the 'src' folder |--//
     .src(`src/front-end/pages/${pageName}/${pageName}.html`)
     //--| Clear comments from HTML file |--//
-    .pipe(removeHtmlComments())
+    .pipe(cleanHTML())
     //--| Compress HTML file |--//
     .pipe(htmlmin({ collapseWhitespace: true }))
     //--| Copy the pageName.html into 'root' folder |--//
@@ -56,7 +60,7 @@ const copyHTML = (pageName) => {
     gulp
       //--| Find *.html files in the source folder |--//
       .src(`src/front-end/pages/${pageName}/${array[index]}/**/*.html`)
-      .pipe(removeHtmlComments())
+      .pipe(cleanHTML())
       .pipe(htmlmin({ collapseWhitespace: true }))
       //--| Copy the *.html files into distribution folder |--//
       .pipe(gulp.dest(`dist/front-end/pages/${pageName}/${array[index]}/`));
@@ -145,6 +149,22 @@ const compileSASS = (pageName) => {
   setTimeout(remove, 5000);
   setTimeout(compile, 2500, pageName);
   setTimeout(prepend, 7500, pageName);
+};
+const copyContent = (pageName) => {
+  //--🠋 Copy content into distributable folder 🠋--//
+  const contentFolders = ['gif-files', 'ico-files', 'jpg-files', 'mp3-files', 'mp4-files', 'png-files', 'svg-files'];
+  let copyContent = (item, index, array) => {
+    gulp
+      //--| Find Source Content |--//
+      .src(`src/front-end/pages/${pageName}/~content/**/*.${array[index].split('-')[0]}`)
+      //--| Ignore Placeholder Files |--//
+      .pipe(ignore('**/*sample*'))
+      //--| Copy Files for Distribution |--//
+      .pipe(gulp.dest(`dist/front-end/pages/${pageName}/~content/`));
+
+    console.log(`|🠊 Copied ${array[index]}`);
+  };
+  contentFolders.forEach(copyContent);
 };
 const compileCode = (stackType) => {
   compileTypeScript();
@@ -269,8 +289,20 @@ function compileTypeScript() {
   setTimeout(deleteTypes, 7500);
 }
 
-gulp.task('cleanDist', function () {
-  //--🠋 Delete Directories in 'dist' directory 🠋--//
-  gulp.src(['dist/back-end', 'dist/front-end'], { read: false }).pipe(clean());
-  //--🠊 This does give an Error but still works for some reason 🠈--//
+// gulp.task('cleanDist', function () {
+//   //--🠋 Delete Directories in 'dist' directory 🠋--//
+//   gulp.src(['dist/back-end', 'dist/front-end'], { read: false }).pipe(clean());
+//   //--🠊 This does give an Error but still works for some reason 🠈--//
+// });
+gulp.task('cleanDist', function (done) {
+  try {
+    // Delete Directories in 'dist' directory
+    gulp.src(['dist/back-end', 'dist/front-end'], { read: false }).pipe(clean());
+
+    console.log('|🠊 Cleaned Distributable!');
+    done();
+  } catch (err) {
+    console.error('|🠊 Error:', err);
+    done(err); // Pass the error to the callback
+  }
 });
