@@ -1,14 +1,22 @@
 .default-body {
   display: grid;
   height: 100vh;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 75px 1fr;
   grid-template-columns: 25px 1fr 25px;
 
   .default-header {
+    display: flex;
     grid-row-end: 2;
     grid-row-start: 1;
-    grid-column-end: 4;
-    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-column-start: 2;
+  }
+  .default-main {
+    display: flex;
+    grid-row-end: 3;
+    grid-row-start: 2;
+    grid-column-end: 3;
+    grid-column-start: 2;
   }
   background: $primary-dark;
   /*

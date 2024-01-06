@@ -1,9 +1,95 @@
 .default-main {
-  display: none;
+  align-items: center;
+  padding: 5rem 10% 2rem;
+  .home-content {
+    max-width: 80rem;
+
+    h1 {
+      color: white;
+      cursor: default;
+      font-size: 6rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    p {
+      width: 56rem;
+      color: white;
+      cursor: default;
+      font-size: 1.5rem;
+      margin: 2rem 0 4rem;
+    }
+    .text-animate {
+      width: 32rem;
+      cursor: default;
+      position: relative;
+      h3 {
+        font-size: 3rem;
+        font-weight: 600;
+        color: transparent;
+        -webkit-text-stroke: 0.75px $primary-light;
+      }
+    }
+    .btn-box {
+      width: 35rem;
+      height: 5rem;
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      .btn {
+        z-index: 1;
+        width: 15rem;
+        height: 100%;
+        overflow: hidden;
+        font-weight: 600;
+        transition: 0.25s;
+        font-size: 1.75rem;
+        position: relative;
+        align-items: center;
+        letter-spacing: 5px;
+        color: $primary-dark;
+        display: inline-flex;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        justify-content: center;
+        background-color: $primary-light;
+        border: 0.25rem solid $primary-light;
+      }
+      .btn:hover {
+        color: $primary-light;
+      }
+      .btn:nth-child(2) {
+        color: $primary-light;
+        background: transparent;
+      }
+      .btn:nth-child(2):hover {
+        color: $primary-dark;
+      }
+      .btn:nth-child(2)::before {
+        background: $primary-light;
+      }
+
+      .btn::before {
+        top: 0;
+        left: 0;
+        width: 0;
+        z-index: -1;
+        content: '';
+        height: 100%;
+        transition: 0.25s;
+        position: absolute;
+        background: $primary-dark;
+      }
+      .btn:hover::before {
+        width: 100%;
+      }
+    }
+  }
+  /*
   //--▼ Desktop (Landscape) ▼--//
   @media screen and (orientation: landscape) {
   }
   //--▼ Mobile (Portrait) ▼--//
   @media screen and (orientation: portrait) {
   }
+  */
 }
