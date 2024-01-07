@@ -13,8 +13,8 @@
           font-size: 8rem;
           font-weight: 400;
           white-space: nowrap;
+          filter: drop-shadow(0 0mm 4mm black);
         }
-
         .animate-title {
           width: 100%;
           position: relative;
@@ -32,6 +32,7 @@
           cursor: default;
           font-size: 1.75rem;
           margin: 2rem 0 4rem;
+          filter: drop-shadow(0 0mm 4mm black);
         }
         .buttons-receptacle {
           width: 35rem;
