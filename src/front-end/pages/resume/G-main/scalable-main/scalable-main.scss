@@ -88,7 +88,11 @@
         }
       }
       .home-picture {
+        transition: 15s;
         background: url('content/png-files/profile-picture.png') no-repeat center/contain;
+      }
+      .home-picture:hover {
+        opacity: 0.75;
       }
     }
 
