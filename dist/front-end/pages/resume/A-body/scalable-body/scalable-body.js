@@ -1,0 +1,1 @@
+define(["require","exports"],function(e,o){"use strict";var l;Object.defineProperty(o,"__esModule",{value:!0}),o.ScalableBody=void 0,(l||(o.ScalableBody={})).events=function(){console.log("scalable-body.js Detected!")}});

@@ -16,6 +16,7 @@ import { BackupRightbar } from '../resume/F-rightbar/backup-rightbar/backup-righ
 import { BackupMain } from '../resume/G-main/backup-main/backup-main';
 import { BackupData } from '../resume/H-data/backup-data/backup-data';
 
+import { ScalableMain } from '../resume/G-main/scalable-main/scalable-main';
 export namespace Resume {
   export function run(blockName: String) {
     switch (blockName) {
@@ -73,6 +74,9 @@ export namespace Resume {
         break;
       case 'backup-main':
         BackupMain.events();
+        break;
+      case 'scalable-main':
+        ScalableMain.events();
         break;
 
       //--|🠋| Data |🠋|--//
