@@ -21,15 +21,15 @@ $tertiary-light: #b8a298; //--🠊 rgba(184,162,152,1) 🠈--//
 
   border: none;
   outline: none;
-  overflow-x: hidden;
+  overflow: visible;
   box-sizing: border-box;
-  scroll-behavior: smooth;
-
+  // scroll-behavior: smooth;
   font-family: 'Rubik', Helvetica;
 }
-h1 {
-  color: white;
+html {
+  font-size: 75%;
 }
+
 //--|▼| Backup Colors |▼|--//
 $green-neon: #00ff00; /*--► rgba(0, 255, 0, 1) ◄--*/
 $green-dark: #274e13; /*--► rgba(39, 78, 19, 1) ◄--*/

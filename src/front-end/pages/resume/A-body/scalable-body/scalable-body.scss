@@ -2,26 +2,21 @@
   @media screen and (orientation: landscape) {
     display: grid;
     height: 100vh;
-
+    background-color: $primary-dark;
     grid-template-rows: 75px 1fr 75px;
     grid-template-columns: 25px 1fr 25px;
+
     #resume-header {
       grid-column-start: 1;
       grid-column-end: 4;
       grid-row-start: 1;
       grid-row-end: 2;
-
-      background-color: $green-dark;
-      opacity: 0.5;
     }
     #resume-footer {
       grid-column-start: 1;
       grid-column-end: 4;
       grid-row-start: 3;
       grid-row-end: 4;
-
-      background-color: $pink-dark;
-      opacity: 0.5;
     }
     #resume-main {
       grid-column-start: 1;
@@ -29,6 +24,40 @@
       grid-row-start: 1;
       grid-row-end: 4;
       display: block; //--🠈 Default Display <main> 🠈--//
+
+      //--🠋 Grid Template 🠋--//
+      .home div[class*='grid'] {
+        grid-template-columns: repeat(7, 1fr);
+        //--🠋 Grid Placement 🠋--//
+        .home-description {
+          grid-column-start: 1;
+          grid-column-end: 5;
+          grid-row-start: 1;
+          grid-row-end: 2;
+        }
+        .home-picture {
+          grid-column-start: 4;
+          grid-column-end: 8;
+          grid-row-start: 1;
+          grid-row-end: 2;
+        }
+      }
+      .about div[class*='grid'] {
+        grid-template-columns: 1fr;
+        //--🠊 Elements Here 🠈--//
+      }
+      .experience div[class*='grid'] {
+        grid-template-columns: 1fr;
+        //--🠊 Elements Here 🠈--//
+      }
+      .skills div[class*='grid'] {
+        grid-template-columns: 1fr;
+        //--🠊 Elements Here 🠈--//
+      }
+      .contact div[class*='grid'] {
+        grid-template-columns: 1fr;
+        //--🠊 Elements Here 🠈--//
+      }
 
       section {
         width: 100%;
@@ -10848,40 +10877,6 @@
         @media only screen and (max-height: 360px) {
           height: 360px;
         }
-      }
-
-      //--🠋 Grid Template 🠋--//
-      .home div[class*='grid'] {
-        grid-template-columns: repeat(7, 1fr);
-        //--🠋 Grid Placement 🠋--//
-        .home-description {
-          grid-column-start: 1;
-          grid-column-end: 5;
-          grid-row-start: 1;
-          grid-row-end: 2;
-        }
-        .home-picture {
-          grid-column-start: 5;
-          grid-column-end: 8;
-          grid-row-start: 1;
-          grid-row-end: 2;
-        }
-      }
-      .about div[class*='grid'] {
-        grid-template-columns: 1fr;
-        //--🠊 Elements Here 🠈--//
-      }
-      .experience div[class*='grid'] {
-        grid-template-columns: 1fr;
-        //--🠊 Elements Here 🠈--//
-      }
-      .skills div[class*='grid'] {
-        grid-template-columns: 1fr;
-        //--🠊 Elements Here 🠈--//
-      }
-      .contact div[class*='grid'] {
-        grid-template-columns: 1fr;
-        //--🠊 Elements Here 🠈--//
       }
     }
   }

@@ -3,10 +3,92 @@
   @media screen and (orientation: landscape) {
     .home div[class*='grid'] {
       .home-description {
-        background-color: $blue-dark;
+        display: flex;
+        color: white;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+          cursor: default;
+          font-size: 8rem;
+          font-weight: 400;
+          white-space: nowrap;
+        }
+
+        .animate-title {
+          width: 100%;
+          position: relative;
+          h3 {
+            cursor: default;
+            font-size: 6rem;
+            font-weight: 800;
+            color: transparent;
+            white-space: nowrap;
+            -webkit-text-stroke: 2px $primary-light;
+          }
+        }
+        p {
+          width: 85%;
+          cursor: default;
+          font-size: 1.75rem;
+          margin: 2rem 0 4rem;
+        }
+        .buttons-receptacle {
+          width: 35rem;
+          height: 5rem;
+          display: flex;
+          position: relative;
+          justify-content: space-between;
+          .button {
+            z-index: 1;
+            width: 15rem;
+            height: 100%;
+            overflow: hidden;
+            font-weight: 600;
+            transition: 0.25s;
+            font-size: 2.75rem;
+            position: relative;
+            align-items: center;
+            color: $primary-dark;
+            display: inline-flex;
+            text-decoration: none;
+            letter-spacing: 0.1rem;
+            border-radius: 0.75rem;
+            justify-content: center;
+            background: $primary-light;
+            border: 0.25rem solid $primary-light;
+          }
+          .button:hover {
+            color: $primary-light;
+          }
+          .button:nth-child(2) {
+            color: $primary-light;
+            background: transparent;
+          }
+          .button:nth-child(2):hover {
+            color: $primary-dark;
+          }
+          .button:nth-child(2)::before {
+            background: $primary-light;
+          }
+          .button::before {
+            content: '';
+            top: 0;
+            left: 0;
+            width: 0;
+            z-index: -1;
+            height: 100%;
+            transition: 0.25s;
+            position: absolute;
+            background: $primary-dark;
+          }
+          .button:hover::before {
+            width: 100%;
+          }
+        }
       }
       .home-picture {
-        background-color: $green-dark;
+        background: url('content/png-files/profile-picture.png') no-repeat center/contain;
       }
     }
 

@@ -281,11 +281,6 @@ function compileTypeScript() {
   setTimeout(deleteTypes, 7500);
 }
 
-// gulp.task('cleanDist', function () {
-//   //--🠋 Delete Directories in 'dist' directory 🠋--//
-//   gulp.src(['dist/back-end', 'dist/front-end'], { read: false }).pipe(clean());
-//   //--🠊 This does give an Error but still works for some reason 🠈--//
-// });
 gulp.task('cleanDist', function (done) {
   try {
     // Delete Directories in 'dist' directory
