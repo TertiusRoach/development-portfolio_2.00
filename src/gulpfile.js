@@ -32,16 +32,7 @@ gulp.task('copyIndex', async () => {
   copyContent(pageName);
   compileCode('front-end');
 });
-/*
-gulp.task('copyTicket', async () => {
-  let pageName = 'ticket';
 
-  copyHTML(pageName);
-  compileSASS(pageName);
-  copyContent(pageName);
-  compileCode('front-end');
-});
-*/
 const copyHTML = (pageName) => {
   //--🠋 Copy main HTML file into root folder 🠋--//
   gulp
@@ -160,12 +151,13 @@ const copyContent = (pageName) => {
       //--| Ignore Placeholder Files |--//
       .pipe(ignore('**/*sample*'))
       //--| Copy Files for Distribution |--//
-      .pipe(gulp.dest(`dist/front-end/pages/${pageName}/~content/`));
+      .pipe(gulp.dest(`dist/front-end/pages/${pageName}/content/`));
 
     console.log(`|🠊 Copied ${array[index]}`);
   };
   contentFolders.forEach(copyContent);
 };
+
 const compileCode = (stackType) => {
   compileTypeScript();
   duplicateVendors(stackType);

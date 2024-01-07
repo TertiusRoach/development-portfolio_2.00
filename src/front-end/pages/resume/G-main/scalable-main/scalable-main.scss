@@ -1,13 +1,4 @@
 .scalable-main {
-  .home div[class*='grid'] {
-    grid-template-columns: repeat(7, 1fr);
-    .home-description {
-    }
-
-    .home-picture {
-    }
-  }
-
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
     .home div[class*='grid'] {
