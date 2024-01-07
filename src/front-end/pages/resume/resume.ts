@@ -16,13 +16,19 @@ import { BackupRightbar } from '../resume/F-rightbar/backup-rightbar/backup-righ
 import { BackupMain } from '../resume/G-main/backup-main/backup-main';
 import { BackupData } from '../resume/H-data/backup-data/backup-data';
 
+import { ScalableBody } from '../resume/A-body/scalable-body/scalable-body';
+import { ScalableHeader } from '../resume/C-header/scalable-header/scalable-header';
 import { ScalableMain } from '../resume/G-main/scalable-main/scalable-main';
+import { ScalableFooter } from './D-footer/scalable-footer/scalable-footer';
 export namespace Resume {
   export function run(blockName: String) {
     switch (blockName) {
       //--|🠋| Body |🠋|--//
       case 'default-body':
         DefaultBody.events();
+        break;
+      case 'scalable-body':
+        ScalableBody.events();
         break;
       case 'backup-body':
         BackupBody.events();
@@ -40,6 +46,9 @@ export namespace Resume {
       case 'default-header':
         DefaultHeader.events();
         break;
+      case 'scalable-header':
+        ScalableHeader.events();
+        break;
       case 'backup-header':
         BackupHeader.events();
         break;
@@ -47,6 +56,9 @@ export namespace Resume {
       //--|🠋| Footer |🠋|--//
       case 'default-footer':
         DefaultFooter.events();
+        break;
+      case 'scalable-footer':
+        ScalableFooter.events();
         break;
       case 'backup-footer':
         BackupFooter.events();
@@ -72,11 +84,11 @@ export namespace Resume {
       case 'default-main':
         DefaultMain.events();
         break;
-      case 'backup-main':
-        BackupMain.events();
-        break;
       case 'scalable-main':
         ScalableMain.events();
+        break;
+      case 'backup-main':
+        BackupMain.events();
         break;
 
       //--|🠋| Data |🠋|--//

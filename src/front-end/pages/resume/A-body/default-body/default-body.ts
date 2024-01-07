@@ -7,7 +7,7 @@ export namespace DefaultBody {
     // Find.block('default-footer');
     // Find.block('default-leftbar');
     // Find.block('default-rightbar');
-    Find.block('scalable-main');
+    // Find.block('default-main');
     // Find.block('default-data');
 
     console.log('default-body.js Detected!');

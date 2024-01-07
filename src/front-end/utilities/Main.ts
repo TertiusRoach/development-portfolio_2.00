@@ -4,11 +4,11 @@ export namespace Main {
   let pageName: String = window.location.pathname.split('/').pop().split('.')[0] || 'index';
 
   switch (pageName) {
-    case 'resume':
-      Load.resume('default-body');
-      break;
     case 'index':
       Load.index('default-body');
+      break;
+    case 'resume':
+      Load.resume('scalable-body');
       break;
     case 'ticket':
       // Load.ticket('default-body');

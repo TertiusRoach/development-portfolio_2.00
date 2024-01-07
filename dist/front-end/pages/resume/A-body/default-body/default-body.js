@@ -1,1 +1,1 @@
-define(["require","exports","utilities/Find"],function(e,t,i){"use strict";var o;Object.defineProperty(t,"__esModule",{value:!0}),t.DefaultBody=void 0,(o||(t.DefaultBody={})).events=function(){i.Find.block("scalable-main"),console.log("default-body.js Detected!")}});
+define(["require","exports"],function(e,t){"use strict";var o;Object.defineProperty(t,"__esModule",{value:!0}),t.DefaultBody=void 0,(o||(t.DefaultBody={})).events=function(){console.log("default-body.js Detected!")}});

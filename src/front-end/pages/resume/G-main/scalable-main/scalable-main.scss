@@ -1,9 +1,39 @@
-.backup-main {
-  display: none;
+.scalable-main {
+  .home div[class*='grid'] {
+    grid-template-columns: repeat(7, 1fr);
+    .home-description {
+    }
+
+    .home-picture {
+    }
+  }
+
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
+    .home div[class*='grid'] {
+      .home-description {
+        background-color: $blue-dark;
+      }
+      .home-picture {
+        background-color: $green-dark;
+      }
+    }
+
+    .about div[class*='grid'] {
+      background-color: $purple-dark;
+    }
+    .experience div[class*='grid'] {
+      background-color: $red-dark;
+    }
+    .skills div[class*='grid'] {
+      background-color: $brown-dark;
+    }
+    .contact div[class*='grid'] {
+      background-color: $grey-dark;
+    }
   }
   //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
+    display: none;
   }
 }

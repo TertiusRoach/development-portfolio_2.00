@@ -1,5 +1,5 @@
-export namespace DefaultHeader {
+export namespace ScalableHeader {
   export function events() {
-    console.log('default-header.js Detected!');
+    console.log('scalable-header.js Detected!');
   }
 }

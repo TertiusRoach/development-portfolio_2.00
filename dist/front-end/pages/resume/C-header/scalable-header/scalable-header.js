@@ -1,1 +1,1 @@
-define(["require","exports"],function(e,t){"use strict";var r;Object.defineProperty(t,"__esModule",{value:!0}),t.DefaultHeader=void 0,(r||(t.DefaultHeader={})).events=function(){console.log("default-header.js Detected!")}});
+define(["require","exports"],function(e,a){"use strict";var l;Object.defineProperty(a,"__esModule",{value:!0}),a.ScalableHeader=void 0,(l||(a.ScalableHeader={})).events=function(){console.log("scalable-header.js Detected!")}});

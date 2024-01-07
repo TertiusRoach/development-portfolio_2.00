@@ -1,1 +1,1 @@
-define(["require","exports"],function(e,o){"use strict";var l;Object.defineProperty(o,"__esModule",{value:!0}),o.ScalableBody=void 0,(l||(o.ScalableBody={})).events=function(){console.log("scalable-body.js Detected!")}});
+define(["require","exports","utilities/Find"],function(e,l,i){"use strict";var a;Object.defineProperty(l,"__esModule",{value:!0}),l.ScalableBody=void 0,(a||(l.ScalableBody={})).events=function(){i.Find.block("scalable-header"),i.Find.block("scalable-footer"),i.Find.block("scalable-main")}});

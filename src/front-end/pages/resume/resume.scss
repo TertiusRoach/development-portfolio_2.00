@@ -27,7 +27,9 @@ $tertiary-light: #b8a298; //--🠊 rgba(184,162,152,1) 🠈--//
 
   font-family: 'Rubik', Helvetica;
 }
-
+h1 {
+  color: white;
+}
 //--|▼| Backup Colors |▼|--//
 $green-neon: #00ff00; /*--► rgba(0, 255, 0, 1) ◄--*/
 $green-dark: #274e13; /*--► rgba(39, 78, 19, 1) ◄--*/
@@ -69,20 +71,3 @@ $turquoise-neon: #00ffff; /*--► rgba(0, 255, 255, 1) ◄--*/
 $turquoise-dark: #0c343d; /*--► rgba(12, 52, 61, 1) ◄--*/
 $turquoise-light: #a2c4c9; /*--► rgba(162, 196, 201, 1) ◄--*/
 //--|▲| Backup Colors |▲|--//
-
-/*
-body {
-  section {
-  }
-  header {
-  }
-  footer {
-  }
-  aside {
-  }
-  main {
-  }
-  div {
-  }
-}
-*/

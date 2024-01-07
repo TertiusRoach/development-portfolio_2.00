@@ -1,5 +1,5 @@
 export namespace ScalableFooter {
   export function events() {
-    console.log('scalable-body.js Detected!');
+    console.log('scalable-footer.js Detected!');
   }
 }
