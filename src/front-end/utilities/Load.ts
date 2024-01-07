@@ -10,6 +10,7 @@ export namespace Load {
     fetch(info.directory)
       .then((response) => response.text())
       .then((data) => {
+        item.className = `${blockName}`;
         //--|🠋| Replace HTML |🠋|--//
         item.innerHTML = data;
 
@@ -25,11 +26,15 @@ export namespace Load {
   export function resume(blockName: String) {
     let info: any = new Tool.info(blockName);
     let item: HTMLElement = info.element;
+
     fetch(info.directory)
       .then((response) => response.text())
       .then((data) => {
-        //--|🠋| Replace Element with HTML file |🠋|--//
+        //--|🠋| Change Class |🠋|--//
+        item.className = `${blockName}`;
+        //--|🠋| Replace HTML |🠋|--//
         item.innerHTML = data;
+
         Resume.run(blockName);
       })
       .catch((error) => {
