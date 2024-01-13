@@ -45,7 +45,20 @@
       //--🠋 About <section> 🠋--//
       .about div[class*='grid'] {
         grid-template-columns: 1fr; //--🠈 Grid Template 🠈--//
+        grid-template-rows: repeat(7, 1fr); //--🠈 Grid Template 🠈--//
         //--🠋 Grid Placement 🠋--//
+        .about-header {
+          grid-column-start: 1;
+          grid-column-end: 2;
+          grid-row-start: 1;
+          grid-row-end: 5;
+        }
+        .about-footer {
+          grid-column-start: 1;
+          grid-column-end: 2;
+          grid-row-start: 5;
+          grid-row-end: 8;
+        }
         //--🠊 Elements Here 🠈--//
       }
       //--🠋 Experience <section> 🠋--//
