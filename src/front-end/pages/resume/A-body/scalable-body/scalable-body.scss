@@ -25,9 +25,9 @@
       grid-row-end: 4;
       display: block; //--🠈 Default Display <main> 🠈--//
 
-      //--🠋 Grid Template 🠋--//
+      //--🠋 Home <section> 🠋--//
       .home div[class*='grid'] {
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(7, 1fr); //--🠈 Grid Template 🠈--//
         //--🠋 Grid Placement 🠋--//
         .home-description {
           grid-column-start: 1;
@@ -42,20 +42,28 @@
           grid-row-end: 2;
         }
       }
+      //--🠋 About <section> 🠋--//
       .about div[class*='grid'] {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; //--🠈 Grid Template 🠈--//
+        //--🠋 Grid Placement 🠋--//
         //--🠊 Elements Here 🠈--//
       }
+      //--🠋 Experience <section> 🠋--//
       .experience div[class*='grid'] {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; //--🠈 Grid Template 🠈--//
+        //--🠋 Grid Placement 🠋--//
         //--🠊 Elements Here 🠈--//
       }
+      //--🠋 Skills <section> 🠋--//
       .skills div[class*='grid'] {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; //--🠈 Grid Template 🠈--//
+        //--🠋 Grid Placement 🠋--//
         //--🠊 Elements Here 🠈--//
       }
+      //--🠋 Contact <section> 🠋--//
       .contact div[class*='grid'] {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; //--🠈 Grid Template 🠈--//
+        //--🠋 Grid Placement 🠋--//
         //--🠊 Elements Here 🠈--//
       }
 
@@ -10883,7 +10891,8 @@
   @media screen and (orientation: portrait) {
     display: none;
   }
-
+}
+body {
   //--🠋 Removes Scrollbar 🠋--//
   main[class*='scalable'] {
     overflow: overlay;

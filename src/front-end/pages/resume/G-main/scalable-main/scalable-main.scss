@@ -1,6 +1,7 @@
 .scalable-main {
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
+    //--🠋 Home <section> 🠋--//
     .home div[class*='grid'] {
       .home-description {
         display: flex;
@@ -9,13 +10,15 @@
         justify-content: center;
 
         h1 {
+          z-index: -1;
           cursor: default;
           font-size: 8rem;
           font-weight: 400;
           white-space: nowrap;
-          filter: drop-shadow(0 0mm 4mm black);
+          filter: drop-shadow(0 0 4mm black);
         }
         .animate-title {
+          z-index: 2;
           width: 100%;
           position: relative;
           h3 {
@@ -89,19 +92,27 @@
         }
       }
       .home-picture {
+        z-index: 1;
         background: url('content/png-files/profile-picture.png') no-repeat center/contain;
       }
     }
 
+    //--🠋 About <section> 🠋--//
     .about div[class*='grid'] {
-      background-color: $purple-dark;
+      background-color: $red-dark;
     }
+
+    //--🠋 Experience <section> 🠋--//
     .experience div[class*='grid'] {
       background-color: $red-dark;
     }
+
+    //--🠋 Skills <section> 🠋--//
     .skills div[class*='grid'] {
       background-color: $brown-dark;
     }
+
+    //--🠋 Contact <section> 🠋--//
     .contact div[class*='grid'] {
       background-color: $grey-dark;
     }
@@ -109,5 +120,30 @@
   //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
     display: none;
+    //--🠋 Home <section> 🠋--//
+    /*
+    .home div[class*='grid'] {
+    }
+    */
+    //--🠋 About <section> 🠋--//
+    /*
+    .about div[class*='grid'] {
+    }
+    */
+    //--🠋 Experience <section> 🠋--//
+    /*
+    .experience div[class*='grid'] {
+    }
+    */
+    //--🠋 Skills <section> 🠋--//
+    /*
+    .skills div[class*='grid'] {
+    }
+    */
+    //--🠋 Contact <section> 🠋--//
+    /*
+    .contact div[class*='grid'] {
+    }
+    */
   }
 }

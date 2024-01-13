@@ -19,3 +19,28 @@ I acknowledge that not everyone has the luxury of dedicating time to such endeav
 [README.md](https://www.markdownguide.org/cheat-sheet/)
 
 [README.md Template](https://github.com/othneildrew/Best-README-Template)
+
+---
+
+For E-Commerce Website -
+
+Here you have alot of options. You can develop it using CMS Software like
+
+Magento
+Opencart
+Prestashop
+Shopify
+and many more in the list
+or you can build it from scratch.
+
+For Blogging Website -
+
+You can develop it from scratch or other options are :
+
+Wordpress
+Wix
+Blogger
+Weebly
+PS: It all depends upon your convenience and how you want to develop your website. I have listed all the starter and advanced options for you.
+
+Wish you luck for your developing career Pal !
