@@ -143,7 +143,7 @@ const compileSASS = (pageName) => {
 };
 const copyContent = (pageName) => {
   //--🠋 Copy content into distributable folder 🠋--//
-  const contentFolders = ['gif-files', 'ico-files', 'jpg-files', 'mp3-files', 'mp4-files', 'png-files', 'svg-files'];
+  const contentFolders = ['gif-files', 'ico-files', 'jpg-files', 'mp3-files', 'mp4-files', 'pdf-files', 'png-files', 'svg-files'];
   let copyContent = (item, index, array) => {
     gulp
       //--| Find Source Content |--//
