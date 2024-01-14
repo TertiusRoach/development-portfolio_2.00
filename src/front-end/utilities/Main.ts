@@ -10,6 +10,9 @@ export namespace Main {
     case 'resume':
       Load.resume('scalable-body');
       break;
+    case 'scale':
+      Load.resume('backup-body');
+      break;
     case 'ticket':
       // Load.ticket('default-body');
       break;

@@ -16,6 +16,15 @@ const deletefile = require('gulp-delete-file');
 const sass = require('gulp-sass')(require('sass'));
 const cleanHTML = require('gulp-remove-html-comments');
 
+gulp.task('copyScale', async () => {
+  let pageName = 'scale';
+
+  copyHTML(pageName);
+  compileSASS(pageName);
+  copyContent(pageName);
+  compileCode('front-end');
+});
+
 gulp.task('copyRésumé', async () => {
   let pageName = 'resume';
 
@@ -76,6 +85,7 @@ const compileSASS = (pageName) => {
         `src/front-end/pages/${pageName}/G-main/**/*.scss`,
         `src/front-end/pages/${pageName}/H-data/**/*.scss`,
         'src/front-end/pages/override-bootstrap.scss',
+        'src/front-end/pages/scale-text.scss',
       ])
       //--| Combine the selected *.scss files |--//
       .pipe(concat('style.scss'))
