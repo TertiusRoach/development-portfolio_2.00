@@ -16,15 +16,6 @@ const deletefile = require('gulp-delete-file');
 const sass = require('gulp-sass')(require('sass'));
 const cleanHTML = require('gulp-remove-html-comments');
 
-gulp.task('copyScale', async () => {
-  let pageName = 'scale';
-
-  copyHTML(pageName);
-  compileSASS(pageName);
-  copyContent(pageName);
-  compileCode('front-end');
-});
-
 gulp.task('copyRésumé', async () => {
   let pageName = 'resume';
 
@@ -35,6 +26,14 @@ gulp.task('copyRésumé', async () => {
 });
 gulp.task('copyIndex', async () => {
   let pageName = 'index';
+
+  copyHTML(pageName);
+  compileSASS(pageName);
+  copyContent(pageName);
+  compileCode('front-end');
+});
+gulp.task('copyScale', async () => {
+  let pageName = 'scale';
 
   copyHTML(pageName);
   compileSASS(pageName);
