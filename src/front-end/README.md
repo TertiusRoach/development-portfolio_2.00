@@ -42,7 +42,15 @@ This directory functions as the [User Interface](https://en.wikipedia.org/wiki/U
 
 ## Pages Directory
 
-This specifically concerns the [front-end](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end) structure. The [page directory](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages) is at the heart of front-end functionality, and the [index](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index) folder serves as the default testing location. Crafted with meticulous attention to detail, this document prioritizes clear navigation and delivers comprehensive references for each file format, contributing to heightened efficiency and quality in the front-end development process.
+This specifically concerns the [front-end](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end) structure. The [page directory](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages) is at the heart of front-end functionality, and the [index](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index) folder serves as the default testing location. Crafted with meticulous attention to detail, this document prioritizes clear navigation and delivers comprehensive references for each file format, contributing to heightened efficiency and quality in the front-end development process. The process starts with the [index.html](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/pages/index/index.html) file situated in the pages folder which is linked to the [front-end.js](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/front-end.js) document. The **index.html** file you work on is duplicated using **Gulp** to make the [online page](https://tertiusroach.github.io/development-portfolio_2.00/) location look more professional by putting it in the root directory: Keep that in mind when linking the files. The **front-end.js** document uses [RequireJS](https://requirejs.org/) to load modules. I want to upgrade to [webpack](https://webpack.js.org/) but I'm honestly to lazy when it comes to figuring out how to restructure and use it, for now, will get to it if some sort of emergency makes the former module loader obsolete.
+
+---
+
+## Utilities Directory
+
+[Main.ts](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/utilities/Main.ts) which calls the first page.
+
+---
 
 ### Designing
 
@@ -84,12 +92,6 @@ Placeholder Specifications = **1920x1080 (1080p)**: Excellent for video content,
 
 ---
 
-## Utilities Folder
-
-Description Here
-
----
-
 ## Vendors Folder
 
 Description Here
@@ -111,7 +113,9 @@ Description Here
 - [x] Compile TypeScript with Gulp
 - [x] Implement RequireJS with Gulp
 - [x] Re-organize Utilities to import everything in index.js
-- [ ] Create Scalable sections that are pixel perfect inside default-main
+- [x] Create Scalable sections that are pixel perfect inside default-main
+- [x] Animate "Tertius Roach" logo for loading screen
+- [ ] Reframe GIF logos for multiple loading screens and better resizing with code
 - [ ] Build [Résumé](https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLejxfgwRYhwC0ffw3dtP-p-lKD2mYkD2r&index=1&t=128s): `<script>` = resume
 
 - [ ] Place each element inside default-body.html
