@@ -8,7 +8,7 @@ export namespace Main {
       Load.index('default-body');
       break;
     case 'resume':
-      // Load.resume('default-body');
+      Load.resume('default-body');
       /* Load.resume('scalable-body'); */
       break;
     case 'scale':

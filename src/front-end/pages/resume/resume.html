@@ -18,10 +18,32 @@
     <!--🠊 class="loading-body" 🠈-->
     <style>
       .loading-body {
-        background-color: darkred;
+        display: grid;
+        height: 100vh;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        background: radial-gradient(circle, rgba(31, 49, 49, 1) 25%, rgba(61, 98, 98, 1) 100%, rgba(158, 176, 176, 1) 100%);
+      }
+      .loading-body main {
+        grid-row-end: 2;
+        grid-row-start: 1;
+        grid-column-end: 2;
+        grid-column-start: 1;
+      }
+      body main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      body main img {
+        height: auto;
+        max-width: 100%;
+        filter: drop-shadow(0 0 1rem black);
       }
     </style>
-    <main></main>
+    <main>
+      <img width="1280" height="720" src="dist/front-end/pages/resume/content/gif-files/1280x720, 15fps/signature-light.gif" alt="Loading Screen" />
+    </main>
     <!-- <h1>Résumé Loading Screen</h1> -->
     <script></script>
   </body>
