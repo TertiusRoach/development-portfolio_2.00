@@ -115,7 +115,6 @@ Description Here
 - [x] Re-organize Utilities to import everything in index.js
 - [x] Create Scalable sections that are pixel perfect inside default-main
 - [x] Animate "Tertius Roach" logo for loading screen
-- [ ] Reframe GIF logos for multiple loading screens and better resizing with code
 - [ ] Build [Résumé](https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLejxfgwRYhwC0ffw3dtP-p-lKD2mYkD2r&index=1&t=128s): `<script>` = resume
 
 - [ ] Place each element inside default-body.html

@@ -1,9 +1,10 @@
 .default-leftbar {
-  display: none;
-  //--▼ Desktop (Landscape) ▼--//
+  //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
+    display: none;
+    border: 4px dashed $orange-neon;
   }
-  //--▼ Mobile (Portrait) ▼--//
+  //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
   }
 }

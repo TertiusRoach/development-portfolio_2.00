@@ -1,30 +1,25 @@
 .default-body {
   display: grid;
   height: 100vh;
-  grid-template-rows: 75px 1fr;
-  grid-template-columns: 25px 1fr 25px;
-
-  .default-header {
-    display: flex;
-    grid-row-end: 2;
-    grid-row-start: 1;
-    grid-column-end: 3;
-    grid-column-start: 2;
-  }
-  .default-main {
-    display: flex;
-    grid-row-end: 3;
-    grid-row-start: 1;
-    grid-column-end: 4;
-    grid-column-start: 1;
-  }
-  background: $primary-dark;
-  /*
-  //--▼ Desktop (Landscape) ▼--//
+  //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
+    background: $primary-dark;
+    grid-template: 75px 1fr 75px / 25px repeat(2, 1fr) 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+    .default-header {
+      grid-area: 1 / 1 / 2 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+    }
+    .default-footer {
+      grid-area: 4 / 1 / 3 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+    }
+    .default-leftbar {
+      grid-area: 2 / 1 / 3 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+    }
+    .default-main {
+      grid-area: 2 / 2 / 3 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+    }
   }
-  //--▼ Mobile (Portrait) ▼--//
+  //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
+    background: red;
   }
-  */
 }

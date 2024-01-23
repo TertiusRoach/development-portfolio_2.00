@@ -7,19 +7,19 @@ import { DefaultRightbar } from '../resume/F-rightbar/default-rightbar/default-r
 import { DefaultMain } from '../resume/G-main/default-main/default-main';
 import { DefaultData } from '../resume/H-data/default-data/default-data';
 
-import { BackupBody } from '../resume/A-body/backup-body/backup-body';
-import { BackupOverlay } from '../resume/B-overlay/backup-overlay/backup-overlay';
-import { BackupHeader } from '../resume/C-header/backup-header/backup-header';
-import { BackupFooter } from '../resume/D-footer/backup-footer/backup-footer';
-import { BackupLeftbar } from '../resume/E-leftbar/backup-leftbar/backup-leftbar';
-import { BackupRightbar } from '../resume/F-rightbar/backup-rightbar/backup-rightbar';
-import { BackupMain } from '../resume/G-main/backup-main/backup-main';
-import { BackupData } from '../resume/H-data/backup-data/backup-data';
+import { BackupBody } from './A-body/~out/backup-body/backup-body';
+import { BackupOverlay } from './B-overlay/~out/backup-overlay/backup-overlay';
+import { BackupHeader } from './C-header/~out/backup-header/backup-header';
+import { BackupFooter } from './D-footer/~out/backup-footer/backup-footer';
+import { BackupLeftbar } from './E-leftbar/~out/backup-leftbar/backup-leftbar';
+import { BackupRightbar } from './F-rightbar/~out/backup-rightbar/backup-rightbar';
+import { BackupMain } from './G-main/~out/backup-main/backup-main';
+import { BackupData } from './H-data/~out/backup-data/backup-data';
 
-import { ScalableBody } from '../resume/A-body/scalable-body/scalable-body';
-import { ScalableHeader } from '../resume/C-header/scalable-header/scalable-header';
-import { ScalableMain } from '../resume/G-main/scalable-main/scalable-main';
-import { ScalableFooter } from './D-footer/scalable-footer/scalable-footer';
+import { ScalableBody } from './A-body/~out/scalable-body/scalable-body';
+import { ScalableHeader } from './C-header/~out/scalable-header/scalable-header';
+import { ScalableMain } from './G-main/~out/scalable-main/scalable-main';
+import { ScalableFooter } from './D-footer/~out/scalable-footer/scalable-footer';
 export namespace Resume {
   export function run(blockName: String) {
     switch (blockName) {

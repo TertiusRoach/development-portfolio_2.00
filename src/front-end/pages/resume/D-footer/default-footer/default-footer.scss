@@ -1,7 +1,8 @@
 .default-footer {
-  display: none;
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
+    display: flex;
+    border: 4px dashed $yellow-neon;
   }
   //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {

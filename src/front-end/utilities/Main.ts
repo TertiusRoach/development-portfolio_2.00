@@ -9,7 +9,7 @@ export namespace Main {
       break;
     case 'resume':
       Load.resume('default-body');
-      /* Load.resume('scalable-body'); */
+      // Load.resume('scalable-body');
       break;
     case 'scale':
       Load.resume('backup-body');

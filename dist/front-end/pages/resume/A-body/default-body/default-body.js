@@ -1,1 +1,1 @@
-define(["require","exports"],function(e,t){"use strict";var o;Object.defineProperty(t,"__esModule",{value:!0}),t.DefaultBody=void 0,(o||(t.DefaultBody={})).events=function(){console.log("default-body.js Detected!")}});
+define(["require","exports","utilities/Find"],function(e,t,d){"use strict";var o;Object.defineProperty(t,"__esModule",{value:!0}),t.DefaultBody=void 0,(o||(t.DefaultBody={})).events=function(){d.Find.block("default-header"),d.Find.block("default-footer"),d.Find.block("default-leftbar"),d.Find.block("default-main"),console.log("default-body.js Detected!")}});
