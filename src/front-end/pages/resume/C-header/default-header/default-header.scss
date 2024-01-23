@@ -3,7 +3,9 @@
   @media screen and (orientation: landscape) {
     display: flex;
     border: 4px dashed $pink-neon;
+    background: rgba($pink-neon, 0.25);
   }
+
   //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
   }

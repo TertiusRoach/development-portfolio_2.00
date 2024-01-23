@@ -2,8 +2,11 @@
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
     display: flex;
+    // background: transparent;
     border: 4px dashed $yellow-neon;
+    background: rgba($yellow-neon, 0.25);
   }
+
   //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
   }

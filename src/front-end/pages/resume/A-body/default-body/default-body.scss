@@ -1,9 +1,9 @@
 .default-body {
   display: grid;
   height: 100vh;
+  background: $primary-dark;
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
-    background: $primary-dark;
     grid-template: 75px 1fr 75px / 25px repeat(2, 1fr) 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
     .default-header {
       grid-area: 1 / 1 / 2 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
@@ -15,11 +15,27 @@
       grid-area: 2 / 1 / 3 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
     }
     .default-main {
-      grid-area: 2 / 2 / 3 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      grid-area: 1 / 1 / 4 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
     }
   }
   //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
-    background: red;
+    // background: red;
+  }
+}
+
+body {
+  //--🠋 Removes Scrollbar 🠋--//
+  main[class*='default'] {
+    overflow: overlay;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-color: transparent transparent;
+  }
+  main[class*='default']::-webkit-scrollbar {
+    width: 0;
+  }
+  main[class*='default']::-webkit-scrollbar-thumb {
+    background-color: transparent;
   }
 }
