@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smooth Scroll with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      section {
+        height: 500px;
+        margin: 20px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">Click me to scroll to Section 2</header>
+
+    <section id="section1">
+      <h2>Section 1</h2>
+      <p>This is the content of Section 1.</p>
+    </section>
+
+    <section id="section2">
+      <h2>Section 2</h2>
+      <p>This is the content of Section 2.</p>
+    </section>
+
+    <script>
+      $(document).ready(function () {
+        // Smooth scroll when clicking on the header
+        $('#header').on('click', function () {
+          $('html, body').animate(
+            {
+              scrollTop: $('#section2').offset().top,
+            },
+            800
+          ); // Adjust the animation speed as needed
+        });
+      });
+    </script>
+  </body>
+</html>

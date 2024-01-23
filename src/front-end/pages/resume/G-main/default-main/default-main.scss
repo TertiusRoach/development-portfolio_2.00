@@ -1,32 +1,38 @@
 .default-main {
+  display: flex;
+  scroll-behavior: smooth;
+  flex-direction: column;
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
-    display: flex;
-    flex-direction: column;
-
-    #home {
+    #main-home {
+      //--🠊 display: block; 🠈--//
       div {
+        display: grid;
+        grid-template: repeat(7, 1fr) / repeat(2, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+
         background: $blue-neon;
         border: 4px dashed $blue-neon;
         background: rgba($blue-neon, 0.25);
       }
     }
-    #skills {
+    #main-skills {
+      //--🠊 display: block; 🠈--//
       div {
         background: $purple-neon;
         border: 4px dashed $purple-neon;
         background: rgba($purple-neon, 0.25);
       }
     }
-    #employment {
+    #main-employment {
+      //--🠊 display: block; 🠈--//
       div {
         background: $red-neon;
         border: 4px dashed $red-neon;
         background: rgba($red-neon, 0.25);
       }
     }
-    #contact {
-      padding-bottom: 75px;
+    #main-contact {
+      //--🠊 display: block; 🠈--//
       div {
         background: $brown-neon;
         border: 4px dashed $brown-neon;
@@ -6075,6 +6081,9 @@
         @media only screen and (max-height: 150px) {
           height: 0px;
         }
+      }
+      &:last-child {
+        padding-bottom: 75px;
       }
     }
   }
