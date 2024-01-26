@@ -5,11 +5,17 @@
     border: 4px dashed $pink-neon;
     background: rgba($pink-neon, 0.25);
     grid-template: 75px / 25px repeat(3, 1fr) 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
-    /*
-    img {
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: left;
       grid-area: 1 / 2 / 2 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      img {
+        width: 50%;
+        height: 50%;
+      }
     }
-    */
+
     .header-navigation {
       display: flex;
       flex-direction: row;
@@ -18,13 +24,22 @@
       justify-content: space-around;
       a {
         overflow: hidden;
-
         text-decoration: none;
         color: $primary-light;
         transition: 0.25s ease-in-out;
         h6 {
           cursor: pointer;
-          font-weight: 600;
+
+          font-weight: 400;
+          @media only screen and (max-width: 1920px) {
+            font-size: 2rem;
+          }
+          @media only screen and (max-width: 800px) {
+            font-size: 1.5rem;
+          }
+          @media only screen and (max-width: 600px) {
+            font-size: 1rem;
+          }
         }
       }
 
