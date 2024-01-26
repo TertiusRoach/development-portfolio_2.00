@@ -6,7 +6,7 @@ export namespace DefaultBody {
     Find.block('default-header');
     Find.block('default-footer');
     Find.block('default-leftbar');
-    // Find.block('default-rightbar');
+    Find.block('default-rightbar');
     Find.block('default-main');
     // Find.block('default-data');
 

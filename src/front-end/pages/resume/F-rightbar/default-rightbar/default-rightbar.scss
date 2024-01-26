@@ -1,9 +1,31 @@
 .default-rightbar {
+  //--🠊 display: none/flex; 🠈--//
   display: none;
+
+  // border: 4px dashed $turquoise-neon;
+  background: rgba($turquoise-neon, 0.125);
+
   //--▼ Desktop (Landscape) ▼--//
   @media screen and (orientation: landscape) {
   }
+
   //--▼ Mobile (Portrait) ▼--//
   @media screen and (orientation: portrait) {
+    justify-content: right;
+
+    #rightbar-portrait {
+      overflow: hidden;
+      transition: width 0.25s ease; /* Adjust the duration and timing function as needed */
+      background: $primary-dark;
+    }
+
+    .hidden {
+      width: 0;
+      // background: darkblue;
+    }
+    .visible {
+      width: 75%;
+      // background: darkred;
+    }
   }
 }
