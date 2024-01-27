@@ -7,19 +7,6 @@ import { DefaultRightbar } from '../resume/F-rightbar/default-rightbar/default-r
 import { DefaultMain } from '../resume/G-main/default-main/default-main';
 import { DefaultData } from '../resume/H-data/default-data/default-data';
 
-import { BackupBody } from './A-body/~out/backup-body/backup-body';
-import { BackupOverlay } from './B-overlay/~out/backup-overlay/backup-overlay';
-import { BackupHeader } from './C-header/~out/backup-header/backup-header';
-import { BackupFooter } from './D-footer/~out/backup-footer/backup-footer';
-import { BackupLeftbar } from './E-leftbar/~out/backup-leftbar/backup-leftbar';
-import { BackupRightbar } from './F-rightbar/~out/backup-rightbar/backup-rightbar';
-import { BackupMain } from './G-main/~out/backup-main/backup-main';
-import { BackupData } from './H-data/~out/backup-data/backup-data';
-
-import { ScalableBody } from './A-body/~out/scalable-body/scalable-body';
-import { ScalableHeader } from './C-header/~out/scalable-header/scalable-header';
-import { ScalableMain } from './G-main/~out/scalable-main/scalable-main';
-import { ScalableFooter } from './D-footer/~out/scalable-footer/scalable-footer';
 export namespace Resume {
   export function run(blockName: String) {
     switch (blockName) {
@@ -28,10 +15,10 @@ export namespace Resume {
         DefaultBody.events();
         break;
       case 'scalable-body':
-        ScalableBody.events();
+        DefaultBody.events();
         break;
       case 'backup-body':
-        BackupBody.events();
+        // BackupBody.events();
         break;
 
       //--|🠋| Overlay |🠋|--//
@@ -39,7 +26,7 @@ export namespace Resume {
         DefaultOverlay.events();
         break;
       case 'backup-overlay':
-        BackupOverlay.events();
+        // BackupOverlay.events();
         break;
 
       //--|🠋| Header |🠋|--//
@@ -47,21 +34,15 @@ export namespace Resume {
         DefaultHeader.events();
         break;
       case 'scalable-header':
-        ScalableHeader.events();
-        break;
-      case 'backup-header':
-        BackupHeader.events();
+        // ScalableHeader.events();
         break;
 
       //--|🠋| Footer |🠋|--//
       case 'default-footer':
         DefaultFooter.events();
         break;
-      case 'scalable-footer':
-        ScalableFooter.events();
-        break;
       case 'backup-footer':
-        BackupFooter.events();
+        // BackupFooter.events();
         break;
 
       //--|🠋| Leftbar |🠋|--//
@@ -69,7 +50,7 @@ export namespace Resume {
         DefaultLeftbar.events();
         break;
       case 'backup-leftbar':
-        BackupLeftbar.events();
+        // BackupLeftbar.events();
         break;
 
       //--|🠋| Rightbar |🠋|--//
@@ -77,18 +58,15 @@ export namespace Resume {
         DefaultRightbar.events();
         break;
       case 'backup-rightbar':
-        BackupRightbar.events();
+        // BackupRightbar.events();
         break;
 
       //--|🠋| Main |🠋|--//
       case 'default-main':
         DefaultMain.events();
         break;
-      case 'scalable-main':
-        ScalableMain.events();
-        break;
       case 'backup-main':
-        BackupMain.events();
+        // BackupMain.events();
         break;
 
       //--|🠋| Data |🠋|--//
@@ -96,7 +74,7 @@ export namespace Resume {
         DefaultData.events();
         break;
       case 'backup-data':
-        BackupData.events();
+        // BackupData.events();
         break;
     }
     /* console.log('🠊 résumé.js Detected! 🠈'); */
