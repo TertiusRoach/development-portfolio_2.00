@@ -1,8 +1,8 @@
 export namespace DefaultHeader {
   export function events() {
-    $('#header-landscape a').on('click', function (event) {
+    $('#header-navigation a').on('click', function (event) {
       //--|🠋| Mark Header as Active |🠋|--//
-      $('#header-landscape a').removeClass('active');
+      $('#header-navigation a').removeClass('active');
       $(event.currentTarget).addClass('active');
     });
 

@@ -37,7 +37,7 @@
   @media screen and (orientation: portrait) {
     .default-leftbar,
     .default-rightbar {
-      grid-area: 2 / 1 / 3 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      grid-area: 1 / 1 / 4 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
       // border: 4px dashed $turquoise-neon;
       // background: rgba($turquoise-neon, 0.125);
     }

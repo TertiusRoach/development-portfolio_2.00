@@ -13,6 +13,13 @@ export namespace DefaultRightbar {
         $('#rightbar-hitbox').addClass('active');
       }, 125);
     });
+
+    if (window.matchMedia('(orientation: portrait)').matches) {
+      console.log('Portrait mode');
+    } else {
+      console.log('Landscape mode');
+    }
+    /*
     $('#rightbar-portrait').on('mouseleave', function () {
       $('#rightbar-portrait').removeClass('visible');
       $('#rightbar-portrait').addClass('hidden');
@@ -24,6 +31,7 @@ export namespace DefaultRightbar {
         rightbarContainer.style.display = 'none';
       }, 250);
     });
+    */
 
     console.log('default-rightbar.js Detected!');
   }
