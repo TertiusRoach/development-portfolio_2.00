@@ -4,39 +4,51 @@
   scroll-behavior: smooth; //--🠊 Only works with Firefox 🠈--//
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
-    #main-home {
-      //--🠊 display: block; 🠈--//
-      div {
-        //--🠊 display: grid; 🠈--//
-        // border: 4px dashed $blue-neon;
-        // background: rgba($blue-neon, 0.25);
+    #main-home div {
+      //--🠊 display: grid; 🠈--//
+      grid-template: repeat(7, 1fr) / repeat(5, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+      .home-subject {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        grid-area: 1 / 1 / 3 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        h1,
+        h4 {
+          color: $primary-light;
+        }
+        h4 {
+          color: red;
+        }
+      }
 
-        grid-template: repeat(7, 1fr) / repeat(4, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+      .home-description {
+        display: flex;
+        border: 4px dashed $grey-neon-neon;
+        background: rgba($grey-neon-neon, 0.25);
+        grid-area: 3 / 1 / 6 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        p {
+          // word-spacing: 2px;
+          text-align: justify;
+          color: $primary-light;
+        }
       }
     }
-    #main-skills {
-      //--🠊 display: block; 🠈--//
-      div {
-        //--🠊 display: grid; 🠈--//
-        border: 4px dashed $purple-neon;
-        background: rgba($purple-neon, 0.25);
-      }
+
+    #main-skills div {
+      //--🠊 display: grid; 🠈--//
+      border: 4px dashed $purple-neon;
+      background: rgba($purple-neon, 0.25);
     }
-    #main-employment {
-      //--🠊 display: block; 🠈--//
-      div {
-        //--🠊 display: grid; 🠈--//
-        border: 4px dashed $red-neon;
-        background: rgba($red-neon, 0.25);
-      }
+    #main-employment div {
+      //--🠊 display: grid; 🠈--//
+      border: 4px dashed $red-neon;
+      background: rgba($red-neon, 0.25);
     }
-    #main-contact {
-      //--🠊 display: block; 🠈--//
-      div {
-        //--🠊 display: grid; 🠈--//
-        border: 4px dashed $brown-neon;
-        background: rgba($brown-neon, 0.25);
-      }
+    #main-contact div {
+      //--🠊 display: grid; 🠈--//
+      border: 4px dashed $brown-neon;
+      background: rgba($brown-neon, 0.25);
     }
   }
 
@@ -46,7 +58,9 @@
       //--🠊 display: block; 🠈--//
       div {
         //--🠊 display: grid; 🠈--//
-        grid-template: repeat(7, 1fr) / repeat(2, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+        // border: 4px dashed $blue-neon;
+        // background: rgba($blue-neon, 0.25);
+        // grid-template: repeat(7, 1fr) / repeat(2, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
       }
     }
     #main-skills {
