@@ -1,7 +1,8 @@
 .default-footer {
   display: flex;
-  border: 4px dashed $yellow-neon;
-  background: rgba($yellow-neon, 0.25);
+  // border: 4px dashed $yellow-neon;
+  // background: rgba($yellow-neon, 0.25);
+
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
   }

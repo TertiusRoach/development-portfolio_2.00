@@ -2,6 +2,12 @@ export namespace DefaultRightbar {
   export function events() {
     const rightbarContainer: HTMLElement = document.querySelector('#resume-rightbar');
 
+    $('#rightbar-navigation div').on('click', function (event) {
+      //--|🠋| Mark Rightbar as Active |🠋|--//
+      $('#rightbar-navigation div').removeClass('active');
+      $(event.currentTarget).addClass('active');
+    });
+
     $('#rightbar-hitbox').on('click mouseover', function () {
       rightbarContainer.style.display = 'flex';
 
@@ -14,13 +20,7 @@ export namespace DefaultRightbar {
       }, 125);
     });
 
-    if (window.matchMedia('(orientation: portrait)').matches) {
-      console.log('Portrait mode');
-    } else {
-      console.log('Landscape mode');
-    }
-    /*
-    $('#rightbar-portrait').on('mouseleave', function () {
+    $('#rightbar-portrait').on('click mouseleave', function () {
       $('#rightbar-portrait').removeClass('visible');
       $('#rightbar-portrait').addClass('hidden');
 
@@ -31,7 +31,6 @@ export namespace DefaultRightbar {
         rightbarContainer.style.display = 'none';
       }, 250);
     });
-    */
 
     console.log('default-rightbar.js Detected!');
   }
