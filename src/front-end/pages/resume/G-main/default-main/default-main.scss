@@ -168,6 +168,7 @@
       .home-profile {
         z-index: 0;
         display: flex;
+        margin-left: 25%;
         position: relative;
         align-items: center;
         justify-content: center;
@@ -223,12 +224,12 @@
           height: auto;
           filter: drop-shadow(0 0 4rem rgba($primary-medium, 0.25));
           figure::before {
-            inset: -0.25rem 8rem;
+            inset: -0.5rem 4rem;
             animation: anti-clockwise 45s linear infinite;
             background: linear-gradient(-90deg, $primary-light 25%, $primary-dark 75%);
           }
           figure::after {
-            inset: 0 0.5rem;
+            inset: 0 0.25rem;
           }
           @keyframes anti-clockwise {
             0% {
@@ -243,12 +244,12 @@
           z-index: 1; //--🠊 Set a lower z-index for outer-circle 🠈--//
           height: 100%;
           figure::before {
-            inset: -0.25rem 16rem;
+            inset: -1rem 6rem;
             animation: clockwise 90s linear infinite;
             background: linear-gradient(90deg, $primary-light 25%, $primary-dark 75%);
           }
           figure::after {
-            inset: 0.5rem 0;
+            inset: 0.25rem 0;
           }
 
           @keyframes clockwise {
