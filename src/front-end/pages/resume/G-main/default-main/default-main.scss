@@ -9,6 +9,7 @@
       grid-template: repeat(7, 1fr) / repeat(5, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
 
       .home-welcome {
+        z-index: 4;
         display: flex;
         white-space: nowrap;
         align-items: flex-end;
@@ -20,6 +21,7 @@
         }
       }
       .home-title {
+        z-index: 3;
         display: flex;
         align-items: flex-start;
         grid-area: 3 / 1 / 4 / 4;
@@ -54,6 +56,7 @@
         }
       }
       .home-description {
+        z-index: 2;
         display: flex;
         align-items: flex-start;
         grid-area: 4 / 1 / 8 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
@@ -70,11 +73,12 @@
         }
       }
       .home-buttons {
+        z-index: 1;
         width: 100%;
         display: flex;
         align-items: center;
         flex-direction: column;
-        grid-area: 4 / 3 / 7 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        grid-area: 4 / 3 / 8 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
 
         .button {
           z-index: 0;
@@ -162,11 +166,12 @@
         }
       }
       .home-profile {
+        z-index: 0;
         display: flex;
         position: relative;
         align-items: center;
         justify-content: center;
-        grid-area: 1 / 4 / 8 / 6; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+        grid-area: 1 / 3 / 8 / 6; //--🠊 row-start / col-start / row-end / col-end 🠈--//
 
         span[class*='circle'] {
           display: flex;
@@ -200,23 +205,23 @@
             }
           }
         }
-
         .profile-circle {
           z-index: 3; //--🠊 Set a lower z-index for outer-circle 🠈--//
-          height: 75%;
-          margin-bottom: 5.75rem;
+          height: 80vh;
+          margin-bottom: 5%;
           img {
-            height: 100%;
-            transition-duration: 2.5s;
+            height: 75%;
+            transition-duration: 5s;
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease-in-out;
           }
           img:hover {
-            height: 105%;
+            height: 85%;
           }
         }
         .inner-circle {
           z-index: 2; //--🠊 Set a higher z-index for inner-circle 🠈--//
           height: auto;
+          filter: drop-shadow(0 0 4rem rgba($primary-medium, 0.25));
           figure::before {
             inset: -0.25rem 8rem;
             animation: anti-clockwise 45s linear infinite;
@@ -254,17 +259,6 @@
               transform: rotate(360deg);
             }
           }
-        }
-      }
-
-      @media only screen and (max-height: 967px) {
-        .home-profile .outer-circle figure {
-          width: 748px;
-          height: 748px;
-        }
-        .home-profile .inner-circle figure {
-          width: 561px;
-          height: 561px;
         }
       }
     }
