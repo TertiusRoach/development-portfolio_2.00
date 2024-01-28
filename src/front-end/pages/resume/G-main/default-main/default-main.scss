@@ -161,8 +161,6 @@
           }
         }
       }
-
-      //------------------------------
       .home-profile {
         display: flex;
         position: relative;
@@ -178,14 +176,16 @@
           figure {
             z-index: 1;
             overflow: hidden;
-            margin-bottom: 0;
-            position: relative;
+            margin-bottom: 0; //--🠊 There's a default margin applied to this tag, I think 🠈--//
             border-radius: 50%;
+            position: relative;
           }
           figure::before {
             content: '';
-            transition: 0.25s;
             position: absolute;
+            // transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease-in-out;
           }
           figure::after {
             content: '';
@@ -193,8 +193,47 @@
             border-radius: 50%;
             background: $primary-dark;
           }
+          &:hover ~ .outer-circle,
+          &:hover ~ .inner-circle {
+            figure::before {
+              inset: -1.25rem 0;
+            }
+          }
         }
 
+        .profile-circle {
+          z-index: 3; //--🠊 Set a lower z-index for outer-circle 🠈--//
+          height: 75%;
+          margin-bottom: 5.75rem;
+          img {
+            height: 100%;
+            transition-duration: 2.5s;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease-in-out;
+          }
+          img:hover {
+            height: 105%;
+          }
+        }
+        .inner-circle {
+          z-index: 2; //--🠊 Set a higher z-index for inner-circle 🠈--//
+          height: auto;
+          figure::before {
+            inset: -0.25rem 8rem;
+            animation: anti-clockwise 45s linear infinite;
+            background: linear-gradient(-90deg, $primary-light 25%, $primary-dark 75%);
+          }
+          figure::after {
+            inset: 0 0.5rem;
+          }
+          @keyframes anti-clockwise {
+            0% {
+              transform: rotate(360deg);
+            }
+            100% {
+              transform: rotate(0deg);
+            }
+          }
+        }
         .outer-circle {
           z-index: 1; //--🠊 Set a lower z-index for outer-circle 🠈--//
           height: 100%;
@@ -203,46 +242,16 @@
             animation: clockwise 90s linear infinite;
             background: linear-gradient(90deg, $primary-light 25%, $primary-dark 75%);
           }
-          figure:hover::before {
-            inset: -1.25rem 0;
-            background: linear-gradient(90deg, $primary-light 25%, $primary-medium 75%);
-          }
-
           figure::after {
             inset: 0.5rem 0;
-            // background: darkred;
           }
+
           @keyframes clockwise {
             0% {
               transform: rotate(0deg);
             }
             100% {
               transform: rotate(360deg);
-            }
-          }
-        }
-        .inner-circle {
-          z-index: 2; /* Set a higher z-index for inner-circle */
-          height: auto;
-          figure::before {
-            inset: -0.25rem 8rem;
-            animation: anti-clockwise 60s linear infinite;
-            background: linear-gradient(-90deg, $primary-light 25%, $primary-dark 75%);
-          }
-          figure:hover::before {
-            inset: -1.25rem 0;
-            background: linear-gradient(90deg, $primary-light 25%, $primary-medium 75%);
-          }
-          figure::after {
-            inset: 0 0.5rem;
-            // background: darkblue;
-          }
-          @keyframes anti-clockwise {
-            0% {
-              transform: rotate(360deg);
-            }
-            100% {
-              transform: rotate(0deg);
             }
           }
         }
@@ -258,7 +267,6 @@
           height: 561px;
         }
       }
-      //------------------------------
     }
 
     #main-skills div {
