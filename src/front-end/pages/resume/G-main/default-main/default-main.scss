@@ -10,6 +10,7 @@
 
       .home-welcome {
         display: flex;
+        white-space: nowrap;
         align-items: flex-end;
         grid-area: 1 / 1 / 3 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
         justify-content: flex-start;
@@ -55,14 +56,109 @@
       .home-description {
         display: flex;
         align-items: flex-start;
-        grid-area: 4 / 1 / 7 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        grid-area: 4 / 1 / 8 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
         justify-content: flex-end;
 
         p {
-          word-spacing: 2px;
+          margin: 5% 0;
           text-align: justify;
           color: $primary-light;
+          padding: 0.25rem 0.25rem 0.25rem 0;
           filter: drop-shadow(0 0 0.25rem rgba(black, 0.5));
+          line-height: 1.5;
+          word-spacing: 2px;
+        }
+      }
+      .home-buttons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        grid-area: 4 / 3 / 7 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+
+        .button {
+          z-index: 0;
+          width: auto;
+          height: auto;
+          cursor: default;
+          margin: 12.5% 0;
+          overflow: hidden;
+          position: relative;
+          align-items: center;
+          display: inline-flex;
+          text-decoration: none;
+          border-radius: 0.25rem;
+          justify-content: center;
+          border: 4px solid $primary-medium;
+          h6 {
+            z-index: 2;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 4px;
+            transition: 0.25s ease-in-out;
+          }
+
+          &::before {
+            top: 0;
+            left: 0;
+            z-index: 1;
+            content: '';
+            height: 100%;
+            transition: 0.5s;
+            position: absolute;
+          }
+
+          &:hover {
+            h6 {
+              color: $primary-medium;
+            }
+          }
+
+          @media only screen and (min-height: 768px) {
+            padding: 1rem 2rem;
+          }
+
+          @media only screen and (max-height: 768px) {
+            padding: 0.5rem 0.25rem;
+          }
+        }
+
+        .button:nth-child(1) {
+          color: $primary-dark;
+          background: $primary-light;
+          filter: drop-shadow(0 0 0.25rem rgba(white, 0.25));
+
+          h6:hover {
+            color: $primary-light;
+          }
+
+          &::before {
+            width: 0;
+            background: $primary-dark;
+          }
+
+          &:nth-child(1):hover::before {
+            width: 100%;
+          }
+        }
+
+        .button:nth-child(2) {
+          color: $primary-light;
+          background: $primary-light;
+          filter: drop-shadow(0 0 0.25rem rgba(black, 0.75));
+
+          h6:hover {
+            color: $primary-dark;
+          }
+
+          &::before {
+            width: 100%;
+            background: $primary-dark;
+          }
+
+          &:nth-child(2):hover::before {
+            width: 0;
+          }
         }
       }
     }
