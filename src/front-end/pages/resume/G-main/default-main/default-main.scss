@@ -161,6 +161,104 @@
           }
         }
       }
+
+      //------------------------------
+      .home-profile {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        grid-area: 1 / 4 / 8 / 6; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+
+        span[class*='circle'] {
+          display: flex;
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          figure {
+            z-index: 1;
+            overflow: hidden;
+            margin-bottom: 0;
+            position: relative;
+            border-radius: 50%;
+          }
+          figure::before {
+            content: '';
+            transition: 0.25s;
+            position: absolute;
+          }
+          figure::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: $primary-dark;
+          }
+        }
+
+        .outer-circle {
+          z-index: 1; //--🠊 Set a lower z-index for outer-circle 🠈--//
+          height: 100%;
+          figure::before {
+            inset: -0.25rem 16rem;
+            animation: clockwise 90s linear infinite;
+            background: linear-gradient(90deg, $primary-light 25%, $primary-dark 75%);
+          }
+          figure:hover::before {
+            inset: -1.25rem 0;
+            background: linear-gradient(90deg, $primary-light 25%, $primary-medium 75%);
+          }
+
+          figure::after {
+            inset: 0.5rem 0;
+            // background: darkred;
+          }
+          @keyframes clockwise {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        }
+        .inner-circle {
+          z-index: 2; /* Set a higher z-index for inner-circle */
+          height: auto;
+          figure::before {
+            inset: -0.25rem 8rem;
+            animation: anti-clockwise 60s linear infinite;
+            background: linear-gradient(-90deg, $primary-light 25%, $primary-dark 75%);
+          }
+          figure:hover::before {
+            inset: -1.25rem 0;
+            background: linear-gradient(90deg, $primary-light 25%, $primary-medium 75%);
+          }
+          figure::after {
+            inset: 0 0.5rem;
+            // background: darkblue;
+          }
+          @keyframes anti-clockwise {
+            0% {
+              transform: rotate(360deg);
+            }
+            100% {
+              transform: rotate(0deg);
+            }
+          }
+        }
+      }
+
+      @media only screen and (max-height: 967px) {
+        .home-profile .outer-circle figure {
+          width: 748px;
+          height: 748px;
+        }
+        .home-profile .inner-circle figure {
+          width: 561px;
+          height: 561px;
+        }
+      }
+      //------------------------------
     }
 
     #main-skills div {
