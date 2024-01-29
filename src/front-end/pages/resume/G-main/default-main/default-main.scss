@@ -275,14 +275,8 @@
         grid-area: 4 / 3 / 8 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
         .button {
           margin: 12.5% 0;
+          padding: 0.5rem 1rem;
           justify-content: center;
-          @media only screen and (min-height: 768px) {
-            padding: 1rem 2rem;
-          }
-
-          @media only screen and (max-height: 768px) {
-            padding: 0.5rem 0.25rem;
-          }
         }
       }
       .home-profile {
