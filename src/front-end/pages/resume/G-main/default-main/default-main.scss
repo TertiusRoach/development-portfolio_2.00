@@ -2,19 +2,15 @@
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth; //--🠊 Only works with Firefox 🠈--//
-  //--🠋 Desktop (Landscape) 🠋--//
-  @media screen and (orientation: landscape) {
-    #main-home div {
-      //--🠊 display: grid; 🠈--//
-      grid-template: repeat(7, 1fr) / repeat(5, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
 
+  #main-home {
+    //--🠊 display: block; 🠈--//
+    div {
+      //--🠊 display: grid; 🠈--//
       .home-welcome {
         z-index: 4;
         display: flex;
         white-space: nowrap;
-        align-items: flex-end;
-        grid-area: 1 / 1 / 3 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-        justify-content: flex-start;
         h1 {
           color: $primary-light;
           filter: drop-shadow(0 0 2rem rgba(0, 0, 0, 0.5));
@@ -23,9 +19,6 @@
       .home-title {
         z-index: 3;
         display: flex;
-        align-items: flex-start;
-        grid-area: 3 / 1 / 4 / 4;
-        justify-content: flex-start;
         h2 {
           position: relative;
           color: $primary-dark;
@@ -59,7 +52,6 @@
         z-index: 2;
         display: flex;
         align-items: flex-start;
-        grid-area: 4 / 1 / 8 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
         justify-content: flex-end;
 
         p {
@@ -77,15 +69,11 @@
         width: 100%;
         display: flex;
         align-items: center;
-        flex-direction: column;
-        grid-area: 4 / 3 / 8 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-
         .button {
           z-index: 0;
           width: auto;
           height: auto;
           cursor: default;
-          margin: 12.5% 0;
           overflow: hidden;
           position: relative;
           align-items: center;
@@ -116,14 +104,6 @@
             h6 {
               color: $primary-medium;
             }
-          }
-
-          @media only screen and (min-height: 768px) {
-            padding: 1rem 2rem;
-          }
-
-          @media only screen and (max-height: 768px) {
-            padding: 0.5rem 0.25rem;
           }
         }
 
@@ -168,11 +148,9 @@
       .home-profile {
         z-index: 0;
         display: flex;
-        margin-left: 25%;
         position: relative;
         align-items: center;
         justify-content: center;
-        grid-area: 1 / 3 / 8 / 6; //--🠊 row-start / col-start / row-end / col-end 🠈--//
 
         span[class*='circle'] {
           display: flex;
@@ -263,7 +241,52 @@
         }
       }
     }
+  }
 
+  //--🠋 Desktop (Landscape) 🠋--//
+  @media screen and (orientation: landscape) {
+    #main-home div {
+      //--🠊 display: grid; 🠈--//
+      grid-template: repeat(7, 1fr) / repeat(5, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+
+      .home-welcome {
+        //--🠊 display: flex; 🠈--//
+        align-items: flex-end;
+        grid-area: 1 / 1 / 3 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        justify-content: flex-start;
+      }
+      .home-title {
+        //--🠊 display: flex; 🠈--//
+        align-items: flex-start;
+        grid-area: 3 / 1 / 4 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        justify-content: flex-start;
+      }
+      .home-description {
+        //--🠊 display: flex; 🠈--//
+        grid-area: 4 / 1 / 8 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      }
+      .home-buttons {
+        //--🠊 display: flex; 🠈--//
+        flex-direction: column;
+        grid-area: 4 / 3 / 8 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        .button {
+          margin: 12.5% 0;
+          justify-content: center;
+          @media only screen and (min-height: 768px) {
+            padding: 1rem 2rem;
+          }
+
+          @media only screen and (max-height: 768px) {
+            padding: 0.5rem 0.25rem;
+          }
+        }
+      }
+      .home-profile {
+        margin-left: 25%;
+        //--🠊 display: flex; 🠈--//
+        grid-area: 1 / 3 / 8 / 6; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      }
+    }
     #main-skills div {
       //--🠊 display: grid; 🠈--//
       border: 4px dashed $purple-neon;
@@ -283,32 +306,50 @@
 
   //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
-    #main-home {
-      //--🠊 display: block; 🠈--//
-      div {
-        //--🠊 display: grid; 🠈--//
-        // border: 4px dashed $blue-neon;
-        // background: rgba($blue-neon, 0.25);
-        // grid-template: repeat(7, 1fr) / repeat(2, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+    #main-home div {
+      //--🠊 display: grid; 🠈--//
+
+      grid-template: repeat(12, 1fr) / 1fr; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+
+      // border: 4px dashed $blue-neon;
+      // background: rgba($blue-neon, 0.25);
+      .home-welcome {
+        align-items: center;
+        justify-content: center;
+        grid-area: 1 / 1 / 2 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        //--🠊 display: flex; 🠈--//
+      }
+      .home-title {
+        align-items: center;
+        justify-content: center;
+        grid-area: 2 / 1 / 3 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        //--🠊 display: flex; 🠈--//
+      }
+      .home-description {
+        //--🠊 display: flex; 🠈--//
+        grid-area: 7 / 1 / 11 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      }
+      .home-buttons {
+        flex-direction: row;
+        //--🠊 display: flex; 🠈--//
+        grid-area: 11 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        .button {
+          margin: 0 12.5%;
+          padding: 1rem 2rem;
+        }
+      }
+      .home-profile {
+        grid-area: 2 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
       }
     }
-    #main-skills {
-      //--🠊 display: block; 🠈--//
-      div {
-        //--🠊 display: grid; 🠈--//
-      }
+    #main-skills div {
+      //--🠊 display: grid; 🠈--//
     }
-    #main-employment {
-      //--🠊 display: block; 🠈--//
-      div {
-        //--🠊 display: grid; 🠈--//
-      }
+    #main-employment div {
+      //--🠊 display: grid; 🠈--//
     }
-    #main-contact {
+    #main-contact div {
       //--🠊 display: block; 🠈--//
-      div {
-        //--🠊 display: grid; 🠈--//
-      }
     }
   }
 }
