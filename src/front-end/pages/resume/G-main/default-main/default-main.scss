@@ -54,13 +54,13 @@
       .home-description {
         z-index: 2;
         display: flex;
-        filter: drop-shadow(0 0 2px black);
+        filter: drop-shadow(0 0 4px black);
         p {
           margin: 5% 0;
+          color: white;
           line-height: 1.5;
           word-spacing: 2px;
           text-align: justify;
-          color: $primary-light;
           padding: 0.25rem 0.25rem 0.25rem 0;
         }
       }
@@ -342,7 +342,7 @@
       .home-description {
         align-items: flex-start;
         grid-area: 6 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-        background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+        // background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 75%);
         //--🠊 display: flex; 🠈--//
       }
       .home-buttons {

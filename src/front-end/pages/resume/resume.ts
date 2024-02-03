@@ -14,9 +14,6 @@ export namespace Resume {
       case 'default-body':
         DefaultBody.events();
         break;
-      case 'scalable-body':
-        DefaultBody.events();
-        break;
       case 'backup-body':
         // BackupBody.events();
         break;

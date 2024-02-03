@@ -5,14 +5,13 @@ export namespace Main {
 
   switch (pageName) {
     case 'index':
-      Load.index('default-body');
+      // Load.index('default-body');
       break;
     case 'resume':
       Load.resume('default-body');
-      // Load.resume('scalable-body');
       break;
     case 'scale':
-      Load.resume('backup-body');
+      // Load.resume('backup-body');
       break;
     case 'ticket':
       // Load.ticket('default-body');
