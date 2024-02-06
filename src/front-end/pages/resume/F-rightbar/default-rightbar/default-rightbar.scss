@@ -3,6 +3,7 @@
 
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
+    display: none;
     #rightbar-portrait {
       display: none;
     }
