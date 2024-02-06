@@ -18,18 +18,11 @@ export namespace DefaultRightbar {
       }, 375);
     });
 
-    $('#rightbar-portrait').on('mouseleave', () => {
-      //--|🠋| Downplay Header |🠋|--//
-      $('#rightbar-hitbox').removeClass('active');
-      $('#header-portrait').removeClass('active');
-
-      //--|🠋| Hide Rightbar |🠋|--//
-      $('#rightbar-portrait').removeClass('visible');
-      $('#rightbar-portrait').addClass('hidden');
-      setTimeout(() => {
-        $('#resume-rightbar').css('display', 'none');
-      }, 375);
+    $('#rightbar-navigation div').on('mouseover', (event) => {
+      //--|🠋| Scroll default-main |🠋|--//
+      window.location.href = event.currentTarget.children[0].getAttribute('href');
     });
+
     console.log('default-rightbar.js Detected!');
   }
 }
