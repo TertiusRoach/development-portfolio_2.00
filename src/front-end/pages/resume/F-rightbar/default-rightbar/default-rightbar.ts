@@ -2,10 +2,9 @@ export namespace DefaultRightbar {
   export function events() {
     //--🠋 Mobile (Portrait) 🠋--//
     $('#rightbar-navigation div a').on('click', (event) => {
+      hideRightbar();
       downplayHeader();
       selectRightbar(event);
-
-      hideRightbar();
     });
 
     $('#rightbar-navigation div').on('mouseover', (event) => {
