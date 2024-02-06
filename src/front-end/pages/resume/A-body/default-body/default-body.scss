@@ -3,26 +3,7 @@
   height: 100vh;
   background: $primary-dark;
   grid-template: 75px 1fr 75px / 25px repeat(2, 1fr) 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
-
-  // #resume-header:hover ~ #resume-rightbar {
-  //   .hidden {
-  //     width: 20rem;
-  //   }
-  //   //
-  //   // background: darkgreen;
-  // }
-
-  /*
-  #resume-header {
-    background: darkred;
-  }
-  #resume-rightbar {
-    #rightbar-portrait {
-      background: darkblue;
-    }
-  }
-  */
-
+  //--🠊 Build Hover Interactivity? 🠈--//
   .default-header {
     grid-area: 1 / 1 / 2 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
     //--🠊 border: 4px dashed $pink-neon; 🠈--//
