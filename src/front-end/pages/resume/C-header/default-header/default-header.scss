@@ -1,6 +1,6 @@
 .default-header {
   display: grid;
-  background: linear-gradient(180deg, rgba($primary-dark, 1) 5%, rgba($primary-dark, 0) 90%);
+  background: linear-gradient(180deg, rgba($primary-medium, 0.5) 5%, rgba($primary-light, 0) 90%);
   .header-logo {
     display: flex;
     align-items: center;
@@ -26,6 +26,9 @@
         text-decoration: none;
         color: $primary-light;
         transition: 0.25s ease-in-out;
+        &:hover {
+          color: $primary-medium;
+        }
         h6 {
           cursor: pointer;
           font-weight: 400;
@@ -40,10 +43,6 @@
             font-size: 1rem;
           }
         }
-      }
-
-      a:hover {
-        color: $primary-medium;
       }
       .active {
         color: $primary-medium;

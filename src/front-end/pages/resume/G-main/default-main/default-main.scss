@@ -7,8 +7,7 @@
     //--🠊 display: block; 🠈--//
     div {
       //--🠊 display: grid; 🠈--//
-      // border: 4px dashed $blue-neon;
-      // background: rgba($blue-neon, 0.25);
+      //--🠊 @include blue-container; 🠈--//
       .home-welcome {
         z-index: 4;
         display: flex;
@@ -345,18 +344,18 @@
         // background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 75%);
         //--🠊 display: flex; 🠈--//
       }
+      .home-profile {
+        grid-area: 2 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      }
       .home-buttons {
         flex-direction: row;
         //--🠊 display: flex; 🠈--//
         justify-content: center;
         grid-area: 12 / 1 / 13 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
         .button {
-          margin: 0 6.25%;
+          margin: 6.25%;
           padding: 1rem 2rem;
         }
-      }
-      .home-profile {
-        grid-area: 2 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
       }
     }
     #main-skills div {

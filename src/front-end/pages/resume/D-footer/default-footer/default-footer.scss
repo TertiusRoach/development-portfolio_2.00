@@ -1,13 +1,35 @@
 .default-footer {
   display: flex;
-  // border: 4px dashed $yellow-neon;
-  // background: rgba($yellow-neon, 0.25);
+  background: linear-gradient(0deg, rgba($primary-medium, 0.5) 5%, rgba($primary-light, 0) 90%);
+  #footer-navigation {
+    display: inherit;
+    align-items: center;
+    justify-content: space-around;
+    a {
+      text-decoration: none;
+      color: $primary-light;
+      transition: 0.25s ease-in-out;
+      &:hover {
+        color: $primary-medium;
+      }
+      svg {
+        font-size: 3rem;
+        filter: drop-shadow(0 0 4px black);
+      }
+    }
+  }
 
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
+    #footer-navigation {
+      width: 50%;
+    }
   }
 
   //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
+    #footer-navigation {
+      width: 100%;
+    }
   }
 }

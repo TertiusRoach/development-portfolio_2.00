@@ -6,31 +6,26 @@
   //--🠊 Build Hover Interactivity? 🠈--//
   .default-header {
     grid-area: 1 / 1 / 2 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-    //--🠊 border: 4px dashed $pink-neon; 🠈--//
-    //--🠊 background: rgba($pink-neon, 0.25); 🠈--//
+    //--🠊 @include pink-container; 🠈--//
   }
   .default-footer {
     grid-area: 4 / 1 / 3 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-    //--🠊 border: 4px dashed $yellow-neon; 🠈--//
-    //--🠊 background: rgba($yellow-neon, 0.25); 🠈--//
+    //--🠊 @include yellow-container; 🠈--//
   }
   .default-main {
     grid-area: 1 / 1 / 4 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-    //--🠊 border: 4px dashed $blue-neon; 🠈--//
-    //--🠊 background: rgba($blue-neon, 0.25); 🠈--//
+    //--🠊 @include blue-container; 🠈--//
   }
 
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
     .default-leftbar {
       grid-area: 2 / 1 / 3 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-      //--🠊 border: 4px dashed $turquoise-neon; 🠈--//
-      //--🠊 background: rgba($turquoise-neon, 0.125); 🠈--//
+      //--🠊 @include turquoise-container; 🠈--//
     }
     .default-rightbar {
       grid-area: 2 / 3 / 2 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-      //--🠊 border: 4px dashed $turquoise-neon; 🠈--//
-      //--🠊 background: rgba($turquoise-neon, 0.125); 🠈--//
+      //--🠊 @include turquoise-container; 🠈--//
     }
   }
   //--🠋 Mobile (Portrait) 🠋--//
@@ -38,13 +33,53 @@
     .default-leftbar,
     .default-rightbar {
       grid-area: 1 / 1 / 4 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-      //--🠊 border: 4px dashed $turquoise-neon; 🠈--//
-      //--🠊 background: rgba($turquoise-neon, 0.125); 🠈--//
+      //--🠊 @include turquoise-container; 🠈--//
     }
   }
 }
 
 body {
+  @mixin green-container {
+    border: 4px dashed $green-neon;
+    background: rgba($green-dark, 0.25);
+  }
+  @mixin pink-container {
+    border: 4px dashed $pink-neon;
+    background: rgba($pink-dark, 0.25);
+  }
+  @mixin yellow-container {
+    border: 4px dashed $yellow-neon;
+    background: rgba($yellow-dark, 0.25);
+  }
+  @mixin orange-container {
+    border: 4px dashed $orange-neon;
+    background: rgba($orange-dark, 0.25);
+  }
+  @mixin blue-container {
+    border: 4px dashed $blue-neon;
+    background: rgba($blue-dark, 0.25);
+  }
+  @mixin purple-container {
+    border: 4px dashed $purple-neon;
+    background: rgba($purple-dark, 0.25);
+  }
+  @mixin red-container {
+    border: 4px dashed $red-neon;
+    background: rgba($red-dark, 0.25);
+  }
+  @mixin brown-container {
+    border: 4px dashed $brown-neon;
+    background: rgba($brown-dark, 0.25);
+  }
+  @mixin grey-container {
+    border: 4px dashed $grey-neon;
+    background: rgba($grey-dark, 0.25);
+  }
+  @mixin turquoise-container {
+    border: 4px dashed $turquoise-neon;
+    background: rgba($turquoise-dark, 0.25);
+  }
+
   //--🠋 Removes Scrollbar 🠋--//
   main[class*='default'] {
     overflow: overlay;
