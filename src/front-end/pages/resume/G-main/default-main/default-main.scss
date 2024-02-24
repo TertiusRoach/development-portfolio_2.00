@@ -288,6 +288,7 @@
       //--🠊 display: grid; 🠈--//
       border: 4px dashed $purple-neon;
       background: rgba($purple-neon, 0.25);
+      grid-template: repeat(7, 1fr) / repeat(5, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
     }
     #main-employment div {
       //--🠊 display: grid; 🠈--//
