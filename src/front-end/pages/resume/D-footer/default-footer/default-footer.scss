@@ -17,12 +17,19 @@
         filter: drop-shadow(0 0 4px black);
       }
     }
+
+    & {
+      @media only screen and (max-height: 300px) {
+        display: none;
+      }
+    }
   }
 
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
     #footer-navigation {
       width: 50%;
+      margin-left: 50%;
     }
   }
 
