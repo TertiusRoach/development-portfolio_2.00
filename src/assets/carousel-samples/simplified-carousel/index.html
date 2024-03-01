@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../../../front-end/vendors/font-awesome/5.13.0/js/all.min.js"></script>
+    <script src="script.js" defer></script>
+
+    <title>Simple Carousel</title>
+  </head>
+  <body>
+    <!-- https://www.youtube.com/watch?v=VYsVOamdB0g&list=PLtqp6VDm2rsDZU4xDruxJ3Vmh4XEOQ0LV&index=1&t=297s&ab_channel=KevinPowell -->
+    <div class="carousel">
+      <button class="carousel__button carousel__button--left is-hidden">
+        <i class="fas fa-chevron-left fa-4x"></i>
+      </button>
+
+      <div class="carousel__track-container">
+        <ul class="carousel__track">
+          <li class="carousel__slide current-slide"><img class="carousel__image" src="image-one.jpg" alt="..." /></li>
+          <li class="carousel__slide"><img class="carousel__image" src="image-two.jpg" alt="..." /></li>
+          <li class="carousel__slide"><img class="carousel__image" src="image-three.jpg" alt="..." /></li>
+        </ul>
+      </div>
+
+      <button class="carousel__button carousel__button--right">
+        <i class="fas fa-chevron-right fa-4x"></i>
+      </button>
+
+      <div class="carousel__nav">
+        <button class="carousel__indicator current-slide"></button>
+        <button class="carousel__indicator"></button>
+        <button class="carousel__indicator"></button>
+      </div>
+    </div>
+  </body>
+</html>
