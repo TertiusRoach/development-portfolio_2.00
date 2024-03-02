@@ -23,7 +23,7 @@ export namespace DefaultMain {
   }
 
   function mainSkills() {
-    const track = document.querySelector('.track-container');
+    const track: any = document.querySelector('.track-container');
     const slides: any = Array.from(track.children);
     const nextButton = document.querySelector('.right-carousel');
     const prevButton = document.querySelector('.left-carousel');
@@ -33,14 +33,35 @@ export namespace DefaultMain {
     const slideWidth = slides[0].getBoundingClientRect().width;
 
     // Arrange the slides next to one another
-    slides[0].style.left = '0px';
-    slides[1].style.left = `${slideWidth}px`;
-    slides[2].style.left = `${slideWidth * 2}px`;
+    const setSlidePosition = (slide, index) => {
+      slide.style.left = `${slideWidth * index}px`;
+    };
+    slides.forEach(setSlidePosition);
 
-    // console.log(slideSize);
+    const moveToSlide = (track, currentSlide, targetSlide) => {
+      track.style.transform = `translateX(-${targetSlide.style.left})`;
+      currentSlide.classList.remove('visible');
+      targetSlide.classList.add('visible');
+    };
 
     // When I click left move slides to the left
+    prevButton.addEventListener('click', (event) => {
+      // Move the Slide
+      const currentSlide = track.querySelector('.visible');
+      const prevSlide: any = currentSlide.previousElementSibling;
+
+      moveToSlide(track, currentSlide, prevSlide);
+    });
+
     // When I click right move slides to the right
+    nextButton.addEventListener('click', (event) => {
+      // Move the Slide
+      const currentSlide = track.querySelector('.visible');
+      const nextSlide: any = currentSlide.nextElementSibling;
+
+      moveToSlide(track, currentSlide, nextSlide);
+    });
+
     // when I click the nav indicators, move to that slide
   }
 }

@@ -75,7 +75,6 @@ body {
     #main-skills div {
       section[class*='carousel'] {
         display: grid;
-        // overflow: hidden;
         grid-template: 25px 1fr / 25px 1fr 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
         @media screen and (orientation: landscape) {
           ul[class*='container'] {
