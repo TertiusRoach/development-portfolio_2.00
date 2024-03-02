@@ -13,8 +13,6 @@ export namespace DefaultRightbar {
 
     console.log('default-rightbar.js Detected!');
   }
-
-  //--|🠋| default-rightbar |🠋|--//
   function selectRightbar(event: any) {
     //--|🠋| Remove all 'active' classes |🠋|--//
     $('#rightbar-navigation div').removeClass('active');

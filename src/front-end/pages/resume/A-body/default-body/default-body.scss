@@ -45,6 +45,20 @@
 }
 
 body {
+  //--🠋 Removes Scrollbar 🠋--//
+  main[class*='default'] {
+    overflow: overlay;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-color: transparent transparent;
+  }
+  main[class*='default']::-webkit-scrollbar {
+    width: 0;
+  }
+  main[class*='default']::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
   /*
   @mixin green-container {
     border: 4px dashed $green-neon;
@@ -87,18 +101,4 @@ body {
     background: rgba($turquoise-dark, 0.25);
   }
   */
-
-  //--🠋 Removes Scrollbar 🠋--//
-  main[class*='default'] {
-    overflow: overlay;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scrollbar-color: transparent transparent;
-  }
-  main[class*='default']::-webkit-scrollbar {
-    width: 0;
-  }
-  main[class*='default']::-webkit-scrollbar-thumb {
-    background-color: transparent;
-  }
 }
