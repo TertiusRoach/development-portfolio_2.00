@@ -5,6 +5,188 @@
 
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
+    #main-skills div {
+      //--|🠋| EXPERIMENT WITH CAROUSEL |🠋|--//
+      section[class*='carousel'] {
+        //--🠊 display: grid; 🠈--//
+        .navigation-carousel {
+          display: flex;
+          justify-content: center;
+          grid-area: 1 / 1 / 2 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          .indicator-carousel {
+            border: 0;
+            width: 25px;
+            height: 25px;
+            margin: 0 5%;
+            cursor: pointer;
+            border-radius: 50%;
+            background: rgba($primary-light, 0.25);
+
+            &.active {
+              cursor: default;
+              background: $primary-light;
+            }
+          }
+        }
+        .left-carousel {
+          grid-area: 2 / 1 / 3 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        }
+        .right-carousel {
+          grid-area: 2 / 3 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        }
+
+        button[class*='carousel'] {
+          z-index: 99;
+          cursor: default;
+          // color: $primary-light;
+          color: blue;
+          background: transparent;
+          svg {
+            cursor: pointer;
+          }
+        }
+
+        .track-carousel {
+          //--🠊 display: grid; 🠈--//
+          .track-container {
+            //--🠊 display: grid; 🠈--//
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            list-style: none;
+            // overflow: hidden;
+            position: relative;
+            align-items: center;
+            // justify-content: center;
+
+            .slide-carousel {
+              // top: 0;
+              // bottom: 0;
+              width: 100%;
+              height: 100%;
+              display: grid;
+              position: absolute;
+              grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+              grid-template: repeat(3, 1fr) / repeat(3, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+              li[class*='carousel'] {
+                div img {
+                  width: 100%;
+                }
+                div:nth-child(1) {
+                  grid-area: 1 / 1 / 2 / 2;
+                  // background-color: darkred;
+                }
+                div:nth-child(2) {
+                  grid-area: 1 / 2 / 2 / 3;
+                  // background-color: darkgreen;
+                }
+                div:nth-child(3) {
+                  grid-area: 1 / 3 / 2 / 4;
+                  // background-color: darkblue;
+                }
+
+                div:nth-child(4) {
+                  grid-area: 2 / 1 / 3 / 2;
+                  // background-color: red;
+                }
+                div:nth-child(5) {
+                  grid-area: 2 / 2 / 3 / 3;
+                  // background-color: green;
+                }
+                div:nth-child(6) {
+                  grid-area: 2 / 3 / 3 / 4;
+                  // background-color: blue;
+                }
+
+                div:nth-child(7) {
+                  grid-area: 3 / 1 / 4 / 2;
+                  // background-color: pink;
+                }
+                div:nth-child(8) {
+                  grid-area: 3 / 2 / 4 / 3;
+                  // background-color: lightgreen;
+                }
+                div:nth-child(9) {
+                  grid-area: 3 / 3 / 4 / 4;
+                  // background-color: lightblue;
+                }
+              }
+              /*
+              article:nth-child(1) {
+                background: darkred;
+              }
+              .second-skills {
+                background: darkgreen;
+              }
+              article:nth-child(3) {
+                background: darkblue;
+              }
+              */
+
+              // article[class*='skills'] {
+
+              //   // overflow: hidden;
+              //   // width: 100%;
+              //   // height: 100%;
+              //   // display: flex;
+              //   // // display: grid;
+              //   // background-color: red;
+              //   img {
+              //     // width: 100%;
+              //     // height: 100%;
+              //     // // width: 393px;
+              //     // // height: 393px;
+              //     // object-fit: cover;
+              //   }
+              // }
+            }
+          }
+        }
+      }
+
+      /*
+      section[class*='carousel'] {
+        .track-carousel {
+          display: inherit;
+          background-color: red;
+          @media only screen and (max-height: 768px) {
+            grid-template: repeat(3, 131px) / 1fr repeat(4, 131px) 1fr; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+          }
+        }
+      }
+      */
+      .carousel-producer {
+        //--🠊 display: grid; 🠈--//
+        grid-area: 2 / 1 / 3 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        background: rgba(darkred, 0.25);
+        /*
+        border: 4px dashed $pink-neon;
+        background: rgba($pink-dark, 0.25);
+        */
+      }
+      .developer-carousel {
+        grid-area: 2 / 2 / 3 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        background: rgba(darkblue, 0.25);
+        /*
+        border: 4px dashed $turquoise-neon;
+        background: rgba($turquoise-dark, 0.25);
+        */
+      }
+      //--|🠉| EXPERIMENT WITH CAROUSEL |🠉|--//
+
+      //--🠊 display: grid; 🠈--//
+      grid-template: 100px 1fr 100px / repeat(2, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+      .skills-producer {
+        //--🠊 display: flex; 🠈--//
+        grid-area: 1 / 1 / 2 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+      }
+      .skills-developer {
+        //--🠊 display: flex; 🠈--//
+        grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+      }
+    }
+
     #main-home div {
       //--🠊 display: grid; 🠈--//
       grid-template: repeat(7, 1fr) / repeat(5, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
@@ -40,44 +222,6 @@
         margin-left: 25%;
         //--🠊 display: flex; 🠈--//
         grid-area: 1 / 3 / 8 / 6; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-      }
-    }
-
-    #main-skills div {
-      //--|🠋| EXPERIMENT WITH CAROUSEL |🠋|--//
-      .producer-carousel {
-        grid-area: 2 / 1 / 3 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-        .track-container {
-          .track-carousel {
-            .slide-carousel {
-              article[class*='skills'] {
-                // width: 100%;
-              }
-            }
-          }
-        }
-
-        border: 4px dashed $pink-neon;
-        background: rgba($pink-dark, 0.25);
-      }
-
-      //--|🠉| EXPERIMENT WITH CAROUSEL |🠉|--//
-      .developer-carousel {
-        grid-area: 2 / 2 / 3 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-
-        border: 4px dashed $turquoise-neon;
-        background: rgba($turquoise-dark, 0.25);
-      }
-
-      //--🠊 display: grid; 🠈--//
-      grid-template: 100px 1fr 100px / repeat(2, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
-      .skills-producer {
-        //--🠊 display: flex; 🠈--//
-        grid-area: 1 / 1 / 2 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-      }
-      .skills-developer {
-        //--🠊 display: flex; 🠈--//
-        grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
       }
     }
     #main-employment div {

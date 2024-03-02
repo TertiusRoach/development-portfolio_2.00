@@ -1,5 +1,5 @@
 export namespace DefaultFooter {
   export function events() {
-    console.log('default-body.js Detected!');
+    // console.log('default-footer.js Detected!');
   }
 }

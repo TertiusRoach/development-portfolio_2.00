@@ -10,6 +10,6 @@ export namespace DefaultBody {
     Find.block('default-main');
     // Find.block('default-data');
 
-    console.log('default-body.js Detected!');
+    // console.log('default-body.js Detected!');
   }
 }

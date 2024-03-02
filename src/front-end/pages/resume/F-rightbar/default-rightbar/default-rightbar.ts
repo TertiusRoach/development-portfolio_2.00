@@ -11,7 +11,7 @@ export namespace DefaultRightbar {
       selectMain(event);
     });
 
-    console.log('default-rightbar.js Detected!');
+    // console.log('default-rightbar.js Detected!');
   }
   function selectRightbar(event: any) {
     //--|🠋| Remove all 'active' classes |🠋|--//

@@ -19,7 +19,7 @@ export namespace DefaultHeader {
       }
     });
 
-    console.log('default-header.js Detected!');
+    // console.log('default-header.js Detected!');
   }
 
   //--|🠋| default-header |🠋|--//
