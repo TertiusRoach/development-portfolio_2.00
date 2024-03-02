@@ -11,49 +11,52 @@
     <span class="skills-developer">
       <h1>Developer</h1>
     </span>
+    <!--|🠉| Code Here |🠉|-->
 
-    <!--|🠋| EXPERIMENT WITH CAROUSEL |🠋|-->
-    <section class="producer-carousel"></section>
-    <section class="developer-carousel">
-      <div class="carousel__nav">
-        <button class="carousel__indicator current-slide"></button>
-        <button class="carousel__indicator"></button>
-        <button class="carousel__indicator"></button>
+    <!--|🠋| Build Carousel |🠋|-->
+    <section class="producer-carousel">
+      <!--|🠋| Figure out scope for Grid |🠋|-->
+      <div class="track-container">
+        <ul class="track-carousel">
+          <li class="slide-carousel">
+            <article class="first-skills">
+              <!--🠋 Grid Here 🠋-->
+              <img src="dist/front-end/pages/resume/content/jpg-files/test-images/image-one.jpg" alt="..." />
+            </article>
+          </li>
+          <li class="slide-carousel">
+            <article class="second-skills">
+              <!--🠋 Grid Here 🠋-->
+              <img src="dist/front-end/pages/resume/content/jpg-files/test-images/image-two.jpg" alt="" />
+            </article>
+          </li>
+          <li class="slide-carousel">
+            <article class="third-skills">
+              <!--🠋 Grid Here 🠋-->
+              <img src="dist/front-end/pages/resume/content/jpg-files/test-images/image-three.jpg" alt="" />
+            </article>
+          </li>
+        </ul>
       </div>
 
-      <div class="carousel">
-        <button class="carousel__button carousel__button--left is-hidden">
+      <!--|🠉| Figure out scope for Grid |🠉|-->
+      <div class="scalable-carousel">
+        <nav class="navigation-carousel">
+          <button class="indicator-carousel"></button>
+          <button class="indicator-carousel"></button>
+          <button class="indicator-carousel"></button>
+        </nav>
+
+        <button class="button-left">
           <i class="fas fa-chevron-left fa-4x"></i>
         </button>
-
-        <div class="carousel__track-container">
-          <ul class="carousel__track">
-            <li class="carousel__slide current-slide">
-              <img class="carousel__image" src="dist/front-end/pages/resume/content/jpg-files/test-images/image-one.jpg" alt="..." />
-            </li>
-            <li class="carousel__slide">
-              <img class="carousel__image" src="dist/front-end/pages/resume/content/jpg-files/test-images/image-two.jpg" alt="..." />
-            </li>
-            <li class="carousel__slide">
-              <img class="carousel__image" src="dist/front-end/pages/resume/content/jpg-files/test-images/image-three.jpg" alt="..." />
-            </li>
-          </ul>
-        </div>
-
-        <button class="carousel__button carousel__button--right">
+        <button class="button-right">
           <i class="fas fa-chevron-right fa-4x"></i>
         </button>
       </div>
-
-      <!-- <div class="carousel__nav">
-        <button class="carousel__indicator current-slide"></button>
-        <button class="carousel__indicator"></button>
-        <button class="carousel__indicator"></button>
-      </div> -->
     </section>
-    <!--|🠉| EXPERIMENT WITH CAROUSEL |🠉|-->
-
-    <!--|🠉| Code Here |🠉|-->
+    <section class="developer-carousel"></section>
+    <!--|🠉| Build Carousel |🠉|-->
   </div>
 </section>
 
