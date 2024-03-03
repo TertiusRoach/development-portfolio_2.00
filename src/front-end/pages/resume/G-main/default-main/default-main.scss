@@ -6,7 +6,30 @@
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
     #main-skills div {
+      section[id*='skills'] {
+        overflow: hidden;
+      }
+      #producer-skills {
+        div {
+          height: 1000px;
+          width: 1000px;
+          background: darkblue;
+        }
+      }
+      #developer-skills {
+        div {
+          height: 1000px;
+          width: 1000px;
+          background: darkred;
+        }
+      }
+
       //--|🠋| Build Carousel |🠋|--//
+
+      // sections[id*='skills'] {
+      // }
+
+      /*
       article {
         position: relative;
         transition: transform 0.5s ease-in-out;
@@ -156,7 +179,7 @@
           display: none;
         }
       }
-
+      */
       // .skills-producer {
       //   //--🠊 display: flex; 🠈--//
       //   grid-area: 1 / 1 / 2 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//

@@ -6,11 +6,12 @@ export namespace DefaultMain {
   }
   //--|🠋| Grouped Functions |🠋|--//
   function mainSkills() {
+    /*
     const updateDots = (currentDot, targetDot) => {
       currentDot.classList.remove('active');
       targetDot.classList.add('active');
     };
-    const moveToSlide = (track, currentSlide, targetSlide, title: String) => {
+    const moveToSlide = (track, currentSlide, targetSlide) => {
       track.style.transform = `translateX(-${targetSlide.style.left})`;
 
       currentSlide.classList.add('hidden');
@@ -18,27 +19,6 @@ export namespace DefaultMain {
 
       targetSlide.classList.add('visible');
       targetSlide.classList.remove('hidden');
-
-      let carousel: HTMLElement = document.querySelector(`.${title}-carousel`);
-      if (carousel) {
-        for (let i = 0; i < carousel.childElementCount; i++) {
-          let container = carousel.children[i] as HTMLElement;
-          switch (container.classList[1]) {
-            case 'visible':
-              for (let j = 0; j < container.childElementCount; j++) {
-                var skill = container.children[j] as HTMLElement;
-                skill.style.cursor = 'pointer';
-              }
-              break;
-            case 'hidden':
-              for (let j = 0; j < container.childElementCount; j++) {
-                var skill = container.children[j] as HTMLElement;
-                skill.style.cursor = 'default';
-              }
-              break;
-          }
-        }
-      }
     };
     const toggleArrows = (slides, prevButton, nextButton, targetIndex) => {
       if (targetIndex === 0) {
@@ -70,7 +50,7 @@ export namespace DefaultMain {
 
         // toggleCursors(title);
         updateDots(currentDot, prevDot);
-        moveToSlide(track, currentSlide, prevSlide, title);
+        moveToSlide(track, currentSlide, prevSlide);
         toggleArrows(slides, prevButton, nextButton, prevIndex);
       });
     };
@@ -92,7 +72,7 @@ export namespace DefaultMain {
         var nextDot = currentDot.nextElementSibling;
 
         updateDots(currentDot, nextDot);
-        moveToSlide(track, currentSlide, nextSlide, title);
+        moveToSlide(track, currentSlide, nextSlide);
         toggleArrows(slides, prevButton, nextButton, nextIndex);
       });
     };
@@ -120,39 +100,39 @@ export namespace DefaultMain {
         var targetSlide: any = slides[targetIndex];
 
         updateDots(currentDot, targetDot);
-        moveToSlide(track, currentSlide, targetSlide, title);
+        moveToSlide(track, currentSlide, targetSlide);
         toggleArrows(slides, prevButton, nextButton, targetIndex);
       });
     };
     modifyDots('producer');
     modifyDots('developer');
 
-    /*
-    const toggleCursors = (title: String) => {
-      let carousel: HTMLElement = document.querySelector(`.${title}-carousel`);
-      if (carousel) {
-        for (let i = 0; i < carousel.childElementCount; i++) {
-          let container = carousel.children[i] as HTMLElement;
-          switch (container.classList[1]) {
-            case 'visible':
-              for (let j = 0; j < container.childElementCount; j++) {
-                var skill = container.children[j] as HTMLElement;
-                skill.style.cursor = 'pointer';
-              }
-              break;
-            case 'hidden':
-              for (let j = 0; j < container.childElementCount; j++) {
-                var skill = container.children[j] as HTMLElement;
-                skill.style.cursor = 'default';
-              }
-              break;
-          }
-        }
-      }
-    };
-    toggleCursors('producer');
-    toggleCursors('developer');
-    */
+    
+    // const toggleCursors = (title: String) => {
+    //   let carousel: HTMLElement = document.querySelector(`.${title}-carousel`);
+    //   if (carousel) {
+    //     for (let i = 0; i < carousel.childElementCount; i++) {
+    //       let container = carousel.children[i] as HTMLElement;
+    //       switch (container.classList[1]) {
+    //         case 'visible':
+    //           for (let j = 0; j < container.childElementCount; j++) {
+    //             var skill = container.children[j] as HTMLElement;
+    //             skill.style.cursor = 'pointer';
+    //           }
+    //           break;
+    //         case 'hidden':
+    //           for (let j = 0; j < container.childElementCount; j++) {
+    //             var skill = container.children[j] as HTMLElement;
+    //             skill.style.cursor = 'default';
+    //           }
+    //           break;
+    //       }
+    //     }
+    //   }
+    // };
+    // toggleCursors('producer');
+    // toggleCursors('developer');
+    
 
     const horizontalSlides = (title: String) => {
       // Arrange the slides next to one another
@@ -167,6 +147,7 @@ export namespace DefaultMain {
     };
     horizontalSlides('producer');
     horizontalSlides('developer');
+    */
   }
   function mainHome() {
     $('.default-main section').on('mouseover', function (event) {
