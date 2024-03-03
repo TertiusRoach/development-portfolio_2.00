@@ -5,14 +5,11 @@
 
   //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
-    // grid-area: 0 / 0 / 0 / 0; //--🠈 row-start / col-start / row-end / col-end 🠈--//
     #main-skills div {
       //--|🠋| Build Carousel |🠋|--//
       article {
-        // overflow: hidden;
         position: relative;
-        // background: rgba(red, 0.5);
-
+        transition: transform 0.5s ease-in-out;
         ul {
           margin: 0;
           padding: 0;
@@ -20,10 +17,17 @@
           height: 100%;
           display: grid;
           position: absolute;
-
-          // background: rgba(blue, 0.5);
+          transition: opacity 0.25s ease-in-out;
           grid-template: repeat(3, 1fr) / repeat(3, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+          &.visible {
+            opacity: 1;
+          }
+          &.hidden {
+            opacity: 0;
+            cursor: default;
+          }
           li {
+            cursor: pointer;
             position: relative;
             list-style-type: none;
             // background: rgba(green, 0.5);
@@ -82,11 +86,9 @@
         }
 
         &[class*='producer'] {
-          // display: none;
           grid-area: 3 / 2 / 4 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
         }
         &[class*='developer'] {
-          display: none;
           grid-area: 3 / 5 / 4 / 6; //--🠈 row-start / col-start / row-end / col-end 🠈--//
         }
       }
@@ -149,6 +151,9 @@
           &.right-developer {
             grid-area: 3 / 6 / 4 / 7; //--🠈 row-start / col-start / row-end / col-end 🠈--//
           }
+        }
+        &.hidden {
+          display: none;
         }
       }
 
