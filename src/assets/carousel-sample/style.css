@@ -38,6 +38,7 @@
 .carousel__button {
   position: absolute;
   top: 50%;
+
   transform: translateY(-50%);
   background: transparent;
   border: 0;
