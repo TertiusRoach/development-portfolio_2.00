@@ -6,7 +6,11 @@ export namespace DefaultMain {
   }
   //--|🠋| Grouped Functions |🠋|--//
   function mainSkills() {
-    const moveToSlide = (track, currentSlide, targetSlide) => {
+    const updateDots = (currentDot, targetDot) => {
+      currentDot.classList.remove('active');
+      targetDot.classList.add('active');
+    };
+    const moveToSlide = (track, currentSlide, targetSlide, title: String) => {
       track.style.transform = `translateX(-${targetSlide.style.left})`;
 
       currentSlide.classList.add('hidden');
@@ -14,10 +18,27 @@ export namespace DefaultMain {
 
       targetSlide.classList.add('visible');
       targetSlide.classList.remove('hidden');
-    };
-    const updateDots = (currentDot, targetDot) => {
-      currentDot.classList.remove('active');
-      targetDot.classList.add('active');
+
+      let carousel: HTMLElement = document.querySelector(`.${title}-carousel`);
+      if (carousel) {
+        for (let i = 0; i < carousel.childElementCount; i++) {
+          let container = carousel.children[i] as HTMLElement;
+          switch (container.classList[1]) {
+            case 'visible':
+              for (let j = 0; j < container.childElementCount; j++) {
+                var skill = container.children[j] as HTMLElement;
+                skill.style.cursor = 'pointer';
+              }
+              break;
+            case 'hidden':
+              for (let j = 0; j < container.childElementCount; j++) {
+                var skill = container.children[j] as HTMLElement;
+                skill.style.cursor = 'default';
+              }
+              break;
+          }
+        }
+      }
     };
     const toggleArrows = (slides, prevButton, nextButton, targetIndex) => {
       if (targetIndex === 0) {
@@ -32,31 +53,9 @@ export namespace DefaultMain {
       }
     };
 
-    // Arrange the slides next to one another
-    // Apply to both carousels
-    const horizontalSlides = (title: String) => {
-      /*
-      let dotsNav = document.querySelector(`.navigation-${title}`);
-      let dots = Array.from(dotsNav.children);
-      */
-
-      let track: any = document.querySelector(`.${title}-carousel`);
-      let slides: any = Array.from(track.children);
-      let slideWidth = slides[0].getBoundingClientRect().width;
-
-      let setSlidePosition = (slide: Object | any, index: number) => {
-        slide.style.left = `${slideWidth * index}px`;
-      };
-      slides.forEach(setSlidePosition);
-    };
-    horizontalSlides('producer');
-    horizontalSlides('developer');
-
-    // When I click left move slides to the left
-    // Apply to both carousels
     const shiftLeft = (title: String) => {
+      // When I click left move slides to the left
       let dotsNav: any = document.querySelector(`.navigation-${title}`);
-      let dots: any = Array.from(dotsNav.children);
       let nextButton = document.querySelector(`.right-${title}`);
       let prevButton = document.querySelector(`.left-${title}`);
 
@@ -69,18 +68,18 @@ export namespace DefaultMain {
         var prevIndex: number = slides.findIndex((slide) => slide === prevSlide);
         var prevDot = currentDot.previousElementSibling;
 
+        // toggleCursors(title);
         updateDots(currentDot, prevDot);
-        moveToSlide(track, currentSlide, prevSlide);
+        moveToSlide(track, currentSlide, prevSlide, title);
         toggleArrows(slides, prevButton, nextButton, prevIndex);
       });
     };
     shiftLeft('producer');
     shiftLeft('developer');
 
-    // When I click right move slides to the right
     const shiftRight = (title: String) => {
+      // When I click right move slides to the right
       let dotsNav: any = document.querySelector(`.navigation-${title}`);
-      let dots: any = Array.from(dotsNav.children);
       let nextButton = document.querySelector(`.right-${title}`);
       let prevButton = document.querySelector(`.left-${title}`);
       nextButton.addEventListener('click', (event) => {
@@ -93,7 +92,7 @@ export namespace DefaultMain {
         var nextDot = currentDot.nextElementSibling;
 
         updateDots(currentDot, nextDot);
-        moveToSlide(track, currentSlide, nextSlide);
+        moveToSlide(track, currentSlide, nextSlide, title);
         toggleArrows(slides, prevButton, nextButton, nextIndex);
       });
     };
@@ -121,12 +120,53 @@ export namespace DefaultMain {
         var targetSlide: any = slides[targetIndex];
 
         updateDots(currentDot, targetDot);
-        moveToSlide(track, currentSlide, targetSlide);
+        moveToSlide(track, currentSlide, targetSlide, title);
         toggleArrows(slides, prevButton, nextButton, targetIndex);
       });
     };
     modifyDots('producer');
     modifyDots('developer');
+
+    /*
+    const toggleCursors = (title: String) => {
+      let carousel: HTMLElement = document.querySelector(`.${title}-carousel`);
+      if (carousel) {
+        for (let i = 0; i < carousel.childElementCount; i++) {
+          let container = carousel.children[i] as HTMLElement;
+          switch (container.classList[1]) {
+            case 'visible':
+              for (let j = 0; j < container.childElementCount; j++) {
+                var skill = container.children[j] as HTMLElement;
+                skill.style.cursor = 'pointer';
+              }
+              break;
+            case 'hidden':
+              for (let j = 0; j < container.childElementCount; j++) {
+                var skill = container.children[j] as HTMLElement;
+                skill.style.cursor = 'default';
+              }
+              break;
+          }
+        }
+      }
+    };
+    toggleCursors('producer');
+    toggleCursors('developer');
+    */
+
+    const horizontalSlides = (title: String) => {
+      // Arrange the slides next to one another
+      let track: any = document.querySelector(`.${title}-carousel`);
+      let slides: any = Array.from(track.children);
+      let slideWidth = slides[0].getBoundingClientRect().width;
+
+      let setSlidePosition = (slide: Object | any, index: number) => {
+        slide.style.left = `${slideWidth * index}px`;
+      };
+      slides.forEach(setSlidePosition);
+    };
+    horizontalSlides('producer');
+    horizontalSlides('developer');
   }
   function mainHome() {
     $('.default-main section').on('mouseover', function (event) {
