@@ -7,6 +7,7 @@
   @media screen and (orientation: landscape) {
     #main-skills div {
       section[id*='skills'] {
+        overflow: hidden; //--🠈 This fixes z-index issues🠈--//
         //--|🠋| Carousel |🠋|--//
         article[id*='carousel'] {
           position: relative;
@@ -19,19 +20,12 @@
             height: 100%;
             display: grid;
             position: absolute;
-            transition: opacity 0.25s ease-in-out;
+            transition: opacity 0.75s ease-in-out;
             grid-template: repeat(3, 1fr) / repeat(3, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
-            &.visible {
-              // opacity: 1;
-              cursor: pointer;
-            }
-            &.hidden {
-              // opacity: 0;
-              cursor: default;
-            }
             li {
               position: relative;
               list-style-type: none;
+              filter: drop-shadow(0 0 8px black);
               img {
                 position: absolute;
                 &:nth-child(1) {
@@ -92,6 +86,14 @@
                 grid-area: 3 / 3 / 4 / 4;
               }
             }
+            &.visible {
+              opacity: 1;
+              cursor: pointer;
+            }
+            &.hidden {
+              opacity: 0;
+              cursor: default;
+            }
           }
         }
         //--|🠉| Carousel |🠉|--//
@@ -100,7 +102,7 @@
           align-items: center;
           justify-content: center;
           grid-area: 1 / 1 / 2 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          filter: drop-shadow(0 0 4px black);
+          filter: drop-shadow(0 0 8px black);
           h1 {
             color: $primary-light;
           }
@@ -113,14 +115,17 @@
           li {
             width: 15px;
             height: 15px;
-            cursor: pointer;
             margin: 0 1rem;
+            cursor: pointer;
             border-radius: 50%;
             list-style-type: none;
-            background: rgba($primary-light, 0.25);
+            background: rgba($primary-light, 0.5);
+            box-shadow: 0 0 8px rgba(black, 1);
+            transition: background-color 0.5s ease-in-out;
             &.active {
               cursor: default;
               background: $primary-light;
+              box-shadow: 0 0 1rem rgba(white, 0.75);
             }
           }
         }
@@ -137,8 +142,8 @@
           svg {
             opacity: 1;
             cursor: pointer;
-            filter: drop-shadow(0 0 8px black);
             transition: opacity 0.25s ease-in-out;
+            filter: drop-shadow(0 0 1rem rgba(white, 0.5));
           }
           &.hidden {
             z-index: 0;
@@ -161,24 +166,21 @@
         div {
           //--🠊 display: grid; 🠈--//
           z-index: 1;
-          &[class*='left'] {
+          &.left-background {
             grid-area: 3 / 1 / 4 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
             background: linear-gradient(-90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
           }
-          &[class*='right'] {
+          &.right-background {
             grid-area: 3 / 3 / 4 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
             background: linear-gradient(90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
           }
         }
 
-        overflow: hidden; //--🠈 This fixes z-index issues🠈--//
         &#producer-skills {
           grid-area: 1 / 1 / 2 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          background: rgba(red, 0.25);
         }
         &#developer-skills {
           grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          background: rgba(blue, 0.25);
         }
       }
     }
