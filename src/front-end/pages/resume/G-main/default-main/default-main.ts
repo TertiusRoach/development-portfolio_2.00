@@ -19,7 +19,7 @@ export namespace DefaultMain {
       targetSlide.classList.add('visible');
       targetSlide.classList.remove('hidden');
     };
-    const toggleArrows = (slides, prevButton, nextButton, targetIndex) => {
+    const toggleArrows = (slides: HTMLElement[], prevButton: HTMLButtonElement, nextButton: HTMLButtonElement, targetIndex: Number) => {
       if (targetIndex === 0) {
         prevButton.classList.add('hidden');
         nextButton.classList.remove('hidden');
@@ -36,8 +36,8 @@ export namespace DefaultMain {
       // When I click left move slides to the left
       let track: any = document.querySelector(`#${title}-skills #${title}-carousel`);
       let dotsNav: any = document.querySelector(`#${title}-skills .navigation-${title}`);
-      let nextButton = document.querySelector(`#${title}-skills .right-${title}`);
-      let prevButton = document.querySelector(`#${title}-skills .left-${title}`);
+      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-skills .right-${title}`);
+      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-skills .left-${title}`);
 
       prevButton.addEventListener('click', (event) => {
         var currentSlide: any = track.querySelector(`#${title}-skills .visible`);
@@ -60,8 +60,8 @@ export namespace DefaultMain {
       // When I click right move slides to the right
       let track: any = document.querySelector(`#${title}-skills #${title}-carousel`);
       let dotsNav: any = document.querySelector(`#${title}-skills .navigation-${title}`);
-      let nextButton = document.querySelector(`#${title}-skills .right-${title}`);
-      let prevButton = document.querySelector(`#${title}-skills .left-${title}`);
+      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-skills .right-${title}`);
+      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-skills .left-${title}`);
       nextButton.addEventListener('click', (event) => {
         var currentSlide: any = track.querySelector(`#${title}-skills .visible`);
         var nextSlide: any = currentSlide.nextElementSibling;
@@ -83,8 +83,8 @@ export namespace DefaultMain {
       let track: any = document.querySelector(`#${title}-skills #${title}-carousel`);
       let dotsNav: any = document.querySelector(`#${title}-skills .navigation-${title}`);
       let dots: any = Array.from(dotsNav.children);
-      let nextButton = document.querySelector(`#${title}-skills .right-${title}`);
-      let prevButton = document.querySelector(`#${title}-skills .left-${title}`);
+      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-skills .right-${title}`);
+      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-skills .left-${title}`);
       dotsNav.addEventListener('click', (event) => {
         // targetDot defines the event target by locating the closest <li> HTMLElement
         var targetDot: any = (event.target as HTMLElement).closest('li');

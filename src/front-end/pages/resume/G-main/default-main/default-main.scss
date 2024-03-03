@@ -123,41 +123,51 @@
               background: $primary-light;
             }
           }
-          // &[class*='producer'] {
-
-          // }
-          // &[class*='developer'] {
-          //   grid-area: 2 / 5 / 3 / 6; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          // }
         }
         button {
           margin: 0;
           padding: 0;
-          z-index: 1;
+          z-index: 2;
           display: flex;
           cursor: default;
           align-items: center;
           color: $primary-light;
           background-color: transparent;
+
           svg {
+            opacity: 1;
             cursor: pointer;
             filter: drop-shadow(0 0 8px black);
+            transition: opacity 0.25s ease-in-out;
+          }
+          &.hidden {
+            z-index: 0;
+            svg {
+              opacity: 0;
+            }
           }
 
           &[class*='left'] {
-            //--🠊 display:  flex; 🠈--//
+            //--🠊 display: flex; 🠈--//
             justify-content: flex-end;
+            grid-area: 3 / 1 / 4 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          }
+          &[class*='right'] {
+            //--🠊 display: flex; 🠈--//
+            justify-content: flex-start;
+            grid-area: 3 / 3 / 4 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          }
+        }
+        div {
+          //--🠊 display: grid; 🠈--//
+          z-index: 1;
+          &[class*='left'] {
             grid-area: 3 / 1 / 4 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
             background: linear-gradient(-90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
           }
           &[class*='right'] {
-            //--🠊 display:  flex; 🠈--//
-            justify-content: flex-start;
             grid-area: 3 / 3 / 4 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
             background: linear-gradient(90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
-          }
-          &.hidden {
-            display: none;
           }
         }
 
@@ -168,7 +178,7 @@
         }
         &#developer-skills {
           grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          background: rgba(green, 0.25);
+          background: rgba(blue, 0.25);
         }
       }
     }
