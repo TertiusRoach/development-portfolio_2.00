@@ -1,20 +1,13 @@
     <!--|🠋| Code Here |🠋|-->
-    <span class="skills-producer">
-      <h1>Producer</h1>
-    </span>
-    <span class="skills-developer">
-      <h1>Developer</h1>
-    </span>
+
 
     <!--|🠉| Code Here |🠉|-->
 
-    <!--|🠋| Build Carousel |🠋|-->
+    
     <section class="carousel-producer">
-      <nav class="navigation-carousel">
-        <button class="indicator-carousel active"></button>
-        <button class="indicator-carousel"></button>
-        <button class="indicator-carousel"></button>
-      </nav>
+	
+	  <!--|🠋| Transfer Carousel |🠋|-->
+
 
       <div class="track-carousel">
         <ul class="track-container">
@@ -129,6 +122,8 @@
     </section>
 
     <section class="carousel-developer">
+
+		<!--|🠋| Transfer Carousel |🠋|-->
       <nav class="navigation-carousel">
         <button class="indicator-carousel active"></button>
         <button class="indicator-carousel"></button>
@@ -245,5 +240,5 @@
       <button class="right-carousel">
         <i class="fas fa-chevron-right fa-2x"></i>
       </button>
+	  <!--|🠉| Transfer Carousel |🠉|-->
     </section>
-    <!--|🠉| Build Carousel |🠉|-->

@@ -1,158 +1,137 @@
     <section id="producer-skills">
-      <nav class="navigation-producer">
-        <li class="indicator-carousel active"></li>
-        <li class="indicator-carousel"></li>
-        <li class="indicator-carousel"></li>
-      </nav>
-
-      <button class="left-producer hidden">
-        <i class="fas fa-chevron-left fa-4x"></i>
-      </button>
 
       <!--🠋 Producer Carousel 🠋-->
       <article class="producer-carousel">
         <ul class="first-container visible">
           <!--🠋 Row One 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/01.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/01.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/01.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/02.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/02.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/02.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/03.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/03.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/03.svg" alt="..." />
           </li>
           <!--🠋 Row Two 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/04.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/04.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/04.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/05.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/05.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/05.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/06.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/06.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/06.svg" alt="..." />
           </li>
           <!--🠋 Row Three 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/07.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/07.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/07.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/08.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/08.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/08.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/09.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/09.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/09.svg" alt="..." />
           </li>
         </ul>
         <ul class="second-container hidden">
           <!--🠋 Row One 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/10.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/10.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/10.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/11.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/11.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/11.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/12.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/12.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/12.svg" alt="..." />
           </li>
           <!--🠋 Row Two 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/13.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/13.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/13.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/14.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/14.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/14.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/15.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/15.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/15.svg" alt="..." />
           </li>
           <!--🠋 Row Three 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/16.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/16.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/16.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/17.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/17.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/17.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/18.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/18.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/18.svg" alt="..." />
           </li>
         </ul>
         <ul class="third-container hidden">
           <!--🠋 Row One 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/19.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/19.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/19.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/20.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/20.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/20.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/21.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/21.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/21.svg" alt="..." />
           </li>
           <!--🠋 Row Two 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/22.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/22.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/22.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/23.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/23.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/23.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/24.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/24.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/24.svg" alt="..." />
           </li>
           <!--🠋 Row Three 🠋-->
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/25.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/25.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/25.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/26.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/26.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/26.svg" alt="..." />
           </li>
           <li>
-            <!-- <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/27.svg" alt="..." /> -->
+            <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/27.svg" alt="..." />
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers/27.svg" alt="..." />
           </li>
         </ul>
       </article>
       <!--🠉 Producer Carousel 🠉-->
-      <button class="right-producer">
-        <i class="fas fa-chevron-right fa-4x"></i>
-      </button>
     </section>
     <section id="developer-skills">
-      <nav class="navigation-developer">
-        <li class="indicator-carousel active"></li>
-        <li class="indicator-carousel"></li>
-        <li class="indicator-carousel"></li>
-      </nav>
-
-      <button class="left-developer hidden">
-        <i class="fas fa-chevron-left fa-4x"></i>
-      </button>
       <!--🠋 Developer Carousel 🠋-->
       <article class="developer-carousel">
-        <ul class="first-container visible" style="z-index: 1">
+        <ul class="first-container visible">
           <!--🠋 Row One 🠋-->
           <li>
             <img src="dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/white-numbers/01.svg" alt="..." />
@@ -278,7 +257,4 @@
       </article>
       <!--🠉 Developer Carousel 🠉-->
 
-      <button class="right-developer">
-        <i class="fas fa-chevron-right fa-4x"></i>
-      </button>
     </section>

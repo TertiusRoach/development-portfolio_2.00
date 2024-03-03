@@ -3,7 +3,7 @@
   height: 100vh;
   background: $primary-dark;
   grid-template: 75px 1fr 75px / 25px repeat(2, 1fr) 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
-  //--🠊 Build Hover Interactivity? 🠈--//
+
   .default-header {
     grid-area: 1 / 1 / 2 / 5; //--🠊 row-start / col-start / row-end / col-end 🠈--//
     //--🠊 border: 4px dashed $pink-neon; 🠈--//
@@ -45,6 +45,14 @@
 }
 
 body {
+  //--🠋 All <main> Containers 🠋--//
+  section[id*='main'] {
+    width: 100%;
+    height: 100%;
+    display: block; //--🠈 Default Display <section> 🠈--//
+    padding: 75px 25px 0 25px;
+  }
+
   //--🠋 Removes Scrollbar 🠋--//
   main[class*='default'] {
     overflow: overlay;
