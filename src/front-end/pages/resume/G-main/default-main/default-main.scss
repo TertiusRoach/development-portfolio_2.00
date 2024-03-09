@@ -3,335 +3,6 @@
   flex-direction: column;
   scroll-behavior: smooth; //--🠊 Only works with Firefox 🠈--//
 
-  //--🠋 Desktop (Landscape) 🠋--//
-  @media screen and (orientation: landscape) {
-    #main-skills div {
-      span[class*='title'] {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        filter: drop-shadow(0 0 8px black);
-        h1 {
-          color: $primary-light;
-        }
-
-        &.producer-title {
-          //--🠊 display: flex; 🠈--//
-          grid-area: 1 / 1 / 2 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-        }
-        &.developer-title {
-          //--🠊 display: flex; 🠈--//
-          grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-        }
-      }
-      section[id*='carousel'] {
-        overflow: hidden; //--🠈 This fixes z-index issues🠈--//
-        nav {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          li {
-            width: 15px;
-            height: 15px;
-            margin: 0 1rem;
-            cursor: pointer;
-            border-radius: 50%;
-            list-style-type: none;
-            background: rgba($primary-light, 0.5);
-            box-shadow: 0 0 8px rgba(black, 1);
-            transition: background-color 0.5s ease-in-out;
-            &.active {
-              cursor: default;
-              background: $primary-light;
-              box-shadow: 0 0 0.25rem rgba(white, 0.75);
-            }
-          }
-        }
-
-        //--|🠋| Carousel |🠋|--//
-        article[id*='skills'] {
-          position: relative;
-          grid-area: 2 / 2 / 3 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          transition: transform 0.5s ease-in-out;
-          ul {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            position: absolute;
-            transition: opacity 0.75s ease-in-out;
-            grid-template: repeat(3, 1fr) / repeat(3, 1fr); //--🠈 grid-template-rows / grid-template-columns 🠈--//
-            li {
-              position: relative;
-              list-style-type: none;
-              filter: drop-shadow(0 0 8px black);
-              img {
-                position: absolute;
-                &:nth-child(1) {
-                  z-index: 1;
-                }
-                &:nth-child(2) {
-                  z-index: 0;
-                }
-              }
-              //-- 🠋 Row One 🠋 --//
-              &:nth-child(1) {
-                //--🠊 border: 4px dashed $green-neon; 🠈--//
-                //--🠊 background: rgba($green-dark, 0.25); 🠈--//
-                grid-area: 1 / 1 / 2 / 2;
-              }
-              &:nth-child(2) {
-                //--🠊 border: 4px dashed $pink-neon; 🠈--//
-                //--🠊 background: rgba($pink-dark, 0.25); 🠈--//
-                grid-area: 1 / 2 / 2 / 3;
-              }
-              &:nth-child(3) {
-                //--🠊 border: 4px dashed $yellow-neon; 🠈--//
-                //--🠊 background: rgba($yellow-dark, 0.25); 🠈--//
-                grid-area: 1 / 3 / 2 / 4;
-              }
-
-              //-- 🠋 Row Two 🠋 --//
-              &:nth-child(4) {
-                //--🠊 border: 4px dashed $orange-neon; 🠈--//
-                //--🠊 background: rgba($orange-dark, 0.25); 🠈--//
-                grid-area: 2 / 1 / 3 / 2;
-              }
-              &:nth-child(5) {
-                //--🠊 border: 4px dashed $blue-neon; 🠈--//
-                //--🠊 background: rgba($blue-dark, 0.25); 🠈--//
-                grid-area: 2 / 2 / 3 / 3;
-              }
-              &:nth-child(6) {
-                //--🠊 border: 4px dashed $purple-neon; 🠈--//
-                //--🠊 background: rgba($purple-dark, 0.25); 🠈--//
-                grid-area: 2 / 3 / 3 / 4;
-              }
-
-              //-- 🠋 Row Three 🠋 --//
-              &:nth-child(7) {
-                //--🠊 border: 4px dashed $red-neon; 🠈--//
-                //--🠊 background: rgba($red-dark, 0.25); 🠈--//
-                grid-area: 3 / 1 / 4 / 2;
-              }
-              &:nth-child(8) {
-                //--🠊 border: 4px dashed $brown-neon; 🠈--//
-                //--🠊 background: rgba($brown-dark, 0.25); 🠈--//
-                grid-area: 3 / 2 / 4 / 3;
-              }
-              &:nth-child(9) {
-                //--🠊 border: 4px dashed $grey-neon; 🠈--//
-                //--🠊 background: rgba($grey-dark, 0.25); 🠈--//
-                grid-area: 3 / 3 / 4 / 4;
-              }
-            }
-            &.visible {
-              opacity: 1;
-              cursor: pointer;
-            }
-            &.hidden {
-              opacity: 0;
-              cursor: default;
-            }
-          }
-        }
-        //--|🠉| Carousel |🠉|--//
-
-        button {
-          margin: 0;
-          padding: 0;
-          z-index: 2;
-          display: flex;
-          cursor: default;
-          align-items: center;
-          color: $primary-light;
-          background-color: transparent;
-          //--🠊 overflow: visible; 🠈--//
-
-          svg {
-            opacity: 1;
-            cursor: pointer;
-            transition: opacity 0.25s ease-in-out;
-            filter: drop-shadow(0 0 0.25rem rgba(white, 0.5));
-          }
-          &.hidden {
-            z-index: 0;
-            svg {
-              opacity: 0;
-            }
-          }
-
-          &[class*='left'] {
-            //--🠊 display: flex; 🠈--//
-            justify-content: flex-end;
-            grid-area: 2 / 1 / 3 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          }
-          &[class*='right'] {
-            //--🠊 display: flex; 🠈--//
-            justify-content: flex-start;
-            grid-area: 2 / 3 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          }
-        }
-        div {
-          //--🠊 display: grid; 🠈--//
-          z-index: 1;
-          &[class*='left'] {
-            //--🠊 display: flex; 🠈--//
-            justify-content: flex-end;
-            grid-area: 2 / 1 / 3 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-            background: linear-gradient(-90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
-          }
-          &[class*='right'] {
-            //--🠊 display: flex; 🠈--//
-            justify-content: flex-start;
-            grid-area: 2 / 3 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-            background: linear-gradient(90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
-          }
-        }
-
-        &#producer-carousel {
-          //--🠊 display: grid; 🠈--//
-          grid-area: 3 / 1 / 4 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          //--🠊 border: 4px dashed $red-neon; 🠈--//
-          //--🠊 background: rgba($red-dark, 0.25); 🠈--//
-        }
-        &#developer-carousel {
-          //--🠊 display: grid; 🠈--//
-          grid-area: 3 / 2 / 4 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          //--🠊 border: 4px dashed $green-neon; 🠈--//
-          //--🠊 background: rgba($green-dark, 0.25); 🠈--//
-        }
-      }
-      section[id*='skills'] {
-        //--🠊 display: block; 🠈--//
-        grid-area: 5 / 1 / 6 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-        background: rgba($blue-dark, 0.75);
-
-        //--🠊 border: 4px dashed $blue-neon; 🠈--//
-        //--🠊 background: rgba($blue-dark, 0.25); 🠈--//
-      }
-    }
-
-    #main-home div {
-      //--🠊 display: grid; 🠈--//
-      grid-template: repeat(7, 1fr) / repeat(5, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
-      .home-welcome {
-        //--🠊 display: flex; 🠈--//
-        align-items: flex-end;
-        grid-area: 1 / 1 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-        justify-content: flex-start;
-      }
-      .home-title {
-        //--🠊 display: flex; 🠈--//
-        align-items: flex-start;
-        grid-area: 3 / 1 / 4 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-        justify-content: flex-start;
-      }
-      .home-description {
-        //--🠊 display: flex; 🠈--//
-        align-items: flex-start;
-        grid-area: 4 / 1 / 8 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-        justify-content: flex-end;
-      }
-      .home-buttons {
-        //--🠊 display: flex; 🠈--//
-        flex-direction: column;
-        grid-area: 4 / 3 / 8 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-        .button {
-          margin: 12.5% 0;
-          padding: 0.5rem 1rem;
-          justify-content: center;
-        }
-      }
-      .home-profile {
-        margin-left: 25%;
-        //--🠊 display: flex; 🠈--//
-        grid-area: 1 / 3 / 8 / 6; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-      }
-    }
-    #main-employment div {
-      //--🠊 display: grid; 🠈--//
-      border: 4px dashed $red-neon;
-      background: rgba($red-dark, 0.25);
-    }
-    #main-contact div {
-      //--🠊 display: grid; 🠈--//
-      border: 4px dashed $brown-neon;
-      background: rgba($brown-dark, 0.25);
-    }
-  }
-
-  //--🠋 Mobile (Portrait) 🠋--//
-  @media screen and (orientation: portrait) {
-    #main-skills div {
-      //--🠊 display: grid; 🠈--//
-    }
-
-    #main-home div {
-      //--🠊 display: grid; 🠈--//
-      grid-template: repeat(12, 1fr) / 1fr; //--🠊 grid-template-rows / grid-template-columns 🠈--//
-      .home-welcome {
-        //--🠊 display: flex; 🠈--//
-        align-items: flex-end;
-        justify-content: center;
-        grid-area: 1 / 1 / 2 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-
-        h1 {
-          white-space: nowrap; //--🠊 Use white-space property instead of text-wrap 🠈--//
-        }
-      }
-      .home-title {
-        //--🠊 display: flex; 🠈--//
-        align-items: flex-start;
-        justify-content: center;
-        grid-area: 2 / 1 / 3 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-        h2 {
-          white-space: nowrap;
-        }
-      }
-      @media only screen and (max-width: 630px) {
-        .home-welcome h1 {
-          display: none;
-        }
-        .home-title {
-          align-items: center;
-          grid-area: 1 / 1 / 3 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-          h2 {
-            font-size: 2rem;
-          }
-        }
-      }
-
-      .home-description {
-        align-items: flex-start;
-        grid-area: 6 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-        // background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 75%);
-        //--🠊 display: flex; 🠈--//
-      }
-      .home-profile {
-        grid-area: 2 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-      }
-      .home-buttons {
-        flex-direction: row;
-        //--🠊 display: flex; 🠈--//
-        justify-content: center;
-        grid-area: 12 / 1 / 13 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
-        .button {
-          margin: 6.25%;
-          padding: 1rem 2rem;
-        }
-      }
-    }
-    #main-employment div {
-      //--🠊 display: grid; 🠈--//
-    }
-    #main-contact div {
-      //--🠊 display: block; 🠈--//
-    }
-  }
-
   #main-home {
     //--🠊 display: block; 🠈--//
     div {
@@ -577,8 +248,367 @@
   #main-skills {
     //--🠊 display: block; 🠈--//
     div {
+      span[class*='title'] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(0 0 8px black);
+        h1,
+        h6 {
+          color: $primary-light;
+        }
+      }
+      section[id*='carousel'] {
+        overflow: hidden; //--🠈 This fixes z-index issues🠈--//
+        nav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          li {
+            width: 15px;
+            height: 15px;
+            margin: 0 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            list-style-type: none;
+            background: rgba($primary-light, 0.5);
+            box-shadow: 0 0 8px rgba(black, 1);
+            transition: background-color 0.5s ease-in-out;
+            &.active {
+              cursor: default;
+              background: $primary-light;
+              box-shadow: 0 0 0.25rem rgba(white, 0.75);
+            }
+          }
+        }
+
+        //--|🠋| Carousel |🠋|--//
+        article[id*='skills'] {
+          position: relative;
+          grid-area: 2 / 2 / 3 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          transition: transform 0.5s ease-in-out;
+          ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            position: absolute;
+            transition: opacity 0.75s ease-in-out;
+            grid-template: repeat(3, 1fr) / repeat(3, 1fr); //--🠈 grid-template-rows / grid-template-columns 🠈--//
+            li {
+              position: relative;
+              list-style-type: none;
+              filter: drop-shadow(0 0 8px black);
+              img {
+                position: absolute;
+                &:nth-child(1) {
+                  z-index: 1;
+                }
+                &:nth-child(2) {
+                  z-index: 0;
+                }
+              }
+              //-- 🠋 Row One 🠋 --//
+              &:nth-child(1) {
+                //--🠊 border: 4px dashed $green-neon; 🠈--//
+                //--🠊 background: rgba($green-dark, 0.25); 🠈--//
+                grid-area: 1 / 1 / 2 / 2;
+              }
+              &:nth-child(2) {
+                //--🠊 border: 4px dashed $pink-neon; 🠈--//
+                //--🠊 background: rgba($pink-dark, 0.25); 🠈--//
+                grid-area: 1 / 2 / 2 / 3;
+              }
+              &:nth-child(3) {
+                //--🠊 border: 4px dashed $yellow-neon; 🠈--//
+                //--🠊 background: rgba($yellow-dark, 0.25); 🠈--//
+                grid-area: 1 / 3 / 2 / 4;
+              }
+
+              //-- 🠋 Row Two 🠋 --//
+              &:nth-child(4) {
+                //--🠊 border: 4px dashed $orange-neon; 🠈--//
+                //--🠊 background: rgba($orange-dark, 0.25); 🠈--//
+                grid-area: 2 / 1 / 3 / 2;
+              }
+              &:nth-child(5) {
+                //--🠊 border: 4px dashed $blue-neon; 🠈--//
+                //--🠊 background: rgba($blue-dark, 0.25); 🠈--//
+                grid-area: 2 / 2 / 3 / 3;
+              }
+              &:nth-child(6) {
+                //--🠊 border: 4px dashed $purple-neon; 🠈--//
+                //--🠊 background: rgba($purple-dark, 0.25); 🠈--//
+                grid-area: 2 / 3 / 3 / 4;
+              }
+
+              //-- 🠋 Row Three 🠋 --//
+              &:nth-child(7) {
+                //--🠊 border: 4px dashed $red-neon; 🠈--//
+                //--🠊 background: rgba($red-dark, 0.25); 🠈--//
+                grid-area: 3 / 1 / 4 / 2;
+              }
+              &:nth-child(8) {
+                //--🠊 border: 4px dashed $brown-neon; 🠈--//
+                //--🠊 background: rgba($brown-dark, 0.25); 🠈--//
+                grid-area: 3 / 2 / 4 / 3;
+              }
+              &:nth-child(9) {
+                //--🠊 border: 4px dashed $grey-neon; 🠈--//
+                //--🠊 background: rgba($grey-dark, 0.25); 🠈--//
+                grid-area: 3 / 3 / 4 / 4;
+              }
+            }
+            &.visible {
+              opacity: 1;
+              cursor: pointer;
+            }
+            &.hidden {
+              opacity: 0;
+              cursor: default;
+            }
+          }
+        }
+        //--|🠉| Carousel |🠉|--//
+
+        button {
+          margin: 0;
+          padding: 0;
+          z-index: 2;
+          display: flex;
+          cursor: default;
+          align-items: center;
+          color: $primary-light;
+          background-color: transparent;
+          //--🠊 overflow: visible; 🠈--//
+
+          svg {
+            opacity: 1;
+            cursor: pointer;
+            transition: opacity 0.25s ease-in-out;
+            filter: drop-shadow(0 0 0.25rem rgba(white, 0.5));
+          }
+          &.hidden {
+            z-index: 0;
+            svg {
+              opacity: 0;
+            }
+          }
+
+          &[class*='left'] {
+            //--🠊 display: flex; 🠈--//
+            justify-content: flex-end;
+            grid-area: 2 / 1 / 3 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          }
+          &[class*='right'] {
+            //--🠊 display: flex; 🠈--//
+            justify-content: flex-start;
+            grid-area: 2 / 3 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          }
+        }
+        div {
+          //--🠊 display: grid; 🠈--//
+          z-index: 1;
+          &[class*='left'] {
+            //--🠊 display: flex; 🠈--//
+            justify-content: flex-end;
+            grid-area: 2 / 1 / 3 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+            background: linear-gradient(-90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
+          }
+          &[class*='right'] {
+            //--🠊 display: flex; 🠈--//
+            justify-content: flex-start;
+            grid-area: 2 / 3 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+            background: linear-gradient(90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
+          }
+        }
+      }
+      section[id*='skills'] {
+        //--🠊 display: block; 🠈--//
+        background: rgba($blue-light, 0.75);
+
+        //--🠊 border: 4px dashed $blue-neon; 🠈--//
+        //--🠊 background: rgba($blue-dark, 0.25); 🠈--//
+      }
       //--🠊 border: 4px dashed $green-neon; 🠈--//
       //--🠊 background: rgba($green-dark, 0.25); 🠈--//
+    }
+  }
+
+  //--🠋 Desktop (Landscape) 🠋--//
+  @media screen and (orientation: landscape) {
+    #main-home div {
+      //--🠊 display: grid; 🠈--//
+      grid-template: repeat(7, 1fr) / repeat(5, 1fr); //--🠊 grid-template-rows / grid-template-columns 🠈--//
+      .home-welcome {
+        //--🠊 display: flex; 🠈--//
+        align-items: flex-end;
+        grid-area: 1 / 1 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        justify-content: flex-start;
+      }
+      .home-title {
+        //--🠊 display: flex; 🠈--//
+        align-items: flex-start;
+        grid-area: 3 / 1 / 4 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        justify-content: flex-start;
+      }
+      .home-description {
+        //--🠊 display: flex; 🠈--//
+        align-items: flex-start;
+        grid-area: 4 / 1 / 8 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        justify-content: flex-end;
+      }
+      .home-buttons {
+        //--🠊 display: flex; 🠈--//
+        flex-direction: column;
+        grid-area: 4 / 3 / 8 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        .button {
+          margin: 12.5% 0;
+          padding: 0.5rem 1rem;
+          justify-content: center;
+        }
+      }
+      .home-profile {
+        margin-left: 25%;
+        //--🠊 display: flex; 🠈--//
+        grid-area: 1 / 3 / 8 / 6; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      }
+    }
+    #main-skills div {
+      span[class*='title'] {
+        h6 {
+          display: none;
+        }
+        &.producer-title {
+          //--🠊 display: flex; 🠈--//
+          grid-area: 1 / 1 / 2 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        }
+        &.developer-title {
+          //--🠊 display: flex; 🠈--//
+          grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        }
+      }
+      section[id*='carousel'] {
+        &#producer-carousel {
+          //--🠊 display: grid; 🠈--//
+          grid-area: 3 / 1 / 4 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        }
+        &#developer-carousel {
+          //--🠊 display: grid; 🠈--//
+          grid-area: 3 / 2 / 4 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        }
+      }
+      section[id*='skills'] {
+        grid-area: 5 / 1 / 6 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+      }
+    }
+    #main-employment div {
+      //--🠊 display: grid; 🠈--//
+      border: 4px dashed $red-neon;
+      background: rgba($red-dark, 0.25);
+    }
+    #main-contact div {
+      //--🠊 display: grid; 🠈--//
+      border: 4px dashed $brown-neon;
+      background: rgba($brown-dark, 0.25);
+    }
+  }
+
+  //--🠋 Mobile (Portrait) 🠋--//
+  @media screen and (orientation: portrait) {
+    #main-home div {
+      //--🠊 display: grid; 🠈--//
+      grid-template: repeat(12, 1fr) / 1fr; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+      .home-welcome {
+        //--🠊 display: flex; 🠈--//
+        align-items: flex-end;
+        justify-content: center;
+        grid-area: 1 / 1 / 2 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+
+        h1 {
+          white-space: nowrap; //--🠊 Use white-space property instead of text-wrap 🠈--//
+        }
+      }
+      .home-title {
+        //--🠊 display: flex; 🠈--//
+        align-items: flex-start;
+        justify-content: center;
+        grid-area: 2 / 1 / 3 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        h2 {
+          white-space: nowrap;
+        }
+      }
+      @media only screen and (max-width: 630px) {
+        .home-welcome h1 {
+          display: none;
+        }
+        .home-title {
+          align-items: center;
+          grid-area: 1 / 1 / 3 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+          h2 {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .home-description {
+        align-items: flex-start;
+        grid-area: 6 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        // background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 75%);
+        //--🠊 display: flex; 🠈--//
+      }
+      .home-profile {
+        grid-area: 2 / 1 / 12 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+      }
+      .home-buttons {
+        flex-direction: row;
+        //--🠊 display: flex; 🠈--//
+        justify-content: center;
+        grid-area: 12 / 1 / 13 / 2; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+        .button {
+          margin: 6.25%;
+          padding: 1rem 2rem;
+        }
+      }
+    }
+    #main-skills div {
+      //--🠊 display: grid; 🠈--//
+      span[class*='title'] {
+        h1 {
+          display: none;
+        }
+        &.producer-title {
+          //--🠊 display: flex; 🠈--//
+          grid-area: 1 / 1 / 2 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        }
+        &.developer-title {
+          //--🠊 display: flex; 🠈--//
+          grid-area: 5 / 1 / 6 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+        }
+      }
+      section[id*='carousel'] {
+        &#producer-carousel {
+          //--🠊 display: grid; 🠈--//
+          grid-area: 3 / 1 / 4 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          // background: red;
+        }
+        &#developer-carousel {
+          //--🠊 display: grid; 🠈--//
+          grid-area: 7 / 1 / 8 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          // background: blue;
+        }
+      }
+      section[id*='skills'] {
+        grid-area: 9 / 1 / 10 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+      }
+    }
+    #main-employment div {
+      //--🠊 display: grid; 🠈--//
+    }
+    #main-contact div {
+      //--🠊 display: block; 🠈--//
     }
   }
 }

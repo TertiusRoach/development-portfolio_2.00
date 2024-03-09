@@ -5436,17 +5436,2255 @@ body {
           @media only screen and (max-height: 375px) {
             grid-template: 25px 0px / 1fr 0px 1fr;
           }
-
-          //***
-          //--🠊 Bottom Code will be prioritized above Top Code 🠈--//
+          @media only screen and (max-height: 374px) {
+            display: none;
+          }
         }
       }
-
       @media screen and (orientation: portrait) {
-        grid-template: 100px 1fr 50px 1fr repeat(2, 100px) 1fr 10px 1fr  / 1fr 50px 1fr; //--🠈 grid-template-rows / grid-template-columns 🠈--//
+        grid-template: 50px 1fr auto 1fr 50px 1fr auto 1fr 75px / 1fr; //--🠈 grid-template-rows / grid-template-columns 🠈--//
         section[id*='carousel'] {
+          display: inherit;
+          //--🠋 Test First 🠋--//
+          @media only screen and (max-width: 1024px) {
+            grid-template: 25px 495px / 1fr 495px 1fr;
+          }
+          @media only screen and (max-width: 1023px) {
+            grid-template: 25px 495px / 1fr 495px 1fr;
+          }
+          @media only screen and (max-width: 1022px) {
+            grid-template: 25px 494px / 1fr 494px 1fr;
+          }
+          @media only screen and (max-width: 1021px) {
+            grid-template: 25px 494px / 1fr 494px 1fr;
+          }
+          @media only screen and (max-width: 1020px) {
+            grid-template: 25px 493px / 1fr 493px 1fr;
+          }
+          @media only screen and (max-width: 1019px) {
+            grid-template: 25px 493px / 1fr 493px 1fr;
+          }
+          @media only screen and (max-width: 1018px) {
+            grid-template: 25px 492px / 1fr 492px 1fr;
+          }
+          @media only screen and (max-width: 1017px) {
+            grid-template: 25px 492px / 1fr 492px 1fr;
+          }
+          @media only screen and (max-width: 1016px) {
+            grid-template: 25px 491px / 1fr 491px 1fr;
+          }
+          @media only screen and (max-width: 1015px) {
+            grid-template: 25px 491px / 1fr 491px 1fr;
+          }
+          @media only screen and (max-width: 1014px) {
+            grid-template: 25px 490px / 1fr 490px 1fr;
+          }
+          @media only screen and (max-width: 1013px) {
+            grid-template: 25px 490px / 1fr 490px 1fr;
+          }
+          @media only screen and (max-width: 1012px) {
+            grid-template: 25px 489px / 1fr 489px 1fr;
+          }
+          @media only screen and (max-width: 1011px) {
+            grid-template: 25px 489px / 1fr 489px 1fr;
+          }
+          @media only screen and (max-width: 1010px) {
+            grid-template: 25px 488px / 1fr 488px 1fr;
+          }
+          @media only screen and (max-width: 1009px) {
+            grid-template: 25px 488px / 1fr 488px 1fr;
+          }
+          @media only screen and (max-width: 1008px) {
+            grid-template: 25px 487px / 1fr 487px 1fr;
+          }
+          @media only screen and (max-width: 1007px) {
+            grid-template: 25px 487px / 1fr 487px 1fr;
+          }
+          @media only screen and (max-width: 1006px) {
+            grid-template: 25px 486px / 1fr 486px 1fr;
+          }
+          @media only screen and (max-width: 1005px) {
+            grid-template: 25px 486px / 1fr 486px 1fr;
+          }
+          @media only screen and (max-width: 1004px) {
+            grid-template: 25px 485px / 1fr 485px 1fr;
+          }
+          @media only screen and (max-width: 1003px) {
+            grid-template: 25px 485px / 1fr 485px 1fr;
+          }
+          @media only screen and (max-width: 1002px) {
+            grid-template: 25px 484px / 1fr 484px 1fr;
+          }
+          @media only screen and (max-width: 1001px) {
+            grid-template: 25px 484px / 1fr 484px 1fr;
+          }
+          @media only screen and (max-width: 1000px) {
+            grid-template: 25px 484px / 1fr 484px 1fr;
+          }
+          @media only screen and (max-width: 999px) {
+            grid-template: 25px 483px / 1fr 483px 1fr;
+          }
+          @media only screen and (max-width: 998px) {
+            grid-template: 25px 483px / 1fr 483px 1fr;
+          }
+          @media only screen and (max-width: 997px) {
+            grid-template: 25px 482px / 1fr 482px 1fr;
+          }
+          @media only screen and (max-width: 996px) {
+            grid-template: 25px 482px / 1fr 482px 1fr;
+          }
+          @media only screen and (max-width: 995px) {
+            grid-template: 25px 481px / 1fr 481px 1fr;
+          }
+          @media only screen and (max-width: 994px) {
+            grid-template: 25px 481px / 1fr 481px 1fr;
+          }
+          @media only screen and (max-width: 993px) {
+            grid-template: 25px 480px / 1fr 480px 1fr;
+          }
+          @media only screen and (max-width: 992px) {
+            grid-template: 25px 480px / 1fr 480px 1fr;
+          }
+          @media only screen and (max-width: 991px) {
+            grid-template: 25px 479px / 1fr 479px 1fr;
+          }
+          @media only screen and (max-width: 990px) {
+            grid-template: 25px 479px / 1fr 479px 1fr;
+          }
+          @media only screen and (max-width: 989px) {
+            grid-template: 25px 478px / 1fr 478px 1fr;
+          }
+          @media only screen and (max-width: 988px) {
+            grid-template: 25px 478px / 1fr 478px 1fr;
+          }
+          @media only screen and (max-width: 987px) {
+            grid-template: 25px 477px / 1fr 477px 1fr;
+          }
+          @media only screen and (max-width: 986px) {
+            grid-template: 25px 477px / 1fr 477px 1fr;
+          }
+          @media only screen and (max-width: 985px) {
+            grid-template: 25px 476px / 1fr 476px 1fr;
+          }
+          @media only screen and (max-width: 984px) {
+            grid-template: 25px 476px / 1fr 476px 1fr;
+          }
+          @media only screen and (max-width: 983px) {
+            grid-template: 25px 475px / 1fr 475px 1fr;
+          }
+          @media only screen and (max-width: 982px) {
+            grid-template: 25px 475px / 1fr 475px 1fr;
+          }
+          @media only screen and (max-width: 981px) {
+            grid-template: 25px 474px / 1fr 474px 1fr;
+          }
+          @media only screen and (max-width: 980px) {
+            grid-template: 25px 474px / 1fr 474px 1fr;
+          }
+          @media only screen and (max-width: 979px) {
+            grid-template: 25px 473px / 1fr 473px 1fr;
+          }
+          @media only screen and (max-width: 978px) {
+            grid-template: 25px 473px / 1fr 473px 1fr;
+          }
+          @media only screen and (max-width: 977px) {
+            grid-template: 25px 473px / 1fr 473px 1fr;
+          }
+          @media only screen and (max-width: 976px) {
+            grid-template: 25px 472px / 1fr 472px 1fr;
+          }
+          @media only screen and (max-width: 975px) {
+            grid-template: 25px 472px / 1fr 472px 1fr;
+          }
+          @media only screen and (max-width: 974px) {
+            grid-template: 25px 471px / 1fr 471px 1fr;
+          }
+          @media only screen and (max-width: 973px) {
+            grid-template: 25px 471px / 1fr 471px 1fr;
+          }
+          @media only screen and (max-width: 972px) {
+            grid-template: 25px 470px / 1fr 470px 1fr;
+          }
+          @media only screen and (max-width: 971px) {
+            grid-template: 25px 470px / 1fr 470px 1fr;
+          }
+          @media only screen and (max-width: 970px) {
+            grid-template: 25px 469px / 1fr 469px 1fr;
+          }
+          @media only screen and (max-width: 969px) {
+            grid-template: 25px 469px / 1fr 469px 1fr;
+          }
+          @media only screen and (max-width: 968px) {
+            grid-template: 25px 468px / 1fr 468px 1fr;
+          }
+          @media only screen and (max-width: 967px) {
+            grid-template: 25px 468px / 1fr 468px 1fr;
+          }
+          @media only screen and (max-width: 966px) {
+            grid-template: 25px 467px / 1fr 467px 1fr;
+          }
+          @media only screen and (max-width: 965px) {
+            grid-template: 25px 467px / 1fr 467px 1fr;
+          }
+          @media only screen and (max-width: 964px) {
+            grid-template: 25px 466px / 1fr 466px 1fr;
+          }
+          @media only screen and (max-width: 963px) {
+            grid-template: 25px 466px / 1fr 466px 1fr;
+          }
+          @media only screen and (max-width: 962px) {
+            grid-template: 25px 465px / 1fr 465px 1fr;
+          }
+          @media only screen and (max-width: 961px) {
+            grid-template: 25px 465px / 1fr 465px 1fr;
+          }
+          @media only screen and (max-width: 960px) {
+            grid-template: 25px 464px / 1fr 464px 1fr;
+          }
+          @media only screen and (max-width: 959px) {
+            grid-template: 25px 464px / 1fr 464px 1fr;
+          }
+          @media only screen and (max-width: 958px) {
+            grid-template: 25px 463px / 1fr 463px 1fr;
+          }
+          @media only screen and (max-width: 957px) {
+            grid-template: 25px 463px / 1fr 463px 1fr;
+          }
+          @media only screen and (max-width: 956px) {
+            grid-template: 25px 462px / 1fr 462px 1fr;
+          }
+          @media only screen and (max-width: 955px) {
+            grid-template: 25px 462px / 1fr 462px 1fr;
+          }
+          @media only screen and (max-width: 954px) {
+            grid-template: 25px 462px / 1fr 462px 1fr;
+          }
+          @media only screen and (max-width: 953px) {
+            grid-template: 25px 461px / 1fr 461px 1fr;
+          }
+          @media only screen and (max-width: 952px) {
+            grid-template: 25px 461px / 1fr 461px 1fr;
+          }
+          @media only screen and (max-width: 951px) {
+            grid-template: 25px 460px / 1fr 460px 1fr;
+          }
+          @media only screen and (max-width: 950px) {
+            grid-template: 25px 460px / 1fr 460px 1fr;
+          }
+          @media only screen and (max-width: 949px) {
+            grid-template: 25px 459px / 1fr 459px 1fr;
+          }
+          @media only screen and (max-width: 948px) {
+            grid-template: 25px 459px / 1fr 459px 1fr;
+          }
+          @media only screen and (max-width: 947px) {
+            grid-template: 25px 458px / 1fr 458px 1fr;
+          }
+          @media only screen and (max-width: 946px) {
+            grid-template: 25px 458px / 1fr 458px 1fr;
+          }
+          @media only screen and (max-width: 945px) {
+            grid-template: 25px 457px / 1fr 457px 1fr;
+          }
+          @media only screen and (max-width: 944px) {
+            grid-template: 25px 457px / 1fr 457px 1fr;
+          }
+          @media only screen and (max-width: 943px) {
+            grid-template: 25px 456px / 1fr 456px 1fr;
+          }
+          @media only screen and (max-width: 942px) {
+            grid-template: 25px 456px / 1fr 456px 1fr;
+          }
+          @media only screen and (max-width: 941px) {
+            grid-template: 25px 455px / 1fr 455px 1fr;
+          }
+          @media only screen and (max-width: 940px) {
+            grid-template: 25px 455px / 1fr 455px 1fr;
+          }
+          @media only screen and (max-width: 939px) {
+            grid-template: 25px 454px / 1fr 454px 1fr;
+          }
+          @media only screen and (max-width: 938px) {
+            grid-template: 25px 454px / 1fr 454px 1fr;
+          }
+          @media only screen and (max-width: 937px) {
+            grid-template: 25px 453px / 1fr 453px 1fr;
+          }
+          @media only screen and (max-width: 936px) {
+            grid-template: 25px 453px / 1fr 453px 1fr;
+          }
+          @media only screen and (max-width: 935px) {
+            grid-template: 25px 452px / 1fr 452px 1fr;
+          }
+          @media only screen and (max-width: 934px) {
+            grid-template: 25px 452px / 1fr 452px 1fr;
+          }
+          @media only screen and (max-width: 933px) {
+            grid-template: 25px 451px / 1fr 451px 1fr;
+          }
+          @media only screen and (max-width: 932px) {
+            grid-template: 25px 451px / 1fr 451px 1fr;
+          }
+          @media only screen and (max-width: 931px) {
+            grid-template: 25px 451px / 1fr 451px 1fr;
+          }
+          @media only screen and (max-width: 930px) {
+            grid-template: 25px 450px / 1fr 450px 1fr;
+          }
+          @media only screen and (max-width: 929px) {
+            grid-template: 25px 450px / 1fr 450px 1fr;
+          }
+          @media only screen and (max-width: 928px) {
+            grid-template: 25px 449px / 1fr 449px 1fr;
+          }
+          @media only screen and (max-width: 927px) {
+            grid-template: 25px 449px / 1fr 449px 1fr;
+          }
+          @media only screen and (max-width: 926px) {
+            grid-template: 25px 448px / 1fr 448px 1fr;
+          }
+          @media only screen and (max-width: 925px) {
+            grid-template: 25px 448px / 1fr 448px 1fr;
+          }
+          @media only screen and (max-width: 924px) {
+            grid-template: 25px 447px / 1fr 447px 1fr;
+          }
+          @media only screen and (max-width: 923px) {
+            grid-template: 25px 447px / 1fr 447px 1fr;
+          }
+          @media only screen and (max-width: 922px) {
+            grid-template: 25px 446px / 1fr 446px 1fr;
+          }
+          @media only screen and (max-width: 921px) {
+            grid-template: 25px 446px / 1fr 446px 1fr;
+          }
+          @media only screen and (max-width: 920px) {
+            grid-template: 25px 445px / 1fr 445px 1fr;
+          }
+          @media only screen and (max-width: 919px) {
+            grid-template: 25px 445px / 1fr 445px 1fr;
+          }
+          @media only screen and (max-width: 918px) {
+            grid-template: 25px 444px / 1fr 444px 1fr;
+          }
+          @media only screen and (max-width: 917px) {
+            grid-template: 25px 444px / 1fr 444px 1fr;
+          }
+          @media only screen and (max-width: 916px) {
+            grid-template: 25px 443px / 1fr 443px 1fr;
+          }
+          @media only screen and (max-width: 915px) {
+            grid-template: 25px 443px / 1fr 443px 1fr;
+          }
+          @media only screen and (max-width: 914px) {
+            grid-template: 25px 442px / 1fr 442px 1fr;
+          }
+          @media only screen and (max-width: 913px) {
+            grid-template: 25px 442px / 1fr 442px 1fr;
+          }
+          @media only screen and (max-width: 912px) {
+            grid-template: 25px 441px / 1fr 441px 1fr;
+          }
+          @media only screen and (max-width: 911px) {
+            grid-template: 25px 441px / 1fr 441px 1fr;
+          }
+          @media only screen and (max-width: 910px) {
+            grid-template: 25px 440px / 1fr 440px 1fr;
+          }
+          @media only screen and (max-width: 909px) {
+            grid-template: 25px 440px / 1fr 440px 1fr;
+          }
+          @media only screen and (max-width: 908px) {
+            grid-template: 25px 439px / 1fr 439px 1fr;
+          }
+          @media only screen and (max-width: 907px) {
+            grid-template: 25px 439px / 1fr 439px 1fr;
+          }
+          @media only screen and (max-width: 906px) {
+            grid-template: 25px 439px / 1fr 439px 1fr;
+          }
+          @media only screen and (max-width: 905px) {
+            grid-template: 25px 438px / 1fr 438px 1fr;
+          }
+          @media only screen and (max-width: 904px) {
+            grid-template: 25px 438px / 1fr 438px 1fr;
+          }
+          @media only screen and (max-width: 903px) {
+            grid-template: 25px 437px / 1fr 437px 1fr;
+          }
+          @media only screen and (max-width: 902px) {
+            grid-template: 25px 437px / 1fr 437px 1fr;
+          }
+          @media only screen and (max-width: 901px) {
+            grid-template: 25px 436px / 1fr 436px 1fr;
+          }
+          @media only screen and (max-width: 900px) {
+            grid-template: 25px 436px / 1fr 436px 1fr;
+          }
+          @media only screen and (max-width: 899px) {
+            grid-template: 25px 435px / 1fr 435px 1fr;
+          }
+          @media only screen and (max-width: 898px) {
+            grid-template: 25px 435px / 1fr 435px 1fr;
+          }
+          @media only screen and (max-width: 897px) {
+            grid-template: 25px 434px / 1fr 434px 1fr;
+          }
+          @media only screen and (max-width: 896px) {
+            grid-template: 25px 434px / 1fr 434px 1fr;
+          }
+          @media only screen and (max-width: 895px) {
+            grid-template: 25px 433px / 1fr 433px 1fr;
+          }
+          @media only screen and (max-width: 894px) {
+            grid-template: 25px 433px / 1fr 433px 1fr;
+          }
+          @media only screen and (max-width: 893px) {
+            grid-template: 25px 432px / 1fr 432px 1fr;
+          }
+          @media only screen and (max-width: 892px) {
+            grid-template: 25px 432px / 1fr 432px 1fr;
+          }
+          @media only screen and (max-width: 891px) {
+            grid-template: 25px 431px / 1fr 431px 1fr;
+          }
+          @media only screen and (max-width: 890px) {
+            grid-template: 25px 431px / 1fr 431px 1fr;
+          }
+          @media only screen and (max-width: 889px) {
+            grid-template: 25px 430px / 1fr 430px 1fr;
+          }
+          @media only screen and (max-width: 888px) {
+            grid-template: 25px 430px / 1fr 430px 1fr;
+          }
+          @media only screen and (max-width: 887px) {
+            grid-template: 25px 429px / 1fr 429px 1fr;
+          }
+          @media only screen and (max-width: 886px) {
+            grid-template: 25px 429px / 1fr 429px 1fr;
+          }
+          @media only screen and (max-width: 885px) {
+            grid-template: 25px 428px / 1fr 428px 1fr;
+          }
+          @media only screen and (max-width: 884px) {
+            grid-template: 25px 428px / 1fr 428px 1fr;
+          }
+          @media only screen and (max-width: 883px) {
+            grid-template: 25px 428px / 1fr 428px 1fr;
+          }
+          @media only screen and (max-width: 882px) {
+            grid-template: 25px 427px / 1fr 427px 1fr;
+          }
+          @media only screen and (max-width: 881px) {
+            grid-template: 25px 427px / 1fr 427px 1fr;
+          }
+          @media only screen and (max-width: 880px) {
+            grid-template: 25px 426px / 1fr 426px 1fr;
+          }
+          @media only screen and (max-width: 879px) {
+            grid-template: 25px 426px / 1fr 426px 1fr;
+          }
+          @media only screen and (max-width: 878px) {
+            grid-template: 25px 425px / 1fr 425px 1fr;
+          }
+          @media only screen and (max-width: 877px) {
+            grid-template: 25px 425px / 1fr 425px 1fr;
+          }
+          @media only screen and (max-width: 876px) {
+            grid-template: 25px 424px / 1fr 424px 1fr;
+          }
+          @media only screen and (max-width: 875px) {
+            grid-template: 25px 424px / 1fr 424px 1fr;
+          }
+          @media only screen and (max-width: 874px) {
+            grid-template: 25px 423px / 1fr 423px 1fr;
+          }
+          @media only screen and (max-width: 873px) {
+            grid-template: 25px 423px / 1fr 423px 1fr;
+          }
+          @media only screen and (max-width: 872px) {
+            grid-template: 25px 422px / 1fr 422px 1fr;
+          }
+          @media only screen and (max-width: 871px) {
+            grid-template: 25px 422px / 1fr 422px 1fr;
+          }
+          @media only screen and (max-width: 870px) {
+            grid-template: 25px 421px / 1fr 421px 1fr;
+          }
+          @media only screen and (max-width: 869px) {
+            grid-template: 25px 421px / 1fr 421px 1fr;
+          }
+          @media only screen and (max-width: 868px) {
+            grid-template: 25px 420px / 1fr 420px 1fr;
+          }
+          @media only screen and (max-width: 867px) {
+            grid-template: 25px 420px / 1fr 420px 1fr;
+          }
+          @media only screen and (max-width: 866px) {
+            grid-template: 25px 419px / 1fr 419px 1fr;
+          }
+          @media only screen and (max-width: 865px) {
+            grid-template: 25px 419px / 1fr 419px 1fr;
+          }
+          @media only screen and (max-width: 864px) {
+            grid-template: 25px 418px / 1fr 418px 1fr;
+          }
+          @media only screen and (max-width: 863px) {
+            grid-template: 25px 418px / 1fr 418px 1fr;
+          }
+          @media only screen and (max-width: 862px) {
+            grid-template: 25px 417px / 1fr 417px 1fr;
+          }
+          @media only screen and (max-width: 861px) {
+            grid-template: 25px 417px / 1fr 417px 1fr;
+          }
+          @media only screen and (max-width: 860px) {
+            grid-template: 25px 417px / 1fr 417px 1fr;
+          }
+          @media only screen and (max-width: 859px) {
+            grid-template: 25px 416px / 1fr 416px 1fr;
+          }
+          @media only screen and (max-width: 858px) {
+            grid-template: 25px 416px / 1fr 416px 1fr;
+          }
+          @media only screen and (max-width: 857px) {
+            grid-template: 25px 415px / 1fr 415px 1fr;
+          }
+          @media only screen and (max-width: 856px) {
+            grid-template: 25px 415px / 1fr 415px 1fr;
+          }
+          @media only screen and (max-width: 855px) {
+            grid-template: 25px 414px / 1fr 414px 1fr;
+          }
+          @media only screen and (max-width: 854px) {
+            grid-template: 25px 414px / 1fr 414px 1fr;
+          }
+          @media only screen and (max-width: 853px) {
+            grid-template: 25px 413px / 1fr 413px 1fr;
+          }
+          @media only screen and (max-width: 852px) {
+            grid-template: 25px 413px / 1fr 413px 1fr;
+          }
+          @media only screen and (max-width: 851px) {
+            grid-template: 25px 412px / 1fr 412px 1fr;
+          }
+          @media only screen and (max-width: 850px) {
+            grid-template: 25px 412px / 1fr 412px 1fr;
+          }
+          @media only screen and (max-width: 849px) {
+            grid-template: 25px 411px / 1fr 411px 1fr;
+          }
+          @media only screen and (max-width: 848px) {
+            grid-template: 25px 411px / 1fr 411px 1fr;
+          }
+          @media only screen and (max-width: 847px) {
+            grid-template: 25px 410px / 1fr 410px 1fr;
+          }
+          @media only screen and (max-width: 846px) {
+            grid-template: 25px 410px / 1fr 410px 1fr;
+          }
+          @media only screen and (max-width: 845px) {
+            grid-template: 25px 409px / 1fr 409px 1fr;
+          }
+          @media only screen and (max-width: 844px) {
+            grid-template: 25px 409px / 1fr 409px 1fr;
+          }
+          @media only screen and (max-width: 843px) {
+            grid-template: 25px 408px / 1fr 408px 1fr;
+          }
+          @media only screen and (max-width: 842px) {
+            grid-template: 25px 408px / 1fr 408px 1fr;
+          }
+          @media only screen and (max-width: 841px) {
+            grid-template: 25px 407px / 1fr 407px 1fr;
+          }
+          @media only screen and (max-width: 840px) {
+            grid-template: 25px 407px / 1fr 407px 1fr;
+          }
+          @media only screen and (max-width: 839px) {
+            grid-template: 25px 406px / 1fr 406px 1fr;
+          }
+          @media only screen and (max-width: 838px) {
+            grid-template: 25px 406px / 1fr 406px 1fr;
+          }
+          @media only screen and (max-width: 837px) {
+            grid-template: 25px 406px / 1fr 406px 1fr;
+          }
+          @media only screen and (max-width: 836px) {
+            grid-template: 25px 405px / 1fr 405px 1fr;
+          }
+          @media only screen and (max-width: 835px) {
+            grid-template: 25px 405px / 1fr 405px 1fr;
+          }
+          @media only screen and (max-width: 834px) {
+            grid-template: 25px 404px / 1fr 404px 1fr;
+          }
+          @media only screen and (max-width: 833px) {
+            grid-template: 25px 404px / 1fr 404px 1fr;
+          }
+          @media only screen and (max-width: 832px) {
+            grid-template: 25px 403px / 1fr 403px 1fr;
+          }
+          @media only screen and (max-width: 831px) {
+            grid-template: 25px 403px / 1fr 403px 1fr;
+          }
+          @media only screen and (max-width: 830px) {
+            grid-template: 25px 402px / 1fr 402px 1fr;
+          }
+          @media only screen and (max-width: 829px) {
+            grid-template: 25px 402px / 1fr 402px 1fr;
+          }
+          @media only screen and (max-width: 828px) {
+            grid-template: 25px 401px / 1fr 401px 1fr;
+          }
+          @media only screen and (max-width: 827px) {
+            grid-template: 25px 401px / 1fr 401px 1fr;
+          }
+          @media only screen and (max-width: 826px) {
+            grid-template: 25px 400px / 1fr 400px 1fr;
+          }
+          @media only screen and (max-width: 825px) {
+            grid-template: 25px 400px / 1fr 400px 1fr;
+          }
+          @media only screen and (max-width: 824px) {
+            grid-template: 25px 399px / 1fr 399px 1fr;
+          }
+          @media only screen and (max-width: 823px) {
+            grid-template: 25px 399px / 1fr 399px 1fr;
+          }
+          @media only screen and (max-width: 822px) {
+            grid-template: 25px 398px / 1fr 398px 1fr;
+          }
+          @media only screen and (max-width: 821px) {
+            grid-template: 25px 398px / 1fr 398px 1fr;
+          }
+          @media only screen and (max-width: 820px) {
+            grid-template: 25px 397px / 1fr 397px 1fr;
+          }
+          @media only screen and (max-width: 819px) {
+            grid-template: 25px 397px / 1fr 397px 1fr;
+          }
+          @media only screen and (max-width: 818px) {
+            grid-template: 25px 396px / 1fr 396px 1fr;
+          }
+          @media only screen and (max-width: 817px) {
+            grid-template: 25px 396px / 1fr 396px 1fr;
+          }
+          @media only screen and (max-width: 816px) {
+            grid-template: 25px 395px / 1fr 395px 1fr;
+          }
+          @media only screen and (max-width: 815px) {
+            grid-template: 25px 395px / 1fr 395px 1fr;
+          }
+          @media only screen and (max-width: 814px) {
+            grid-template: 25px 395px / 1fr 395px 1fr;
+          }
+          @media only screen and (max-width: 813px) {
+            grid-template: 25px 394px / 1fr 394px 1fr;
+          }
+          @media only screen and (max-width: 812px) {
+            grid-template: 25px 394px / 1fr 394px 1fr;
+          }
+          @media only screen and (max-width: 811px) {
+            grid-template: 25px 393px / 1fr 393px 1fr;
+          }
+          @media only screen and (max-width: 810px) {
+            grid-template: 25px 393px / 1fr 393px 1fr;
+          }
+          @media only screen and (max-width: 809px) {
+            grid-template: 25px 392px / 1fr 392px 1fr;
+          }
+          @media only screen and (max-width: 808px) {
+            grid-template: 25px 392px / 1fr 392px 1fr;
+          }
+          @media only screen and (max-width: 807px) {
+            grid-template: 25px 391px / 1fr 391px 1fr;
+          }
+          @media only screen and (max-width: 806px) {
+            grid-template: 25px 391px / 1fr 391px 1fr;
+          }
+          @media only screen and (max-width: 805px) {
+            grid-template: 25px 390px / 1fr 390px 1fr;
+          }
+          @media only screen and (max-width: 804px) {
+            grid-template: 25px 390px / 1fr 390px 1fr;
+          }
+          @media only screen and (max-width: 803px) {
+            grid-template: 25px 389px / 1fr 389px 1fr;
+          }
+          @media only screen and (max-width: 802px) {
+            grid-template: 25px 389px / 1fr 389px 1fr;
+          }
+          @media only screen and (max-width: 801px) {
+            grid-template: 25px 388px / 1fr 388px 1fr;
+          }
+          @media only screen and (max-width: 800px) {
+            grid-template: 25px 388px / 1fr 388px 1fr;
+          }
+          @media only screen and (max-width: 799px) {
+            grid-template: 25px 387px / 1fr 387px 1fr;
+          }
+          @media only screen and (max-width: 798px) {
+            grid-template: 25px 387px / 1fr 387px 1fr;
+          }
+          @media only screen and (max-width: 797px) {
+            grid-template: 25px 386px / 1fr 386px 1fr;
+          }
+          @media only screen and (max-width: 796px) {
+            grid-template: 25px 386px / 1fr 386px 1fr;
+          }
+          @media only screen and (max-width: 795px) {
+            grid-template: 25px 385px / 1fr 385px 1fr;
+          }
+          @media only screen and (max-width: 794px) {
+            grid-template: 25px 385px / 1fr 385px 1fr;
+          }
+          @media only screen and (max-width: 793px) {
+            grid-template: 25px 384px / 1fr 384px 1fr;
+          }
+          @media only screen and (max-width: 792px) {
+            grid-template: 25px 384px / 1fr 384px 1fr;
+          }
+          @media only screen and (max-width: 791px) {
+            grid-template: 25px 384px / 1fr 384px 1fr;
+          }
+          @media only screen and (max-width: 790px) {
+            grid-template: 25px 383px / 1fr 383px 1fr;
+          }
+          @media only screen and (max-width: 789px) {
+            grid-template: 25px 383px / 1fr 383px 1fr;
+          }
+          @media only screen and (max-width: 788px) {
+            grid-template: 25px 382px / 1fr 382px 1fr;
+          }
+          @media only screen and (max-width: 787px) {
+            grid-template: 25px 382px / 1fr 382px 1fr;
+          }
+          @media only screen and (max-width: 786px) {
+            grid-template: 25px 381px / 1fr 381px 1fr;
+          }
+          @media only screen and (max-width: 785px) {
+            grid-template: 25px 381px / 1fr 381px 1fr;
+          }
+          @media only screen and (max-width: 784px) {
+            grid-template: 25px 380px / 1fr 380px 1fr;
+          }
+          @media only screen and (max-width: 783px) {
+            grid-template: 25px 380px / 1fr 380px 1fr;
+          }
+          @media only screen and (max-width: 782px) {
+            grid-template: 25px 379px / 1fr 379px 1fr;
+          }
+          @media only screen and (max-width: 781px) {
+            grid-template: 25px 379px / 1fr 379px 1fr;
+          }
+          @media only screen and (max-width: 780px) {
+            grid-template: 25px 378px / 1fr 378px 1fr;
+          }
+          @media only screen and (max-width: 779px) {
+            grid-template: 25px 378px / 1fr 378px 1fr;
+          }
+          @media only screen and (max-width: 778px) {
+            grid-template: 25px 377px / 1fr 377px 1fr;
+          }
+          @media only screen and (max-width: 777px) {
+            grid-template: 25px 377px / 1fr 377px 1fr;
+          }
+          @media only screen and (max-width: 776px) {
+            grid-template: 25px 376px / 1fr 376px 1fr;
+          }
+          @media only screen and (max-width: 775px) {
+            grid-template: 25px 376px / 1fr 376px 1fr;
+          }
+          @media only screen and (max-width: 774px) {
+            grid-template: 25px 375px / 1fr 375px 1fr;
+          }
+          @media only screen and (max-width: 773px) {
+            grid-template: 25px 375px / 1fr 375px 1fr;
+          }
+          @media only screen and (max-width: 772px) {
+            grid-template: 25px 374px / 1fr 374px 1fr;
+          }
+          @media only screen and (max-width: 771px) {
+            grid-template: 25px 374px / 1fr 374px 1fr;
+          }
+          @media only screen and (max-width: 770px) {
+            grid-template: 25px 373px / 1fr 373px 1fr;
+          }
+          @media only screen and (max-width: 769px) {
+            grid-template: 25px 373px / 1fr 373px 1fr;
+          }
+          @media only screen and (max-width: 768px) {
+            grid-template: 25px 373px / 1fr 373px 1fr;
+          }
+          @media only screen and (max-width: 767px) {
+            grid-template: 25px 372px / 1fr 372px 1fr;
+          }
+          @media only screen and (max-width: 766px) {
+            grid-template: 25px 372px / 1fr 372px 1fr;
+          }
+          @media only screen and (max-width: 765px) {
+            grid-template: 25px 371px / 1fr 371px 1fr;
+          }
+          @media only screen and (max-width: 764px) {
+            grid-template: 25px 371px / 1fr 371px 1fr;
+          }
+          @media only screen and (max-width: 763px) {
+            grid-template: 25px 370px / 1fr 370px 1fr;
+          }
+          @media only screen and (max-width: 762px) {
+            grid-template: 25px 370px / 1fr 370px 1fr;
+          }
+          @media only screen and (max-width: 761px) {
+            grid-template: 25px 369px / 1fr 369px 1fr;
+          }
+          @media only screen and (max-width: 760px) {
+            grid-template: 25px 369px / 1fr 369px 1fr;
+          }
+          @media only screen and (max-width: 759px) {
+            grid-template: 25px 368px / 1fr 368px 1fr;
+          }
+          @media only screen and (max-width: 758px) {
+            grid-template: 25px 368px / 1fr 368px 1fr;
+          }
+          @media only screen and (max-width: 757px) {
+            grid-template: 25px 367px / 1fr 367px 1fr;
+          }
+          @media only screen and (max-width: 756px) {
+            grid-template: 25px 367px / 1fr 367px 1fr;
+          }
+          @media only screen and (max-width: 755px) {
+            grid-template: 25px 366px / 1fr 366px 1fr;
+          }
+          @media only screen and (max-width: 754px) {
+            grid-template: 25px 366px / 1fr 366px 1fr;
+          }
+          @media only screen and (max-width: 753px) {
+            grid-template: 25px 365px / 1fr 365px 1fr;
+          }
+          @media only screen and (max-width: 752px) {
+            grid-template: 25px 365px / 1fr 365px 1fr;
+          }
+          @media only screen and (max-width: 751px) {
+            grid-template: 25px 364px / 1fr 364px 1fr;
+          }
+          @media only screen and (max-width: 750px) {
+            grid-template: 25px 364px / 1fr 364px 1fr;
+          }
+          @media only screen and (max-width: 749px) {
+            grid-template: 25px 363px / 1fr 363px 1fr;
+          }
+          @media only screen and (max-width: 748px) {
+            grid-template: 25px 363px / 1fr 363px 1fr;
+          }
+          @media only screen and (max-width: 747px) {
+            grid-template: 25px 362px / 1fr 362px 1fr;
+          }
+          @media only screen and (max-width: 746px) {
+            grid-template: 25px 362px / 1fr 362px 1fr;
+          }
+          @media only screen and (max-width: 745px) {
+            grid-template: 25px 362px / 1fr 362px 1fr;
+          }
+          @media only screen and (max-width: 744px) {
+            grid-template: 25px 361px / 1fr 361px 1fr;
+          }
+          @media only screen and (max-width: 743px) {
+            grid-template: 25px 361px / 1fr 361px 1fr;
+          }
+          @media only screen and (max-width: 742px) {
+            grid-template: 25px 360px / 1fr 360px 1fr;
+          }
+          @media only screen and (max-width: 741px) {
+            grid-template: 25px 360px / 1fr 360px 1fr;
+          }
+          @media only screen and (max-width: 740px) {
+            grid-template: 25px 359px / 1fr 359px 1fr;
+          }
+          @media only screen and (max-width: 739px) {
+            grid-template: 25px 359px / 1fr 359px 1fr;
+          }
+          @media only screen and (max-width: 738px) {
+            grid-template: 25px 358px / 1fr 358px 1fr;
+          }
+          @media only screen and (max-width: 737px) {
+            grid-template: 25px 358px / 1fr 358px 1fr;
+          }
+          @media only screen and (max-width: 736px) {
+            grid-template: 25px 357px / 1fr 357px 1fr;
+          }
+          @media only screen and (max-width: 735px) {
+            grid-template: 25px 357px / 1fr 357px 1fr;
+          }
+          @media only screen and (max-width: 734px) {
+            grid-template: 25px 356px / 1fr 356px 1fr;
+          }
+          @media only screen and (max-width: 733px) {
+            grid-template: 25px 356px / 1fr 356px 1fr;
+          }
+          @media only screen and (max-width: 732px) {
+            grid-template: 25px 355px / 1fr 355px 1fr;
+          }
+          @media only screen and (max-width: 731px) {
+            grid-template: 25px 355px / 1fr 355px 1fr;
+          }
+          @media only screen and (max-width: 730px) {
+            grid-template: 25px 354px / 1fr 354px 1fr;
+          }
+          @media only screen and (max-width: 729px) {
+            grid-template: 25px 354px / 1fr 354px 1fr;
+          }
+          @media only screen and (max-width: 728px) {
+            grid-template: 25px 353px / 1fr 353px 1fr;
+          }
+          @media only screen and (max-width: 727px) {
+            grid-template: 25px 353px / 1fr 353px 1fr;
+          }
+          @media only screen and (max-width: 726px) {
+            grid-template: 25px 352px / 1fr 352px 1fr;
+          }
+          @media only screen and (max-width: 725px) {
+            grid-template: 25px 352px / 1fr 352px 1fr;
+          }
+          @media only screen and (max-width: 724px) {
+            grid-template: 25px 351px / 1fr 351px 1fr;
+          }
+          @media only screen and (max-width: 723px) {
+            grid-template: 25px 351px / 1fr 351px 1fr;
+          }
+          @media only screen and (max-width: 722px) {
+            grid-template: 25px 350px / 1fr 350px 1fr;
+          }
+          @media only screen and (max-width: 721px) {
+            grid-template: 25px 350px / 1fr 350px 1fr;
+          }
+          @media only screen and (max-width: 720px) {
+            grid-template: 25px 350px / 1fr 350px 1fr;
+          }
+          @media only screen and (max-width: 719px) {
+            grid-template: 25px 349px / 1fr 349px 1fr;
+          }
+          @media only screen and (max-width: 718px) {
+            grid-template: 25px 349px / 1fr 349px 1fr;
+          }
+          @media only screen and (max-width: 717px) {
+            grid-template: 25px 348px / 1fr 348px 1fr;
+          }
+          @media only screen and (max-width: 716px) {
+            grid-template: 25px 348px / 1fr 348px 1fr;
+          }
+          @media only screen and (max-width: 715px) {
+            grid-template: 25px 347px / 1fr 347px 1fr;
+          }
+          @media only screen and (max-width: 714px) {
+            grid-template: 25px 347px / 1fr 347px 1fr;
+          }
+          @media only screen and (max-width: 713px) {
+            grid-template: 25px 346px / 1fr 346px 1fr;
+          }
+          @media only screen and (max-width: 712px) {
+            grid-template: 25px 346px / 1fr 346px 1fr;
+          }
+          @media only screen and (max-width: 711px) {
+            grid-template: 25px 345px / 1fr 345px 1fr;
+          }
+          @media only screen and (max-width: 710px) {
+            grid-template: 25px 345px / 1fr 345px 1fr;
+          }
+          @media only screen and (max-width: 709px) {
+            grid-template: 25px 344px / 1fr 344px 1fr;
+          }
+          @media only screen and (max-width: 708px) {
+            grid-template: 25px 344px / 1fr 344px 1fr;
+          }
+          @media only screen and (max-width: 707px) {
+            grid-template: 25px 343px / 1fr 343px 1fr;
+          }
+          @media only screen and (max-width: 706px) {
+            grid-template: 25px 343px / 1fr 343px 1fr;
+          }
+          @media only screen and (max-width: 705px) {
+            grid-template: 25px 342px / 1fr 342px 1fr;
+          }
+          @media only screen and (max-width: 704px) {
+            grid-template: 25px 342px / 1fr 342px 1fr;
+          }
+          @media only screen and (max-width: 703px) {
+            grid-template: 25px 341px / 1fr 341px 1fr;
+          }
+          @media only screen and (max-width: 702px) {
+            grid-template: 25px 341px / 1fr 341px 1fr;
+          }
+          @media only screen and (max-width: 701px) {
+            grid-template: 25px 340px / 1fr 340px 1fr;
+          }
+          @media only screen and (max-width: 700px) {
+            grid-template: 25px 340px / 1fr 340px 1fr;
+          }
+          @media only screen and (max-width: 699px) {
+            grid-template: 25px 339px / 1fr 339px 1fr;
+          }
+          @media only screen and (max-width: 698px) {
+            grid-template: 25px 339px / 1fr 339px 1fr;
+          }
+          @media only screen and (max-width: 697px) {
+            grid-template: 25px 339px / 1fr 339px 1fr;
+          }
+          @media only screen and (max-width: 696px) {
+            grid-template: 25px 338px / 1fr 338px 1fr;
+          }
+          @media only screen and (max-width: 695px) {
+            grid-template: 25px 338px / 1fr 338px 1fr;
+          }
+          @media only screen and (max-width: 694px) {
+            grid-template: 25px 337px / 1fr 337px 1fr;
+          }
+          @media only screen and (max-width: 693px) {
+            grid-template: 25px 337px / 1fr 337px 1fr;
+          }
+          @media only screen and (max-width: 692px) {
+            grid-template: 25px 336px / 1fr 336px 1fr;
+          }
+          @media only screen and (max-width: 691px) {
+            grid-template: 25px 336px / 1fr 336px 1fr;
+          }
+          @media only screen and (max-width: 690px) {
+            grid-template: 25px 335px / 1fr 335px 1fr;
+          }
+          @media only screen and (max-width: 689px) {
+            grid-template: 25px 335px / 1fr 335px 1fr;
+          }
+          @media only screen and (max-width: 688px) {
+            grid-template: 25px 334px / 1fr 334px 1fr;
+          }
+          @media only screen and (max-width: 687px) {
+            grid-template: 25px 334px / 1fr 334px 1fr;
+          }
+          @media only screen and (max-width: 686px) {
+            grid-template: 25px 333px / 1fr 333px 1fr;
+          }
+          @media only screen and (max-width: 685px) {
+            grid-template: 25px 333px / 1fr 333px 1fr;
+          }
+          @media only screen and (max-width: 684px) {
+            grid-template: 25px 332px / 1fr 332px 1fr;
+          }
+          @media only screen and (max-width: 683px) {
+            grid-template: 25px 332px / 1fr 332px 1fr;
+          }
+          @media only screen and (max-width: 682px) {
+            grid-template: 25px 331px / 1fr 331px 1fr;
+          }
+          @media only screen and (max-width: 681px) {
+            grid-template: 25px 331px / 1fr 331px 1fr;
+          }
+          @media only screen and (max-width: 680px) {
+            grid-template: 25px 330px / 1fr 330px 1fr;
+          }
+          @media only screen and (max-width: 679px) {
+            grid-template: 25px 330px / 1fr 330px 1fr;
+          }
+          @media only screen and (max-width: 678px) {
+            grid-template: 25px 329px / 1fr 329px 1fr;
+          }
+          @media only screen and (max-width: 677px) {
+            grid-template: 25px 329px / 1fr 329px 1fr;
+          }
+          @media only screen and (max-width: 676px) {
+            grid-template: 25px 328px / 1fr 328px 1fr;
+          }
+          @media only screen and (max-width: 675px) {
+            grid-template: 25px 328px / 1fr 328px 1fr;
+          }
+          @media only screen and (max-width: 674px) {
+            grid-template: 25px 328px / 1fr 328px 1fr;
+          }
+          @media only screen and (max-width: 673px) {
+            grid-template: 25px 327px / 1fr 327px 1fr;
+          }
+          @media only screen and (max-width: 672px) {
+            grid-template: 25px 327px / 1fr 327px 1fr;
+          }
+          @media only screen and (max-width: 671px) {
+            grid-template: 25px 326px / 1fr 326px 1fr;
+          }
+          @media only screen and (max-width: 670px) {
+            grid-template: 25px 326px / 1fr 326px 1fr;
+          }
+          @media only screen and (max-width: 669px) {
+            grid-template: 25px 325px / 1fr 325px 1fr;
+          }
+          @media only screen and (max-width: 668px) {
+            grid-template: 25px 325px / 1fr 325px 1fr;
+          }
+          @media only screen and (max-width: 667px) {
+            grid-template: 25px 324px / 1fr 324px 1fr;
+          }
+          @media only screen and (max-width: 666px) {
+            grid-template: 25px 324px / 1fr 324px 1fr;
+          }
+          @media only screen and (max-width: 665px) {
+            grid-template: 25px 323px / 1fr 323px 1fr;
+          }
+          @media only screen and (max-width: 664px) {
+            grid-template: 25px 323px / 1fr 323px 1fr;
+          }
+          @media only screen and (max-width: 663px) {
+            grid-template: 25px 322px / 1fr 322px 1fr;
+          }
+          @media only screen and (max-width: 662px) {
+            grid-template: 25px 322px / 1fr 322px 1fr;
+          }
+          @media only screen and (max-width: 661px) {
+            grid-template: 25px 321px / 1fr 321px 1fr;
+          }
+          @media only screen and (max-width: 660px) {
+            grid-template: 25px 321px / 1fr 321px 1fr;
+          }
+          @media only screen and (max-width: 659px) {
+            grid-template: 25px 320px / 1fr 320px 1fr;
+          }
+          @media only screen and (max-width: 658px) {
+            grid-template: 25px 320px / 1fr 320px 1fr;
+          }
+          @media only screen and (max-width: 657px) {
+            grid-template: 25px 319px / 1fr 319px 1fr;
+          }
+          @media only screen and (max-width: 656px) {
+            grid-template: 25px 319px / 1fr 319px 1fr;
+          }
+          @media only screen and (max-width: 655px) {
+            grid-template: 25px 318px / 1fr 318px 1fr;
+          }
+          @media only screen and (max-width: 654px) {
+            grid-template: 25px 318px / 1fr 318px 1fr;
+          }
+          @media only screen and (max-width: 653px) {
+            grid-template: 25px 317px / 1fr 317px 1fr;
+          }
+          @media only screen and (max-width: 652px) {
+            grid-template: 25px 317px / 1fr 317px 1fr;
+          }
+          @media only screen and (max-width: 651px) {
+            grid-template: 25px 317px / 1fr 317px 1fr;
+          }
+          @media only screen and (max-width: 650px) {
+            grid-template: 25px 316px / 1fr 316px 1fr;
+          }
+          @media only screen and (max-width: 649px) {
+            grid-template: 25px 316px / 1fr 316px 1fr;
+          }
+          @media only screen and (max-width: 648px) {
+            grid-template: 25px 315px / 1fr 315px 1fr;
+          }
+          @media only screen and (max-width: 647px) {
+            grid-template: 25px 315px / 1fr 315px 1fr;
+          }
+          @media only screen and (max-width: 646px) {
+            grid-template: 25px 314px / 1fr 314px 1fr;
+          }
+          @media only screen and (max-width: 645px) {
+            grid-template: 25px 314px / 1fr 314px 1fr;
+          }
+          @media only screen and (max-width: 644px) {
+            grid-template: 25px 313px / 1fr 313px 1fr;
+          }
+          @media only screen and (max-width: 643px) {
+            grid-template: 25px 313px / 1fr 313px 1fr;
+          }
+          @media only screen and (max-width: 642px) {
+            grid-template: 25px 312px / 1fr 312px 1fr;
+          }
+          @media only screen and (max-width: 641px) {
+            grid-template: 25px 312px / 1fr 312px 1fr;
+          }
+          @media only screen and (max-width: 640px) {
+            grid-template: 25px 311px / 1fr 311px 1fr;
+          }
+          @media only screen and (max-width: 639px) {
+            grid-template: 25px 311px / 1fr 311px 1fr;
+          }
+          @media only screen and (max-width: 638px) {
+            grid-template: 25px 310px / 1fr 310px 1fr;
+          }
+          @media only screen and (max-width: 637px) {
+            grid-template: 25px 310px / 1fr 310px 1fr;
+          }
+          @media only screen and (max-width: 636px) {
+            grid-template: 25px 309px / 1fr 309px 1fr;
+          }
+          @media only screen and (max-width: 635px) {
+            grid-template: 25px 309px / 1fr 309px 1fr;
+          }
+          @media only screen and (max-width: 634px) {
+            grid-template: 25px 308px / 1fr 308px 1fr;
+          }
+          @media only screen and (max-width: 633px) {
+            grid-template: 25px 308px / 1fr 308px 1fr;
+          }
+          @media only screen and (max-width: 632px) {
+            grid-template: 25px 307px / 1fr 307px 1fr;
+          }
+          @media only screen and (max-width: 631px) {
+            grid-template: 25px 307px / 1fr 307px 1fr;
+          }
+          @media only screen and (max-width: 630px) {
+            grid-template: 25px 306px / 1fr 306px 1fr;
+          }
+          @media only screen and (max-width: 629px) {
+            grid-template: 25px 306px / 1fr 306px 1fr;
+          }
+          @media only screen and (max-width: 628px) {
+            grid-template: 25px 306px / 1fr 306px 1fr;
+          }
+          @media only screen and (max-width: 627px) {
+            grid-template: 25px 305px / 1fr 305px 1fr;
+          }
+          @media only screen and (max-width: 626px) {
+            grid-template: 25px 305px / 1fr 305px 1fr;
+          }
+          @media only screen and (max-width: 625px) {
+            grid-template: 25px 304px / 1fr 304px 1fr;
+          }
+          @media only screen and (max-width: 624px) {
+            grid-template: 25px 304px / 1fr 304px 1fr;
+          }
+          @media only screen and (max-width: 623px) {
+            grid-template: 25px 303px / 1fr 303px 1fr;
+          }
+          @media only screen and (max-width: 622px) {
+            grid-template: 25px 303px / 1fr 303px 1fr;
+          }
+          @media only screen and (max-width: 621px) {
+            grid-template: 25px 302px / 1fr 302px 1fr;
+          }
+          @media only screen and (max-width: 620px) {
+            grid-template: 25px 302px / 1fr 302px 1fr;
+          }
+          @media only screen and (max-width: 619px) {
+            grid-template: 25px 301px / 1fr 301px 1fr;
+          }
+          @media only screen and (max-width: 618px) {
+            grid-template: 25px 301px / 1fr 301px 1fr;
+          }
+          @media only screen and (max-width: 617px) {
+            grid-template: 25px 300px / 1fr 300px 1fr;
+          }
+          @media only screen and (max-width: 616px) {
+            grid-template: 25px 300px / 1fr 300px 1fr;
+          }
+          @media only screen and (max-width: 615px) {
+            grid-template: 25px 299px / 1fr 299px 1fr;
+          }
+          @media only screen and (max-width: 614px) {
+            grid-template: 25px 299px / 1fr 299px 1fr;
+          }
+          @media only screen and (max-width: 613px) {
+            grid-template: 25px 298px / 1fr 298px 1fr;
+          }
+          @media only screen and (max-width: 612px) {
+            grid-template: 25px 298px / 1fr 298px 1fr;
+          }
+          @media only screen and (max-width: 611px) {
+            grid-template: 25px 297px / 1fr 297px 1fr;
+          }
+          @media only screen and (max-width: 610px) {
+            grid-template: 25px 297px / 1fr 297px 1fr;
+          }
+          @media only screen and (max-width: 609px) {
+            grid-template: 25px 296px / 1fr 296px 1fr;
+          }
+          @media only screen and (max-width: 608px) {
+            grid-template: 25px 296px / 1fr 296px 1fr;
+          }
+          @media only screen and (max-width: 607px) {
+            grid-template: 25px 295px / 1fr 295px 1fr;
+          }
+          @media only screen and (max-width: 606px) {
+            grid-template: 25px 295px / 1fr 295px 1fr;
+          }
+          @media only screen and (max-width: 605px) {
+            grid-template: 25px 295px / 1fr 295px 1fr;
+          }
+          @media only screen and (max-width: 604px) {
+            grid-template: 25px 294px / 1fr 294px 1fr;
+          }
+          @media only screen and (max-width: 603px) {
+            grid-template: 25px 294px / 1fr 294px 1fr;
+          }
+          @media only screen and (max-width: 602px) {
+            grid-template: 25px 293px / 1fr 293px 1fr;
+          }
+          @media only screen and (max-width: 601px) {
+            grid-template: 25px 293px / 1fr 293px 1fr;
+          }
+          @media only screen and (max-width: 600px) {
+            grid-template: 25px 292px / 1fr 292px 1fr;
+          }
+          @media only screen and (max-width: 599px) {
+            grid-template: 25px 292px / 1fr 292px 1fr;
+          }
+          @media only screen and (max-width: 598px) {
+            grid-template: 25px 291px / 1fr 291px 1fr;
+          }
+          @media only screen and (max-width: 597px) {
+            grid-template: 25px 291px / 1fr 291px 1fr;
+          }
+          @media only screen and (max-width: 596px) {
+            grid-template: 25px 290px / 1fr 290px 1fr;
+          }
+          @media only screen and (max-width: 595px) {
+            grid-template: 25px 290px / 1fr 290px 1fr;
+          }
+          @media only screen and (max-width: 594px) {
+            grid-template: 25px 289px / 1fr 289px 1fr;
+          }
+          @media only screen and (max-width: 593px) {
+            grid-template: 25px 289px / 1fr 289px 1fr;
+          }
+          @media only screen and (max-width: 592px) {
+            grid-template: 25px 288px / 1fr 288px 1fr;
+          }
+          @media only screen and (max-width: 591px) {
+            grid-template: 25px 288px / 1fr 288px 1fr;
+          }
+          @media only screen and (max-width: 590px) {
+            grid-template: 25px 287px / 1fr 287px 1fr;
+          }
+          @media only screen and (max-width: 589px) {
+            grid-template: 25px 287px / 1fr 287px 1fr;
+          }
+          @media only screen and (max-width: 588px) {
+            grid-template: 25px 286px / 1fr 286px 1fr;
+          }
+          @media only screen and (max-width: 587px) {
+            grid-template: 25px 286px / 1fr 286px 1fr;
+          }
+          @media only screen and (max-width: 586px) {
+            grid-template: 25px 285px / 1fr 285px 1fr;
+          }
+          @media only screen and (max-width: 585px) {
+            grid-template: 25px 285px / 1fr 285px 1fr;
+          }
+          @media only screen and (max-width: 584px) {
+            grid-template: 25px 284px / 1fr 284px 1fr;
+          }
+          @media only screen and (max-width: 583px) {
+            grid-template: 25px 284px / 1fr 284px 1fr;
+          }
+          @media only screen and (max-width: 582px) {
+            grid-template: 25px 284px / 1fr 284px 1fr;
+          }
+          @media only screen and (max-width: 581px) {
+            grid-template: 25px 283px / 1fr 283px 1fr;
+          }
+          @media only screen and (max-width: 580px) {
+            grid-template: 25px 283px / 1fr 283px 1fr;
+          }
+          @media only screen and (max-width: 579px) {
+            grid-template: 25px 282px / 1fr 282px 1fr;
+          }
+          @media only screen and (max-width: 578px) {
+            grid-template: 25px 282px / 1fr 282px 1fr;
+          }
+          @media only screen and (max-width: 577px) {
+            grid-template: 25px 281px / 1fr 281px 1fr;
+          }
+          @media only screen and (max-width: 576px) {
+            grid-template: 25px 281px / 1fr 281px 1fr;
+          }
+          @media only screen and (max-width: 575px) {
+            grid-template: 25px 280px / 1fr 280px 1fr;
+          }
+          @media only screen and (max-width: 574px) {
+            grid-template: 25px 280px / 1fr 280px 1fr;
+          }
+          @media only screen and (max-width: 573px) {
+            grid-template: 25px 279px / 1fr 279px 1fr;
+          }
+          @media only screen and (max-width: 572px) {
+            grid-template: 25px 279px / 1fr 279px 1fr;
+          }
+          @media only screen and (max-width: 571px) {
+            grid-template: 25px 278px / 1fr 278px 1fr;
+          }
+          @media only screen and (max-width: 570px) {
+            grid-template: 25px 278px / 1fr 278px 1fr;
+          }
+          @media only screen and (max-width: 569px) {
+            grid-template: 25px 277px / 1fr 277px 1fr;
+          }
+          @media only screen and (max-width: 568px) {
+            grid-template: 25px 277px / 1fr 277px 1fr;
+          }
+          @media only screen and (max-width: 567px) {
+            grid-template: 25px 276px / 1fr 276px 1fr;
+          }
+          @media only screen and (max-width: 566px) {
+            grid-template: 25px 276px / 1fr 276px 1fr;
+          }
+          @media only screen and (max-width: 565px) {
+            grid-template: 25px 275px / 1fr 275px 1fr;
+          }
+          @media only screen and (max-width: 564px) {
+            grid-template: 25px 275px / 1fr 275px 1fr;
+          }
+          @media only screen and (max-width: 563px) {
+            grid-template: 25px 274px / 1fr 274px 1fr;
+          }
+          @media only screen and (max-width: 562px) {
+            grid-template: 25px 274px / 1fr 274px 1fr;
+          }
+          @media only screen and (max-width: 561px) {
+            grid-template: 25px 273px / 1fr 273px 1fr;
+          }
+          @media only screen and (max-width: 560px) {
+            grid-template: 25px 273px / 1fr 273px 1fr;
+          }
+          @media only screen and (max-width: 559px) {
+            grid-template: 25px 272px / 1fr 272px 1fr;
+          }
+          @media only screen and (max-width: 558px) {
+            grid-template: 25px 272px / 1fr 272px 1fr;
+          }
+          @media only screen and (max-width: 557px) {
+            grid-template: 25px 272px / 1fr 272px 1fr;
+          }
+          @media only screen and (max-width: 556px) {
+            grid-template: 25px 271px / 1fr 271px 1fr;
+          }
+          @media only screen and (max-width: 555px) {
+            grid-template: 25px 271px / 1fr 271px 1fr;
+          }
+          @media only screen and (max-width: 554px) {
+            grid-template: 25px 270px / 1fr 270px 1fr;
+          }
+          @media only screen and (max-width: 553px) {
+            grid-template: 25px 270px / 1fr 270px 1fr;
+          }
+          @media only screen and (max-width: 552px) {
+            grid-template: 25px 269px / 1fr 269px 1fr;
+          }
+          @media only screen and (max-width: 551px) {
+            grid-template: 25px 269px / 1fr 269px 1fr;
+          }
+          @media only screen and (max-width: 550px) {
+            grid-template: 25px 268px / 1fr 268px 1fr;
+          }
+          @media only screen and (max-width: 549px) {
+            grid-template: 25px 268px / 1fr 268px 1fr;
+          }
+          @media only screen and (max-width: 548px) {
+            grid-template: 25px 267px / 1fr 267px 1fr;
+          }
+          @media only screen and (max-width: 547px) {
+            grid-template: 25px 267px / 1fr 267px 1fr;
+          }
+          @media only screen and (max-width: 546px) {
+            grid-template: 25px 266px / 1fr 266px 1fr;
+          }
+          @media only screen and (max-width: 545px) {
+            grid-template: 25px 266px / 1fr 266px 1fr;
+          }
+          @media only screen and (max-width: 544px) {
+            grid-template: 25px 265px / 1fr 265px 1fr;
+          }
+          @media only screen and (max-width: 543px) {
+            grid-template: 25px 265px / 1fr 265px 1fr;
+          }
+          @media only screen and (max-width: 542px) {
+            grid-template: 25px 264px / 1fr 264px 1fr;
+          }
+          @media only screen and (max-width: 541px) {
+            grid-template: 25px 264px / 1fr 264px 1fr;
+          }
+          @media only screen and (max-width: 540px) {
+            grid-template: 25px 263px / 1fr 263px 1fr;
+          }
+          @media only screen and (max-width: 539px) {
+            grid-template: 25px 263px / 1fr 263px 1fr;
+          }
+          @media only screen and (max-width: 538px) {
+            grid-template: 25px 262px / 1fr 262px 1fr;
+          }
+          @media only screen and (max-width: 537px) {
+            grid-template: 25px 262px / 1fr 262px 1fr;
+          }
+          @media only screen and (max-width: 536px) {
+            grid-template: 25px 261px / 1fr 261px 1fr;
+          }
+          @media only screen and (max-width: 535px) {
+            grid-template: 25px 261px / 1fr 261px 1fr;
+          }
+          @media only screen and (max-width: 534px) {
+            grid-template: 25px 261px / 1fr 261px 1fr;
+          }
+          @media only screen and (max-width: 533px) {
+            grid-template: 25px 260px / 1fr 260px 1fr;
+          }
+          @media only screen and (max-width: 532px) {
+            grid-template: 25px 260px / 1fr 260px 1fr;
+          }
+          @media only screen and (max-width: 531px) {
+            grid-template: 25px 259px / 1fr 259px 1fr;
+          }
+          @media only screen and (max-width: 530px) {
+            grid-template: 25px 259px / 1fr 259px 1fr;
+          }
+          @media only screen and (max-width: 529px) {
+            grid-template: 25px 258px / 1fr 258px 1fr;
+          }
+          @media only screen and (max-width: 528px) {
+            grid-template: 25px 258px / 1fr 258px 1fr;
+          }
+          @media only screen and (max-width: 527px) {
+            grid-template: 25px 257px / 1fr 257px 1fr;
+          }
+          @media only screen and (max-width: 526px) {
+            grid-template: 25px 257px / 1fr 257px 1fr;
+          }
+          @media only screen and (max-width: 525px) {
+            grid-template: 25px 256px / 1fr 256px 1fr;
+          }
+          @media only screen and (max-width: 524px) {
+            grid-template: 25px 256px / 1fr 256px 1fr;
+          }
+          @media only screen and (max-width: 523px) {
+            grid-template: 25px 255px / 1fr 255px 1fr;
+          }
+          @media only screen and (max-width: 522px) {
+            grid-template: 25px 255px / 1fr 255px 1fr;
+          }
+          @media only screen and (max-width: 521px) {
+            grid-template: 25px 254px / 1fr 254px 1fr;
+          }
+          @media only screen and (max-width: 520px) {
+            grid-template: 25px 254px / 1fr 254px 1fr;
+          }
+          @media only screen and (max-width: 519px) {
+            grid-template: 25px 253px / 1fr 253px 1fr;
+          }
+          @media only screen and (max-width: 518px) {
+            grid-template: 25px 253px / 1fr 253px 1fr;
+          }
+          @media only screen and (max-width: 517px) {
+            grid-template: 25px 252px / 1fr 252px 1fr;
+          }
+          @media only screen and (max-width: 516px) {
+            grid-template: 25px 252px / 1fr 252px 1fr;
+          }
+          @media only screen and (max-width: 515px) {
+            grid-template: 25px 251px / 1fr 251px 1fr;
+          }
+          @media only screen and (max-width: 514px) {
+            grid-template: 25px 251px / 1fr 251px 1fr;
+          }
+          @media only screen and (max-width: 513px) {
+            grid-template: 25px 250px / 1fr 250px 1fr;
+          }
+          @media only screen and (max-width: 512px) {
+            grid-template: 25px 250px / 1fr 250px 1fr;
+          }
+          @media only screen and (max-width: 511px) {
+            grid-template: 25px 250px / 1fr 250px 1fr;
+          }
+          @media only screen and (max-width: 510px) {
+            grid-template: 25px 249px / 1fr 249px 1fr;
+          }
+          @media only screen and (max-width: 509px) {
+            grid-template: 25px 249px / 1fr 249px 1fr;
+          }
+          @media only screen and (max-width: 508px) {
+            grid-template: 25px 248px / 1fr 248px 1fr;
+          }
+          @media only screen and (max-width: 507px) {
+            grid-template: 25px 248px / 1fr 248px 1fr;
+          }
+          @media only screen and (max-width: 506px) {
+            grid-template: 25px 247px / 1fr 247px 1fr;
+          }
+          @media only screen and (max-width: 505px) {
+            grid-template: 25px 247px / 1fr 247px 1fr;
+          }
+          @media only screen and (max-width: 504px) {
+            grid-template: 25px 246px / 1fr 246px 1fr;
+          }
+          @media only screen and (max-width: 503px) {
+            grid-template: 25px 246px / 1fr 246px 1fr;
+          }
+          @media only screen and (max-width: 502px) {
+            grid-template: 25px 245px / 1fr 245px 1fr;
+          }
+          @media only screen and (max-width: 501px) {
+            grid-template: 25px 245px / 1fr 245px 1fr;
+          }
+          @media only screen and (max-width: 500px) {
+            grid-template: 25px 244px / 1fr 244px 1fr;
+          }
+          @media only screen and (max-width: 499px) {
+            grid-template: 25px 244px / 1fr 244px 1fr;
+          }
+          @media only screen and (max-width: 498px) {
+            grid-template: 25px 243px / 1fr 243px 1fr;
+          }
+          @media only screen and (max-width: 497px) {
+            grid-template: 25px 243px / 1fr 243px 1fr;
+          }
+          @media only screen and (max-width: 496px) {
+            grid-template: 25px 242px / 1fr 242px 1fr;
+          }
+          @media only screen and (max-width: 495px) {
+            grid-template: 25px 242px / 1fr 242px 1fr;
+          }
+          @media only screen and (max-width: 494px) {
+            grid-template: 25px 241px / 1fr 241px 1fr;
+          }
+          @media only screen and (max-width: 493px) {
+            grid-template: 25px 241px / 1fr 241px 1fr;
+          }
+          @media only screen and (max-width: 492px) {
+            grid-template: 25px 240px / 1fr 240px 1fr;
+          }
+          @media only screen and (max-width: 491px) {
+            grid-template: 25px 240px / 1fr 240px 1fr;
+          }
+          @media only screen and (max-width: 490px) {
+            grid-template: 25px 239px / 1fr 239px 1fr;
+          }
+          @media only screen and (max-width: 489px) {
+            grid-template: 25px 239px / 1fr 239px 1fr;
+          }
+          @media only screen and (max-width: 488px) {
+            grid-template: 25px 239px / 1fr 239px 1fr;
+          }
+          @media only screen and (max-width: 487px) {
+            grid-template: 25px 238px / 1fr 238px 1fr;
+          }
+          @media only screen and (max-width: 486px) {
+            grid-template: 25px 238px / 1fr 238px 1fr;
+          }
+          @media only screen and (max-width: 485px) {
+            grid-template: 25px 237px / 1fr 237px 1fr;
+          }
+          @media only screen and (max-width: 484px) {
+            grid-template: 25px 237px / 1fr 237px 1fr;
+          }
+          @media only screen and (max-width: 483px) {
+            grid-template: 25px 236px / 1fr 236px 1fr;
+          }
+          @media only screen and (max-width: 482px) {
+            grid-template: 25px 236px / 1fr 236px 1fr;
+          }
+          @media only screen and (max-width: 481px) {
+            grid-template: 25px 235px / 1fr 235px 1fr;
+          }
+          @media only screen and (max-width: 480px) {
+            grid-template: 25px 235px / 1fr 235px 1fr;
+          }
+          @media only screen and (max-width: 479px) {
+            grid-template: 25px 234px / 1fr 234px 1fr;
+          }
+          @media only screen and (max-width: 478px) {
+            grid-template: 25px 234px / 1fr 234px 1fr;
+          }
+          @media only screen and (max-width: 477px) {
+            grid-template: 25px 233px / 1fr 233px 1fr;
+          }
+          @media only screen and (max-width: 476px) {
+            grid-template: 25px 233px / 1fr 233px 1fr;
+          }
+          @media only screen and (max-width: 475px) {
+            grid-template: 25px 232px / 1fr 232px 1fr;
+          }
+          @media only screen and (max-width: 474px) {
+            grid-template: 25px 232px / 1fr 232px 1fr;
+          }
+          @media only screen and (max-width: 473px) {
+            grid-template: 25px 231px / 1fr 231px 1fr;
+          }
+          @media only screen and (max-width: 472px) {
+            grid-template: 25px 231px / 1fr 231px 1fr;
+          }
+          @media only screen and (max-width: 471px) {
+            grid-template: 25px 230px / 1fr 230px 1fr;
+          }
+          @media only screen and (max-width: 470px) {
+            grid-template: 25px 230px / 1fr 230px 1fr;
+          }
+          @media only screen and (max-width: 469px) {
+            grid-template: 25px 229px / 1fr 229px 1fr;
+          }
+          @media only screen and (max-width: 468px) {
+            grid-template: 25px 229px / 1fr 229px 1fr;
+          }
+          @media only screen and (max-width: 467px) {
+            grid-template: 25px 228px / 1fr 228px 1fr;
+          }
+          @media only screen and (max-width: 466px) {
+            grid-template: 25px 228px / 1fr 228px 1fr;
+          }
+          @media only screen and (max-width: 465px) {
+            grid-template: 25px 228px / 1fr 228px 1fr;
+          }
+          @media only screen and (max-width: 464px) {
+            grid-template: 25px 227px / 1fr 227px 1fr;
+          }
+          @media only screen and (max-width: 463px) {
+            grid-template: 25px 227px / 1fr 227px 1fr;
+          }
+          @media only screen and (max-width: 462px) {
+            grid-template: 25px 226px / 1fr 226px 1fr;
+          }
+          @media only screen and (max-width: 461px) {
+            grid-template: 25px 226px / 1fr 226px 1fr;
+          }
+          @media only screen and (max-width: 460px) {
+            grid-template: 25px 225px / 1fr 225px 1fr;
+          }
+          @media only screen and (max-width: 459px) {
+            grid-template: 25px 225px / 1fr 225px 1fr;
+          }
+          @media only screen and (max-width: 458px) {
+            grid-template: 25px 224px / 1fr 224px 1fr;
+          }
+          @media only screen and (max-width: 457px) {
+            grid-template: 25px 224px / 1fr 224px 1fr;
+          }
+          @media only screen and (max-width: 456px) {
+            grid-template: 25px 223px / 1fr 223px 1fr;
+          }
+          @media only screen and (max-width: 455px) {
+            grid-template: 25px 223px / 1fr 223px 1fr;
+          }
+          @media only screen and (max-width: 454px) {
+            grid-template: 25px 222px / 1fr 222px 1fr;
+          }
+          @media only screen and (max-width: 453px) {
+            grid-template: 25px 222px / 1fr 222px 1fr;
+          }
+          @media only screen and (max-width: 452px) {
+            grid-template: 25px 221px / 1fr 221px 1fr;
+          }
+          @media only screen and (max-width: 451px) {
+            grid-template: 25px 221px / 1fr 221px 1fr;
+          }
+          @media only screen and (max-width: 450px) {
+            grid-template: 25px 220px / 1fr 220px 1fr;
+          }
+          @media only screen and (max-width: 449px) {
+            grid-template: 25px 220px / 1fr 220px 1fr;
+          }
+          @media only screen and (max-width: 448px) {
+            grid-template: 25px 219px / 1fr 219px 1fr;
+          }
+          @media only screen and (max-width: 447px) {
+            grid-template: 25px 219px / 1fr 219px 1fr;
+          }
+          @media only screen and (max-width: 446px) {
+            grid-template: 25px 218px / 1fr 218px 1fr;
+          }
+          @media only screen and (max-width: 445px) {
+            grid-template: 25px 218px / 1fr 218px 1fr;
+          }
+          @media only screen and (max-width: 444px) {
+            grid-template: 25px 217px / 1fr 217px 1fr;
+          }
+          @media only screen and (max-width: 443px) {
+            grid-template: 25px 217px / 1fr 217px 1fr;
+          }
+          @media only screen and (max-width: 442px) {
+            grid-template: 25px 217px / 1fr 217px 1fr;
+          }
+          @media only screen and (max-width: 441px) {
+            grid-template: 25px 216px / 1fr 216px 1fr;
+          }
+          @media only screen and (max-width: 440px) {
+            grid-template: 25px 216px / 1fr 216px 1fr;
+          }
+          @media only screen and (max-width: 439px) {
+            grid-template: 25px 215px / 1fr 215px 1fr;
+          }
+          @media only screen and (max-width: 438px) {
+            grid-template: 25px 215px / 1fr 215px 1fr;
+          }
+          @media only screen and (max-width: 437px) {
+            grid-template: 25px 214px / 1fr 214px 1fr;
+          }
+          @media only screen and (max-width: 436px) {
+            grid-template: 25px 214px / 1fr 214px 1fr;
+          }
+          @media only screen and (max-width: 435px) {
+            grid-template: 25px 213px / 1fr 213px 1fr;
+          }
+          @media only screen and (max-width: 434px) {
+            grid-template: 25px 213px / 1fr 213px 1fr;
+          }
+          @media only screen and (max-width: 433px) {
+            grid-template: 25px 212px / 1fr 212px 1fr;
+          }
+          @media only screen and (max-width: 432px) {
+            grid-template: 25px 212px / 1fr 212px 1fr;
+          }
+          @media only screen and (max-width: 431px) {
+            grid-template: 25px 211px / 1fr 211px 1fr;
+          }
+          @media only screen and (max-width: 430px) {
+            grid-template: 25px 211px / 1fr 211px 1fr;
+          }
+          @media only screen and (max-width: 429px) {
+            grid-template: 25px 210px / 1fr 210px 1fr;
+          }
+          @media only screen and (max-width: 428px) {
+            grid-template: 25px 210px / 1fr 210px 1fr;
+          }
+          @media only screen and (max-width: 427px) {
+            grid-template: 25px 209px / 1fr 209px 1fr;
+          }
+          @media only screen and (max-width: 426px) {
+            grid-template: 25px 209px / 1fr 209px 1fr;
+          }
+          @media only screen and (max-width: 425px) {
+            grid-template: 25px 208px / 1fr 208px 1fr;
+          }
+          @media only screen and (max-width: 424px) {
+            grid-template: 25px 208px / 1fr 208px 1fr;
+          }
+          @media only screen and (max-width: 423px) {
+            grid-template: 25px 207px / 1fr 207px 1fr;
+          }
+          @media only screen and (max-width: 422px) {
+            grid-template: 25px 207px / 1fr 207px 1fr;
+          }
+          @media only screen and (max-width: 421px) {
+            grid-template: 25px 206px / 1fr 206px 1fr;
+          }
+          @media only screen and (max-width: 420px) {
+            grid-template: 25px 206px / 1fr 206px 1fr;
+          }
+          @media only screen and (max-width: 419px) {
+            grid-template: 25px 206px / 1fr 206px 1fr;
+          }
+          @media only screen and (max-width: 418px) {
+            grid-template: 25px 205px / 1fr 205px 1fr;
+          }
+          @media only screen and (max-width: 417px) {
+            grid-template: 25px 205px / 1fr 205px 1fr;
+          }
+          @media only screen and (max-width: 416px) {
+            grid-template: 25px 204px / 1fr 204px 1fr;
+          }
+          @media only screen and (max-width: 415px) {
+            grid-template: 25px 204px / 1fr 204px 1fr;
+          }
+          @media only screen and (max-width: 414px) {
+            grid-template: 25px 203px / 1fr 203px 1fr;
+          }
+          @media only screen and (max-width: 413px) {
+            grid-template: 25px 203px / 1fr 203px 1fr;
+          }
+          @media only screen and (max-width: 412px) {
+            grid-template: 25px 202px / 1fr 202px 1fr;
+          }
+          @media only screen and (max-width: 411px) {
+            grid-template: 25px 202px / 1fr 202px 1fr;
+          }
+          @media only screen and (max-width: 410px) {
+            grid-template: 25px 201px / 1fr 201px 1fr;
+          }
+          @media only screen and (max-width: 409px) {
+            grid-template: 25px 201px / 1fr 201px 1fr;
+          }
+          @media only screen and (max-width: 408px) {
+            grid-template: 25px 200px / 1fr 200px 1fr;
+          }
+          @media only screen and (max-width: 407px) {
+            grid-template: 25px 200px / 1fr 200px 1fr;
+          }
+          @media only screen and (max-width: 406px) {
+            grid-template: 25px 199px / 1fr 199px 1fr;
+          }
+          @media only screen and (max-width: 405px) {
+            grid-template: 25px 199px / 1fr 199px 1fr;
+          }
+          @media only screen and (max-width: 404px) {
+            grid-template: 25px 198px / 1fr 198px 1fr;
+          }
+          @media only screen and (max-width: 403px) {
+            grid-template: 25px 198px / 1fr 198px 1fr;
+          }
+          @media only screen and (max-width: 402px) {
+            grid-template: 25px 197px / 1fr 197px 1fr;
+          }
+          @media only screen and (max-width: 401px) {
+            grid-template: 25px 197px / 1fr 197px 1fr;
+          }
+          @media only screen and (max-width: 400px) {
+            grid-template: 25px 196px / 1fr 196px 1fr;
+          }
+          @media only screen and (max-width: 399px) {
+            grid-template: 25px 196px / 1fr 196px 1fr;
+          }
+          @media only screen and (max-width: 398px) {
+            grid-template: 25px 195px / 1fr 195px 1fr;
+          }
+          @media only screen and (max-width: 397px) {
+            grid-template: 25px 195px / 1fr 195px 1fr;
+          }
+          @media only screen and (max-width: 396px) {
+            grid-template: 25px 195px / 1fr 195px 1fr;
+          }
+          @media only screen and (max-width: 395px) {
+            grid-template: 25px 194px / 1fr 194px 1fr;
+          }
+          @media only screen and (max-width: 394px) {
+            grid-template: 25px 194px / 1fr 194px 1fr;
+          }
+          @media only screen and (max-width: 393px) {
+            grid-template: 25px 193px / 1fr 193px 1fr;
+          }
+          @media only screen and (max-width: 392px) {
+            grid-template: 25px 193px / 1fr 193px 1fr;
+          }
+          @media only screen and (max-width: 391px) {
+            grid-template: 25px 192px / 1fr 192px 1fr;
+          }
+          @media only screen and (max-width: 390px) {
+            grid-template: 25px 192px / 1fr 192px 1fr;
+          }
+          @media only screen and (max-width: 389px) {
+            grid-template: 25px 191px / 1fr 191px 1fr;
+          }
+          @media only screen and (max-width: 388px) {
+            grid-template: 25px 191px / 1fr 191px 1fr;
+          }
+          @media only screen and (max-width: 387px) {
+            grid-template: 25px 190px / 1fr 190px 1fr;
+          }
+          @media only screen and (max-width: 386px) {
+            grid-template: 25px 190px / 1fr 190px 1fr;
+          }
+          @media only screen and (max-width: 385px) {
+            grid-template: 25px 189px / 1fr 189px 1fr;
+          }
+          @media only screen and (max-width: 384px) {
+            grid-template: 25px 189px / 1fr 189px 1fr;
+          }
+          @media only screen and (max-width: 383px) {
+            grid-template: 25px 188px / 1fr 188px 1fr;
+          }
+          @media only screen and (max-width: 382px) {
+            grid-template: 25px 188px / 1fr 188px 1fr;
+          }
+          @media only screen and (max-width: 381px) {
+            grid-template: 25px 187px / 1fr 187px 1fr;
+          }
+          @media only screen and (max-width: 380px) {
+            grid-template: 25px 187px / 1fr 187px 1fr;
+          }
+          @media only screen and (max-width: 379px) {
+            grid-template: 25px 186px / 1fr 186px 1fr;
+          }
+          @media only screen and (max-width: 378px) {
+            grid-template: 25px 186px / 1fr 186px 1fr;
+          }
+          @media only screen and (max-width: 377px) {
+            grid-template: 25px 185px / 1fr 185px 1fr;
+          }
+          @media only screen and (max-width: 376px) {
+            grid-template: 25px 185px / 1fr 185px 1fr;
+          }
+          @media only screen and (max-width: 375px) {
+            grid-template: 25px 184px / 1fr 184px 1fr;
+          }
+          @media only screen and (max-width: 374px) {
+            grid-template: 25px 184px / 1fr 184px 1fr;
+          }
+          @media only screen and (max-width: 373px) {
+            grid-template: 25px 183px / 1fr 183px 1fr;
+          }
+          @media only screen and (max-width: 372px) {
+            grid-template: 25px 183px / 1fr 183px 1fr;
+          }
+          @media only screen and (max-width: 371px) {
+            grid-template: 25px 183px / 1fr 183px 1fr;
+          }
+          @media only screen and (max-width: 370px) {
+            grid-template: 25px 182px / 1fr 182px 1fr;
+          }
+          @media only screen and (max-width: 369px) {
+            grid-template: 25px 182px / 1fr 182px 1fr;
+          }
+          @media only screen and (max-width: 368px) {
+            grid-template: 25px 181px / 1fr 181px 1fr;
+          }
+          @media only screen and (max-width: 367px) {
+            grid-template: 25px 181px / 1fr 181px 1fr;
+          }
+          @media only screen and (max-width: 366px) {
+            grid-template: 25px 180px / 1fr 180px 1fr;
+          }
+          @media only screen and (max-width: 365px) {
+            grid-template: 25px 180px / 1fr 180px 1fr;
+          }
+          @media only screen and (max-width: 364px) {
+            grid-template: 25px 179px / 1fr 179px 1fr;
+          }
+          @media only screen and (max-width: 363px) {
+            grid-template: 25px 179px / 1fr 179px 1fr;
+          }
+          @media only screen and (max-width: 362px) {
+            grid-template: 25px 178px / 1fr 178px 1fr;
+          }
+          @media only screen and (max-width: 361px) {
+            grid-template: 25px 178px / 1fr 178px 1fr;
+          }
+          @media only screen and (max-width: 360px) {
+            grid-template: 25px 177px / 1fr 177px 1fr;
+          }
+          @media only screen and (max-width: 359px) {
+            grid-template: 25px 177px / 1fr 177px 1fr;
+          }
+          @media only screen and (max-width: 358px) {
+            grid-template: 25px 176px / 1fr 176px 1fr;
+          }
+          @media only screen and (max-width: 357px) {
+            grid-template: 25px 176px / 1fr 176px 1fr;
+          }
+          @media only screen and (max-width: 356px) {
+            grid-template: 25px 175px / 1fr 175px 1fr;
+          }
+          @media only screen and (max-width: 355px) {
+            grid-template: 25px 175px / 1fr 175px 1fr;
+          }
+          @media only screen and (max-width: 354px) {
+            grid-template: 25px 174px / 1fr 174px 1fr;
+          }
+          @media only screen and (max-width: 353px) {
+            grid-template: 25px 174px / 1fr 174px 1fr;
+          }
+          @media only screen and (max-width: 352px) {
+            grid-template: 25px 173px / 1fr 173px 1fr;
+          }
+          @media only screen and (max-width: 351px) {
+            grid-template: 25px 173px / 1fr 173px 1fr;
+          }
+          @media only screen and (max-width: 350px) {
+            grid-template: 25px 172px / 1fr 172px 1fr;
+          }
+          @media only screen and (max-width: 349px) {
+            grid-template: 25px 172px / 1fr 172px 1fr;
+          }
+          @media only screen and (max-width: 348px) {
+            grid-template: 25px 172px / 1fr 172px 1fr;
+          }
+          @media only screen and (max-width: 347px) {
+            grid-template: 25px 171px / 1fr 171px 1fr;
+          }
+          @media only screen and (max-width: 346px) {
+            grid-template: 25px 171px / 1fr 171px 1fr;
+          }
+          @media only screen and (max-width: 345px) {
+            grid-template: 25px 170px / 1fr 170px 1fr;
+          }
+          @media only screen and (max-width: 344px) {
+            grid-template: 25px 170px / 1fr 170px 1fr;
+          }
+          @media only screen and (max-width: 343px) {
+            grid-template: 25px 169px / 1fr 169px 1fr;
+          }
+          @media only screen and (max-width: 342px) {
+            grid-template: 25px 169px / 1fr 169px 1fr;
+          }
+          @media only screen and (max-width: 341px) {
+            grid-template: 25px 168px / 1fr 168px 1fr;
+          }
+          @media only screen and (max-width: 340px) {
+            grid-template: 25px 168px / 1fr 168px 1fr;
+          }
+          @media only screen and (max-width: 339px) {
+            grid-template: 25px 167px / 1fr 167px 1fr;
+          }
+          @media only screen and (max-width: 338px) {
+            grid-template: 25px 167px / 1fr 167px 1fr;
+          }
+          @media only screen and (max-width: 337px) {
+            grid-template: 25px 166px / 1fr 166px 1fr;
+          }
+          @media only screen and (max-width: 336px) {
+            grid-template: 25px 166px / 1fr 166px 1fr;
+          }
+          @media only screen and (max-width: 335px) {
+            grid-template: 25px 165px / 1fr 165px 1fr;
+          }
+          @media only screen and (max-width: 334px) {
+            grid-template: 25px 165px / 1fr 165px 1fr;
+          }
+          @media only screen and (max-width: 333px) {
+            grid-template: 25px 164px / 1fr 164px 1fr;
+          }
+          @media only screen and (max-width: 332px) {
+            grid-template: 25px 164px / 1fr 164px 1fr;
+          }
+          @media only screen and (max-width: 331px) {
+            grid-template: 25px 163px / 1fr 163px 1fr;
+          }
+          @media only screen and (max-width: 330px) {
+            grid-template: 25px 163px / 1fr 163px 1fr;
+          }
+          @media only screen and (max-width: 329px) {
+            grid-template: 25px 162px / 1fr 162px 1fr;
+          }
+          @media only screen and (max-width: 328px) {
+            grid-template: 25px 162px / 1fr 162px 1fr;
+          }
+          @media only screen and (max-width: 327px) {
+            grid-template: 25px 161px / 1fr 161px 1fr;
+          }
+          @media only screen and (max-width: 326px) {
+            grid-template: 25px 161px / 1fr 161px 1fr;
+          }
+          @media only screen and (max-width: 325px) {
+            grid-template: 25px 161px / 1fr 161px 1fr;
+          }
+          @media only screen and (max-width: 324px) {
+            grid-template: 25px 160px / 1fr 160px 1fr;
+          }
+          @media only screen and (max-width: 323px) {
+            grid-template: 25px 160px / 1fr 160px 1fr;
+          }
+          @media only screen and (max-width: 322px) {
+            grid-template: 25px 159px / 1fr 159px 1fr;
+          }
+          @media only screen and (max-width: 321px) {
+            grid-template: 25px 159px / 1fr 159px 1fr;
+          }
+          @media only screen and (max-width: 320px) {
+            grid-template: 25px 158px / 1fr 158px 1fr;
+          }
+          @media only screen and (max-width: 319px) {
+            grid-template: 25px 158px / 1fr 158px 1fr;
+          }
+          @media only screen and (max-width: 318px) {
+            grid-template: 25px 157px / 1fr 157px 1fr;
+          }
+          @media only screen and (max-width: 317px) {
+            grid-template: 25px 157px / 1fr 157px 1fr;
+          }
+          @media only screen and (max-width: 316px) {
+            grid-template: 25px 156px / 1fr 156px 1fr;
+          }
+          @media only screen and (max-width: 315px) {
+            grid-template: 25px 156px / 1fr 156px 1fr;
+          }
+          @media only screen and (max-width: 314px) {
+            grid-template: 25px 155px / 1fr 155px 1fr;
+          }
+          @media only screen and (max-width: 313px) {
+            grid-template: 25px 155px / 1fr 155px 1fr;
+          }
+          @media only screen and (max-width: 312px) {
+            grid-template: 25px 154px / 1fr 154px 1fr;
+          }
+          @media only screen and (max-width: 311px) {
+            grid-template: 25px 154px / 1fr 154px 1fr;
+          }
+          @media only screen and (max-width: 310px) {
+            grid-template: 25px 153px / 1fr 153px 1fr;
+          }
+          @media only screen and (max-width: 309px) {
+            grid-template: 25px 153px / 1fr 153px 1fr;
+          }
+          @media only screen and (max-width: 308px) {
+            grid-template: 25px 152px / 1fr 152px 1fr;
+          }
+          @media only screen and (max-width: 307px) {
+            grid-template: 25px 152px / 1fr 152px 1fr;
+          }
+          @media only screen and (max-width: 306px) {
+            grid-template: 25px 151px / 1fr 151px 1fr;
+          }
+          @media only screen and (max-width: 305px) {
+            grid-template: 25px 151px / 1fr 151px 1fr;
+          }
+          @media only screen and (max-width: 304px) {
+            grid-template: 25px 150px / 1fr 150px 1fr;
+          }
+          @media only screen and (max-width: 303px) {
+            grid-template: 25px 150px / 1fr 150px 1fr;
+          }
+          @media only screen and (max-width: 302px) {
+            grid-template: 25px 150px / 1fr 150px 1fr;
+          }
+          @media only screen and (max-width: 301px) {
+            grid-template: 25px 149px / 1fr 149px 1fr;
+          }
+          @media only screen and (max-width: 300px) {
+            grid-template: 25px 149px / 1fr 149px 1fr;
+          }
+          @media only screen and (max-width: 299px) {
+            grid-template: 25px 148px / 1fr 148px 1fr;
+          }
+          @media only screen and (max-width: 298px) {
+            grid-template: 25px 148px / 1fr 148px 1fr;
+          }
+          @media only screen and (max-width: 297px) {
+            grid-template: 25px 147px / 1fr 147px 1fr;
+          }
+          @media only screen and (max-width: 296px) {
+            grid-template: 25px 147px / 1fr 147px 1fr;
+          }
+          @media only screen and (max-width: 295px) {
+            grid-template: 25px 146px / 1fr 146px 1fr;
+          }
+          @media only screen and (max-width: 294px) {
+            grid-template: 25px 146px / 1fr 146px 1fr;
+          }
+          @media only screen and (max-width: 293px) {
+            grid-template: 25px 145px / 1fr 145px 1fr;
+          }
+          @media only screen and (max-width: 292px) {
+            grid-template: 25px 145px / 1fr 145px 1fr;
+          }
+          @media only screen and (max-width: 291px) {
+            grid-template: 25px 144px / 1fr 144px 1fr;
+          }
+          @media only screen and (max-width: 290px) {
+            grid-template: 25px 144px / 1fr 144px 1fr;
+          }
+          @media only screen and (max-width: 289px) {
+            grid-template: 25px 143px / 1fr 143px 1fr;
+          }
+          @media only screen and (max-width: 288px) {
+            grid-template: 25px 143px / 1fr 143px 1fr;
+          }
+          @media only screen and (max-width: 287px) {
+            grid-template: 25px 142px / 1fr 142px 1fr;
+          }
+          @media only screen and (max-width: 286px) {
+            grid-template: 25px 142px / 1fr 142px 1fr;
+          }
+          @media only screen and (max-width: 285px) {
+            grid-template: 25px 141px / 1fr 141px 1fr;
+          }
+          @media only screen and (max-width: 284px) {
+            grid-template: 25px 141px / 1fr 141px 1fr;
+          }
+          @media only screen and (max-width: 283px) {
+            grid-template: 25px 140px / 1fr 140px 1fr;
+          }
+          @media only screen and (max-width: 282px) {
+            grid-template: 25px 140px / 1fr 140px 1fr;
+          }
+          @media only screen and (max-width: 281px) {
+            grid-template: 25px 139px / 1fr 139px 1fr;
+          }
+          @media only screen and (max-width: 280px) {
+            grid-template: 25px 139px / 1fr 139px 1fr;
+          }
+          //--🠉 Test First 🠉--//
         }
       }
+      //--🠊 Bottom Code will be prioritized above Top Code 🠈--//
     }
     //--🠉 02. Main Skills 🠉--//
     //--🠋 01. Main Home 🠋--//
