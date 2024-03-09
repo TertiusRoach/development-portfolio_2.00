@@ -34,15 +34,15 @@ export namespace DefaultMain {
 
     const shiftLeft = (title: String) => {
       // When I click left move slides to the left
-      let track: any = document.querySelector(`#${title}-skills #${title}-carousel`);
-      let dotsNav: any = document.querySelector(`#${title}-skills .navigation-${title}`);
-      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-skills .right-${title}`);
-      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-skills .left-${title}`);
+      let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+      let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
+      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
 
       prevButton.addEventListener('click', (event) => {
-        var currentSlide: any = track.querySelector(`#${title}-skills .visible`);
+        var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
         var prevSlide: any = currentSlide.previousElementSibling;
-        var currentDot = dotsNav.querySelector(`#${title}-skills .active`);
+        var currentDot = dotsNav.querySelector(`#${title}-carousel .active`);
         var slides: any = Array.from(track.children);
         var prevIndex: number = slides.findIndex((slide) => slide === prevSlide);
         var prevDot = currentDot.previousElementSibling;
@@ -58,14 +58,14 @@ export namespace DefaultMain {
 
     const shiftRight = (title: String) => {
       // When I click right move slides to the right
-      let track: any = document.querySelector(`#${title}-skills #${title}-carousel`);
-      let dotsNav: any = document.querySelector(`#${title}-skills .navigation-${title}`);
-      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-skills .right-${title}`);
-      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-skills .left-${title}`);
+      let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+      let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
+      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
       nextButton.addEventListener('click', (event) => {
-        var currentSlide: any = track.querySelector(`#${title}-skills .visible`);
+        var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
         var nextSlide: any = currentSlide.nextElementSibling;
-        var currentDot = dotsNav.querySelector(`#${title}-skills .active`);
+        var currentDot = dotsNav.querySelector(`#${title}-carousel .active`);
         var slides: any = Array.from(track.children);
         var nextIndex: number = slides.findIndex((slide) => slide === nextSlide);
         var nextDot = currentDot.nextElementSibling;
@@ -80,11 +80,11 @@ export namespace DefaultMain {
 
     const modifyDots = (title: String) => {
       // when I click the nav indicators, move to that slide
-      let track: any = document.querySelector(`#${title}-skills #${title}-carousel`);
-      let dotsNav: any = document.querySelector(`#${title}-skills .navigation-${title}`);
+      let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+      let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
       let dots: any = Array.from(dotsNav.children);
-      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-skills .right-${title}`);
-      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-skills .left-${title}`);
+      let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+      let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
       dotsNav.addEventListener('click', (event) => {
         // targetDot defines the event target by locating the closest <li> HTMLElement
         var targetDot: any = (event.target as HTMLElement).closest('li');
@@ -92,8 +92,8 @@ export namespace DefaultMain {
         // If targetDot doesn't have a value (is null or undefined), the code stops executing and doesn't proceed to the next steps.
         if (!targetDot) return;
 
-        var currentSlide: any = track.querySelector(`#${title}-skills .visible`);
-        var currentDot: any = dotsNav.querySelector(`#${title}-skills .active`);
+        var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
+        var currentDot: any = dotsNav.querySelector(`#${title}-carousel .active`);
         var targetIndex: number = dots.findIndex((dot) => dot === targetDot);
         var slides: any = Array.from(track.children);
         var targetSlide: any = slides[targetIndex];
@@ -108,7 +108,7 @@ export namespace DefaultMain {
 
     const horizontalSlides = (title: String) => {
       // Arrange the slides next to one another
-      let track: any = document.querySelector(`#${title}-skills #${title}-carousel`);
+      let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
       let slides: any = Array.from(track.children);
       let slideWidth = slides[0].getBoundingClientRect().width;
 
@@ -121,6 +121,7 @@ export namespace DefaultMain {
     horizontalSlides('developer');
   }
   function mainHome() {
+    //--|🠋| There's a bug here |🠋|--//
     $('.default-main section').on('mouseover', function (event) {
       let headerElement: HTMLElement = document.querySelector(`#header-navigation #header-${event.currentTarget.id.split('-')[1]}`);
       let rightbarElement: HTMLElement = document.querySelector(`#rightbar-navigation #rightbar-${event.currentTarget.id.split('-')[1]}`);
