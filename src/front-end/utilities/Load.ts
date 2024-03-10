@@ -1,10 +1,9 @@
-import { Tool } from 'utilities/Tool';
-
+import { Page } from 'utilities/Page';
 import { Index } from 'pages/index/index';
 import { Resume } from 'pages/resume/resume';
 export namespace Load {
   export function index(blockName: String) {
-    let info: any = new Tool.info(blockName);
+    let info: any = new Page.info(blockName);
     let item: HTMLElement = info.element;
 
     fetch(info.directory)
@@ -24,7 +23,7 @@ export namespace Load {
   }
 
   export function resume(blockName: String) {
-    let info: any = new Tool.info(blockName);
+    let info: any = new Page.info(blockName);
     let item: HTMLElement = info.element;
 
     fetch(info.directory)

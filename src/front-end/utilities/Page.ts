@@ -1,4 +1,4 @@
-export namespace Tool {
+export namespace Page {
   export class info {
     constructor(blockName: String) {
       let page: String = window.location.pathname.split('/').pop().split('.')[0] || 'index';
