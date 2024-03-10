@@ -592,12 +592,10 @@
         &#producer-carousel {
           //--🠊 display: grid; 🠈--//
           grid-area: 3 / 1 / 4 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          // background: red;
         }
         &#developer-carousel {
           //--🠊 display: grid; 🠈--//
           grid-area: 7 / 1 / 8 / 2; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          // background: blue;
         }
       }
       section[id*='skills'] {
