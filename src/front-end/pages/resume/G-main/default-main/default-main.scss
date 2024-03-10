@@ -248,46 +248,12 @@
   #main-skills {
     //--🠊 display: block; 🠈--//
     div {
-      span[class*='title'] {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        filter: drop-shadow(0 0 8px black);
-        h1,
-        h6 {
-          color: $primary-light;
-        }
-      }
       section[id*='carousel'] {
-        overflow: hidden; //--🠈 This fixes z-index issues🠈--//
-        nav {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          li {
-            width: 15px;
-            height: 15px;
-            margin: 0 1rem;
-            cursor: pointer;
-            border-radius: 50%;
-            list-style-type: none;
-            background: rgba($primary-light, 0.5);
-            box-shadow: 0 0 8px rgba(black, 1);
-            transition: background-color 0.5s ease-in-out;
-            &.active {
-              cursor: default;
-              background: $primary-light;
-              box-shadow: 0 0 0.25rem rgba(white, 0.75);
-            }
-          }
-        }
-
         //--|🠋| Carousel |🠋|--//
         article[id*='skills'] {
           position: relative;
           grid-area: 2 / 2 / 3 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-          transition: transform 0.5s ease-in-out;
+          transition: transform 0.75s ease-in-out;
           ul {
             margin: 0;
             padding: 0;
@@ -296,20 +262,44 @@
             display: grid;
             position: absolute;
             transition: opacity 0.75s ease-in-out;
-            grid-template: repeat(3, 1fr) / repeat(3, 1fr); //--🠈 grid-template-rows / grid-template-columns 🠈--//
             li {
               position: relative;
               list-style-type: none;
-              filter: drop-shadow(0 0 8px black);
               img {
                 position: absolute;
-                &:nth-child(1) {
+                transition: clip-path 0.5s ease-in-out;
+                &:first-child {
                   z-index: 1;
+                  clip-path: inset(0 0 0 0); //--🠈 top-offset / right-offset / bottom-offset / left-offset 🠈--//
+                  filter: drop-shadow(0 0 8px black);
                 }
-                &:nth-child(2) {
+                &:last-child {
                   z-index: 0;
+                  clip-path: inset(0 0 100% 0); //--🠈 top-offset / right-offset / bottom-offset / left-offset 🠈--//
+                  filter: drop-shadow(0 0 8px white);
                 }
               }
+              &:hover img {
+                &:first-child {
+                  clip-path: inset(100% 0 0 0); //--🠈 top-offset / right-offset / bottom-offset / left-offset 🠈--//
+                }
+                &:last-child {
+                  clip-path: inset(0 0 0 0); //--🠈 top-offset / right-offset / bottom-offset / left-offset 🠈--//
+                }
+              }
+            }
+            &.visible {
+              opacity: 1;
+              cursor: pointer;
+            }
+            &.hidden {
+              opacity: 0;
+              cursor: default;
+            }
+          }
+          ul[class*='container'] {
+            grid-template: repeat(3, 1fr) / repeat(3, 1fr); //--🠈 grid-template-rows / grid-template-columns 🠈--//
+            li {
               //-- 🠋 Row One 🠋 --//
               &:nth-child(1) {
                 //--🠊 border: 4px dashed $green-neon; 🠈--//
@@ -361,18 +351,33 @@
                 grid-area: 3 / 3 / 4 / 4;
               }
             }
-            &.visible {
-              opacity: 1;
-              cursor: pointer;
-            }
-            &.hidden {
-              opacity: 0;
-              cursor: default;
-            }
           }
         }
         //--|🠉| Carousel |🠉|--//
 
+        overflow: hidden; //--🠈 This fixes z-index issues🠈--//
+        nav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
+          li {
+            width: 15px;
+            height: 15px;
+            margin: 0 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            list-style-type: none;
+            background: rgba($primary-light, 0.5);
+            box-shadow: 0 0 8px rgba(black, 1);
+            transition: background-color 0.5s ease-in-out;
+            &.active {
+              cursor: default;
+              background: $primary-light;
+              box-shadow: 0 0 0.25rem rgba(white, 0.75);
+            }
+          }
+        }
         button {
           margin: 0;
           padding: 0;
@@ -423,6 +428,16 @@
             grid-area: 2 / 3 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
             background: linear-gradient(90deg, rgba($primary-dark, 0) 0%, rgba($primary-dark, 1) 100%);
           }
+        }
+      }
+      span[class*='title'] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(0 0 8px black);
+        h1,
+        h6 {
+          color: $primary-light;
         }
       }
       section[id*='skills'] {
