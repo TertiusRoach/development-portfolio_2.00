@@ -1,8 +1,0 @@
-    <section id="producer-skills">
-
-      
-    </section>
-    <section id="developer-skills">
-      
-
-    </section>

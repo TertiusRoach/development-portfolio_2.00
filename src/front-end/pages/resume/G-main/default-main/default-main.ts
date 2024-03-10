@@ -4,8 +4,32 @@ export namespace DefaultMain {
     mainSkills();
     // console.log('default-main.js Detected!');
   }
-  //--|🠋| Grouped Functions |🠋|--//
+  //--|🠋| Sections |🠋|--//
+  function mainHome() {
+    //--|🠋| There's a bug here |🠋|--//
+    $('.default-main section').on('mouseover', function (event) {
+      let headerElement: HTMLElement = document.querySelector(`#header-navigation #header-${event.currentTarget.id.split('-')[1]}`);
+      let rightbarElement: HTMLElement = document.querySelector(`#rightbar-navigation #rightbar-${event.currentTarget.id.split('-')[1]}`);
+
+      if (headerElement.classList[0] === undefined && rightbarElement.classList[0] === undefined) {
+        //--|🠋| Mark Header as Active |🠋|--//
+        $('#header-navigation a').removeClass('active');
+        $(headerElement).addClass('active');
+
+        //--|🠋| Mark Rightbar as Active |🠋|--//
+        $('#rightbar-navigation div').removeClass('active');
+        $(rightbarElement).addClass('active');
+      }
+    });
+  }
   function mainSkills() {
+    Tools.carousel('producer');
+    Tools.carousel('developer');
+  }
+}
+
+namespace Tools {
+  export function carousel(titleName: String) {
     const updateDots = (currentDot, targetDot) => {
       currentDot.classList.remove('active');
       targetDot.classList.add('active');
@@ -32,7 +56,7 @@ export namespace DefaultMain {
       }
     };
 
-    const shiftLeft = (title: String) => {
+    let shiftLeft = (title: String) => {
       // When I click left move slides to the left
       let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
       let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
@@ -53,10 +77,7 @@ export namespace DefaultMain {
         toggleArrows(slides, prevButton, nextButton, prevIndex);
       });
     };
-    shiftLeft('producer');
-    shiftLeft('developer');
-
-    const shiftRight = (title: String) => {
+    let shiftRight = (title: String) => {
       // When I click right move slides to the right
       let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
       let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
@@ -75,10 +96,7 @@ export namespace DefaultMain {
         toggleArrows(slides, prevButton, nextButton, nextIndex);
       });
     };
-    shiftRight('producer');
-    shiftRight('developer');
-
-    const modifyDots = (title: String) => {
+    let modifyDots = (title: String) => {
       // when I click the nav indicators, move to that slide
       let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
       let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
@@ -103,10 +121,7 @@ export namespace DefaultMain {
         toggleArrows(slides, prevButton, nextButton, targetIndex);
       });
     };
-    modifyDots('producer');
-    modifyDots('developer');
-
-    const horizontalSlides = (title: String) => {
+    let horizontalSlides = (title: String) => {
       // Arrange the slides next to one another
       let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
       let slides: any = Array.from(track.children);
@@ -117,24 +132,10 @@ export namespace DefaultMain {
       };
       slides.forEach(setSlidePosition);
     };
-    horizontalSlides('producer');
-    horizontalSlides('developer');
-  }
-  function mainHome() {
-    //--|🠋| There's a bug here |🠋|--//
-    $('.default-main section').on('mouseover', function (event) {
-      let headerElement: HTMLElement = document.querySelector(`#header-navigation #header-${event.currentTarget.id.split('-')[1]}`);
-      let rightbarElement: HTMLElement = document.querySelector(`#rightbar-navigation #rightbar-${event.currentTarget.id.split('-')[1]}`);
 
-      if (headerElement.classList[0] === undefined && rightbarElement.classList[0] === undefined) {
-        //--|🠋| Mark Header as Active |🠋|--//
-        $('#header-navigation a').removeClass('active');
-        $(headerElement).addClass('active');
-
-        //--|🠋| Mark Rightbar as Active |🠋|--//
-        $('#rightbar-navigation div').removeClass('active');
-        $(rightbarElement).addClass('active');
-      }
-    });
+    shiftLeft(titleName);
+    shiftRight(titleName);
+    modifyDots(titleName);
+    horizontalSlides(titleName);
   }
 }
