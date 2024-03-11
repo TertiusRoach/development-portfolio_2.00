@@ -7,6 +7,7 @@ export namespace DefaultMain {
   //--|🠋| Sections |🠋|--//
   function mainHome() {
     //--|🠋| There's a bug here |🠋|--//
+    /*
     $('.default-main section').on('mouseover', function (event) {
       let headerElement: HTMLElement = document.querySelector(`#header-navigation #header-${event.currentTarget.id.split('-')[1]}`);
       let rightbarElement: HTMLElement = document.querySelector(`#rightbar-navigation #rightbar-${event.currentTarget.id.split('-')[1]}`);
@@ -21,9 +22,15 @@ export namespace DefaultMain {
         $(rightbarElement).addClass('active');
       }
     });
+    */
   }
   function mainSkills() {
+    Tools.bar('producer');
+    Tools.icons('producer');
     Tools.carousel('producer');
+
+    Tools.bar('developer');
+    Tools.icons('developer');
     Tools.carousel('developer');
   }
 }
@@ -138,4 +145,67 @@ namespace Tools {
     modifyDots(titleName);
     horizontalSlides(titleName);
   }
+  export function bar(titleName: String) {
+    const rating: Array<Object> = [
+      { rating: 0 },
+      { rating: 1 },
+      { rating: 2 },
+      { rating: 3 },
+      { rating: 4 },
+      { rating: 5 },
+      { rating: 6 },
+      { rating: 7 },
+      { rating: 8 },
+      { rating: 9 },
+      { rating: 10 },
+    ];
+    $(`#${titleName}-carousel #${titleName}-skills .visible li`).on('mouseover', function (event) {
+      let bar: any = document.querySelector('#proficiency-skills span');
+      // console.log(event.target);
+    });
+    /*
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(1)`).on('mouseover', function (event) {
+      console.log(document.querySelector('#proficiency-skills span'));
+      const element: any = document.querySelector('#proficiency-skills span');
+      element.classList = [];
+      element.classList = 'I';
+      // currentSlide.classList.remove('visible');
+      // console.log('Change class to .I');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(2)`).on('mouseover', function (event) {
+      console.log(document.querySelector('#proficiency-skills span'));
+      const element: any = document.querySelector('#proficiency-skills span');
+      element.classList = [];
+      element.classList = 'II';
+      // console.log('Change class to .II');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(3)`).on('mouseover', function (event) {
+      // console.log('Change class to .III');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(4)`).on('mouseover', function (event) {
+      // console.log('Change class to .IV');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(5)`).on('mouseover', function (event) {
+      // console.log('Change class to .V');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(6)`).on('mouseover', function (event) {
+      // console.log('Change class to .VI');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(7)`).on('mouseover', function (event) {
+      // console.log('Change class to .VII');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(8)`).on('mouseover', function (event) {
+      // console.log('Change class to .VIII');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(9)`).on('mouseover', function (event) {
+      // console.log('Change class to .IX');
+    });
+    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(10)`).on('mouseover', function (event) {
+      // console.log('Change class to .X');
+    });
+    */
+  }
+  export function icons(titleName: String) {}
+
+  // export function array() {}
 }
