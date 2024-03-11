@@ -25,12 +25,7 @@ export namespace DefaultMain {
     */
   }
   function mainSkills() {
-    Tools.bar('producer');
-    Tools.icons('producer');
     Tools.carousel('producer');
-
-    Tools.bar('developer');
-    Tools.icons('developer');
     Tools.carousel('developer');
   }
 }
@@ -144,68 +139,48 @@ namespace Tools {
     shiftRight(titleName);
     modifyDots(titleName);
     horizontalSlides(titleName);
-  }
-  export function bar(titleName: String) {
-    const rating: Array<Object> = [
-      { rating: 0 },
-      { rating: 1 },
-      { rating: 2 },
-      { rating: 3 },
-      { rating: 4 },
-      { rating: 5 },
-      { rating: 6 },
-      { rating: 7 },
-      { rating: 8 },
-      { rating: 9 },
-      { rating: 10 },
-    ];
-    $(`#${titleName}-carousel #${titleName}-skills .visible li`).on('mouseover', function (event) {
-      let bar: any = document.querySelector('#proficiency-skills span');
-      // console.log(event.target);
-    });
-    /*
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(1)`).on('mouseover', function (event) {
-      console.log(document.querySelector('#proficiency-skills span'));
-      const element: any = document.querySelector('#proficiency-skills span');
-      element.classList = [];
-      element.classList = 'I';
-      // currentSlide.classList.remove('visible');
-      // console.log('Change class to .I');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(2)`).on('mouseover', function (event) {
-      console.log(document.querySelector('#proficiency-skills span'));
-      const element: any = document.querySelector('#proficiency-skills span');
-      element.classList = [];
-      element.classList = 'II';
-      // console.log('Change class to .II');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(3)`).on('mouseover', function (event) {
-      // console.log('Change class to .III');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(4)`).on('mouseover', function (event) {
-      // console.log('Change class to .IV');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(5)`).on('mouseover', function (event) {
-      // console.log('Change class to .V');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(6)`).on('mouseover', function (event) {
-      // console.log('Change class to .VI');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(7)`).on('mouseover', function (event) {
-      // console.log('Change class to .VII');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(8)`).on('mouseover', function (event) {
-      // console.log('Change class to .VIII');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(9)`).on('mouseover', function (event) {
-      // console.log('Change class to .IX');
-    });
-    $(`#${titleName}-carousel #${titleName}-skills .visible li:nth-child(10)`).on('mouseover', function (event) {
-      // console.log('Change class to .X');
-    });
-    */
-  }
-  export function icons(titleName: String) {}
 
-  // export function array() {}
+    $(`#${titleName}-carousel #${titleName}-skills ul li`).on('mouseover', function (event) {
+      Tools.bar(event);
+    });
+  }
+  export function bar(event: HTMLElement | any) {
+    let bar = document.querySelector('#proficiency-skills span');
+    let rating: String;
+    bar.className = '';
+    bar.classList.add('O');
+    switch ($(event.target).parent().children(':last').attr('alt')) {
+      case '1/10':
+        rating = 'I';
+        break;
+      case '2/10':
+        rating = 'II';
+        break;
+      case '3/10':
+        rating = 'III';
+        break;
+      case '4/10':
+        rating = 'IV';
+        break;
+      case '5/10':
+        rating = 'V';
+        break;
+      case '6/10':
+        rating = 'VI';
+        break;
+      case '7/10':
+        rating = 'VII';
+        break;
+      case '8/10':
+        rating = 'VIII';
+        break;
+      case '9/10':
+        rating = 'IX';
+        break;
+      case '10/10':
+        rating = 'X';
+        break;
+    }
+    bar.classList.add(`${rating}`);
+  }
 }
