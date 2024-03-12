@@ -26,7 +26,10 @@ export namespace DefaultMain {
   }
   function mainSkills() {
     Tools.carousel('producer');
+    Tools.proficiency('producer');
+
     Tools.carousel('developer');
+    Tools.proficiency('developer');
   }
 }
 
@@ -139,48 +142,106 @@ namespace Tools {
     shiftRight(titleName);
     modifyDots(titleName);
     horizontalSlides(titleName);
-
-    $(`#${titleName}-carousel #${titleName}-skills ul li`).on('mouseover', function (event) {
-      Tools.bar(event);
-    });
   }
-  export function bar(event: HTMLElement | any) {
-    let bar = document.querySelector('#proficiency-skills span');
-    let rating: String;
-    bar.className = '';
-    bar.classList.add('O');
-    switch ($(event.target).parent().children(':last').attr('alt')) {
-      case '1/10':
-        rating = 'I';
-        break;
-      case '2/10':
-        rating = 'II';
-        break;
-      case '3/10':
-        rating = 'III';
-        break;
-      case '4/10':
-        rating = 'IV';
-        break;
-      case '5/10':
-        rating = 'V';
-        break;
-      case '6/10':
-        rating = 'VI';
-        break;
-      case '7/10':
-        rating = 'VII';
-        break;
-      case '8/10':
-        rating = 'VIII';
-        break;
-      case '9/10':
-        rating = 'IX';
-        break;
-      case '10/10':
-        rating = 'X';
-        break;
-    }
-    bar.classList.add(`${rating}`);
+  export function proficiency(titleName: String) {
+    const observeScores = (prevScore: Number, nextScore: Number) => {
+      if (`${prevScore}` !== 'NaN' && `${prevScore}` !== 'undefined' && `${nextScore}` !== 'NaN' && `${nextScore}` !== 'undefined') {
+        return true;
+      } else {
+        return false;
+      }
+    };
+    const activateCounter = (counter: HTMLHeadingElement | any, prevScore: Number, nextScore: Number) => {
+      let count: any | Number;
+
+      switch (prevScore < nextScore) {
+        case true:
+          //--🠋 `Count up from ${prevScore} to ${nextScore}` 🠋--//
+          count = prevScore;
+          const countUp = setInterval(() => {
+            count++;
+            counter.textContent = `${count}/10`;
+
+            if (count === nextScore) {
+              clearInterval(countUp);
+              counter.setAttribute('data-val', nextScore);
+            }
+          }, 250);
+
+          break;
+        case false:
+          //--🠋 `Count down from ${prevScore} to ${nextScore}` 🠋--//
+          count = prevScore;
+          const countDown = setInterval(() => {
+            count--;
+            counter.textContent = `${count}/10`;
+
+            if (count === nextScore) {
+              clearInterval(countDown);
+              counter.setAttribute('data-val', nextScore);
+            }
+          }, 250);
+          break;
+      }
+    };
+
+    let carouselSkill: String = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
+    $(carouselSkill).on('mouseover', function (event) {
+      let bar: HTMLSpanElement = document.querySelector('#proficiency-skills span');
+      let counter: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
+      let prevScore: Number = Number(counter.getAttribute('data-val').split('/')[0]);
+
+      let rating: String;
+      let nextScore: Number | typeof NaN;
+      switch ($(event.target).parent().children(':last').attr('alt')) {
+        case '1/10':
+          rating = 'I';
+          nextScore = 1;
+          break;
+        case '2/10':
+          rating = 'II';
+          nextScore = 2;
+          break;
+        case '3/10':
+          rating = 'III';
+          nextScore = 3;
+          break;
+        case '4/10':
+          rating = 'IV';
+          nextScore = 4;
+          break;
+        case '5/10':
+          rating = 'V';
+          nextScore = 5;
+          break;
+        case '6/10':
+          rating = 'VI';
+          nextScore = 6;
+          break;
+        case '7/10':
+          rating = 'VII';
+          nextScore = 7;
+          break;
+        case '8/10':
+          rating = 'VIII';
+          nextScore = 8;
+          break;
+        case '9/10':
+          rating = 'IX';
+          nextScore = 9;
+          break;
+        case '10/10':
+          rating = 'X';
+          nextScore = 10;
+          break;
+      }
+      bar.className = '';
+      bar.classList.add(`${rating}`);
+
+      //---------------------Counter Here
+      if (observeScores(prevScore, nextScore) === true && prevScore !== nextScore) {
+        activateCounter(counter, prevScore, nextScore);
+      }
+    });
   }
 }
