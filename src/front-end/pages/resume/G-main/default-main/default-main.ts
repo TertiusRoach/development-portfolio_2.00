@@ -41,7 +41,7 @@ namespace Tools {
     const section: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span:nth-child(2)`);
     const navigation = `#${titleName}-carousel .navigation-${titleName} li`;
 
-    let safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
+    const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
       let enable: String = event.target.firstChild.innerText;
       switch (action) {
         case 'block':
@@ -225,100 +225,149 @@ namespace Tools {
     };
     const activateCounter = (counter: HTMLHeadingElement | any, prevScore: Number | any, nextScore: Number | any) => {
       let count: any;
-      let milliseconds: number = 125;
       let delay: number;
+      let milliseconds: number = 125;
+
       switch (prevScore < nextScore) {
         case true:
           //--🠋 `Count up from ${prevScore} to ${nextScore}` 🠋--//
           count = prevScore;
-          delay = milliseconds * (nextScore - prevScore);
           const countUp = setInterval(() => {
             count++;
             counter.textContent = `${count}/10`;
 
             if (count === nextScore) {
               clearInterval(countUp);
+              delay = milliseconds * (nextScore - prevScore);
             }
           }, milliseconds);
           break;
         case false:
           //--🠋 `Count down from ${prevScore} to ${nextScore}` 🠋--//
           count = prevScore;
-          delay = milliseconds * (prevScore - nextScore);
+
           const countDown = setInterval(() => {
             count--;
             counter.textContent = `${count}/10`;
 
             if (count === nextScore) {
               clearInterval(countDown);
+              delay = milliseconds * (prevScore - nextScore);
             }
           }, milliseconds);
           break;
       }
-      return delay;
+    };
+    const activateBar = (event: HTMLElement | any) => {
+      let bar: HTMLSpanElement = document.querySelector('#proficiency-skills span');
+      let counter: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
+      let prevScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
+      bar.className = '';
+      switch ($(event.target).parent().children(':last').attr('alt')) {
+        case '1/10':
+          bar.classList.add('I');
+          counter.setAttribute('data-val', '1');
+          break;
+        case '2/10':
+          bar.classList.add('II');
+          counter.setAttribute('data-val', '2');
+          break;
+        case '3/10':
+          bar.classList.add('III');
+          counter.setAttribute('data-val', '3');
+          break;
+        case '4/10':
+          bar.classList.add('IV');
+          counter.setAttribute('data-val', '4');
+          break;
+        case '5/10':
+          bar.classList.add('V');
+          counter.setAttribute('data-val', '5');
+          break;
+        case '6/10':
+          bar.classList.add('VI');
+          counter.setAttribute('data-val', '6');
+          break;
+        case '7/10':
+          bar.classList.add('VII');
+          counter.setAttribute('data-val', '7');
+          break;
+        case '8/10':
+          bar.classList.add('VIII');
+          counter.setAttribute('data-val', '8');
+          break;
+        case '9/10':
+          bar.classList.add('IX');
+          counter.setAttribute('data-val', '9');
+          break;
+        case '10/10':
+          bar.classList.add('X');
+          counter.setAttribute('data-val', '10');
+          break;
+      }
+
+      let nextScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
+      if (observeScores(prevScore, nextScore) === true && prevScore !== nextScore) {
+        activateCounter(counter, prevScore, nextScore);
+      }
+    };
+    const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
+      let enable: String = event.target.getAttribute('alt');
+      switch (action) {
+        case 'block':
+          setTimeout(() => {
+            for (let i = 0; i < event.target.parentNode.parentNode.children.length; i++) {
+              let element = event.target.parentNode.parentNode.childNodes[i].firstChild.getAttribute('alt');
+              if (element !== enable) {
+                event.target.parentNode.parentNode.children[i].classList.remove('cleared');
+                event.target.parentNode.parentNode.children[i].classList.add('blocked');
+              } else if (element === enable) {
+                event.target.parentNode.parentNode.children[i].classList.remove('blocked');
+                event.target.parentNode.parentNode.children[i].classList.add('cleared');
+              }
+            }
+          }, milliseconds);
+          break;
+        case 'clear':
+          setTimeout(() => {
+            for (let i = 0; i < event.target.parentNode.parentNode.children.length; i++) {
+              event.target.parentNode.parentNode.children[i].classList.remove('blocked');
+              event.target.parentNode.parentNode.children[i].classList.add('cleared');
+            }
+          }, milliseconds);
+          break;
+      }
     };
 
-    let ready: boolean = true;
-    const skillIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
-    $(skillIcon).on('mouseover', function (event) {
-      //--|🠋| It's buggy, maybe add an invisible wall to block off other icons while executing? |🠋|--//
-      if (ready === true) {
-        ready = false;
-        let bar: HTMLSpanElement = document.querySelector('#proficiency-skills span');
-        let counter: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
-        let prevScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
-
-        bar.className = '';
-        switch ($(event.target).parent().children(':last').attr('alt')) {
-          case '1/10':
-            bar.classList.add('I');
-            counter.setAttribute('data-val', '1');
-            break;
-          case '2/10':
-            bar.classList.add('II');
-            counter.setAttribute('data-val', '2');
-            break;
-          case '3/10':
-            bar.classList.add('III');
-            counter.setAttribute('data-val', '3');
-            break;
-          case '4/10':
-            bar.classList.add('IV');
-            counter.setAttribute('data-val', '4');
-            break;
-          case '5/10':
-            bar.classList.add('V');
-            counter.setAttribute('data-val', '5');
-            break;
-          case '6/10':
-            bar.classList.add('VI');
-            counter.setAttribute('data-val', '6');
-            break;
-          case '7/10':
-            bar.classList.add('VII');
-            counter.setAttribute('data-val', '7');
-            break;
-          case '8/10':
-            bar.classList.add('VIII');
-            counter.setAttribute('data-val', '8');
-            break;
-          case '9/10':
-            bar.classList.add('IX');
-            counter.setAttribute('data-val', '9');
-            break;
-          case '10/10':
-            bar.classList.add('X');
-            counter.setAttribute('data-val', '10');
+    const firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
+    const lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
+    $(firstIcon)
+      .on('mouseover', function (event) {
+        switch (true) {
+          case event.target.parentElement.classList.contains('cleared'):
+            activateBar(event);
+            safetyToggle('block', event, 0);
             break;
         }
+      })
+      .on('mouseleave', function (event) {
+        safetyToggle('clear', event, 125);
+      });
 
-        let nextScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
-        if (observeScores(prevScore, nextScore) === true && prevScore !== nextScore) {
-          activateCounter(counter, prevScore, nextScore);
+    $(lastIcon)
+      .on('mouseover', function (event) {
+        switch (true) {
+          case event.target.parentElement.classList.contains('cleared'):
+            activateBar(event);
+            safetyToggle('block', event, 0);
+            break;
         }
-
-        ready = true;
-      }
-    });
+      })
+      .on('mouseleave', function (event) {
+        safetyToggle('clear', event, 125);
+      })
+      .on('click', function (event) {
+        console.log('Yay, overlay!');
+      });
   }
 }
