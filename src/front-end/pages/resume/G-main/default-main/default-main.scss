@@ -365,6 +365,15 @@
                   clip-path: inset(0 0 0 0); //--🠈 top-offset / right-offset / bottom-offset / left-offset 🠈--//
                 }
               }
+
+              &.cleared,
+              &.cleared:hover {
+                background: green;
+              }
+              &.blocked,
+              &.blocked:hover {
+                background: red;
+              }
             }
             &.visible {
               opacity: 1;
