@@ -37,8 +37,6 @@ export namespace DefaultMain {
 
 namespace Tools {
   export function navigation(titleName: String) {
-    const title: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span:nth-child(1)`);
-    const section: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span:nth-child(2)`);
     const navigation = `#${titleName}-carousel .navigation-${titleName} li`;
 
     const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
@@ -69,42 +67,36 @@ namespace Tools {
           break;
       }
     };
+    const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
+      let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
+      let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
 
-    $(navigation)
-      .on('mouseover', function (event) {
-        switch (true) {
-          case event.target.classList.contains('cleared'):
-            safetyToggle('block', event, 0);
-            let sectionName: String = $(event.target).find('>:first-child').text();
+      let sectionName: String = $(event.target).find('>:first-child').text();
+      hidden.innerHTML = `<h1>${sectionName}</h1>
+                          <h6>${sectionName}</h6>`;
 
-            section.innerHTML = `<h1>${sectionName}</h1>
-                                 <h6>${sectionName}</h6>`;
+      setTimeout(() => {
+        visible.className = '';
+        visible.className = 'hidden';
+        setTimeout(() => {
+          visible.innerHTML = `<h1>${sectionName}</h1>
+                               <h6>${sectionName}</h6>`;
+        }, milliseconds);
 
-            title.className = '';
-            title.className = 'hidden';
+        hidden.className = '';
+        hidden.className = 'visible';
+      }, milliseconds);
+    };
 
-            section.className = '';
-            section.className = 'visible';
-
-            safetyToggle('clear', event, 375);
-            break;
-        }
-      })
-      .on('mouseleave', function (event) {
-        switch (true) {
-          case event.target.classList.contains('cleared'):
-            safetyToggle('block', event, 0);
-
-            title.className = '';
-            title.className = 'visible';
-
-            section.className = '';
-            section.className = 'hidden';
-
-            safetyToggle('clear', event, 375);
-            break;
-        }
-      });
+    $(navigation).on('click', function (event) {
+      switch (true) {
+        case event.target.classList.contains('cleared'):
+          navigationToggle(event, 375);
+          safetyToggle('block', event, 0);
+          safetyToggle('clear', event, 375);
+          break;
+      }
+    });
   }
   export function carousel(titleName: String) {
     const updateDots = (currentDot: HTMLElement, targetDot: HTMLElement) => {
@@ -216,12 +208,30 @@ namespace Tools {
     horizontalSlides(titleName);
   }
   export function rating(titleName: String) {
-    const observeScores = (prevScore: Number, nextScore: Number) => {
-      if (`${prevScore}` !== 'NaN' && `${prevScore}` !== 'undefined' && `${nextScore}` !== 'NaN' && `${nextScore}` !== 'undefined') {
-        return true;
-      } else {
-        return false;
-      }
+    const firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
+    const lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
+
+    const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
+      let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
+      let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
+
+      // let skillName: String = $(event.target.parentElement).find('>:first-child').attr('alt');
+
+      setTimeout(() => {
+        hidden.innerHTML = `<h1>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h1>
+                            <h6>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h6>`;
+
+        visible.className = '';
+        visible.className = 'hidden';
+
+        setTimeout(() => {
+          visible.innerHTML = `<h1>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h1>
+                               <h6>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h6>`;
+        }, milliseconds);
+
+        hidden.className = '';
+        hidden.className = 'visible';
+      }, milliseconds);
     };
     const activateCounter = (counter: HTMLHeadingElement | any, prevScore: Number | any, nextScore: Number | any) => {
       let count: any;
@@ -256,6 +266,13 @@ namespace Tools {
             }
           }, milliseconds);
           break;
+      }
+    };
+    const observeScores = (prevScore: Number, nextScore: Number) => {
+      if (`${prevScore}` !== 'NaN' && `${prevScore}` !== 'undefined' && `${nextScore}` !== 'NaN' && `${nextScore}` !== 'undefined') {
+        return true;
+      } else {
+        return false;
       }
     };
     const activateBar = (event: HTMLElement | any) => {
@@ -339,14 +356,13 @@ namespace Tools {
       }
     };
 
-    const firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
-    const lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
     $(firstIcon)
       .on('mouseover', function (event) {
         switch (true) {
           case event.target.parentElement.classList.contains('cleared'):
-            activateBar(event);
             safetyToggle('block', event, 0);
+            activateBar(event);
+            navigationToggle(event, 375);
             break;
         }
       })
@@ -358,8 +374,9 @@ namespace Tools {
       .on('mouseover', function (event) {
         switch (true) {
           case event.target.parentElement.classList.contains('cleared'):
-            activateBar(event);
             safetyToggle('block', event, 0);
+            activateBar(event);
+            navigationToggle(event, 375);
             break;
         }
       })
