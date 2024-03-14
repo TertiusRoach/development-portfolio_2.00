@@ -257,6 +257,7 @@
         }
         span {
           display: flex;
+          align-items: center;
           justify-content: center;
           transition: 0.75s ease-in-out;
           h1,
@@ -634,7 +635,6 @@
         }
         span {
           //--🠊 display: flex; 🠈--//
-          align-items: center;
           h6 {
             display: none;
           }
@@ -739,7 +739,6 @@
         }
         span {
           //--🠊 display: flex; 🠈--//
-          align-items: flex-end;
           h1 {
             display: none;
           }

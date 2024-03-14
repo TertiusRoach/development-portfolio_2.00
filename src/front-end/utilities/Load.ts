@@ -1,6 +1,7 @@
 import { Page } from 'utilities/Page';
 import { Index } from 'pages/index/index';
 import { Resume } from 'pages/resume/resume';
+
 export namespace Load {
   export function index(blockName: String) {
     let info: any = new Page.info(blockName);
@@ -42,5 +43,5 @@ export namespace Load {
       });
   }
 
-  /* console.log('🠊 Load.js Detected! 🠈'); */
+  //--🠊 console.log('|🠊 Load.js Detected! 🠈|'); 🠈--//
 }

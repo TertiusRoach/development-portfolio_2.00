@@ -1,0 +1,1 @@
+define(["require","exports"],function(e,s){"use strict";var o;Object.defineProperty(s,"__esModule",{value:!0}),s.Info=void 0,(o||(s.Info={})).resume=class{constructor(){this.skills=[{blah:"ffffff"}]}buildSkills(e){console.log(e)}}});
