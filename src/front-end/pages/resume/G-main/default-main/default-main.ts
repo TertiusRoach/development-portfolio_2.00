@@ -221,8 +221,7 @@ export namespace DefaultMain {
       const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
         let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
         let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
-        // let skill: HTMLLIElement = document.querySelector(`#${titleName}-carousel #${titleName}-skills .visible .cleared`);
-        // console.log($(`#${titleName}-carousel #${titleName}-skills .visible .cleared`).find('>:first-child').attr('alt'));
+
         setTimeout(() => {
           hidden.innerHTML = `<h1>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h1>
                               <h6>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h6>`;
@@ -243,7 +242,6 @@ export namespace DefaultMain {
         let count: any;
         let delay: number;
         let milliseconds: number = 125;
-
         switch (prevScore < nextScore) {
           case true:
             //--🠋 `Count up from ${prevScore} to ${nextScore}` 🠋--//
@@ -257,7 +255,6 @@ export namespace DefaultMain {
                 clearInterval(countUp);
                 navigationToggle(event, 375);
                 safetyToggle('clear', event, 0);
-                // safetyToggle('clear', event, delay);
               }
             }, milliseconds);
             break;
@@ -272,7 +269,6 @@ export namespace DefaultMain {
               if (count === nextScore) {
                 clearInterval(countDown);
                 navigationToggle(event, 375);
-                // safetyToggle('clear', event, delay);
                 safetyToggle('clear', event, 0);
               }
             }, milliseconds);

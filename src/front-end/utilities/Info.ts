@@ -1,6 +1,5 @@
 export namespace Info {
   export class resume {
-    // skills: object[];
     design: Object[];
     editing: Object[];
     admin: Object[];
