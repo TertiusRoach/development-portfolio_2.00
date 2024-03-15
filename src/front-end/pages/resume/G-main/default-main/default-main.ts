@@ -383,6 +383,9 @@ export namespace DefaultMain {
         .on('click', function (event) {
           console.log('Yay, overlay!');
         })
+        .on('mouseover', function (event) {
+          activateBar(event);
+        })
         .on('mouseleave', function (event) {
           safetyToggle('clear', event, 0);
         });
