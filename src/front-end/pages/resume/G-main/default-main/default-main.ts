@@ -7,18 +7,16 @@ export namespace DefaultMain {
       MainHome.navigation();
     };
     mainHome();
-    const mainSkills = () => {
-      MainSkills.navigation('producer');
-      MainSkills.carousel('producer');
-      MainSkills.rating('producer');
-      MainSkills.build('producer');
+    const mainSkills = (titleName: 'producer' | 'developer') => {
+      console.log(Info.Main.skills('all')[0].application);
 
-      MainSkills.navigation('developer');
-      MainSkills.carousel('developer');
-      MainSkills.rating('developer');
-      MainSkills.build('developer');
+      MainSkills.navigation(titleName);
+      MainSkills.carousel(titleName);
+      MainSkills.rating(titleName);
+      // MainSkills.build(titleName);
     };
-    mainSkills();
+    mainSkills('producer');
+    mainSkills('developer');
 
     //--🠊 console.log('|🠊 default-main.js Detected! 🠈|'); 🠈--//
   }
@@ -44,7 +42,6 @@ export namespace DefaultMain {
       */
     }
   }
-
   namespace MainSkills {
     export function navigation(titleName: 'producer' | 'developer') {
       const navigation = `#${titleName}-carousel .navigation-${titleName} li`;
@@ -387,8 +384,8 @@ export namespace DefaultMain {
         });
     }
     export function build(titleName: 'producer' | 'developer') {
-      // Info.resume;
       // console.log(new Info.resume(titleName));
+      // console.log(test);
     }
   }
 }

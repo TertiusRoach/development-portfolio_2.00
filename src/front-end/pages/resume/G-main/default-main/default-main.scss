@@ -264,11 +264,12 @@
 
           h1,
           h6 {
+            margin: 0 8px;
             overflow: inherit;
             white-space: nowrap;
             color: $primary-light;
             text-overflow: ellipsis;
-            filter: drop-shadow(0 0 8px black);
+            filter: drop-shadow(0 0 8px black); //--🠈 Horizontal Offset / Vertical Offset / Blur Radius / Color 🠈--//
           }
 
           &.visible {
