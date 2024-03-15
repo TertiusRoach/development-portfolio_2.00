@@ -257,12 +257,17 @@
         }
         span {
           display: flex;
+          overflow: hidden;
           align-items: center;
           justify-content: center;
           transition: 0.75s ease-in-out;
+
           h1,
           h6 {
+            overflow: inherit;
+            white-space: nowrap;
             color: $primary-light;
+            text-overflow: ellipsis;
             filter: drop-shadow(0 0 8px black);
           }
 
