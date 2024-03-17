@@ -8,12 +8,10 @@ export namespace DefaultMain {
     };
     mainHome();
     const mainSkills = (titleName: 'producer' | 'developer') => {
-      console.log(Info.Main.skills('all')[0].application);
-
       MainSkills.navigation(titleName);
       MainSkills.carousel(titleName);
       MainSkills.rating(titleName);
-      // MainSkills.build(titleName);
+      MainSkills.build(titleName);
     };
     mainSkills('producer');
     mainSkills('developer');
@@ -47,7 +45,7 @@ export namespace DefaultMain {
       const navigation = `#${titleName}-carousel .navigation-${titleName} li`;
 
       const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
-        let enable: String = event.target.firstChild.innerText;
+        let enable: string = event.target.firstChild.innerText;
         switch (action) {
           case 'block':
             setTimeout(() => {
@@ -78,7 +76,7 @@ export namespace DefaultMain {
         let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
         let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
 
-        let sectionName: String = $(event.target).find('>:first-child').text();
+        let sectionName: string = $(event.target).find('>:first-child').text();
         hidden.innerHTML = `<h1>${sectionName}</h1>
                             <h6>${sectionName}</h6>`;
 
@@ -106,7 +104,7 @@ export namespace DefaultMain {
       });
     }
     export function carousel(titleName: 'producer' | 'developer') {
-      const shiftLeft = (title: String) => {
+      const shiftLeft = (title: string) => {
         // When I click left move slides to the left
         let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
         let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
@@ -127,7 +125,7 @@ export namespace DefaultMain {
           toggleArrows(slides, prevButton, nextButton, prevIndex);
         });
       };
-      const shiftRight = (title: String) => {
+      const shiftRight = (title: string) => {
         // When I click right move slides to the right
         let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
         let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
@@ -146,7 +144,7 @@ export namespace DefaultMain {
           toggleArrows(slides, prevButton, nextButton, nextIndex);
         });
       };
-      const modifyDots = (title: String) => {
+      const modifyDots = (title: string) => {
         // when I click the nav indicators, move to that slide
         let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
         let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
@@ -171,7 +169,7 @@ export namespace DefaultMain {
           toggleArrows(slides, prevButton, nextButton, targetIndex);
         });
       };
-      const horizontalSlides = (title: String) => {
+      const horizontalSlides = (title: string) => {
         // Arrange the slides next to one another
         let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
         let slides: any = Array.from(track.children);
@@ -280,7 +278,7 @@ export namespace DefaultMain {
         }
       };
       const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
-        let enable: String = event.target.getAttribute('alt');
+        let enable: string = event.target.getAttribute('alt');
         switch (action) {
           case 'block':
             setTimeout(() => {
@@ -316,6 +314,10 @@ export namespace DefaultMain {
             let prevScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
             bar.className = '';
             switch ($(event.target).parent().children(':last').attr('alt')) {
+              case '0/10':
+                bar.classList.add('O');
+                counter.setAttribute('data-val', '0');
+                break;
               case '1/10':
                 bar.classList.add('I');
                 counter.setAttribute('data-val', '1');
@@ -384,8 +386,104 @@ export namespace DefaultMain {
         });
     }
     export function build(titleName: 'producer' | 'developer') {
-      // console.log(new Info.resume(titleName));
-      // console.log(test);
+      switch (titleName) {
+        case 'producer':
+          //--🠋 Reset Images to Default Value 🠋--//
+          let skillIcons: Array<HTMLLIElement> = [];
+          let alternative: Array<string> = ['...', '0/10'];
+          let containers: Array<string> = ['first-container', 'second-container', 'third-container', 'fourth-container', 'fifth-container'];
+
+          for (let i = 0; i < containers.length; i++) {
+            for (let j = 1; j <= 9; j++) {
+              var skill: HTMLLIElement = document.querySelector(`#${titleName}-carousel #${titleName}-skills .${containers[i]} li:nth-child(${j})`);
+
+              var topImage: HTMLImageElement = skill.querySelector(':first-child');
+              var botImage: HTMLImageElement = skill.querySelector(':last-child');
+              [topImage, botImage].forEach((icon, index) => {
+                //--🠋 Clears Classes within the <li> tags 🠋--//
+                while (icon.classList.length > 0) {
+                  icon.classList.remove(icon.classList.item(0));
+                }
+                //--🠋 Assign Source Location 🠋--//
+                icon.src = 'dist/front-end/pages/resume/content/svg-files/transparent-placeholder.svg';
+                //--🠋 Assign Alternative Text 🠋--//
+                icon.alt = alternative[index];
+              });
+
+              skillIcons.push(skill);
+            }
+          }
+          //--🠋 Import Array from utilities/Info.ts 🠋--//
+          for (let i = 0; i < Info.Resume.skills().length; i++) {
+            var firstIcon: HTMLImageElement = skillIcons[i].querySelector(':first-child');
+            var lastIcon: HTMLImageElement = skillIcons[i].querySelector(':last-child');
+
+            //--🠋 Assign class to firstIcon 🠋--//
+            firstIcon.className = Info.Resume.skills()[i].className;
+            //--🠋 Assign src to firstIcon 🠋--//
+            firstIcon.src = Info.Resume.skills()[i].firstIcon;
+            //--🠋 Assign alt to firstIcon 🠋--//
+            firstIcon.alt = Info.Resume.skills()[i].application;
+            //--🠋 Assign class to lastIcon 🠋--//
+            if (Info.Resume.skills()[i].overlay) {
+              lastIcon.className = 'overlay';
+              lastIcon.parentElement.style.cursor = 'pointer';
+            }
+            //--🠋 Assign src to lastIcon 🠋--//
+            lastIcon.src = Info.Resume.skills()[i].lastIcon;
+            //--🠋 Assign alt to lastIcon 🠋--//
+            lastIcon.alt = `${Info.Resume.skills()[i].rating}/10`;
+          }
+          /*
+          //--🠋 Import Array from utilities/Info.ts 🠋--//
+          for (let i = 0; i < Info.Resume.skills('languages').length; i++) {
+            var firstIcon: HTMLImageElement = skillIcons[i].querySelector(':first-child');
+            var lastIcon: HTMLImageElement = skillIcons[i].querySelector(':last-child');
+
+            //--🠋 Assign class to firstIcon 🠋--//
+            firstIcon.className = Info.Resume.skills('languages')[i].className;
+            //--🠋 Assign src to firstIcon 🠋--//
+            firstIcon.src = Info.Resume.skills('languages')[i].firstIcon;
+            //--🠋 Assign alt to firstIcon 🠋--//
+            firstIcon.alt = Info.Resume.skills('languages')[i].application;
+            //--🠋 Assign class to lastIcon 🠋--//
+            if (Info.Resume.skills('languages')[i].overlay) {
+              lastIcon.className = 'overlay';
+              lastIcon.parentElement.style.cursor = 'pointer';
+            }
+            //--🠋 Assign src to lastIcon 🠋--//
+            lastIcon.src = Info.Resume.skills('languages')[i].lastIcon;
+            //--🠋 Assign alt to lastIcon 🠋--//
+            lastIcon.alt = `${Info.Resume.skills('languages')[i].rating}/10`;
+          }
+          */
+          /*
+          //--🠋 Import Array from utilities/Info.ts 🠋--//
+          for (let i = 0; i < Info.Resume.skills('everything').length; i++) {
+            var firstIcon: HTMLImageElement = skillIcons[i].querySelector(':first-child');
+            var lastIcon: HTMLImageElement = skillIcons[i].querySelector(':last-child');
+
+            //--🠋 Assign class to firstIcon 🠋--//
+            firstIcon.className = Info.Resume.skills('everything')[i].className;
+            //--🠋 Assign src to firstIcon 🠋--//
+            firstIcon.src = Info.Resume.skills('everything')[i].firstIcon;
+            //--🠋 Assign alt to firstIcon 🠋--//
+            firstIcon.alt = Info.Resume.skills('everything')[i].application;
+            //--🠋 Assign class to lastIcon 🠋--//
+            if (Info.Resume.skills('everything')[i].overlay) {
+              lastIcon.className = 'overlay';
+              lastIcon.parentElement.style.cursor = 'pointer';
+            }
+            //--🠋 Assign src to lastIcon 🠋--//
+            lastIcon.src = Info.Resume.skills('everything')[i].lastIcon;
+            //--🠋 Assign alt to lastIcon 🠋--//
+            lastIcon.alt = `${Info.Resume.skills('everything')[i].rating}/10`;
+          }
+          */
+          break;
+        case 'developer':
+          break;
+      }
     }
   }
 }

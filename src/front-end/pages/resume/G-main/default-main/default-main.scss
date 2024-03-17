@@ -365,6 +365,7 @@
                   filter: drop-shadow(0 0 4px white);
                 }
               }
+
               &:hover img {
                 &:first-child {
                   clip-path: inset(100% 0 0 0); //--🠈 top-offset / right-offset / bottom-offset / left-offset 🠈--//
@@ -373,17 +374,6 @@
                   clip-path: inset(0 0 0 0); //--🠈 top-offset / right-offset / bottom-offset / left-offset 🠈--//
                 }
               }
-
-              /*
-              &.cleared,
-              &.cleared:hover {
-                background: green;
-              }
-              &.blocked,
-              &.blocked:hover {
-                background: red;
-              }
-              */
             }
             &.visible {
               opacity: 1;
@@ -449,6 +439,17 @@
                 grid-area: 3 / 3 / 4 / 4;
               }
             }
+
+            /*
+            .cleared,
+            .cleared:hover {
+              background: green;
+            }
+            .blocked,
+            .blocked:hover {
+              background: red;
+            }
+            */
           }
         }
         //--|🠉| Carousel |🠉|--//
