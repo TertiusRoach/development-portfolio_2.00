@@ -21,7 +21,7 @@ export namespace Info {
     private static firstIcon: string;
     private static lastIcon: string;
 
-    static skills(section?: 'design' | 'editing' | 'admin' | 'languages' | 'utilities' | 'databases' | 'everything'): Icon[] {
+    static skills(section?: 'design' | 'editing' | 'admin' | 'languages' | 'utilities' | 'databases' | 'everything' | string): Icon[] {
       this.firstIcon = 'dist/front-end/pages/resume/content/png-files/logo-skills/green-logos';
       this.lastIcon = 'dist/front-end/pages/resume/content/png-files/logo-skills/original-logos';
 

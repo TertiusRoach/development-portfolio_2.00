@@ -8,10 +8,10 @@ export namespace DefaultMain {
     };
     mainHome();
     const mainSkills = (titleName: 'producer' | 'developer') => {
-      MainSkills.navigation(titleName);
-      MainSkills.carousel(titleName);
-      MainSkills.rating(titleName);
       MainSkills.build(titleName);
+      MainSkills.rating(titleName);
+      MainSkills.carousel(titleName);
+      MainSkills.navigation(titleName);
     };
     mainSkills('producer');
     mainSkills('developer');
@@ -41,176 +41,75 @@ export namespace DefaultMain {
     }
   }
   namespace MainSkills {
-    export function navigation(titleName: 'producer' | 'developer') {
-      const navigation = `#${titleName}-carousel .navigation-${titleName} li`;
-
-      const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
-        let enable: string = event.target.firstChild.innerText;
-        switch (action) {
-          case 'block':
-            setTimeout(() => {
-              for (let i = 0; i < event.target.parentNode.children.length; i++) {
-                let element = event.target.parentNode.childNodes[i].firstChild.innerText;
-
-                if (element !== enable) {
-                  event.target.parentNode.children[i].classList.remove('cleared');
-                  event.target.parentNode.children[i].classList.add('blocked');
-                } else if (element === enable) {
-                  event.target.parentNode.children[i].classList.remove('blocked');
-                  event.target.parentNode.children[i].classList.add('cleared');
-                }
-              }
-            }, milliseconds);
-            break;
-          case 'clear':
-            setTimeout(() => {
-              for (let i = 0; i < event.target.parentNode.children.length; i++) {
-                event.target.parentNode.children[i].classList.remove('blocked');
-                event.target.parentNode.children[i].classList.add('cleared');
-              }
-            }, milliseconds);
-            break;
+    export function build(titleName: 'producer' | 'developer') {
+      const createNavigation = (sections: Array<string>, index: number) => {
+        let listItem: HTMLLIElement = document.createElement('li');
+        listItem.className = 'cleared';
+        navigation.appendChild(listItem);
+        if (index === 0) {
+          listItem.id = 'active'; //--🠈 Set the id to 'active' for the first section 🠈--//
         }
+
+        let spanItem: HTMLSpanElement = document.createElement('span');
+        listItem.appendChild(spanItem);
+        spanItem.textContent = sections[index];
       };
-      const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
-        let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
-        let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
-
-        let sectionName: string = $(event.target).find('>:first-child').text();
-        hidden.innerHTML = `<h1>${sectionName}</h1>
-                            <h6>${sectionName}</h6>`;
-
-        setTimeout(() => {
-          visible.className = '';
-          visible.className = 'hidden';
-          setTimeout(() => {
-            visible.innerHTML = `<h1>${sectionName}</h1>
-                                 <h6>${sectionName}</h6>`;
-          }, milliseconds);
-
-          hidden.className = '';
-          hidden.className = 'visible';
-        }, milliseconds);
-      };
-
-      $(navigation).on('click', function (event) {
-        switch (true) {
-          case event.target.classList.contains('cleared'):
-            navigationToggle(event, 375);
-            safetyToggle('block', event, 0);
-            safetyToggle('clear', event, 375);
-            break;
-        }
-      });
-    }
-    export function carousel(titleName: 'producer' | 'developer') {
-      const shiftLeft = (title: string) => {
-        // When I click left move slides to the left
-        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
-        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
-        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
-        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
-
-        prevButton.addEventListener('click', (event) => {
-          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
-          var prevSlide: any = currentSlide.previousElementSibling;
-          var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
-          var slides: any = Array.from(track.children);
-          var prevIndex: number = slides.findIndex((slide) => slide === prevSlide);
-          var prevDot = currentDot.previousElementSibling;
-
-          // toggleCursors(title);
-          updateDots(currentDot, prevDot);
-          moveToSlide(track, currentSlide, prevSlide);
-          toggleArrows(slides, prevButton, nextButton, prevIndex);
-        });
-      };
-      const shiftRight = (title: string) => {
-        // When I click right move slides to the right
-        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
-        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
-        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
-        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
-        nextButton.addEventListener('click', (event) => {
-          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
-          var nextSlide: any = currentSlide.nextElementSibling;
-          var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
-          var slides: any = Array.from(track.children);
-          var nextIndex: number = slides.findIndex((slide) => slide === nextSlide);
-          var nextDot = currentDot.nextElementSibling;
-
-          updateDots(currentDot, nextDot);
-          moveToSlide(track, currentSlide, nextSlide);
-          toggleArrows(slides, prevButton, nextButton, nextIndex);
-        });
-      };
-      const modifyDots = (title: string) => {
-        // when I click the nav indicators, move to that slide
-        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
-        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
-        let dots: any = Array.from(dotsNav.children);
-        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
-        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
-        dotsNav.addEventListener('click', (event) => {
-          // targetDot defines the event target by locating the closest <li> HTMLElement
-          var targetDot: any = (event.target as HTMLElement).closest('li');
-
-          // If targetDot doesn't have a value (is null or undefined), the code stops executing and doesn't proceed to the next steps.
-          if (!targetDot) return;
-
-          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
-          var currentDot: any = dotsNav.querySelector(`#${title}-carousel #active`);
-          var targetIndex: number = dots.findIndex((dot) => dot === targetDot);
-          var slides: any = Array.from(track.children);
-          var targetSlide: any = slides[targetIndex];
-
-          updateDots(currentDot, targetDot);
-          moveToSlide(track, currentSlide, targetSlide);
-          toggleArrows(slides, prevButton, nextButton, targetIndex);
-        });
-      };
-      const horizontalSlides = (title: string) => {
-        // Arrange the slides next to one another
-        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
-        let slides: any = Array.from(track.children);
-        let slideWidth = slides[0].getBoundingClientRect().width;
-
-        let setSlidePosition = (slide: Object | any, index: number) => {
-          slide.style.left = `${slideWidth * index}px`;
-        };
-        slides.forEach(setSlidePosition);
-      };
-
-      shiftLeft(titleName);
-      shiftRight(titleName);
-      modifyDots(titleName);
-      horizontalSlides(titleName);
-
-      const updateDots = (currentDot: HTMLElement, targetDot: HTMLElement) => {
-        currentDot.removeAttribute('id');
-        targetDot.setAttribute('id', 'active');
-      };
-      const moveToSlide = (track, currentSlide, targetSlide) => {
-        track.style.transform = `translateX(-${targetSlide.style.left})`;
-
-        currentSlide.classList.add('hidden');
-        currentSlide.classList.remove('visible');
-
-        targetSlide.classList.add('visible');
-        targetSlide.classList.remove('hidden');
-      };
-      const toggleArrows = (slides: HTMLElement[], prevButton: HTMLButtonElement, nextButton: HTMLButtonElement, targetIndex: Number) => {
-        if (targetIndex === 0) {
-          prevButton.classList.add('hidden');
-          nextButton.classList.remove('hidden');
-        } else if (targetIndex === slides.length - 1) {
-          prevButton.classList.remove('hidden');
-          nextButton.classList.add('hidden');
+      const createCarousel = (containers: Array<string>, index: number) => {
+        let crate: HTMLUListElement = document.createElement('ul');
+        carousel.appendChild(crate);
+        crate.className = containers[index];
+        //--🠋 Add the appropriate classes for navigation to work 🠋--//
+        if (index === 0) {
+          crate.classList.add('visible');
         } else {
-          prevButton.classList.remove('hidden');
-          nextButton.classList.remove('hidden');
+          crate.classList.add('hidden');
+        }
+
+        let section: any = Info.Resume.skills(sections[index].toLowerCase());
+        for (let i = 0; i < section.length; i++) {
+          var icons: HTMLLIElement = document.createElement('li');
+          var firstIcon: HTMLImageElement = document.createElement('img');
+          var lastIcon: HTMLImageElement = document.createElement('img');
+
+          crate.appendChild(icons);
+          icons.appendChild(firstIcon);
+          icons.appendChild(lastIcon);
+
+          //--🠋 Assign class to icons 🠋--//
+          firstIcon.className = section[i].className;
+          if (section[i].overlay) {
+            lastIcon.className = 'overlay';
+            lastIcon.parentElement.style.cursor = 'pointer';
+          }
+
+          //--🠋 Assign src to firstIcon 🠋--//
+          firstIcon.src = section[i].firstIcon;
+          lastIcon.src = section[i].lastIcon;
+
+          //--🠋 Assign alt to icons 🠋--//
+          firstIcon.alt = section[i].application;
+          lastIcon.alt = `${section[i].rating}/10`;
         }
       };
+
+      let sections: Array<string>;
+      let carousel: HTMLElement = document.querySelector(`#${titleName}-carousel #${titleName}-skills`);
+      let navigation: HTMLElement = document.querySelector(`#${titleName}-carousel .navigation-${titleName}`);
+      let containers: Array<string> = ['first-container', 'second-container', 'third-container', 'fourth-container', 'fifth-container'];
+      carousel.innerHTML = '';
+      navigation.innerHTML = '';
+      switch (titleName) {
+        case 'producer':
+          sections = ['Design', 'Editing', 'Admin'];
+          break;
+        case 'developer':
+          sections = ['Languages', 'Utilities', 'Databases'];
+          break;
+      }
+      for (let i = 0; i < sections.length; i++) {
+        createNavigation(sections, i);
+        createCarousel(containers, i);
+      }
     }
     export function rating(titleName: 'producer' | 'developer') {
       const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
@@ -385,105 +284,177 @@ export namespace DefaultMain {
           safetyToggle('clear', event, 0);
         });
     }
-    export function build(titleName: 'producer' | 'developer') {
-      switch (titleName) {
-        case 'producer':
-          //--🠋 Reset Images to Default Value 🠋--//
-          let skillIcons: Array<HTMLLIElement> = [];
-          let alternative: Array<string> = ['...', '0/10'];
-          let containers: Array<string> = ['first-container', 'second-container', 'third-container', 'fourth-container', 'fifth-container'];
+    export function carousel(titleName: 'producer' | 'developer') {
+      //--|🠋| There's a bug here (The aren't working) |🠋|--//
+      const shiftLeft = (title: string) => {
+        // When I click left move slides to the left
+        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
+        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
 
-          for (let i = 0; i < containers.length; i++) {
-            for (let j = 1; j <= 9; j++) {
-              var skill: HTMLLIElement = document.querySelector(`#${titleName}-carousel #${titleName}-skills .${containers[i]} li:nth-child(${j})`);
+        prevButton.addEventListener('click', (event) => {
+          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
+          var prevSlide: any = currentSlide.previousElementSibling;
+          var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
+          var slides: any = Array.from(track.children);
+          var prevIndex: number = slides.findIndex((slide) => slide === prevSlide);
+          var prevDot = currentDot.previousElementSibling;
 
-              var topImage: HTMLImageElement = skill.querySelector(':first-child');
-              var botImage: HTMLImageElement = skill.querySelector(':last-child');
-              [topImage, botImage].forEach((icon, index) => {
-                //--🠋 Clears Classes within the <li> tags 🠋--//
-                while (icon.classList.length > 0) {
-                  icon.classList.remove(icon.classList.item(0));
+          // toggleCursors(title);
+          updateDots(currentDot, prevDot);
+          moveToSlide(track, currentSlide, prevSlide);
+          toggleArrows(slides, prevButton, nextButton, prevIndex);
+        });
+      };
+      const shiftRight = (title: string) => {
+        // When I click right move slides to the right
+        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
+        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
+        nextButton.addEventListener('click', (event) => {
+          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
+          var nextSlide: any = currentSlide.nextElementSibling;
+          var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
+          var slides: any = Array.from(track.children);
+          var nextIndex: number = slides.findIndex((slide) => slide === nextSlide);
+          var nextDot = currentDot.nextElementSibling;
+
+          updateDots(currentDot, nextDot);
+          moveToSlide(track, currentSlide, nextSlide);
+          toggleArrows(slides, prevButton, nextButton, nextIndex);
+        });
+      };
+      const modifyDots = (title: string) => {
+        // when I click the nav indicators, move to that slide
+        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
+        let dots: any = Array.from(dotsNav.children);
+        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
+        dotsNav.addEventListener('click', (event) => {
+          // targetDot defines the event target by locating the closest <li> HTMLElement
+          var targetDot: any = (event.target as HTMLElement).closest('li');
+
+          // If targetDot doesn't have a value (is null or undefined), the code stops executing and doesn't proceed to the next steps.
+          if (!targetDot) return;
+
+          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
+          var currentDot: any = dotsNav.querySelector(`#${title}-carousel #active`);
+          var targetIndex: number = dots.findIndex((dot) => dot === targetDot);
+          var slides: any = Array.from(track.children);
+          var targetSlide: any = slides[targetIndex];
+
+          updateDots(currentDot, targetDot);
+          moveToSlide(track, currentSlide, targetSlide);
+          toggleArrows(slides, prevButton, nextButton, targetIndex);
+        });
+      };
+      const horizontalSlides = (title: string) => {
+        // Arrange the slides next to one another
+        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+        let slides: any = Array.from(track.children);
+        let slideWidth = slides[0].getBoundingClientRect().width;
+
+        let setSlidePosition = (slide: Object | any, index: number) => {
+          slide.style.left = `${slideWidth * index}px`;
+        };
+        slides.forEach(setSlidePosition);
+      };
+
+      shiftLeft(titleName);
+      shiftRight(titleName);
+      modifyDots(titleName);
+      horizontalSlides(titleName);
+
+      const updateDots = (currentDot: HTMLElement, targetDot: HTMLElement) => {
+        currentDot.removeAttribute('id');
+        targetDot.setAttribute('id', 'active');
+      };
+      const moveToSlide = (track, currentSlide, targetSlide) => {
+        track.style.transform = `translateX(-${targetSlide.style.left})`;
+
+        currentSlide.classList.add('hidden');
+        currentSlide.classList.remove('visible');
+
+        targetSlide.classList.add('visible');
+        targetSlide.classList.remove('hidden');
+      };
+      const toggleArrows = (slides: HTMLElement[], prevButton: HTMLButtonElement, nextButton: HTMLButtonElement, targetIndex: Number) => {
+        if (targetIndex === 0) {
+          prevButton.classList.add('hidden');
+          nextButton.classList.remove('hidden');
+        } else if (targetIndex === slides.length - 1) {
+          prevButton.classList.remove('hidden');
+          nextButton.classList.add('hidden');
+        } else {
+          prevButton.classList.remove('hidden');
+          nextButton.classList.remove('hidden');
+        }
+      };
+    }
+    export function navigation(titleName: 'producer' | 'developer') {
+      const navigation = `#${titleName}-carousel .navigation-${titleName} li`;
+
+      const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
+        let enable: string = event.target.firstChild.innerText;
+        switch (action) {
+          case 'block':
+            setTimeout(() => {
+              for (let i = 0; i < event.target.parentNode.children.length; i++) {
+                let element = event.target.parentNode.childNodes[i].firstChild.innerText;
+
+                if (element !== enable) {
+                  event.target.parentNode.children[i].classList.remove('cleared');
+                  event.target.parentNode.children[i].classList.add('blocked');
+                } else if (element === enable) {
+                  event.target.parentNode.children[i].classList.remove('blocked');
+                  event.target.parentNode.children[i].classList.add('cleared');
                 }
-                //--🠋 Assign Source Location 🠋--//
-                icon.src = 'dist/front-end/pages/resume/content/svg-files/transparent-placeholder.svg';
-                //--🠋 Assign Alternative Text 🠋--//
-                icon.alt = alternative[index];
-              });
+              }
+            }, milliseconds);
+            break;
+          case 'clear':
+            setTimeout(() => {
+              for (let i = 0; i < event.target.parentNode.children.length; i++) {
+                event.target.parentNode.children[i].classList.remove('blocked');
+                event.target.parentNode.children[i].classList.add('cleared');
+              }
+            }, milliseconds);
+            break;
+        }
+      };
+      const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
+        let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
+        let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
 
-              skillIcons.push(skill);
-            }
-          }
-          //--🠋 Import Array from utilities/Info.ts 🠋--//
-          for (let i = 0; i < Info.Resume.skills().length; i++) {
-            var firstIcon: HTMLImageElement = skillIcons[i].querySelector(':first-child');
-            var lastIcon: HTMLImageElement = skillIcons[i].querySelector(':last-child');
+        let sectionName: string = $(event.target).find('>:first-child').text();
+        hidden.innerHTML = `<h1>${sectionName}</h1>
+                            <h6>${sectionName}</h6>`;
 
-            //--🠋 Assign class to firstIcon 🠋--//
-            firstIcon.className = Info.Resume.skills()[i].className;
-            //--🠋 Assign src to firstIcon 🠋--//
-            firstIcon.src = Info.Resume.skills()[i].firstIcon;
-            //--🠋 Assign alt to firstIcon 🠋--//
-            firstIcon.alt = Info.Resume.skills()[i].application;
-            //--🠋 Assign class to lastIcon 🠋--//
-            if (Info.Resume.skills()[i].overlay) {
-              lastIcon.className = 'overlay';
-              lastIcon.parentElement.style.cursor = 'pointer';
-            }
-            //--🠋 Assign src to lastIcon 🠋--//
-            lastIcon.src = Info.Resume.skills()[i].lastIcon;
-            //--🠋 Assign alt to lastIcon 🠋--//
-            lastIcon.alt = `${Info.Resume.skills()[i].rating}/10`;
-          }
-          /*
-          //--🠋 Import Array from utilities/Info.ts 🠋--//
-          for (let i = 0; i < Info.Resume.skills('languages').length; i++) {
-            var firstIcon: HTMLImageElement = skillIcons[i].querySelector(':first-child');
-            var lastIcon: HTMLImageElement = skillIcons[i].querySelector(':last-child');
+        setTimeout(() => {
+          visible.className = '';
+          visible.className = 'hidden';
+          setTimeout(() => {
+            visible.innerHTML = `<h1>${sectionName}</h1>
+                                 <h6>${sectionName}</h6>`;
+          }, milliseconds);
 
-            //--🠋 Assign class to firstIcon 🠋--//
-            firstIcon.className = Info.Resume.skills('languages')[i].className;
-            //--🠋 Assign src to firstIcon 🠋--//
-            firstIcon.src = Info.Resume.skills('languages')[i].firstIcon;
-            //--🠋 Assign alt to firstIcon 🠋--//
-            firstIcon.alt = Info.Resume.skills('languages')[i].application;
-            //--🠋 Assign class to lastIcon 🠋--//
-            if (Info.Resume.skills('languages')[i].overlay) {
-              lastIcon.className = 'overlay';
-              lastIcon.parentElement.style.cursor = 'pointer';
-            }
-            //--🠋 Assign src to lastIcon 🠋--//
-            lastIcon.src = Info.Resume.skills('languages')[i].lastIcon;
-            //--🠋 Assign alt to lastIcon 🠋--//
-            lastIcon.alt = `${Info.Resume.skills('languages')[i].rating}/10`;
-          }
-          */
-          /*
-          //--🠋 Import Array from utilities/Info.ts 🠋--//
-          for (let i = 0; i < Info.Resume.skills('everything').length; i++) {
-            var firstIcon: HTMLImageElement = skillIcons[i].querySelector(':first-child');
-            var lastIcon: HTMLImageElement = skillIcons[i].querySelector(':last-child');
+          hidden.className = '';
+          hidden.className = 'visible';
+        }, milliseconds);
+      };
 
-            //--🠋 Assign class to firstIcon 🠋--//
-            firstIcon.className = Info.Resume.skills('everything')[i].className;
-            //--🠋 Assign src to firstIcon 🠋--//
-            firstIcon.src = Info.Resume.skills('everything')[i].firstIcon;
-            //--🠋 Assign alt to firstIcon 🠋--//
-            firstIcon.alt = Info.Resume.skills('everything')[i].application;
-            //--🠋 Assign class to lastIcon 🠋--//
-            if (Info.Resume.skills('everything')[i].overlay) {
-              lastIcon.className = 'overlay';
-              lastIcon.parentElement.style.cursor = 'pointer';
-            }
-            //--🠋 Assign src to lastIcon 🠋--//
-            lastIcon.src = Info.Resume.skills('everything')[i].lastIcon;
-            //--🠋 Assign alt to lastIcon 🠋--//
-            lastIcon.alt = `${Info.Resume.skills('everything')[i].rating}/10`;
-          }
-          */
-          break;
-        case 'developer':
-          break;
-      }
+      $(navigation).on('click', function (event) {
+        switch (true) {
+          case event.target.classList.contains('cleared'):
+            navigationToggle(event, 375);
+            safetyToggle('block', event, 0);
+            safetyToggle('clear', event, 375);
+            break;
+        }
+      });
     }
   }
 }
