@@ -7,6 +7,9 @@ export namespace Info {
     overlay: boolean;
     rating: number;
 
+    private static firstIcon: string;
+    private static lastIcon: string;
+
     constructor(application: string, className: string, firstIcon: string, lastIcon: string, overlay: boolean, rating: number) {
       this.application = application;
       this.className = className;
@@ -15,108 +18,152 @@ export namespace Info {
       this.overlay = overlay;
       this.rating = rating;
     }
+
+    static skills(skill: string) {
+      this.firstIcon = 'dist/front-end/pages/resume/content/png-files/logo-skills/green-logos';
+      this.lastIcon = 'dist/front-end/pages/resume/content/png-files/logo-skills/original-logos';
+
+      switch (skill) {
+        case 'Adobe After Effects':
+          return new Icon('Adobe After Effects', 'adobe-after-effects', `${this.firstIcon}/Adobe After Effects.png`, `${this.lastIcon}/Adobe After Effects.png`, false, 8);
+        case 'Adobe Audition':
+          return new Icon('Adobe Audition', 'adobe-audition', `${this.firstIcon}/Adobe Audition.png`, `${this.lastIcon}/Adobe Audition.png`, false, 7);
+        case 'Adobe Illustrator':
+          return new Icon('Adobe Illustrator', 'adobe-illustrator', `${this.firstIcon}/Adobe Illustrator.png`, `${this.lastIcon}/Adobe Illustrator.png`, false, 6);
+        case 'Adobe InDesign':
+          return new Icon('Adobe InDesign', 'adobe-indesign', `${this.firstIcon}/Adobe InDesign.png`, `${this.lastIcon}/Adobe InDesign.png`, false, 7);
+        case 'Adobe Photoshop':
+          return new Icon('Adobe Photoshop', 'adobe-photoshop', `${this.firstIcon}/Adobe Photoshop.png`, `${this.lastIcon}/Adobe Photoshop.png`, false, 9);
+        case 'Adobe Premiere Pro':
+          return new Icon('Adobe Premiere Pro', 'adobe-premiere-pro', `${this.firstIcon}/Adobe Premiere Pro.png`, `${this.lastIcon}/Adobe Premiere Pro.png`, false, 7);
+        case 'Adobe Xd':
+          return new Icon('Adobe Xd', 'adobe-xd', `${this.firstIcon}/Adobe Xd.png`, `${this.lastIcon}/Adobe Xd.png`, false, 5);
+        case 'Angular':
+          return new Icon('Angular', 'angular', `${this.firstIcon}/Angular.png`, `${this.lastIcon}/Angular.png`, false, 1);
+        case 'C++':
+          return new Icon('C++', 'cPlusPlus', `${this.firstIcon}/C++.png`, `${this.lastIcon}/C++.png`, false, 1);
+        case 'CSS':
+          return new Icon('CSS', 'css', `${this.firstIcon}/CSS.png`, `${this.lastIcon}/CSS.png`, true, 8);
+        case 'DaVinci Resolve':
+          return new Icon('DaVinci Resolve', 'davinci-resolve', `${this.firstIcon}/DaVinci Resolve.png`, `${this.lastIcon}/DaVinci Resolve.png`, true, 10);
+        case 'Figma':
+          return new Icon('Figma', 'figma', `${this.firstIcon}/Figma.png`, `${this.lastIcon}/Figma.png`, true, 7);
+        case 'Final Cut Pro':
+          return new Icon('Final Cut Pro', 'final-cut-pro', `${this.firstIcon}/Final Cut Pro.png`, `${this.lastIcon}/Final Cut Pro.png`, false, 6);
+        case 'GIMP':
+          return new Icon('GIMP', 'gimp', `${this.firstIcon}/GIMP.png`, `${this.lastIcon}/GIMP.png`, false, 7);
+        case 'GitHub':
+          return new Icon('GitHub', 'github', `${this.firstIcon}/GitHub.png`, `${this.lastIcon}/GitHub.png`, true, 6);
+        case 'Google Apps Script':
+          return new Icon('Google Apps Script', 'google-apps-script', `${this.firstIcon}/Google Apps Script.png`, `${this.lastIcon}/Google Apps Script.png`, false, 7);
+        case 'Google Drive':
+          return new Icon('Google Drive', 'google-drive', `${this.firstIcon}/Google Drive.png`, `${this.lastIcon}/Google Drive.png`, false, 10);
+        case 'Google Sheets':
+          return new Icon('Google Sheets', 'google-sheets', `${this.firstIcon}/Google Sheets.png`, `${this.lastIcon}/Google Sheets.png`, true, 8);
+        case 'Gulp':
+          return new Icon('Gulp', 'gulp', `${this.firstIcon}/Gulp.png`, `${this.lastIcon}/Gulp.png`, false, 8);
+        case 'HTML':
+          return new Icon('HTML', 'html', `${this.firstIcon}/HTML.png`, `${this.lastIcon}/HTML.png`, false, 10);
+        case 'Inkscape':
+          return new Icon('Inkscape', 'inkscape', `${this.firstIcon}/Inkscape.png`, `${this.lastIcon}/Inkscape.png`, false, 5);
+        case 'JavaScript':
+          return new Icon('JavaScript', 'javascript', `${this.firstIcon}/JavaScript.png`, `${this.lastIcon}/JavaScript.png`, true, 8);
+        case 'jQuery':
+          return new Icon('jQuery', 'jquery', `${this.firstIcon}/jQuery.png`, `${this.lastIcon}/jQuery.png`, false, 8);
+        case 'Microsoft Excel':
+          return new Icon('Microsoft Excel', 'microsoft-excel', `${this.firstIcon}/Microsoft Excel.png`, `${this.lastIcon}/Microsoft Excel.png`, false, 9);
+        case 'Microsoft OneDrive':
+          return new Icon('Microsoft OneDrive', 'microsoft-onedrive', `${this.firstIcon}/Microsoft OneDrive.png`, `${this.lastIcon}/Microsoft OneDrive.png`, false, 10);
+        case 'SharePoint':
+          return new Icon('SharePoint', 'sharepoint', `${this.firstIcon}/SharePoint.png`, `${this.lastIcon}/SharePoint.png`, false, 7);
+        case 'Microsoft Word':
+          return new Icon('Microsoft Word', 'microsoft-word', `${this.firstIcon}/Microsoft Word.png`, `${this.lastIcon}/Microsoft Word.png`, false, 10);
+        case 'MongoDB':
+          return new Icon('MongoDB', 'mongodb', `${this.firstIcon}/MongoDB.png`, `${this.lastIcon}/MongoDB.png`, false, 5);
+        case 'MySQL':
+          return new Icon('MySQL', 'mysql', `${this.firstIcon}/MySQL.png`, `${this.lastIcon}/MySQL.png`, false, 6);
+        case 'Natron':
+          return new Icon('Natron', 'natron', `${this.firstIcon}/Natron.png`, `${this.lastIcon}/Natron.png`, false, 1);
+        case 'Node.js':
+          return new Icon('Node.js', 'node-js', `${this.firstIcon}/NodeJS.png`, `${this.lastIcon}/NodeJS.png`, false, 5);
+        case 'Python':
+          return new Icon('Python', 'python', `${this.firstIcon}/Python.png`, `${this.lastIcon}/Python.png`, false, 3);
+        case 'Sass':
+          return new Icon('Sass', 'sass', `${this.firstIcon}/Sass.png`, `${this.lastIcon}/Sass.png`, false, 9);
+        case 'Scribus':
+          return new Icon('Scribus', 'scribus', `${this.firstIcon}/Scribus.png`, `${this.lastIcon}/Scribus.png`, false, 8);
+        case 'Steinberg Cubase':
+          return new Icon('Steinberg Cubase', 'steinberg-cubase', `${this.firstIcon}/Steinberg Cubase.png`, `${this.lastIcon}/Steinberg Cubase.png`, false, 6);
+        case 'TypeScript':
+          return new Icon('TypeScript', 'typescript', `${this.firstIcon}/TypeScript.png`, `${this.lastIcon}/TypeScript.png`, false, 7);
+        case 'Visual Basic for Applications':
+          return new Icon('Visual Basic for Applications', 'visual-basic-for-applications', `${this.firstIcon}/Visual Basic for Applications.png`, `${this.lastIcon}/Visual Basic for Applications.png`, true, 9);
+        case 'Visual Studio Code':
+          return new Icon('Visual Studio Code', 'visual-studio-code', `${this.firstIcon}/Visual Studio Code.png`, `${this.lastIcon}/Visual Studio Code.png`, false, 5);
+        default:
+          return { application: '', className: '', firstIcon: ``, lastIcon: ``, overlay: false, rating: 0 };
+      }
+    }
   }
 
   export class Resume {
     private static firstIcon: string;
     private static lastIcon: string;
 
-    static skills(section?: 'design' | 'editing' | 'admin' | 'languages' | 'utilities' | 'databases' | 'everything' | string): Icon[] {
-      this.firstIcon = 'dist/front-end/pages/resume/content/png-files/logo-skills/green-logos';
-      this.lastIcon = 'dist/front-end/pages/resume/content/png-files/logo-skills/original-logos';
-
-      const adobeAfterEffects: Icon = new Icon('Adobe After Effects', 'adobe-after-effects', `${this.firstIcon}/Adobe After Effects.png`, `${this.lastIcon}/Adobe After Effects.png`, false, 8);
-      const adobeAudition: Icon = new Icon('Adobe Audition', 'adobe-audition', `${this.firstIcon}/Adobe Audition.png`, `${this.lastIcon}/Adobe Audition.png`, false, 7);
-      const adobeIllustrator: Icon = new Icon('Adobe Illustrator', 'adobe-illustrator', `${this.firstIcon}/Adobe Illustrator.png`, `${this.lastIcon}/Adobe Illustrator.png`, false, 6);
-      const adobeInDesign: Icon = new Icon('Adobe InDesign', 'adobe-indesign', `${this.firstIcon}/Adobe InDesign.png`, `${this.lastIcon}/Adobe InDesign.png`, false, 7);
-      const adobePhotoshop: Icon = new Icon('Adobe Photoshop', 'adobe-photoshop', `${this.firstIcon}/Adobe Photoshop.png`, `${this.lastIcon}/Adobe Photoshop.png`, false, 9);
-      const adobePremierePro: Icon = new Icon('Adobe Premiere Pro', 'adobe-premiere-pro', `${this.firstIcon}/Adobe Premiere Pro.png`, `${this.lastIcon}/Adobe Premiere Pro.png`, false, 7);
-      const adobeXd: Icon = new Icon('Adobe Xd', 'adobe-xd', `${this.firstIcon}/Adobe Xd.png`, `${this.lastIcon}/Adobe Xd.png`, false, 5);
-      const angular: Icon = new Icon('Angular', 'angular', `${this.firstIcon}/Angular.png`, `${this.lastIcon}/Angular.png`, false, 1);
-      const cPlusPlus: Icon = new Icon('C++', 'cPlusPlus', `${this.firstIcon}/C++.png`, `${this.lastIcon}/C++.png`, false, 1);
-      const css: Icon = new Icon('CSS', 'css', `${this.firstIcon}/CSS.png`, `${this.lastIcon}/CSS.png`, true, 8);
-      const daVinciResolve: Icon = new Icon('DaVinci Resolve', 'davinci-resolve', `${this.firstIcon}/DaVinci Resolve.png`, `${this.lastIcon}/DaVinci Resolve.png`, true, 10);
-      const figma: Icon = new Icon('Figma', 'figma', `${this.firstIcon}/Figma.png`, `${this.lastIcon}/Figma.png`, true, 7);
-      const finalCutPro: Icon = new Icon('Final Cut Pro', 'final-cut-pro', `${this.firstIcon}/Final Cut Pro.png`, `${this.lastIcon}/Final Cut Pro.png`, false, 6);
-      const gimp: Icon = new Icon('GIMP', 'gimp', `${this.firstIcon}/GIMP.png`, `${this.lastIcon}/GIMP.png`, false, 7);
-      const gitHub: Icon = new Icon('GitHub', 'github', `${this.firstIcon}/GitHub.png`, `${this.lastIcon}/GitHub.png`, true, 6);
-      const googleAppsScript: Icon = new Icon('Google Apps Script', 'google-apps-script', `${this.firstIcon}/Google Apps Script.png`, `${this.lastIcon}/Google Apps Script.png`, false, 7);
-      const googleDrive: Icon = new Icon('Google Drive', 'google-drive', `${this.firstIcon}/Google Drive.png`, `${this.lastIcon}/Google Drive.png`, false, 10);
-      const googleSheets: Icon = new Icon('Google Sheets', 'google-sheets', `${this.firstIcon}/Google Sheets.png`, `${this.lastIcon}/Google Sheets.png`, true, 8);
-      const gulp: Icon = new Icon('Gulp', 'gulp', `${this.firstIcon}/Gulp.png`, `${this.lastIcon}/Gulp.png`, false, 8);
-      const html: Icon = new Icon('HTML', 'html', `${this.firstIcon}/HTML.png`, `${this.lastIcon}/HTML.png`, false, 10);
-      const inkscape: Icon = new Icon('Inkscape', 'inkscape', `${this.firstIcon}/Inkscape.png`, `${this.lastIcon}/Inkscape.png`, false, 5);
-      const javaScript: Icon = new Icon('JavaScript', 'javascript', `${this.firstIcon}/JavaScript.png`, `${this.lastIcon}/JavaScript.png`, true, 8);
-      const jQuery: Icon = new Icon('jQuery', 'jquery', `${this.firstIcon}/jQuery.png`, `${this.lastIcon}/jQuery.png`, false, 8);
-      const microsoftExcel: Icon = new Icon('Microsoft Excel', 'microsoft-excel', `${this.firstIcon}/Microsoft Excel.png`, `${this.lastIcon}/Microsoft Excel.png`, false, 9);
-      const microsoftOneDrive: Icon = new Icon('Microsoft OneDrive', 'microsoft-onedrive', `${this.firstIcon}/Microsoft OneDrive.png`, `${this.lastIcon}/Microsoft OneDrive.png`, false, 10);
-      const microsoftSharePoint: Icon = new Icon('SharePoint', 'sharepoint', `${this.firstIcon}/SharePoint.png`, `${this.lastIcon}/SharePoint.png`, false, 7);
-      const microsoftWord: Icon = new Icon('Microsoft Word', 'microsoft-word', `${this.firstIcon}/Microsoft Word.png`, `${this.lastIcon}/Microsoft Word.png`, false, 10);
-      const mongoDb: Icon = new Icon('MongoDB', 'mongodb', `${this.firstIcon}/MongoDB.png`, `${this.lastIcon}/MongoDB.png`, false, 5);
-      const mySQL: Icon = new Icon('MySQL', 'mysql', `${this.firstIcon}/MySQL.png`, `${this.lastIcon}/MySQL.png`, false, 6);
-      const natron: Icon = new Icon('Natron', 'natron', `${this.firstIcon}/Natron.png`, `${this.lastIcon}/Natron.png`, false, 1);
-      const nodeJS: Icon = new Icon('Node.js', 'node-js', `${this.firstIcon}/NodeJS.png`, `${this.lastIcon}/NodeJS.png`, false, 5);
-      const python: Icon = new Icon('Python', 'python', `${this.firstIcon}/Python.png`, `${this.lastIcon}/Python.png`, false, 3);
-      const sass: Icon = new Icon('Sass', 'sass', `${this.firstIcon}/Sass.png`, `${this.lastIcon}/Sass.png`, false, 9);
-      const scribus: Icon = new Icon('Scribus', 'scribus', `${this.firstIcon}/Scribus.png`, `${this.lastIcon}/Scribus.png`, false, 8);
-      const steinbergCubase: Icon = new Icon('Steinberg Cubase', 'steinberg-cubase', `${this.firstIcon}/Steinberg Cubase.png`, `${this.lastIcon}/Steinberg Cubase.png`, false, 6);
-      const typeScript: Icon = new Icon('TypeScript', 'typescript', `${this.firstIcon}/TypeScript.png`, `${this.lastIcon}/TypeScript.png`, false, 7);
-      const vba: Icon = new Icon('Visual Basic for Applications', 'visual-basic-for-applications', `${this.firstIcon}/Visual Basic for Applications.png`, `${this.lastIcon}/Visual Basic for Applications.png`, true, 9);
-      const visualStudioCode: Icon = new Icon('Visual Studio Code', 'visual-studio-code', `${this.firstIcon}/Visual Studio Code.png`, `${this.lastIcon}/Visual Studio Code.png`, false, 5);
-
+    static carousel(section?: 'design' | 'editing' | 'admin' | 'languages' | 'utilities' | 'databases' | 'everything' | string): Icon[] {
       switch (section) {
         case 'design':
-          return [adobeIllustrator, adobeInDesign, adobePhotoshop, adobePremierePro, adobeXd, figma, gimp, inkscape, scribus];
+          return [Icon.skills('Adobe Photoshop'), Icon.skills('Figma'), Icon.skills('Scribus'), Icon.skills('Inkscape'), Icon.skills('Adobe Illustrator')];
         case 'editing':
-          return [adobeAfterEffects, adobeAudition, daVinciResolve, finalCutPro, natron, steinbergCubase];
+          return [Icon.skills('DaVinci Resolve'), Icon.skills('Adobe Premiere Pro'), Icon.skills('Final Cut Pro')];
         case 'admin':
-          return [googleSheets, microsoftExcel, microsoftWord];
+          return [Icon.skills('Google Sheets'), Icon.skills('Microsoft Word')];
         case 'languages':
-          return [css, html, javaScript, jQuery, sass, python, typeScript, vba, cPlusPlus, angular];
+          return [Icon.skills('JavaScript'), Icon.skills('CSS'), Icon.skills('HTML'), Icon.skills('Visual Basic for Applications'), Icon.skills('Python'), Icon.skills('C++')];
         case 'utilities':
-          return [gitHub, googleAppsScript, googleDrive, gulp, microsoftOneDrive, nodeJS, microsoftSharePoint, visualStudioCode];
+          return [Icon.skills('GitHub'), Icon.skills('Google Apps Script'), Icon.skills('Google Drive'), Icon.skills('Gulp'), Icon.skills('Microsoft OneDrive'), Icon.skills('SharePoint'), Icon.skills('Node.js'), Icon.skills('Visual Studio Code')];
         case 'databases':
-          return [mySQL, mongoDb];
+          return [Icon.skills('MongoDB'), Icon.skills('MySQL')];
         case 'everything':
           return [
-            adobeAfterEffects,
-            adobeAudition,
-            adobeIllustrator,
-            adobeInDesign,
-            adobePhotoshop,
-            adobePremierePro,
-            adobeXd,
-            angular,
-            cPlusPlus,
-            css,
-            daVinciResolve,
-            figma,
-            finalCutPro,
-            gimp,
-            gitHub,
-            googleAppsScript,
-            googleDrive,
-            googleSheets,
-            gulp,
-            html,
-            inkscape,
-            javaScript,
-            jQuery,
-            microsoftExcel,
-            microsoftOneDrive,
-            microsoftSharePoint,
-            microsoftWord,
-            mongoDb,
-            mySQL,
-            natron,
-            nodeJS,
-            python,
-            sass,
-            scribus,
-            steinbergCubase,
-            typeScript,
-            vba,
-            visualStudioCode,
+            Icon.skills('Adobe After Effects'),
+            Icon.skills('Adobe Audition'),
+            Icon.skills('Adobe Illustrator'),
+            Icon.skills('Adobe InDesign'),
+            Icon.skills('Adobe Photoshop'),
+            Icon.skills('Adobe Premiere Pro'),
+            Icon.skills('Adobe Xd'),
+            Icon.skills('Angular'),
+            Icon.skills('C++'),
+            Icon.skills('CSS'),
+            Icon.skills('DaVinci Resolve'),
+            Icon.skills('Figma'),
+            Icon.skills('Final Cut Pro'),
+            Icon.skills('GIMP'),
+            Icon.skills('GitHub'),
+            Icon.skills('Google Apps Script'),
+            Icon.skills('Google Drive'),
+            Icon.skills('Google Sheets'),
+            Icon.skills('Gulp'),
+            Icon.skills('HTML'),
+            Icon.skills('Inkscape'),
+            Icon.skills('JavaScript'),
+            Icon.skills('jQuery'),
+            Icon.skills('Microsoft Excel'),
+            Icon.skills('Microsoft OneDrive'),
+            Icon.skills('SharePoint'),
+            Icon.skills('Microsoft Word'),
+            Icon.skills('MongoDB'),
+            Icon.skills('MySQL'),
+            Icon.skills('Natron'),
+            Icon.skills('Node.js'),
+            Icon.skills('Python'),
+            Icon.skills('Sass'),
+            Icon.skills('Scribus'),
+            Icon.skills('Steinberg Cubase'),
+            Icon.skills('TypeScript'),
+            Icon.skills('Visual Basic for Applications'),
+            Icon.skills('Visual Studio Code'),
           ];
         default:
           this.firstIcon = 'dist/front-end/pages/resume/content/svg-files/test-images/arabic-numerals/black-numbers';

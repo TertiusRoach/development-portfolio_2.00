@@ -65,7 +65,7 @@ export namespace DefaultMain {
           crate.classList.add('hidden');
         }
 
-        let section: any = Info.Resume.skills(sections[index].toLowerCase());
+        let section: Array<object> | any = Info.Resume.carousel(sections[index].toLowerCase());
         for (let i = 0; i < section.length; i++) {
           var icons: HTMLLIElement = document.createElement('li');
           var firstIcon: HTMLImageElement = document.createElement('img');
