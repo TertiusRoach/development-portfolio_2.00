@@ -7,6 +7,7 @@ export namespace DefaultMain {
       MainHome.navigation();
     };
     mainHome();
+
     const mainSkills = (titleName: 'producer' | 'developer') => {
       MainSkills.build();
       // MainSkills.build(titleName);
@@ -43,28 +44,12 @@ export namespace DefaultMain {
   }
   namespace MainSkills {
     export function build(titleName?: 'producer' | 'developer') {
-      const createNavigation = (sections: Array<string>, index: number, testing?: Array<HTMLElement>) => {
+      const createNavigation = (sections: Array<string>, index: number, navigation: HTMLElement) => {
         let listItem: HTMLLIElement = document.createElement('li');
         let spanItem: HTMLSpanElement = document.createElement('span');
 
         listItem.className = 'cleared';
-
-        // console.log(!sections[0].includes('#'));
-        switch (!sections[0].includes('#')) {
-          case true:
-            //--🠋 titleName Included 🠋--//
-            navigation.appendChild(listItem);
-            break;
-          case false:
-            //--🠋 titleName Excluded 🠋--//
-            for (let i = 0; i < testing.length; i++) {
-              testing[i].appendChild(listItem);
-              console.log(testing[i].className);
-            }
-
-            // testing[1].appendChild(listItem);
-            break;
-        }
+        navigation.appendChild(listItem);
 
         switch (index) {
           case 0:
@@ -75,7 +60,7 @@ export namespace DefaultMain {
         listItem.appendChild(spanItem);
         spanItem.textContent = sections[index];
       };
-      const createCarousel = (containers: Array<string>, index: number) => {
+      const createCarousel = (containers: Array<string>, index: number, carousel: HTMLElement) => {
         let crate: HTMLUListElement = document.createElement('ul');
         carousel.appendChild(crate);
         crate.className = containers[index];
@@ -135,60 +120,62 @@ export namespace DefaultMain {
           carousel.innerHTML = '';
           navigation.innerHTML = '';
           for (let i = 0; i < sections.length; i++) {
-            createNavigation(sections, i);
-            createCarousel(containers, i);
+            createNavigation(sections, i, navigation);
+            createCarousel(containers, i, carousel);
           }
           break;
         case false:
           //--|🠋| This is for Testing |🠋|--//
-          let producerCarousel: HTMLElement = document.querySelector('#producer-carousel #producer-skills');
-          let developerCarousel: HTMLElement = document.querySelector('#developer-carousel #developer-skills');
-          let producerNavigation: HTMLElement = document.querySelector('#producer-carousel .navigation-producer');
-          let developerNavigation: HTMLElement = document.querySelector('#developer-carousel .navigation-developer');
+          let producerIcons: NodeListOf<HTMLLIElement> = document.querySelectorAll('#producer-carousel #producer-skills ul[class*="container"] li');
+          let developerIcons: NodeListOf<HTMLLIElement> = document.querySelectorAll('#developer-carousel #developer-skills ul[class*="container"] li');
+          for (let i = 0; i < Info.Resume.carousel().length; i++) {
+            var info = Info.Resume.carousel()[i];
 
-          document.querySelector('#producer-carousel #producer-skills').innerHTML = '';
-          document.querySelector('#developer-carousel #developer-skills').innerHTML = '';
-          document.querySelector('#producer-carousel .navigation-producer').innerHTML = '';
-          document.querySelector('#developer-carousel .navigation-developer').innerHTML = '';
+            var firstProducer: any = producerIcons[i].firstElementChild;
+            var lastProducer: any = producerIcons[i].lastElementChild;
 
-          let testing: Array<HTMLElement> = [producerNavigation, developerNavigation];
-          for (let i = 0; i < sections.length; i++) {
-            createNavigation(sections, i, testing);
-            /*
-            let listItem: HTMLLIElement = document.createElement('li');
-            let spanItem: HTMLSpanElement = document.createElement('span');
+            var firstDeveloper: any = developerIcons[i].firstElementChild;
+            var lastDeveloper: any = developerIcons[i].lastElementChild;
 
-            listItem.className = 'cleared';
-            producerNavigation.appendChild(listItem);
-            developerNavigation.appendChild(listItem);
-            if (i === 0) {
-              listItem.id = 'active'; //--🠈 Set the id to 'active' for the first section 🠈--//
+            //--🠋 Assign class to icons 🠋--//
+            firstProducer.className = info.className;
+            firstDeveloper.className = info.className;
+            if (info.overlay) {
+              lastProducer.className = 'overlay';
+              lastProducer.parentElement.style.cursor = 'pointer';
+
+              lastDeveloper.className = 'overlay';
+              lastDeveloper.parentElement.style.cursor = 'pointer';
             }
 
-            listItem.appendChild(spanItem);
-            spanItem.textContent = sections[i];
-            */
-          }
+            //--🠋 Assign src to firstIcon 🠋--//
+            firstProducer.src = info.firstIcon;
+            lastProducer.src = info.lastIcon;
 
-          for (let i = 0; i < Info.Resume.carousel().length; i++) {
-            // console.log(i);
-          }
+            firstDeveloper.src = info.firstIcon;
+            lastDeveloper.src = info.lastIcon;
 
+            //--🠋 Assign alt to icons 🠋--//
+            firstProducer.alt = info.application;
+            lastProducer.alt = `${info.rating}/10`;
+
+            firstDeveloper.alt = info.application;
+            lastDeveloper.alt = `${info.rating}/10`;
+          }
+          //--|🠉| This is for Testing |🠉|--//
           break;
-        //--|🠉| This is for Testing |🠉|--//
       }
     }
     export function rating(titleName: 'producer' | 'developer') {
+      /*
       let firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
       let lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
-
       const triggerRating = (barHeader: HTMLHeadingElement, barCounter: HTMLSpanElement, prevScore: number | any, nextScore: number | any) => {
         let count: any;
         let delay: number;
         let milliseconds: number = 125;
         // let barHeader: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
         // let barCounter: HTMLSpanElement = document.querySelector('#proficiency-skills span');
-
         switch (prevScore < nextScore) {
           case true:
             //--🠋 `Count up from ${prevScore} to ${nextScore}` 🠋--//
@@ -197,7 +184,6 @@ export namespace DefaultMain {
             const countUp = setInterval(() => {
               count++;
               barHeader.textContent = `${count}/10`;
-
               if (count === nextScore) {
                 clearInterval(countUp);
                 // navigationToggle(event, 375);
@@ -212,7 +198,6 @@ export namespace DefaultMain {
             const countDown = setInterval(() => {
               count--;
               barHeader.textContent = `${count}/10`;
-
               if (count === nextScore) {
                 clearInterval(countDown);
                 // navigationToggle(event, 375);
@@ -222,7 +207,6 @@ export namespace DefaultMain {
             break;
         }
       };
-
       $(firstIcon).on('mouseover', function (event) {
         var prevScore: number = parseInt($('#proficiency-skills h3').attr('data-val'));
         var nextScore: number = Info.Icon.skills(event.target.getAttribute('alt')).rating;
@@ -230,46 +214,32 @@ export namespace DefaultMain {
         var barCounter: HTMLSpanElement = document.querySelector('#proficiency-skills span');
         triggerRating(barHeader, barCounter, prevScore, nextScore);
         // console.log();
-
-        /*
-        var barHeader: string = document.querySelector('#proficiency-skills h3').getAttribute('data-val');
-        console.log(barHeader);
-
-        console.log(Info.Icon.skills(software).application);
-        console.log();
-        */
-
-        /*
-        console.log(Info.Icon.skills(software).className);
-        console.log(Info.Icon.skills(software).firstIcon);
-        console.log(Info.Icon.skills(software).lastIcon);
-        console.log(Info.Icon.skills(software).overlay);
-        */
+        // var barHeader: string = document.querySelector('#proficiency-skills h3').getAttribute('data-val');
+        // console.log(barHeader);
+        // console.log(Info.Icon.skills(software).application);
+        // console.log();
+        // console.log(Info.Icon.skills(software).className);
+        // console.log(Info.Icon.skills(software).firstIcon);
+        // console.log(Info.Icon.skills(software).lastIcon);
+        // console.log(Info.Icon.skills(software).overlay);
       });
-
-      // if (firstIcon) {
-      //   // If the first child exists, get its attribute
-      //   let attributeValue = firstIcon.getAttribute('yourAttributeName');
-      //   console.log(attributeValue);
-      // }
-
-      /*
+      if (firstIcon) {
+        // If the first child exists, get its attribute
+        let attributeValue = firstIcon.getAttribute('yourAttributeName');
+        console.log(attributeValue);
+      }
       const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
         let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
         let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
-
         setTimeout(() => {
           hidden.innerHTML = `<h1>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h1>
                               <h6>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h6>`;
-
           visible.className = '';
           visible.className = 'hidden';
-
           setTimeout(() => {
             visible.innerHTML = `<h1>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h1>
                                  <h6>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h6>`;
           }, milliseconds);
-
           hidden.className = '';
           hidden.className = 'visible';
         }, milliseconds);
@@ -286,7 +256,6 @@ export namespace DefaultMain {
             const countUp = setInterval(() => {
               count++;
               counter.textContent = `${count}/10`;
-
               if (count === nextScore) {
                 clearInterval(countUp);
                 navigationToggle(event, 375);
@@ -301,7 +270,6 @@ export namespace DefaultMain {
             const countDown = setInterval(() => {
               count--;
               counter.textContent = `${count}/10`;
-
               if (count === nextScore) {
                 clearInterval(countDown);
                 navigationToggle(event, 375);
@@ -349,7 +317,6 @@ export namespace DefaultMain {
         switch (true) {
           case event.target.parentElement.classList.contains('cleared'):
             safetyToggle('block', event, 0);
-
             let bar: HTMLSpanElement = document.querySelector('#proficiency-skills span');
             let counter: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
             let prevScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
@@ -400,7 +367,6 @@ export namespace DefaultMain {
                 counter.setAttribute('data-val', '10');
                 break;
             }
-
             let nextScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
             if (observeScores(prevScore, nextScore) === true && prevScore !== nextScore) {
               activateCounter(counter, prevScore, nextScore, titleName, event);
@@ -408,13 +374,11 @@ export namespace DefaultMain {
             break;
         }
       };
-
       let firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
       let lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
       $(firstIcon).on('mouseover mouseleave', function (event) {
         activateBar(event);
       });
-
       $(lastIcon)
         .on('click', function (event) {
           console.log('Yay, overlay!');
@@ -425,7 +389,7 @@ export namespace DefaultMain {
         .on('mouseleave', function (event) {
           safetyToggle('clear', event, 0);
         });
-      */
+        */
     }
     export function carousel(titleName: 'producer' | 'developer') {
       //--|🠋| There's a bug here (The aren't working) |🠋|--//

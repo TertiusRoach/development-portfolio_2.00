@@ -130,46 +130,92 @@ export namespace Info {
         case 'Ten':
           return new Icon('Ten', 'ten', `${this.firstIcon}/10.svg`, `${this.lastIcon}/10.svg`, false, 10);
         case 'Eleven':
-          return new Icon('Eleven', 'eleven', `${this.firstIcon}/11.svg`, `${this.lastIcon}/11.svg`, true, 11);
+          return new Icon('Eleven', 'eleven', `${this.firstIcon}/11.svg`, `${this.lastIcon}/11.svg`, true, 1);
         case 'Twelve':
-          return new Icon('Twelve', 'twelve', `${this.firstIcon}/12.svg`, `${this.lastIcon}/12.svg`, false, 12);
+          return new Icon('Twelve', 'twelve', `${this.firstIcon}/12.svg`, `${this.lastIcon}/12.svg`, false, 2);
         case 'Thirteen':
-          return new Icon('Thirteen', 'thirteen', `${this.firstIcon}/13.svg`, `${this.lastIcon}/13.svg`, true, 13);
+          return new Icon('Thirteen', 'thirteen', `${this.firstIcon}/13.svg`, `${this.lastIcon}/13.svg`, true, 3);
         case 'Fourteen':
-          return new Icon('Fourteen', 'fourteen', `${this.firstIcon}/14.svg`, `${this.lastIcon}/14.svg`, false, 14);
+          return new Icon('Fourteen', 'fourteen', `${this.firstIcon}/14.svg`, `${this.lastIcon}/14.svg`, false, 4);
         case 'Fifteen':
-          return new Icon('Fifteen', 'fifteen', `${this.firstIcon}/15.svg`, `${this.lastIcon}/15.svg`, true, 15);
+          return new Icon('Fifteen', 'fifteen', `${this.firstIcon}/15.svg`, `${this.lastIcon}/15.svg`, true, 5);
         case 'Sixteen':
-          return new Icon('Sixteen', 'sixteen', `${this.firstIcon}/16.svg`, `${this.lastIcon}/16.svg`, false, 16);
+          return new Icon('Sixteen', 'sixteen', `${this.firstIcon}/16.svg`, `${this.lastIcon}/16.svg`, false, 6);
         case 'Seventeen':
-          return new Icon('Seventeen', 'seventeen', `${this.firstIcon}/17.svg`, `${this.lastIcon}/17.svg`, true, 17);
+          return new Icon('Seventeen', 'seventeen', `${this.firstIcon}/17.svg`, `${this.lastIcon}/17.svg`, true, 7);
         case 'Eighteen':
-          return new Icon('Eighteen', 'eighteen', `${this.firstIcon}/18.svg`, `${this.lastIcon}/18.svg`, false, 18);
+          return new Icon('Eighteen', 'eighteen', `${this.firstIcon}/18.svg`, `${this.lastIcon}/18.svg`, false, 8);
         case 'Nineteen':
-          return new Icon('Nineteen', 'nineteen', `${this.firstIcon}/19.svg`, `${this.lastIcon}/19.svg`, true, 19);
+          return new Icon('Nineteen', 'nineteen', `${this.firstIcon}/19.svg`, `${this.lastIcon}/19.svg`, true, 9);
         case 'Twenty':
-          return new Icon('Twenty', 'twenty', `${this.firstIcon}/20.svg`, `${this.lastIcon}/20.svg`, false, 20);
+          return new Icon('Twenty', 'twenty', `${this.firstIcon}/20.svg`, `${this.lastIcon}/20.svg`, false, 10);
         case 'Twenty-one':
-          return new Icon('Twenty-one', 'twenty-one', `${this.firstIcon}/21.svg`, `${this.lastIcon}/21.svg`, true, 21);
+          return new Icon('Twenty-one', 'twenty-one', `${this.firstIcon}/21.svg`, `${this.lastIcon}/21.svg`, true, 1);
         case 'Twenty-two':
-          return new Icon('Twenty-two', 'twenty-two', `${this.firstIcon}/22.svg`, `${this.lastIcon}/22.svg`, false, 22);
+          return new Icon('Twenty-two', 'twenty-two', `${this.firstIcon}/22.svg`, `${this.lastIcon}/22.svg`, false, 2);
         case 'Twenty-three':
-          return new Icon('Twenty-three', 'twenty-three', `${this.firstIcon}/23.svg`, `${this.lastIcon}/23.svg`, true, 23);
+          return new Icon('Twenty-three', 'twenty-three', `${this.firstIcon}/23.svg`, `${this.lastIcon}/23.svg`, true, 3);
         case 'Twenty-four':
-          return new Icon('Twenty-four', 'twenty-four', `${this.firstIcon}/24.svg`, `${this.lastIcon}/24.svg`, false, 24);
+          return new Icon('Twenty-four', 'twenty-four', `${this.firstIcon}/24.svg`, `${this.lastIcon}/24.svg`, false, 4);
         case 'Twenty-five':
-          return new Icon('Twenty-five', 'twenty-five', `${this.firstIcon}/25.svg`, `${this.lastIcon}/25.svg`, true, 25);
+          return new Icon('Twenty-five', 'twenty-five', `${this.firstIcon}/25.svg`, `${this.lastIcon}/25.svg`, true, 5);
         case 'Twenty-six':
-          return new Icon('Twenty-six', 'twenty-six', `${this.firstIcon}/26.svg`, `${this.lastIcon}/26.svg`, false, 26);
+          return new Icon('Twenty-six', 'twenty-six', `${this.firstIcon}/26.svg`, `${this.lastIcon}/26.svg`, false, 6);
         case 'Twenty-seven':
-          return new Icon('Twenty-seven', 'twenty-seven', `${this.firstIcon}/27.svg`, `${this.lastIcon}/27.svg`, true, 27);
+          return new Icon('Twenty-seven', 'twenty-seven', `${this.firstIcon}/27.svg`, `${this.lastIcon}/27.svg`, true, 7);
+        case 'Twenty-eight':
+          return new Icon('Twenty-eight', 'twenty-eight', `${this.firstIcon}/28.svg`, `${this.lastIcon}/28.svg`, false, 8);
+        case 'Twenty-nine':
+          return new Icon('Twenty-nine', 'twenty-nine', `${this.firstIcon}/29.svg`, `${this.lastIcon}/29.svg`, false, 9);
+        case 'Thirty':
+          return new Icon('Thirty', 'thirty', `${this.firstIcon}/30.svg`, `${this.lastIcon}/30.svg`, false, 10);
+        case 'Thirty-one':
+          return new Icon('Thirty-one', 'thirty-one', `${this.firstIcon}/31.svg`, `${this.lastIcon}/31.svg`, false, 1);
+        case 'Thirty-two':
+          return new Icon('Thirty-two', 'thirty-two', `${this.firstIcon}/32.svg`, `${this.lastIcon}/32.svg`, false, 2);
+        case 'Thirty-three':
+          return new Icon('Thirty-three', 'thirty-three', `${this.firstIcon}/33.svg`, `${this.lastIcon}/33.svg`, false, 3);
+        case 'Thirty-four':
+          return new Icon('Thirty-four', 'thirty-four', `${this.firstIcon}/34.svg`, `${this.lastIcon}/34.svg`, false, 4);
+        case 'Thirty-five':
+          return new Icon('Thirty-five', 'thirty-five', `${this.firstIcon}/35.svg`, `${this.lastIcon}/35.svg`, false, 5);
+        case 'Thirty-six':
+          return new Icon('Thirty-six', 'thirty-six', `${this.firstIcon}/36.svg`, `${this.lastIcon}/36.svg`, false, 6);
+        case 'Thirty-seven':
+          return new Icon('Thirty-seven', 'thirty-seven', `${this.firstIcon}/37.svg`, `${this.lastIcon}/37.svg`, false, 7);
+        case 'Thirty-eight':
+          return new Icon('Thirty-eight', 'thirty-eight', `${this.firstIcon}/38.svg`, `${this.lastIcon}/38.svg`, false, 8);
+        case 'Thirty-nine':
+          return new Icon('Thirty-nine', 'thirty-nine', `${this.firstIcon}/39.svg`, `${this.lastIcon}/39.svg`, false, 9);
+        case 'Forty':
+          return new Icon('Forty', 'forty', `${this.firstIcon}/40.svg`, `${this.lastIcon}/40.svg`, false, 10);
+        case 'Forty-one':
+          return new Icon('Forty-one', 'forty-one', `${this.firstIcon}/41.svg`, `${this.lastIcon}/41.svg`, false, 1);
+        case 'Forty-two':
+          return new Icon('Forty-two', 'forty-two', `${this.firstIcon}/42.svg`, `${this.lastIcon}/42.svg`, false, 2);
+        case 'Forty-three':
+          return new Icon('Forty-three', 'forty-three', `${this.firstIcon}/43.svg`, `${this.lastIcon}/43.svg`, false, 3);
+        case 'Forty-four':
+          return new Icon('Forty-four', 'forty-four', `${this.firstIcon}/44.svg`, `${this.lastIcon}/44.svg`, false, 4);
+        case 'Forty-five':
+          return new Icon('Forty-five', 'forty-five', `${this.firstIcon}/45.svg`, `${this.lastIcon}/45.svg`, false, 5);
+        case 'Forty-six':
+          return new Icon('Forty-six', 'forty-six', `${this.firstIcon}/46.svg`, `${this.lastIcon}/46.svg`, false, 6);
+        case 'Forty-seven':
+          return new Icon('Forty-seven', 'forty-seven', `${this.firstIcon}/47.svg`, `${this.lastIcon}/47.svg`, false, 7);
+        case 'Forty-eight':
+          return new Icon('Forty-eight', 'forty-eight', `${this.firstIcon}/48.svg`, `${this.lastIcon}/48.svg`, false, 8);
+        case 'Forty-nine':
+          return new Icon('Forty-nine', 'forty-nine', `${this.firstIcon}/49.svg`, `${this.lastIcon}/49.svg`, false, 9);
+        case 'Fifty':
+          return new Icon('Fifty', 'fifty', `${this.firstIcon}/50.svg`, `${this.lastIcon}/50.svg`, false, 10);
       }
     }
   }
 
   export class Resume {
-    private static firstIcon: string;
-    private static lastIcon: string;
+    // private static firstIcon: string;
+    // private static lastIcon: string;
 
     static carousel(section?: 'design' | 'editing' | 'admin' | 'languages' | 'utilities' | 'databases' | 'everything' | string): Icon[] {
       switch (section) {
@@ -228,6 +274,7 @@ export namespace Info {
           ];
         default:
           return [
+            //--🠋 First Container 🠋--//
             Icon.tests('One'),
             Icon.tests('Two'),
             Icon.tests('Three'),
@@ -237,6 +284,7 @@ export namespace Info {
             Icon.tests('Seven'),
             Icon.tests('Eight'),
             Icon.tests('Nine'),
+            //--🠋 Second Container 🠋--//
             Icon.tests('Ten'),
             Icon.tests('Eleven'),
             Icon.tests('Twelve'),
@@ -246,6 +294,7 @@ export namespace Info {
             Icon.tests('Sixteen'),
             Icon.tests('Seventeen'),
             Icon.tests('Eighteen'),
+            //--🠋 Third Container 🠋--//
             Icon.tests('Nineteen'),
             Icon.tests('Twenty'),
             Icon.tests('Twenty-one'),
@@ -255,6 +304,26 @@ export namespace Info {
             Icon.tests('Twenty-five'),
             Icon.tests('Twenty-six'),
             Icon.tests('Twenty-seven'),
+            //--🠋 Fourth Container 🠋--//
+            Icon.tests('Twenty-Eight'),
+            Icon.tests('Twenty-Nine'),
+            Icon.tests('Thirty'),
+            Icon.tests('Thirty-One'),
+            Icon.tests('Thirty-Two'),
+            Icon.tests('Thirty-Three'),
+            Icon.tests('Thirty-Four'),
+            Icon.tests('Thirty-Five'),
+            Icon.tests('Thirty-Six'),
+            //--🠋 Fifth Container 🠋--//
+            Icon.tests('Thirty-Seven'),
+            Icon.tests('Thirty-Eight'),
+            Icon.tests('Thirty-Nine'),
+            Icon.tests('Forty'),
+            Icon.tests('Forty-One'),
+            Icon.tests('Forty-Two'),
+            Icon.tests('Forty-Three'),
+            Icon.tests('Forty-Four'),
+            Icon.tests('Forty-Five'),
           ];
       }
     }
