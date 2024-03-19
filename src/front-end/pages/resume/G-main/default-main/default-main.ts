@@ -8,7 +8,8 @@ export namespace DefaultMain {
     };
     mainHome();
     const mainSkills = (titleName: 'producer' | 'developer') => {
-      MainSkills.build(titleName);
+      MainSkills.build();
+      // MainSkills.build(titleName);
       MainSkills.rating(titleName);
       MainSkills.carousel(titleName);
       MainSkills.navigation(titleName);
@@ -41,16 +42,36 @@ export namespace DefaultMain {
     }
   }
   namespace MainSkills {
-    export function build(titleName: 'producer' | 'developer') {
-      const createNavigation = (sections: Array<string>, index: number) => {
+    export function build(titleName?: 'producer' | 'developer') {
+      const createNavigation = (sections: Array<string>, index: number, testing?: Array<HTMLElement>) => {
         let listItem: HTMLLIElement = document.createElement('li');
+        let spanItem: HTMLSpanElement = document.createElement('span');
+
         listItem.className = 'cleared';
-        navigation.appendChild(listItem);
-        if (index === 0) {
-          listItem.id = 'active'; //--🠈 Set the id to 'active' for the first section 🠈--//
+
+        // console.log(!sections[0].includes('#'));
+        switch (!sections[0].includes('#')) {
+          case true:
+            //--🠋 titleName Included 🠋--//
+            navigation.appendChild(listItem);
+            break;
+          case false:
+            //--🠋 titleName Excluded 🠋--//
+            for (let i = 0; i < testing.length; i++) {
+              testing[i].appendChild(listItem);
+              console.log(testing[i].className);
+            }
+
+            // testing[1].appendChild(listItem);
+            break;
         }
 
-        let spanItem: HTMLSpanElement = document.createElement('span');
+        switch (index) {
+          case 0:
+            listItem.id = 'active'; //--🠈 Set the id to 'active' for the first section 🠈--//
+            break;
+        }
+
         listItem.appendChild(spanItem);
         spanItem.textContent = sections[index];
       };
@@ -66,6 +87,7 @@ export namespace DefaultMain {
         }
 
         let section: Array<object> | any = Info.Resume.carousel(sections[index].toLowerCase());
+
         for (let i = 0; i < section.length; i++) {
           var icons: HTMLLIElement = document.createElement('li');
           var firstIcon: HTMLImageElement = document.createElement('img');
@@ -96,8 +118,7 @@ export namespace DefaultMain {
       let carousel: HTMLElement = document.querySelector(`#${titleName}-carousel #${titleName}-skills`);
       let navigation: HTMLElement = document.querySelector(`#${titleName}-carousel .navigation-${titleName}`);
       let containers: Array<string> = ['first-container', 'second-container', 'third-container', 'fourth-container', 'fifth-container'];
-      carousel.innerHTML = '';
-      navigation.innerHTML = '';
+
       switch (titleName) {
         case 'producer':
           sections = ['Design', 'Editing', 'Admin'];
@@ -105,13 +126,134 @@ export namespace DefaultMain {
         case 'developer':
           sections = ['Languages', 'Utilities', 'Databases'];
           break;
+        default:
+          sections = ['Container #1', 'Container #2', 'Container #3'];
+          break;
       }
-      for (let i = 0; i < sections.length; i++) {
-        createNavigation(sections, i);
-        createCarousel(containers, i);
+      switch (carousel !== null && navigation !== null) {
+        case true:
+          carousel.innerHTML = '';
+          navigation.innerHTML = '';
+          for (let i = 0; i < sections.length; i++) {
+            createNavigation(sections, i);
+            createCarousel(containers, i);
+          }
+          break;
+        case false:
+          //--|🠋| This is for Testing |🠋|--//
+          let producerCarousel: HTMLElement = document.querySelector('#producer-carousel #producer-skills');
+          let developerCarousel: HTMLElement = document.querySelector('#developer-carousel #developer-skills');
+          let producerNavigation: HTMLElement = document.querySelector('#producer-carousel .navigation-producer');
+          let developerNavigation: HTMLElement = document.querySelector('#developer-carousel .navigation-developer');
+
+          document.querySelector('#producer-carousel #producer-skills').innerHTML = '';
+          document.querySelector('#developer-carousel #developer-skills').innerHTML = '';
+          document.querySelector('#producer-carousel .navigation-producer').innerHTML = '';
+          document.querySelector('#developer-carousel .navigation-developer').innerHTML = '';
+
+          let testing: Array<HTMLElement> = [producerNavigation, developerNavigation];
+          for (let i = 0; i < sections.length; i++) {
+            createNavigation(sections, i, testing);
+            /*
+            let listItem: HTMLLIElement = document.createElement('li');
+            let spanItem: HTMLSpanElement = document.createElement('span');
+
+            listItem.className = 'cleared';
+            producerNavigation.appendChild(listItem);
+            developerNavigation.appendChild(listItem);
+            if (i === 0) {
+              listItem.id = 'active'; //--🠈 Set the id to 'active' for the first section 🠈--//
+            }
+
+            listItem.appendChild(spanItem);
+            spanItem.textContent = sections[i];
+            */
+          }
+
+          for (let i = 0; i < Info.Resume.carousel().length; i++) {
+            // console.log(i);
+          }
+
+          break;
+        //--|🠉| This is for Testing |🠉|--//
       }
     }
     export function rating(titleName: 'producer' | 'developer') {
+      let firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
+      let lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
+
+      const triggerRating = (barHeader: HTMLHeadingElement, barCounter: HTMLSpanElement, prevScore: number | any, nextScore: number | any) => {
+        let count: any;
+        let delay: number;
+        let milliseconds: number = 125;
+        // let barHeader: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
+        // let barCounter: HTMLSpanElement = document.querySelector('#proficiency-skills span');
+
+        switch (prevScore < nextScore) {
+          case true:
+            //--🠋 `Count up from ${prevScore} to ${nextScore}` 🠋--//
+            count = prevScore;
+            delay = milliseconds * (nextScore - prevScore);
+            const countUp = setInterval(() => {
+              count++;
+              barHeader.textContent = `${count}/10`;
+
+              if (count === nextScore) {
+                clearInterval(countUp);
+                // navigationToggle(event, 375);
+                // safetyToggle('clear', event, 0);
+              }
+            }, milliseconds);
+            break;
+          case false:
+            //--🠋 `Count down from ${prevScore} to ${nextScore}` 🠋--//
+            count = prevScore;
+            delay = milliseconds * (prevScore - nextScore);
+            const countDown = setInterval(() => {
+              count--;
+              barHeader.textContent = `${count}/10`;
+
+              if (count === nextScore) {
+                clearInterval(countDown);
+                // navigationToggle(event, 375);
+                // safetyToggle('clear', event, 0);
+              }
+            }, milliseconds);
+            break;
+        }
+      };
+
+      $(firstIcon).on('mouseover', function (event) {
+        var prevScore: number = parseInt($('#proficiency-skills h3').attr('data-val'));
+        var nextScore: number = Info.Icon.skills(event.target.getAttribute('alt')).rating;
+        var barHeader: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
+        var barCounter: HTMLSpanElement = document.querySelector('#proficiency-skills span');
+        triggerRating(barHeader, barCounter, prevScore, nextScore);
+        // console.log();
+
+        /*
+        var barHeader: string = document.querySelector('#proficiency-skills h3').getAttribute('data-val');
+        console.log(barHeader);
+
+        console.log(Info.Icon.skills(software).application);
+        console.log();
+        */
+
+        /*
+        console.log(Info.Icon.skills(software).className);
+        console.log(Info.Icon.skills(software).firstIcon);
+        console.log(Info.Icon.skills(software).lastIcon);
+        console.log(Info.Icon.skills(software).overlay);
+        */
+      });
+
+      // if (firstIcon) {
+      //   // If the first child exists, get its attribute
+      //   let attributeValue = firstIcon.getAttribute('yourAttributeName');
+      //   console.log(attributeValue);
+      // }
+
+      /*
       const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
         let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
         let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
@@ -283,6 +425,7 @@ export namespace DefaultMain {
         .on('mouseleave', function (event) {
           safetyToggle('clear', event, 0);
         });
+      */
     }
     export function carousel(titleName: 'producer' | 'developer') {
       //--|🠋| There's a bug here (The aren't working) |🠋|--//
