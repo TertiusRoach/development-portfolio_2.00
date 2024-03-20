@@ -9,11 +9,11 @@ export namespace DefaultMain {
     mainHome();
 
     const mainSkills = (titleName: 'producer' | 'developer') => {
-      MainSkills.build();
-      // MainSkills.build(titleName);
-      MainSkills.rating(titleName);
-      MainSkills.carousel(titleName);
       MainSkills.navigation(titleName);
+      MainSkills.carousel(titleName);
+      MainSkills.rating(titleName);
+      // MainSkills.build(titleName);
+      MainSkills.build();
     };
     mainSkills('producer');
     mainSkills('developer');
