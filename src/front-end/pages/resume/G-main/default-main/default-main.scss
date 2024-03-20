@@ -536,7 +536,7 @@
           grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
           background: $primary-medium;
           &.O::before {
-            width: calc(5% - 1rem);
+            width: calc(0);
           }
           &.I::before {
             width: calc(10% - 1rem);
