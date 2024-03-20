@@ -220,234 +220,50 @@ export namespace DefaultMain {
     }
     //--🠋 03. Rating 🠋--//
     export function rating(titleName: 'producer' | 'developer') {
-      let icon: HTMLLIElement | HTMLImageElement | any = `#${titleName}-carousel #${titleName}-skills ul li`;
-
-      $(icon).on('mouseover', function (event) {
-        console.log(event.target.getAttribute('alt'));
-      });
-      /*
-      let firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
-      let lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
-      const triggerRating = (barHeader: HTMLHeadingElement, barCounter: HTMLSpanElement, prevScore: number | any, nextScore: number | any) => {
-        let count: any;
-        let delay: number;
-        let milliseconds: number = 125;
-        // let barHeader: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
-        // let barCounter: HTMLSpanElement = document.querySelector('#proficiency-skills span');
-        switch (prevScore < nextScore) {
-          case true:
-            //--🠋 `Count up from ${prevScore} to ${nextScore}` 🠋--//
-            count = prevScore;
-            delay = milliseconds * (nextScore - prevScore);
-            const countUp = setInterval(() => {
-              count++;
-              barHeader.textContent = `${count}/10`;
-              if (count === nextScore) {
-                clearInterval(countUp);
-                // navigationToggle(event, 375);
-                // safetyToggle('clear', event, 0);
-              }
-            }, milliseconds);
-            break;
-          case false:
-            //--🠋 `Count down from ${prevScore} to ${nextScore}` 🠋--//
-            count = prevScore;
-            delay = milliseconds * (prevScore - nextScore);
-            const countDown = setInterval(() => {
-              count--;
-              barHeader.textContent = `${count}/10`;
-              if (count === nextScore) {
-                clearInterval(countDown);
-                // navigationToggle(event, 375);
-                // safetyToggle('clear', event, 0);
-              }
-            }, milliseconds);
-            break;
+      const romanNumerals = (arabic: number) => {
+        switch (arabic) {
+          case 0:
+            return 'O';
+          case 1:
+            return 'I';
+          case 2:
+            return 'II';
+          case 3:
+            return 'III';
+          case 4:
+            return 'IV';
+          case 5:
+            return 'V';
+          case 6:
+            return 'VI';
+          case 7:
+            return 'VII';
+          case 8:
+            return 'VIII';
+          case 9:
+            return 'IX';
+          case 10:
+            return 'X';
         }
       };
-      $(firstIcon).on('mouseover', function (event) {
-        var prevScore: number = parseInt($('#proficiency-skills h3').attr('data-val'));
-        var nextScore: number = Info.Icon.skills(event.target.getAttribute('alt')).rating;
+
+      $(`#${titleName}-carousel #${titleName}-skills ul li`).on('mouseover', function (event) {
+        let current: any = event.target.parentElement.firstChild;
+        let select: any = Info.Icon.tests(current.alt);
+
         var barHeader: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
         var barCounter: HTMLSpanElement = document.querySelector('#proficiency-skills span');
-        triggerRating(barHeader, barCounter, prevScore, nextScore);
-        // console.log();
-        // var barHeader: string = document.querySelector('#proficiency-skills h3').getAttribute('data-val');
-        // console.log(barHeader);
-        // console.log(Info.Icon.skills(software).application);
-        // console.log();
-        // console.log(Info.Icon.skills(software).className);
-        // console.log(Info.Icon.skills(software).firstIcon);
-        // console.log(Info.Icon.skills(software).lastIcon);
-        // console.log(Info.Icon.skills(software).overlay);
+        let navHeader: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span:nth-child(1)`);
+
+        barHeader.setAttribute('data-val', `${select.rating}`);
+        barHeader.innerText = `${select.rating}/10`;
+
+        barCounter.className = '';
+        barCounter.className = romanNumerals(select.rating);
+
+        navHeader.innerHTML = `<h1>${select.application}</h1>
+                              <h6>${select.application}</h6>`;
       });
-      if (firstIcon) {
-        // If the first child exists, get its attribute
-        let attributeValue = firstIcon.getAttribute('yourAttributeName');
-        console.log(attributeValue);
-      }
-      const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
-        let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
-        let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
-        setTimeout(() => {
-          hidden.innerHTML = `<h1>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h1>
-                              <h6>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h6>`;
-          visible.className = '';
-          visible.className = 'hidden';
-          setTimeout(() => {
-            visible.innerHTML = `<h1>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h1>
-                                 <h6>${$(event.target.parentElement).find('>:first-child').attr('alt')}</h6>`;
-          }, milliseconds);
-          hidden.className = '';
-          hidden.className = 'visible';
-        }, milliseconds);
-      };
-      const activateCounter = (counter: HTMLHeadingElement | any, prevScore: Number | any, nextScore: Number | any, titleName: 'producer' | 'developer', event: HTMLElement) => {
-        let count: any;
-        let delay: number;
-        let milliseconds: number = 125;
-        switch (prevScore < nextScore) {
-          case true:
-            //--🠋 `Count up from ${prevScore} to ${nextScore}` 🠋--//
-            count = prevScore;
-            delay = milliseconds * (nextScore - prevScore);
-            const countUp = setInterval(() => {
-              count++;
-              counter.textContent = `${count}/10`;
-              if (count === nextScore) {
-                clearInterval(countUp);
-                navigationToggle(event, 375);
-                safetyToggle('clear', event, 0);
-              }
-            }, milliseconds);
-            break;
-          case false:
-            //--🠋 `Count down from ${prevScore} to ${nextScore}` 🠋--//
-            count = prevScore;
-            delay = milliseconds * (prevScore - nextScore);
-            const countDown = setInterval(() => {
-              count--;
-              counter.textContent = `${count}/10`;
-              if (count === nextScore) {
-                clearInterval(countDown);
-                navigationToggle(event, 375);
-                safetyToggle('clear', event, 0);
-              }
-            }, milliseconds);
-            break;
-        }
-      };
-      const observeScores = (prevScore: Number, nextScore: Number) => {
-        if (`${prevScore}` !== 'NaN' && `${prevScore}` !== 'undefined' && `${nextScore}` !== 'NaN' && `${nextScore}` !== 'undefined') {
-          return true;
-        } else {
-          return false;
-        }
-      };
-      const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
-        let enable: string = event.target.getAttribute('alt');
-        switch (action) {
-          case 'block':
-            setTimeout(() => {
-              for (let i = 0; i < event.target.parentNode.parentNode.children.length; i++) {
-                let element = event.target.parentNode.parentNode.childNodes[i].firstChild.getAttribute('alt');
-                if (element !== enable) {
-                  event.target.parentNode.parentNode.children[i].classList.remove('cleared');
-                  event.target.parentNode.parentNode.children[i].classList.add('blocked');
-                } else if (element === enable) {
-                  event.target.parentNode.parentNode.children[i].classList.remove('blocked');
-                  event.target.parentNode.parentNode.children[i].classList.add('cleared');
-                }
-              }
-            }, milliseconds);
-            break;
-          case 'clear':
-            setTimeout(() => {
-              for (let i = 0; i < event.target.parentNode.parentNode.children.length; i++) {
-                event.target.parentNode.parentNode.children[i].classList.remove('blocked');
-                event.target.parentNode.parentNode.children[i].classList.add('cleared');
-              }
-            }, milliseconds);
-            break;
-        }
-      };
-      const activateBar = (event: HTMLElement | any) => {
-        switch (true) {
-          case event.target.parentElement.classList.contains('cleared'):
-            safetyToggle('block', event, 0);
-            let bar: HTMLSpanElement = document.querySelector('#proficiency-skills span');
-            let counter: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
-            let prevScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
-            bar.className = '';
-            switch ($(event.target).parent().children(':last').attr('alt')) {
-              case '0/10':
-                bar.classList.add('O');
-                counter.setAttribute('data-val', '0');
-                break;
-              case '1/10':
-                bar.classList.add('I');
-                counter.setAttribute('data-val', '1');
-                break;
-              case '2/10':
-                bar.classList.add('II');
-                counter.setAttribute('data-val', '2');
-                break;
-              case '3/10':
-                bar.classList.add('III');
-                counter.setAttribute('data-val', '3');
-                break;
-              case '4/10':
-                bar.classList.add('IV');
-                counter.setAttribute('data-val', '4');
-                break;
-              case '5/10':
-                bar.classList.add('V');
-                counter.setAttribute('data-val', '5');
-                break;
-              case '6/10':
-                bar.classList.add('VI');
-                counter.setAttribute('data-val', '6');
-                break;
-              case '7/10':
-                bar.classList.add('VII');
-                counter.setAttribute('data-val', '7');
-                break;
-              case '8/10':
-                bar.classList.add('VIII');
-                counter.setAttribute('data-val', '8');
-                break;
-              case '9/10':
-                bar.classList.add('IX');
-                counter.setAttribute('data-val', '9');
-                break;
-              case '10/10':
-                bar.classList.add('X');
-                counter.setAttribute('data-val', '10');
-                break;
-            }
-            let nextScore: Number = Number(document.querySelector('#proficiency-skills h3').getAttribute('data-val'));
-            if (observeScores(prevScore, nextScore) === true && prevScore !== nextScore) {
-              activateCounter(counter, prevScore, nextScore, titleName, event);
-            }
-            break;
-        }
-      };
-      let firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
-      let lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
-      $(firstIcon).on('mouseover mouseleave', function (event) {
-        activateBar(event);
-      });
-      $(lastIcon)
-        .on('click', function (event) {
-          console.log('Yay, overlay!');
-        })
-        .on('mouseover', function (event) {
-          activateBar(event);
-        })
-        .on('mouseleave', function (event) {
-          safetyToggle('clear', event, 0);
-        });
-        */
     }
     //--🠋 04. Build 🠋--//
     export function build(titleName?: 'producer' | 'developer') {
