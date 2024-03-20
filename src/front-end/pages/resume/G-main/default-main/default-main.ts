@@ -220,6 +220,11 @@ export namespace DefaultMain {
     }
     //--🠋 03. Rating 🠋--//
     export function rating(titleName: 'producer' | 'developer') {
+      let icon = `#${titleName}-carousel #${titleName}-skills ul li`;
+
+      $(icon).on('mouseover', function (event) {
+        console.log($(event.target).children().first().attr('alt'));
+      });
       /*
       let firstIcon = `#${titleName}-carousel #${titleName}-skills ul li > :first-child`;
       let lastIcon = `#${titleName}-carousel #${titleName}-skills ul li > :last-child`;
