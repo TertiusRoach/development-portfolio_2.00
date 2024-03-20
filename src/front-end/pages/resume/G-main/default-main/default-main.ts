@@ -10,11 +10,11 @@ export namespace DefaultMain {
 
     const mainSkills = (titleName: 'producer' | 'developer') => {
       //--🠋 Execution Order 🠋--//
-      MainSkills.navigation(titleName); //--🠈 01. Navigation 🠈--//
-      MainSkills.carousel(titleName); //--🠈 02. Carousel 🠈--//
-      MainSkills.rating(titleName); //--🠈 03. Rating 🠈--//
-      // MainSkills.build(titleName); //--🠈 04. Build 🠈--//
-      MainSkills.build();
+      MainSkills.build(titleName); //--🠈 00. Build 🠈--//
+      MainSkills.update(titleName); //--🠈 00. Update 🠈--//
+      MainSkills.navigation(titleName); //--🠈 00. Navigation 🠈--//
+
+      //--🠊 MainSkills.build(); 🠈--//
     };
     mainSkills('producer');
     mainSkills('developer');
@@ -44,71 +44,8 @@ export namespace DefaultMain {
     }
   }
   namespace MainSkills {
-    //--🠋 01. Navigation 🠋--//
+    //--🠋 00. Navigation 🠋--//
     export function navigation(titleName: 'producer' | 'developer') {
-      const navigation = `#${titleName}-carousel .navigation-${titleName} li`;
-
-      const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
-        let enable: string = event.target.firstChild.innerText;
-        switch (action) {
-          case 'block':
-            setTimeout(() => {
-              for (let i = 0; i < event.target.parentNode.children.length; i++) {
-                let element = event.target.parentNode.childNodes[i].firstChild.innerText;
-
-                if (element !== enable) {
-                  event.target.parentNode.children[i].classList.remove('cleared');
-                  event.target.parentNode.children[i].classList.add('blocked');
-                } else if (element === enable) {
-                  event.target.parentNode.children[i].classList.remove('blocked');
-                  event.target.parentNode.children[i].classList.add('cleared');
-                }
-              }
-            }, milliseconds);
-            break;
-          case 'clear':
-            setTimeout(() => {
-              for (let i = 0; i < event.target.parentNode.children.length; i++) {
-                event.target.parentNode.children[i].classList.remove('blocked');
-                event.target.parentNode.children[i].classList.add('cleared');
-              }
-            }, milliseconds);
-            break;
-        }
-      };
-      const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
-        let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
-        let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
-
-        let sectionName: string = $(event.target).find('>:first-child').text();
-        hidden.innerHTML = `<h1>${sectionName}</h1>
-                            <h6>${sectionName}</h6>`;
-
-        setTimeout(() => {
-          visible.className = '';
-          visible.className = 'hidden';
-          setTimeout(() => {
-            visible.innerHTML = `<h1>${sectionName}</h1>
-                                 <h6>${sectionName}</h6>`;
-          }, milliseconds);
-
-          hidden.className = '';
-          hidden.className = 'visible';
-        }, milliseconds);
-      };
-
-      $(navigation).on('click', function (event) {
-        switch (true) {
-          case event.target.classList.contains('cleared'):
-            navigationToggle(event, 375);
-            safetyToggle('block', event, 0);
-            safetyToggle('clear', event, 375);
-            break;
-        }
-      });
-    }
-    //--🠋 02. Carousel 🠋--//
-    export function carousel(titleName: 'producer' | 'developer') {
       //--|🠋| There's a bug here (The aren't working) |🠋|--//
       const shiftLeft = (title: string) => {
         // When I click left move slides to the left
@@ -218,8 +155,15 @@ export namespace DefaultMain {
         }
       };
     }
-    //--🠋 03. Rating 🠋--//
-    export function rating(titleName: 'producer' | 'developer') {
+    //--🠋 00. Update 🠋--//
+    export function update(titleName: 'producer' | 'developer') {
+      const header: string = `#${titleName}-carousel .navigation-${titleName} li`;
+      const arrows: string = `#${titleName}-carousel button[class*='${titleName}']`;
+      const carousel: string = `#${titleName}-carousel #${titleName}-skills ul li`;
+      const barRating: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
+      const barLoader: HTMLSpanElement = document.querySelector('#proficiency-skills span');
+      const navigation: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span`);
+
       const romanNumerals = (arabic: number) => {
         switch (arabic) {
           case 0:
@@ -247,25 +191,46 @@ export namespace DefaultMain {
         }
       };
 
-      $(`#${titleName}-carousel #${titleName}-skills ul li`).on('mouseover', function (event) {
-        let current: any = event.target.parentElement.firstChild;
-        let select: any = Info.Icon.tests(current.alt);
+      $(header)
+        .on('mouseover', function (event) {
+          let section: string = event.target.querySelector('span').textContent;
+          navigation.innerHTML = `<h1>${section}</h1>
+                                  <h6>${section}</h6>`;
+        })
+        .on('mouseleave', function () {
+          let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
+          navigation.innerHTML = `<h1>${section.textContent}</h1>
+                                  <h6>${section.textContent}</h6>`;
+        });
+      $(carousel)
+        .on('mouseover', function (event) {
+          let icon: any | HTMLImageElement = event.target.parentElement.firstChild;
+          let select: any | object = Info.Icon.skills(icon.alt);
 
-        var barHeader: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
-        var barCounter: HTMLSpanElement = document.querySelector('#proficiency-skills span');
-        let navHeader: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span:nth-child(1)`);
+          if (select !== undefined) {
+            barRating.innerText = `${select.rating}/10`;
+            barRating.setAttribute('data-val', `${select.rating}`);
 
-        barHeader.setAttribute('data-val', `${select.rating}`);
-        barHeader.innerText = `${select.rating}/10`;
+            barLoader.className = '';
+            barLoader.className = romanNumerals(select.rating);
 
-        barCounter.className = '';
-        barCounter.className = romanNumerals(select.rating);
+            navigation.innerHTML = `<h1>${select.application}</h1>
+                                  <h6>${select.application}</h6>`;
+          }
+        })
+        .on('mouseleave', function (event) {
+          let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
+          navigation.innerHTML = `<h1>${section.textContent}</h1>
+                                <h6>${section.textContent}</h6>`;
+        });
 
-        navHeader.innerHTML = `<h1>${select.application}</h1>
-                              <h6>${select.application}</h6>`;
+      $(arrows).on('click', function () {
+        let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
+        navigation.innerHTML = `<h1>${section.textContent}</h1>
+                                <h6>${section.textContent}</h6>`;
       });
     }
-    //--🠋 04. Build 🠋--//
+    //--🠋 00. Build 🠋--//
     export function build(titleName?: 'producer' | 'developer') {
       const createNavigation = (sections: Array<string>, index: number, navigation: HTMLElement) => {
         let listItem: HTMLLIElement = document.createElement('li');
@@ -388,6 +353,79 @@ export namespace DefaultMain {
           //--|🠉| This is for Testing |🠉|--//
           break;
       }
+    }
+
+    export function bin(titleName: 'producer' | 'developer') {
+      /*
+      $(`#${titleName}-carousel #${titleName}-skills ul`).on('mouseleave', function () {
+        let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
+        navigation.innerHTML = `<h1>${section.textContent}</h1>
+                                <h6>${section.textContent}</h6>`;
+      });
+      */
+      /*
+      const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
+        let enable: string = event.target.firstChild.innerText;
+        switch (action) {
+          case 'block':
+            setTimeout(() => {
+              for (let i = 0; i < event.target.parentNode.children.length; i++) {
+                let element = event.target.parentNode.childNodes[i].firstChild.innerText;
+
+                if (element !== enable) {
+                  event.target.parentNode.children[i].classList.remove('cleared');
+                  event.target.parentNode.children[i].classList.add('blocked');
+                } else if (element === enable) {
+                  event.target.parentNode.children[i].classList.remove('blocked');
+                  event.target.parentNode.children[i].classList.add('cleared');
+                }
+              }
+            }, milliseconds);
+            break;
+          case 'clear':
+            setTimeout(() => {
+              for (let i = 0; i < event.target.parentNode.children.length; i++) {
+                event.target.parentNode.children[i].classList.remove('blocked');
+                event.target.parentNode.children[i].classList.add('cleared');
+              }
+            }, milliseconds);
+            break;
+        }
+      };
+      */
+      /*
+      $(navigation).on('click', function (event) {
+        switch (true) {
+          case event.target.classList.contains('cleared'):
+            navigationToggle(event, 375);
+            safetyToggle('block', event, 0);
+            safetyToggle('clear', event, 375);
+            break;
+        }
+      });
+      */
+      /*
+      const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
+        let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
+        let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
+
+        let sectionName: string = $(event.target).find('>:first-child').text();
+        hidden.innerHTML = `<h1>${sectionName}</h1>
+                            <h6>${sectionName}</h6>`;
+
+        setTimeout(() => {
+          visible.className = '';
+          visible.className = 'hidden';
+          setTimeout(() => {
+            visible.innerHTML = `<h1>${sectionName}</h1>
+                                 <h6>${sectionName}</h6>`;
+          }, milliseconds);
+
+          hidden.className = '';
+          hidden.className = 'visible';
+        }, milliseconds);
+      };
+      */
     }
   }
 }

@@ -256,6 +256,7 @@
           grid-area: 1 / 2 / 2 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
         }
         span {
+          z-index: 1;
           display: flex;
           overflow: hidden;
           align-items: center;
@@ -272,6 +273,7 @@
             filter: drop-shadow(0 0 8px black); //--🠈 Horizontal Offset / Vertical Offset / Blur Radius / Color 🠈--//
           }
 
+          /*
           &.visible {
             z-index: 2;
             opacity: 1;
@@ -282,6 +284,7 @@
             opacity: 0;
             filter: blur(16px);
           }
+          */
         }
         svg {
           z-index: 0;
