@@ -166,47 +166,47 @@ export namespace Info {
         case 'Twenty-eight':
           return new Icon('Twenty-eight', 'twenty-eight', `${this.firstIcon}/28.svg`, `${this.lastIcon}/28.svg`, false, 8);
         case 'Twenty-nine':
-          return new Icon('Twenty-nine', 'twenty-nine', `${this.firstIcon}/29.svg`, `${this.lastIcon}/29.svg`, false, 9);
+          return new Icon('Twenty-nine', 'twenty-nine', `${this.firstIcon}/29.svg`, `${this.lastIcon}/29.svg`, true, 9);
         case 'Thirty':
           return new Icon('Thirty', 'thirty', `${this.firstIcon}/30.svg`, `${this.lastIcon}/30.svg`, false, 10);
         case 'Thirty-one':
-          return new Icon('Thirty-one', 'thirty-one', `${this.firstIcon}/31.svg`, `${this.lastIcon}/31.svg`, false, 1);
+          return new Icon('Thirty-one', 'thirty-one', `${this.firstIcon}/31.svg`, `${this.lastIcon}/31.svg`, true, 1);
         case 'Thirty-two':
           return new Icon('Thirty-two', 'thirty-two', `${this.firstIcon}/32.svg`, `${this.lastIcon}/32.svg`, false, 2);
         case 'Thirty-three':
-          return new Icon('Thirty-three', 'thirty-three', `${this.firstIcon}/33.svg`, `${this.lastIcon}/33.svg`, false, 3);
+          return new Icon('Thirty-three', 'thirty-three', `${this.firstIcon}/33.svg`, `${this.lastIcon}/33.svg`, true, 3);
         case 'Thirty-four':
           return new Icon('Thirty-four', 'thirty-four', `${this.firstIcon}/34.svg`, `${this.lastIcon}/34.svg`, false, 4);
         case 'Thirty-five':
-          return new Icon('Thirty-five', 'thirty-five', `${this.firstIcon}/35.svg`, `${this.lastIcon}/35.svg`, false, 5);
+          return new Icon('Thirty-five', 'thirty-five', `${this.firstIcon}/35.svg`, `${this.lastIcon}/35.svg`, true, 5);
         case 'Thirty-six':
           return new Icon('Thirty-six', 'thirty-six', `${this.firstIcon}/36.svg`, `${this.lastIcon}/36.svg`, false, 6);
         case 'Thirty-seven':
-          return new Icon('Thirty-seven', 'thirty-seven', `${this.firstIcon}/37.svg`, `${this.lastIcon}/37.svg`, false, 7);
+          return new Icon('Thirty-seven', 'thirty-seven', `${this.firstIcon}/37.svg`, `${this.lastIcon}/37.svg`, true, 7);
         case 'Thirty-eight':
           return new Icon('Thirty-eight', 'thirty-eight', `${this.firstIcon}/38.svg`, `${this.lastIcon}/38.svg`, false, 8);
         case 'Thirty-nine':
-          return new Icon('Thirty-nine', 'thirty-nine', `${this.firstIcon}/39.svg`, `${this.lastIcon}/39.svg`, false, 9);
+          return new Icon('Thirty-nine', 'thirty-nine', `${this.firstIcon}/39.svg`, `${this.lastIcon}/39.svg`, true, 9);
         case 'Forty':
           return new Icon('Forty', 'forty', `${this.firstIcon}/40.svg`, `${this.lastIcon}/40.svg`, false, 10);
         case 'Forty-one':
-          return new Icon('Forty-one', 'forty-one', `${this.firstIcon}/41.svg`, `${this.lastIcon}/41.svg`, false, 1);
+          return new Icon('Forty-one', 'forty-one', `${this.firstIcon}/41.svg`, `${this.lastIcon}/41.svg`, true, 1);
         case 'Forty-two':
           return new Icon('Forty-two', 'forty-two', `${this.firstIcon}/42.svg`, `${this.lastIcon}/42.svg`, false, 2);
         case 'Forty-three':
-          return new Icon('Forty-three', 'forty-three', `${this.firstIcon}/43.svg`, `${this.lastIcon}/43.svg`, false, 3);
+          return new Icon('Forty-three', 'forty-three', `${this.firstIcon}/43.svg`, `${this.lastIcon}/43.svg`, true, 3);
         case 'Forty-four':
           return new Icon('Forty-four', 'forty-four', `${this.firstIcon}/44.svg`, `${this.lastIcon}/44.svg`, false, 4);
         case 'Forty-five':
-          return new Icon('Forty-five', 'forty-five', `${this.firstIcon}/45.svg`, `${this.lastIcon}/45.svg`, false, 5);
+          return new Icon('Forty-five', 'forty-five', `${this.firstIcon}/45.svg`, `${this.lastIcon}/45.svg`, true, 5);
         case 'Forty-six':
           return new Icon('Forty-six', 'forty-six', `${this.firstIcon}/46.svg`, `${this.lastIcon}/46.svg`, false, 6);
         case 'Forty-seven':
-          return new Icon('Forty-seven', 'forty-seven', `${this.firstIcon}/47.svg`, `${this.lastIcon}/47.svg`, false, 7);
+          return new Icon('Forty-seven', 'forty-seven', `${this.firstIcon}/47.svg`, `${this.lastIcon}/47.svg`, true, 7);
         case 'Forty-eight':
           return new Icon('Forty-eight', 'forty-eight', `${this.firstIcon}/48.svg`, `${this.lastIcon}/48.svg`, false, 8);
         case 'Forty-nine':
-          return new Icon('Forty-nine', 'forty-nine', `${this.firstIcon}/49.svg`, `${this.lastIcon}/49.svg`, false, 9);
+          return new Icon('Forty-nine', 'forty-nine', `${this.firstIcon}/49.svg`, `${this.lastIcon}/49.svg`, true, 9);
         case 'Fifty':
           return new Icon('Fifty', 'fifty', `${this.firstIcon}/50.svg`, `${this.lastIcon}/50.svg`, false, 10);
       }
