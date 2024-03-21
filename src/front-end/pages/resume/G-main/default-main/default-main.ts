@@ -25,7 +25,30 @@ export namespace DefaultMain {
   //--|🠋| 01. Home |🠋|--//
   namespace MainHome {
     export function navigation() {
-      $('.default-main section')
+      const mainSections: string = '.default-main section';
+      const mainContact: string = '.default-main .home-buttons a:nth-child(1)';
+
+      const scrollAnimate = (targetElement: HTMLElement, targetOffset: number, milliseconds: number) => {
+        let pixelAmount: number;
+        switch (targetElement.id.split('-')[1]) {
+          case 'home':
+            pixelAmount = targetElement.offsetHeight * 0 - targetOffset;
+            break;
+          case 'skills':
+            pixelAmount = targetElement.offsetHeight * 1 - targetOffset;
+            break;
+          case 'employment':
+            pixelAmount = targetElement.offsetHeight * 2 - targetOffset;
+            break;
+          case 'contact':
+            pixelAmount = targetElement.offsetHeight * 3 - targetOffset;
+            break;
+        }
+        $('html, main').animate({ scrollTop: `+=${pixelAmount}px` }, milliseconds);
+        // window.location.href = `#main-${targetElement.id.split('-')[1]}`;
+      };
+
+      $(mainSections)
         .on('mouseover', function (event) {
           //--🠋 Only execute if the hovered element's id contains "main". 🠋--//
           if (event.currentTarget.id.includes('main')) {
@@ -41,9 +64,18 @@ export namespace DefaultMain {
         .on('click', function (event) {
           //--🠋 Only execute if the clicked element's id contains "main". 🠋--//
           if (event.currentTarget.id.includes('main')) {
-            window.location.href = `#main-${event.currentTarget.id.split('-')[1]}`;
+            let targetElement: HTMLElement = document.querySelector(`#main-${event.currentTarget.id.split('-')[1]}`);
+            let targetOffset: number = document.querySelector('.default-main').scrollTop;
+            scrollAnimate(targetElement, targetOffset, 500);
+            /* window.location.href = `#main-${event.currentTarget.id.split('-')[1]}`; */
           }
         });
+
+      $(mainContact).on('click', function () {
+        let targetElement: HTMLElement = document.querySelector('#main-contact');
+        let targetOffset: number = document.querySelector('.default-main').scrollTop;
+        $('html, main').animate({ scrollTop: `+=${targetElement.offsetHeight * 3 - targetOffset}px` }, 750);
+      });
     }
   }
   //--|🠋| 02. Skills |🠋|--//
@@ -182,7 +214,7 @@ export namespace DefaultMain {
         let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
         let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
 
-        prevButton.addEventListener('click', (event) => {
+        prevButton.addEventListener('click', () => {
           var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
           var prevSlide: any = currentSlide.previousElementSibling;
           var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
@@ -190,7 +222,6 @@ export namespace DefaultMain {
           var prevIndex: number = slides.findIndex((slide) => slide === prevSlide);
           var prevDot = currentDot.previousElementSibling;
 
-          // toggleCursors(title);
           updateDots(currentDot, prevDot);
           moveToSlide(track, currentSlide, prevSlide);
           toggleArrows(slides, prevButton, nextButton, prevIndex);

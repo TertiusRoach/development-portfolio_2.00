@@ -11,17 +11,31 @@ export namespace DefaultRightbar {
       selectMain(event);
     });
 
-    // console.log('default-rightbar.js Detected!');
+    //--🠊 console.log('|🠊 default-rightbar.js Detected! 🠈|'); 🠈--//
   }
-  function selectRightbar(event: any) {
-    //--|🠋| Remove all 'active' classes |🠋|--//
-    $('#rightbar-navigation div').removeClass('active');
-    //--|🠋| Highlight Clicked Rightbar |🠋|--//
-    $(event.currentTarget).addClass('active');
-  }
+
   function selectMain(event: any) {
     //--|🠋| Scroll default-main |🠋|--//
     window.location.href = event.currentTarget.children[0].getAttribute('href');
+
+    /*
+    let pixelAmount: number;
+    switch (targetElement.id.split('-')[1]) {
+      case 'home':
+        pixelAmount = targetElement.offsetHeight * 0 - targetOffset;
+        break;
+      case 'skills':
+        pixelAmount = targetElement.offsetHeight * 1 - targetOffset;
+        break;
+      case 'employment':
+        pixelAmount = targetElement.offsetHeight * 2 - targetOffset;
+        break;
+      case 'contact':
+        pixelAmount = targetElement.offsetHeight * 3 - targetOffset;
+        break;
+    }
+    $('html, main').animate({ scrollTop: `+=${pixelAmount}px` }, milliseconds);
+    */
   }
   function hideRightbar() {
     //--|🠋| Hide Rightbar |🠋|--//
@@ -35,5 +49,11 @@ export namespace DefaultRightbar {
     //--|🠋| Downplay Header |🠋|--//
     $('#rightbar-hitbox').removeClass('active');
     $('#header-portrait').removeClass('active');
+  }
+  function selectRightbar(event: any) {
+    //--|🠋| Remove all 'active' classes |🠋|--//
+    $('#rightbar-navigation div').removeClass('active');
+    //--|🠋| Highlight Clicked Rightbar |🠋|--//
+    $(event.currentTarget).addClass('active');
   }
 }

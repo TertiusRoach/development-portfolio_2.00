@@ -3,6 +3,7 @@ export namespace DefaultHeader {
     //--🠋 Desktop (Landscape) 🠋--//
     $('#header-navigation a').on('click', (event) => {
       selectHeader(event);
+      scrollAnimate(event, 500);
     });
 
     //--🠋 Mobile (Portrait) 🠋--//
@@ -23,6 +24,28 @@ export namespace DefaultHeader {
   }
 
   //--|🠋| default-header |🠋|--//
+  function scrollAnimate(event: object | any, milliseconds: number) {
+    let pixelAmount: number;
+    let targetEvent: string = event.currentTarget.id.split('-')[1];
+    let targetOffset: number = document.querySelector('.default-main').scrollTop;
+    let targetElement: HTMLElement = document.querySelector(`#main-${targetEvent}`);
+
+    switch (targetEvent) {
+      case 'home':
+        pixelAmount = targetElement.offsetHeight * 0 - targetOffset;
+        break;
+      case 'skills':
+        pixelAmount = targetElement.offsetHeight * 1 - targetOffset;
+        break;
+      case 'employment':
+        pixelAmount = targetElement.offsetHeight * 2 - targetOffset;
+        break;
+      case 'contact':
+        pixelAmount = targetElement.offsetHeight * 3 - targetOffset;
+        break;
+    }
+    $('html, main').animate({ scrollTop: `+=${pixelAmount}px` }, milliseconds);
+  }
   function selectHeader(event: any) {
     //--|🠋| Remove all 'active' classes |🠋|--//
     $('#header-navigation a').removeClass('active');
