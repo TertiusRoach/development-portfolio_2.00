@@ -8,20 +8,22 @@ export namespace DefaultMain {
     };
     mainHome();
 
-    const mainSkills = (titleName: 'producer' | 'developer') => {
-      //--🠋 Execution Order 🠋--//
-      MainSkills.build(titleName); //--🠈 00. Build 🠈--//
-      MainSkills.update(titleName); //--🠈 00. Update 🠈--//
-      MainSkills.navigation(titleName); //--🠈 00. Navigation 🠈--//
-
-      //--🠊 MainSkills.build(); 🠈--//
+    const mainSkills = () => {
+      let titleNames: Array<string> = ['producer', 'developer'];
+      //--🠊 MainSkills.build('testing'); 🠈--//
+      // MainSkills.build('testing');
+      for (let i = 0; i < titleNames.length; i++) {
+        //--🠋 Execution Order 🠋--//
+        MainSkills.build(titleNames[i]); //--🠈 01. Build 🠈--//
+        MainSkills.navigation(titleNames[i]); //--🠈 02. Navigation 🠈--//
+        MainSkills.update(titleNames[i]); //--🠈 03. Update 🠈--//
+      }
     };
-    mainSkills('producer');
-    mainSkills('developer');
+    mainSkills();
 
     //--🠊 console.log('|🠊 default-main.js Detected! 🠈|'); 🠈--//
   }
-
+  //--|🠋| 01. Home |🠋|--//
   namespace MainHome {
     export function navigation() {
       //--|🠋| There's a bug here |🠋|--//
@@ -43,195 +45,10 @@ export namespace DefaultMain {
       */
     }
   }
+  //--|🠋| 02. Skills |🠋|--//
   namespace MainSkills {
-    //--🠋 00. Navigation 🠋--//
-    export function navigation(titleName: 'producer' | 'developer') {
-      //--|🠋| There's a bug here (The aren't working) |🠋|--//
-      const shiftLeft = (title: string) => {
-        // When I click left move slides to the left
-        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
-        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
-        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
-        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
-
-        prevButton.addEventListener('click', (event) => {
-          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
-          var prevSlide: any = currentSlide.previousElementSibling;
-          var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
-          var slides: any = Array.from(track.children);
-          var prevIndex: number = slides.findIndex((slide) => slide === prevSlide);
-          var prevDot = currentDot.previousElementSibling;
-
-          // toggleCursors(title);
-          updateDots(currentDot, prevDot);
-          moveToSlide(track, currentSlide, prevSlide);
-          toggleArrows(slides, prevButton, nextButton, prevIndex);
-        });
-      };
-      const shiftRight = (title: string) => {
-        // When I click right move slides to the right
-        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
-        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
-        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
-        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
-        nextButton.addEventListener('click', (event) => {
-          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
-          var nextSlide: any = currentSlide.nextElementSibling;
-          var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
-          var slides: any = Array.from(track.children);
-          var nextIndex: number = slides.findIndex((slide) => slide === nextSlide);
-          var nextDot = currentDot.nextElementSibling;
-
-          updateDots(currentDot, nextDot);
-          moveToSlide(track, currentSlide, nextSlide);
-          toggleArrows(slides, prevButton, nextButton, nextIndex);
-        });
-      };
-      const modifyDots = (title: string) => {
-        // when I click the nav indicators, move to that slide
-        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
-        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
-        let dots: any = Array.from(dotsNav.children);
-        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
-        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
-        dotsNav.addEventListener('click', (event) => {
-          // targetDot defines the event target by locating the closest <li> HTMLElement
-          var targetDot: any = (event.target as HTMLElement).closest('li');
-
-          // If targetDot doesn't have a value (is null or undefined), the code stops executing and doesn't proceed to the next steps.
-          if (!targetDot) return;
-
-          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
-          var currentDot: any = dotsNav.querySelector(`#${title}-carousel #active`);
-          var targetIndex: number = dots.findIndex((dot) => dot === targetDot);
-          var slides: any = Array.from(track.children);
-          var targetSlide: any = slides[targetIndex];
-
-          updateDots(currentDot, targetDot);
-          moveToSlide(track, currentSlide, targetSlide);
-          toggleArrows(slides, prevButton, nextButton, targetIndex);
-        });
-      };
-      const horizontalSlides = (title: string) => {
-        // Arrange the slides next to one another
-        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
-        let slides: any = Array.from(track.children);
-        let slideWidth = slides[0].getBoundingClientRect().width;
-
-        let setSlidePosition = (slide: Object | any, index: number) => {
-          slide.style.left = `${slideWidth * index}px`;
-        };
-        slides.forEach(setSlidePosition);
-      };
-
-      shiftLeft(titleName);
-      shiftRight(titleName);
-      modifyDots(titleName);
-      horizontalSlides(titleName);
-
-      const updateDots = (currentDot: HTMLElement, targetDot: HTMLElement) => {
-        currentDot.removeAttribute('id');
-        targetDot.setAttribute('id', 'active');
-      };
-      const moveToSlide = (track, currentSlide, targetSlide) => {
-        track.style.transform = `translateX(-${targetSlide.style.left})`;
-
-        currentSlide.classList.add('hidden');
-        currentSlide.classList.remove('visible');
-
-        targetSlide.classList.add('visible');
-        targetSlide.classList.remove('hidden');
-      };
-      const toggleArrows = (slides: HTMLElement[], prevButton: HTMLButtonElement, nextButton: HTMLButtonElement, targetIndex: Number) => {
-        if (targetIndex === 0) {
-          prevButton.classList.add('hidden');
-          nextButton.classList.remove('hidden');
-        } else if (targetIndex === slides.length - 1) {
-          prevButton.classList.remove('hidden');
-          nextButton.classList.add('hidden');
-        } else {
-          prevButton.classList.remove('hidden');
-          nextButton.classList.remove('hidden');
-        }
-      };
-    }
-    //--🠋 00. Update 🠋--//
-    export function update(titleName: 'producer' | 'developer') {
-      const header: string = `#${titleName}-carousel .navigation-${titleName} li`;
-      const arrows: string = `#${titleName}-carousel button[class*='${titleName}']`;
-      const carousel: string = `#${titleName}-carousel #${titleName}-skills ul li`;
-      const barRating: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
-      const barLoader: HTMLSpanElement = document.querySelector('#proficiency-skills span');
-      const navigation: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span`);
-
-      const romanNumerals = (arabic: number) => {
-        switch (arabic) {
-          case 0:
-            return 'O';
-          case 1:
-            return 'I';
-          case 2:
-            return 'II';
-          case 3:
-            return 'III';
-          case 4:
-            return 'IV';
-          case 5:
-            return 'V';
-          case 6:
-            return 'VI';
-          case 7:
-            return 'VII';
-          case 8:
-            return 'VIII';
-          case 9:
-            return 'IX';
-          case 10:
-            return 'X';
-        }
-      };
-
-      $(header)
-        .on('mouseover', function (event) {
-          let section: string = event.target.querySelector('span').textContent;
-          navigation.innerHTML = `<h1>${section}</h1>
-                                  <h6>${section}</h6>`;
-        })
-        .on('mouseleave', function () {
-          let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
-          navigation.innerHTML = `<h1>${section.textContent}</h1>
-                                  <h6>${section.textContent}</h6>`;
-        });
-      $(carousel)
-        .on('mouseover', function (event) {
-          let icon: any | HTMLImageElement = event.target.parentElement.firstChild;
-          let select: any | object = Info.Icon.skills(icon.alt);
-
-          if (select !== undefined) {
-            barRating.innerText = `${select.rating}/10`;
-            barRating.setAttribute('data-val', `${select.rating}`);
-
-            barLoader.className = '';
-            barLoader.className = romanNumerals(select.rating);
-
-            navigation.innerHTML = `<h1>${select.application}</h1>
-                                  <h6>${select.application}</h6>`;
-          }
-        })
-        .on('mouseleave', function (event) {
-          let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
-          navigation.innerHTML = `<h1>${section.textContent}</h1>
-                                <h6>${section.textContent}</h6>`;
-        });
-
-      $(arrows).on('click', function () {
-        let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
-        navigation.innerHTML = `<h1>${section.textContent}</h1>
-                                <h6>${section.textContent}</h6>`;
-      });
-    }
-    //--🠋 00. Build 🠋--//
-    export function build(titleName?: 'producer' | 'developer') {
+    //--🠋 01. Build 🠋--//
+    export function build(titleName: 'producer' | 'developer' | string) {
       const createNavigation = (sections: Array<string>, index: number, navigation: HTMLElement) => {
         let listItem: HTMLLIElement = document.createElement('li');
         let spanItem: HTMLSpanElement = document.createElement('span');
@@ -354,6 +171,229 @@ export namespace DefaultMain {
           break;
       }
     }
+    //--🠋 02. Navigation 🠋--//
+    export function navigation(titleName: 'producer' | 'developer' | string) {
+      //--|🠋| There's a bug here (The aren't working) |🠋|--//
+      const shiftLeft = (title: string) => {
+        // When I click left move slides to the left
+        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
+        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
+
+        prevButton.addEventListener('click', (event) => {
+          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
+          var prevSlide: any = currentSlide.previousElementSibling;
+          var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
+          var slides: any = Array.from(track.children);
+          var prevIndex: number = slides.findIndex((slide) => slide === prevSlide);
+          var prevDot = currentDot.previousElementSibling;
+
+          // toggleCursors(title);
+          updateDots(currentDot, prevDot);
+          moveToSlide(track, currentSlide, prevSlide);
+          toggleArrows(slides, prevButton, nextButton, prevIndex);
+        });
+      };
+      const shiftRight = (title: string) => {
+        // When I click right move slides to the right
+        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
+        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
+        nextButton.addEventListener('click', (event) => {
+          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
+          var nextSlide: any = currentSlide.nextElementSibling;
+          var currentDot = dotsNav.querySelector(`#${title}-carousel #active`);
+          var slides: any = Array.from(track.children);
+          var nextIndex: number = slides.findIndex((slide) => slide === nextSlide);
+          var nextDot = currentDot.nextElementSibling;
+
+          updateDots(currentDot, nextDot);
+          moveToSlide(track, currentSlide, nextSlide);
+          toggleArrows(slides, prevButton, nextButton, nextIndex);
+        });
+      };
+      const modifyDots = (title: string) => {
+        // when I click the nav indicators, move to that slide
+        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+        let dotsNav: any = document.querySelector(`#${title}-carousel .navigation-${title}`);
+        let dots: any = Array.from(dotsNav.children);
+        let nextButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .right-${title}`);
+        let prevButton: HTMLButtonElement = document.querySelector(`#${title}-carousel .left-${title}`);
+        dotsNav.addEventListener('click', (event) => {
+          // targetDot defines the event target by locating the closest <li> HTMLElement
+          var targetDot: any = (event.target as HTMLElement).closest('li');
+
+          // If targetDot doesn't have a value (is null or undefined), the code stops executing and doesn't proceed to the next steps.
+          if (!targetDot) return;
+
+          var currentSlide: any = track.querySelector(`#${title}-carousel .visible`);
+          var currentDot: any = dotsNav.querySelector(`#${title}-carousel #active`);
+          var targetIndex: number = dots.findIndex((dot) => dot === targetDot);
+          var slides: any = Array.from(track.children);
+          var targetSlide: any = slides[targetIndex];
+
+          updateDots(currentDot, targetDot);
+          moveToSlide(track, currentSlide, targetSlide);
+          toggleArrows(slides, prevButton, nextButton, targetIndex);
+        });
+      };
+      const horizontalSlides = (title: string) => {
+        // Arrange the slides next to one another
+        let track: any = document.querySelector(`#${title}-carousel #${title}-skills`);
+        let slides: any = Array.from(track.children);
+        let slideWidth = slides[0].getBoundingClientRect().width;
+
+        let setSlidePosition = (slide: Object | any, index: number) => {
+          slide.style.left = `${slideWidth * index}px`;
+        };
+        slides.forEach(setSlidePosition);
+      };
+
+      shiftLeft(titleName);
+      shiftRight(titleName);
+      modifyDots(titleName);
+      horizontalSlides(titleName);
+
+      const updateDots = (currentDot: HTMLElement, targetDot: HTMLElement) => {
+        currentDot.removeAttribute('id');
+        targetDot.setAttribute('id', 'active');
+      };
+      const moveToSlide = (track, currentSlide, targetSlide) => {
+        track.style.transform = `translateX(-${targetSlide.style.left})`;
+
+        currentSlide.classList.add('hidden');
+        currentSlide.classList.remove('visible');
+
+        targetSlide.classList.add('visible');
+        targetSlide.classList.remove('hidden');
+      };
+      const toggleArrows = (slides: HTMLElement[], prevButton: HTMLButtonElement, nextButton: HTMLButtonElement, targetIndex: Number) => {
+        if (targetIndex === 0) {
+          prevButton.classList.add('hidden');
+          nextButton.classList.remove('hidden');
+        } else if (targetIndex === slides.length - 1) {
+          prevButton.classList.remove('hidden');
+          nextButton.classList.add('hidden');
+        } else {
+          prevButton.classList.remove('hidden');
+          nextButton.classList.remove('hidden');
+        }
+      };
+    }
+    //--🠋 03. Update 🠋--//
+    export function update(titleName: 'producer' | 'developer' | string) {
+      const header: string = `#${titleName}-carousel .navigation-${titleName} li`;
+
+      const arrows: string = `#${titleName}-carousel button[class*='${titleName}']`;
+
+      const carousel: string = `#${titleName}-carousel #${titleName}-skills ul li`;
+      const barRating: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
+      const barLoader: HTMLSpanElement = document.querySelector('#proficiency-skills span');
+      const navigation: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span`);
+
+      const romanNumerals = (arabic: number) => {
+        switch (arabic) {
+          case 0:
+            return 'O';
+          case 1:
+            return 'I';
+          case 2:
+            return 'II';
+          case 3:
+            return 'III';
+          case 4:
+            return 'IV';
+          case 5:
+            return 'V';
+          case 6:
+            return 'VI';
+          case 7:
+            return 'VII';
+          case 8:
+            return 'VIII';
+          case 9:
+            return 'IX';
+          case 10:
+            return 'X';
+        }
+      };
+
+      $(carousel)
+        .on('mouseover', function (event) {
+          let icon: any | HTMLImageElement = event.target.parentElement.firstChild;
+          let select: any | object;
+          let initialize: number = parseInt(icon.src.split('/').pop());
+
+          //--🠋 Switch between testing or default 🠋--//
+          if (isNaN(initialize)) {
+            select = Info.Icon.skills(icon.alt); //--🠈 Default 🠈--//
+          } else {
+            select = Info.Icon.tests(icon.alt); //--🠈 Testing 🠈--//
+          }
+
+          barRating.innerText = `${select.rating}/10`;
+          barRating.setAttribute('data-val', `${select.rating}`);
+
+          barLoader.className = '';
+          barLoader.className = romanNumerals(select.rating);
+
+          navigation.innerHTML = `<h1>${select.application}</h1>
+                                  <h6>${select.application}</h6>`;
+
+          if (select !== undefined) {
+          }
+        })
+        .on('mouseleave', function () {
+          let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
+          navigation.innerHTML = `<h1>${section.textContent}</h1>
+                              <h6>${section.textContent}</h6>`;
+        });
+
+      $(header)
+        .on('mouseover', function (event) {
+          let section: string = event.target.querySelector('span').textContent;
+          navigation.innerHTML = `<h1>${section}</h1>
+                                  <h6>${section}</h6>`;
+        })
+        .on('mouseleave', function () {
+          let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
+          navigation.innerHTML = `<h1>${section.textContent}</h1>
+                                  <h6>${section.textContent}</h6>`;
+        });
+
+      const producerArrows: string = '#producer-carousel button[class*="producer"]';
+      const developerArrows: string = '#developer-carousel button[class*="developer"]';
+      $(producerArrows).on('click', function () {
+        let selector: HTMLSpanElement = document.querySelector('.producer-title span');
+        let sections: HTMLSpanElement = document.querySelector('#producer-carousel .navigation-producer #active span');
+
+        selector.innerHTML = `<h1>${sections.textContent}</h1>
+                              <h6>${sections.textContent}</h6>`;
+      });
+      $(developerArrows).on('click', function () {
+        let selector: HTMLSpanElement = document.querySelector('.developer-title span');
+        let sections: HTMLSpanElement = document.querySelector('#developer-carousel .navigation-developer #active span');
+
+        selector.innerHTML = `<h1>${sections.textContent}</h1>
+                              <h6>${sections.textContent}</h6>`;
+      });
+
+      /*
+      $(arrows).on('click', function (event) {
+        titleName = event.target.parentElement.className.split('-')[1];
+        console.log(titleName);
+        
+        let selector = document.querySelector(`header[class*='${titleName}-title'] span`);
+        let section: HTMLSpanElement | any = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
+
+        selector.innerHTML = `<h1>${section.textContent}</h1>
+                              <h6>${section.textContent}</h6>`;
+                              
+      });
+      */
+    }
 
     export function bin(titleName: 'producer' | 'developer') {
       /*
@@ -428,4 +468,8 @@ export namespace DefaultMain {
       */
     }
   }
+
+  //--|🠋| 03. Employment |🠋|--//
+
+  //--|🠋| 04. Contact |🠋|--//
 }

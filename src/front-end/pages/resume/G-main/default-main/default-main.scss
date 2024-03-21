@@ -294,7 +294,7 @@
         }
       }
       section[id*='carousel'] {
-        overflow: hidden; //--🠈 This fixes z-index issues🠈--//
+        overflow: hidden; //--🠈 This fixes overlapping carousels 🠈--//
         nav {
           display: flex;
           align-items: center;
@@ -346,8 +346,8 @@
             width: 100%;
             height: 100%;
             display: grid;
-            grid-gap: 2rem;
             position: absolute;
+            //--🠊 grid-gap: 2rem; 🠈--//
             transition: opacity 0.75s ease-in-out;
             li {
               position: relative;
@@ -662,8 +662,10 @@
           grid-area: 3 / 2 / 4 / 3; //--🠈 row-start / col-start / row-end / col-end 🠈--//
         }
       }
+      /*
       section[id*='skills'] {
       }
+      */
     }
     #main-employment div {
       //--🠊 display: grid; 🠈--//
