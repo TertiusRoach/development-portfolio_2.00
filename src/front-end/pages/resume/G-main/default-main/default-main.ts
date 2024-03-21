@@ -11,7 +11,6 @@ export namespace DefaultMain {
     const mainSkills = () => {
       let titleNames: Array<string> = ['producer', 'developer'];
       //--🠊 MainSkills.build('testing'); 🠈--//
-      // MainSkills.build('testing');
       for (let i = 0; i < titleNames.length; i++) {
         //--🠋 Execution Order 🠋--//
         MainSkills.build(titleNames[i]); //--🠈 01. Build 🠈--//
@@ -26,23 +25,18 @@ export namespace DefaultMain {
   //--|🠋| 01. Home |🠋|--//
   namespace MainHome {
     export function navigation() {
-      //--|🠋| There's a bug here |🠋|--//
-      /*
       $('.default-main section').on('mouseover', function (event) {
-        let headerElement: HTMLElement = document.querySelector(`#header-navigation #header-${event.currentTarget.id.split('-')[1]}`);
-        let rightbarElement: HTMLElement = document.querySelector(`#rightbar-navigation #rightbar-${event.currentTarget.id.split('-')[1]}`);
-  
-        if (headerElement.classList[0] === undefined && rightbarElement.classList[0] === undefined) {
-          //--|🠋| Mark Header as Active |🠋|--//
-          $('#header-navigation a').removeClass('active');
-          $(headerElement).addClass('active');
-  
-          //--|🠋| Mark Rightbar as Active |🠋|--//
-          $('#rightbar-navigation div').removeClass('active');
-          $(rightbarElement).addClass('active');
+        //--🠋 Only execute if the hovered element's id contains "main". 🠋--//
+        if (event.currentTarget.id.includes('main')) {
+          let eventTarget: string = event.currentTarget.id.split('-')[1];
+
+          document.querySelector('.default-header nav .active').className = ''; //--🠈 prevHeader 🠈--//
+          document.querySelector(`.default-header #header-${eventTarget}`).className = 'active'; //--🠈 nextHeader 🠈--//
+
+          document.querySelector('.default-rightbar section nav .active').className = ''; //--🠈 prevRightbar 🠈--//
+          document.querySelector(`.default-rightbar #rightbar-${eventTarget}`).className = 'active'; //--🠈 nextRightbar 🠈--//
         }
       });
-      */
     }
   }
   //--|🠋| 02. Skills |🠋|--//
@@ -285,13 +279,12 @@ export namespace DefaultMain {
     //--🠋 03. Update 🠋--//
     export function update(titleName: 'producer' | 'developer' | string) {
       const header: string = `#${titleName}-carousel .navigation-${titleName} li`;
-
-      const arrows: string = `#${titleName}-carousel button[class*='${titleName}']`;
-
       const carousel: string = `#${titleName}-carousel #${titleName}-skills ul li`;
       const barRating: HTMLHeadingElement = document.querySelector('#proficiency-skills h3');
       const barLoader: HTMLSpanElement = document.querySelector('#proficiency-skills span');
       const navigation: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] span`);
+      const producerArrows: string = '#producer-carousel button[class*="producer"]';
+      const developerArrows: string = '#developer-carousel button[class*="developer"]';
 
       const romanNumerals = (arabic: number) => {
         switch (arabic) {
@@ -341,14 +334,11 @@ export namespace DefaultMain {
 
           navigation.innerHTML = `<h1>${select.application}</h1>
                                   <h6>${select.application}</h6>`;
-
-          if (select !== undefined) {
-          }
         })
         .on('mouseleave', function () {
           let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
           navigation.innerHTML = `<h1>${section.textContent}</h1>
-                              <h6>${section.textContent}</h6>`;
+                                  <h6>${section.textContent}</h6>`;
         });
 
       $(header)
@@ -363,8 +353,6 @@ export namespace DefaultMain {
                                   <h6>${section.textContent}</h6>`;
         });
 
-      const producerArrows: string = '#producer-carousel button[class*="producer"]';
-      const developerArrows: string = '#developer-carousel button[class*="developer"]';
       $(producerArrows).on('click', function () {
         let selector: HTMLSpanElement = document.querySelector('.producer-title span');
         let sections: HTMLSpanElement = document.querySelector('#producer-carousel .navigation-producer #active span');
@@ -379,8 +367,11 @@ export namespace DefaultMain {
         selector.innerHTML = `<h1>${sections.textContent}</h1>
                               <h6>${sections.textContent}</h6>`;
       });
+    }
 
+    export function bin(titleName: 'producer' | 'developer') {
       /*
+      const arrows: string = `#${titleName}-carousel button[class*='${titleName}']`;
       $(arrows).on('click', function (event) {
         titleName = event.target.parentElement.className.split('-')[1];
         console.log(titleName);
@@ -393,9 +384,6 @@ export namespace DefaultMain {
                               
       });
       */
-    }
-
-    export function bin(titleName: 'producer' | 'developer') {
       /*
       $(`#${titleName}-carousel #${titleName}-skills ul`).on('mouseleave', function () {
         let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
