@@ -25,18 +25,25 @@ export namespace DefaultMain {
   //--|🠋| 01. Home |🠋|--//
   namespace MainHome {
     export function navigation() {
-      $('.default-main section').on('mouseover', function (event) {
-        //--🠋 Only execute if the hovered element's id contains "main". 🠋--//
-        if (event.currentTarget.id.includes('main')) {
-          let eventTarget: string = event.currentTarget.id.split('-')[1];
+      $('.default-main section')
+        .on('mouseover', function (event) {
+          //--🠋 Only execute if the hovered element's id contains "main". 🠋--//
+          if (event.currentTarget.id.includes('main')) {
+            let eventTarget: string = event.currentTarget.id.split('-')[1];
 
-          document.querySelector('.default-header nav .active').className = ''; //--🠈 prevHeader 🠈--//
-          document.querySelector(`.default-header #header-${eventTarget}`).className = 'active'; //--🠈 nextHeader 🠈--//
+            document.querySelector('.default-header nav .active').className = ''; //--🠈 prevHeader 🠈--//
+            document.querySelector(`.default-header #header-${eventTarget}`).className = 'active'; //--🠈 nextHeader 🠈--//
 
-          document.querySelector('.default-rightbar section nav .active').className = ''; //--🠈 prevRightbar 🠈--//
-          document.querySelector(`.default-rightbar #rightbar-${eventTarget}`).className = 'active'; //--🠈 nextRightbar 🠈--//
-        }
-      });
+            document.querySelector('.default-rightbar section nav .active').className = ''; //--🠈 prevRightbar 🠈--//
+            document.querySelector(`.default-rightbar #rightbar-${eventTarget}`).className = 'active'; //--🠈 nextRightbar 🠈--//
+          }
+        })
+        .on('click', function (event) {
+          //--🠋 Only execute if the clicked element's id contains "main". 🠋--//
+          if (event.currentTarget.id.includes('main')) {
+            window.location.href = `#main-${event.currentTarget.id.split('-')[1]}`;
+          }
+        });
     }
   }
   //--|🠋| 02. Skills |🠋|--//
