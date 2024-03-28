@@ -66,3 +66,48 @@ $turquoise-neon: #00ffff; //--🠊 rgba(0, 255, 255, 1) 🠈--//
 $turquoise-dark: #0c343d; //--🠊 rgba(12, 52, 61, 1) 🠈--//
 $turquoise-light: #a2c4c9; //--🠊 rgba(162, 196, 201, 1) 🠈--//
 //--|🠉| Backup Colors |🠉|--//
+
+body {
+  /*
+  @mixin green-container {
+    border: 4px dashed $green-neon;
+    background: rgba($green-dark, 0.25);
+  }
+  @mixin pink-container {
+    border: 4px dashed $pink-neon;
+    background: rgba($pink-dark, 0.25);
+  }
+  @mixin yellow-container {
+    border: 4px dashed $yellow-neon;
+    background: rgba($yellow-dark, 0.25);
+  }
+  @mixin orange-container {
+    border: 4px dashed $orange-neon;
+    background: rgba($orange-dark, 0.25);
+  }
+  @mixin blue-container {
+    border: 4px dashed $blue-neon;
+    background: rgba($blue-dark, 0.25);
+  }
+  @mixin purple-container {
+    border: 4px dashed $purple-neon;
+    background: rgba($purple-dark, 0.25);
+  }
+  @mixin red-container {
+    border: 4px dashed $red-neon;
+    background: rgba($red-dark, 0.25);
+  }
+  @mixin brown-container {
+    border: 4px dashed $brown-neon;
+    background: rgba($brown-dark, 0.25);
+  }
+  @mixin grey-container {
+    border: 4px dashed $grey-neon;
+    background: rgba($grey-dark, 0.25);
+  }
+  @mixin turquoise-container {
+    border: 4px dashed $turquoise-neon;
+    background: rgba($turquoise-dark, 0.25);
+  }
+  */
+}

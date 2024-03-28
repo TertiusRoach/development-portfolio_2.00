@@ -2,6 +2,7 @@ body {
   //--🠊 display: grid; 🠈--//
   //--|🠋| Resume Main |🠋|--//
   #resume-main {
+    //--🠊 display: flex; 🠈--//
     //--🠋 03. Main Employment 🠋--//
     #main-employment div {
       /*
@@ -18688,7 +18689,7 @@ body {
     //--🠉 01. Main Home 🠉--//
     //--🠋 02. Main Skills 🠋--//
     #main-skills div {
-      display: grid;
+      //   display: grid;
       @media screen and (orientation: landscape) {
         grid-template: 100px 1fr auto 1fr 100px / repeat(2, 1fr); //--🠈 grid-template-rows / grid-template-columns 🠈--//
         section[id*='carousel'] {

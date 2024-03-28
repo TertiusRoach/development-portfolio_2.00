@@ -47,8 +47,31 @@
       //--🠊 background: rgba($yellow-dark, 0.25); 🠈--//
     }
   }
+
+  //--🠋 All <main> Containers 🠋--//
+  section[id*='main'] {
+    width: 100%;
+    height: 100%;
+    display: block; //--🠈 Default display for <section> tags 🠈--//
+    padding: 75px 25px 0 25px;
+  }
+
+  //--🠋 Remove Scrollbar 🠋--//
+  main[class*='default'] {
+    overflow: overlay;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-color: transparent transparent;
+  }
+  main[class*='default']::-webkit-scrollbar {
+    width: 0;
+  }
+  main[class*='default']::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
 }
 
+/*
 body {
   //--🠋 All <main> Containers 🠋--//
   section[id*='main'] {
@@ -71,47 +94,5 @@ body {
   main[class*='default']::-webkit-scrollbar-thumb {
     background-color: transparent;
   }
-
-  /*
-  @mixin green-container {
-    border: 4px dashed $green-neon;
-    background: rgba($green-dark, 0.25);
-  }
-  @mixin pink-container {
-    border: 4px dashed $pink-neon;
-    background: rgba($pink-dark, 0.25);
-  }
-  @mixin yellow-container {
-    border: 4px dashed $yellow-neon;
-    background: rgba($yellow-dark, 0.25);
-  }
-  @mixin orange-container {
-    border: 4px dashed $orange-neon;
-    background: rgba($orange-dark, 0.25);
-  }
-  @mixin blue-container {
-    border: 4px dashed $blue-neon;
-    background: rgba($blue-dark, 0.25);
-  }
-  @mixin purple-container {
-    border: 4px dashed $purple-neon;
-    background: rgba($purple-dark, 0.25);
-  }
-  @mixin red-container {
-    border: 4px dashed $red-neon;
-    background: rgba($red-dark, 0.25);
-  }
-  @mixin brown-container {
-    border: 4px dashed $brown-neon;
-    background: rgba($brown-dark, 0.25);
-  }
-  @mixin grey-container {
-    border: 4px dashed $grey-neon;
-    background: rgba($grey-dark, 0.25);
-  }
-  @mixin turquoise-container {
-    border: 4px dashed $turquoise-neon;
-    background: rgba($turquoise-dark, 0.25);
-  }
-  */
 }
+*/

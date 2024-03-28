@@ -20,8 +20,8 @@ export namespace Info {
     }
 
     static skills(software: string) {
-      this.firstIcon = 'dist/front-end/pages/resume/content/png-files/logo-skills/green-logos';
-      this.lastIcon = 'dist/front-end/pages/resume/content/png-files/logo-skills/original-logos';
+      this.firstIcon = 'dist/front-end/pages/resume/content/png-files/main-skills/green-logos';
+      this.lastIcon = 'dist/front-end/pages/resume/content/png-files/main-skills/original-logos';
 
       switch (software) {
         case 'Adobe After Effects':
