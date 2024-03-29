@@ -20,6 +20,11 @@ export namespace DefaultMain {
     };
     mainSkills();
 
+    const mainEmployment = () => {
+      MainEmployment.description('employment');
+    };
+    mainEmployment();
+
     //--🠊 console.log('|🠊 default-main.js Detected! 🠈|'); 🠈--//
   }
   //--|🠋| 01. Home |🠋|--//
@@ -406,95 +411,32 @@ export namespace DefaultMain {
                               <h6>${sections.textContent}</h6>`;
       });
     }
-
-    export function bin(titleName: 'producer' | 'developer') {
-      /*
-      const arrows: string = `#${titleName}-carousel button[class*='${titleName}']`;
-      $(arrows).on('click', function (event) {
-        titleName = event.target.parentElement.className.split('-')[1];
-        console.log(titleName);
-        
-        let selector = document.querySelector(`header[class*='${titleName}-title'] span`);
-        let section: HTMLSpanElement | any = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
-
-        selector.innerHTML = `<h1>${section.textContent}</h1>
-                              <h6>${section.textContent}</h6>`;
-                              
-      });
-      */
-      /*
-      $(`#${titleName}-carousel #${titleName}-skills ul`).on('mouseleave', function () {
-        let section = document.querySelector(`#${titleName}-carousel .navigation-${titleName} #active span`);
-        navigation.innerHTML = `<h1>${section.textContent}</h1>
-                                <h6>${section.textContent}</h6>`;
-      });
-      */
-      /*
-      const safetyToggle = (action: 'block' | 'clear', event: HTMLElement | any, milliseconds: number) => {
-        let enable: string = event.target.firstChild.innerText;
-        switch (action) {
-          case 'block':
-            setTimeout(() => {
-              for (let i = 0; i < event.target.parentNode.children.length; i++) {
-                let element = event.target.parentNode.childNodes[i].firstChild.innerText;
-
-                if (element !== enable) {
-                  event.target.parentNode.children[i].classList.remove('cleared');
-                  event.target.parentNode.children[i].classList.add('blocked');
-                } else if (element === enable) {
-                  event.target.parentNode.children[i].classList.remove('blocked');
-                  event.target.parentNode.children[i].classList.add('cleared');
-                }
-              }
-            }, milliseconds);
-            break;
-          case 'clear':
-            setTimeout(() => {
-              for (let i = 0; i < event.target.parentNode.children.length; i++) {
-                event.target.parentNode.children[i].classList.remove('blocked');
-                event.target.parentNode.children[i].classList.add('cleared');
-              }
-            }, milliseconds);
-            break;
-        }
-      };
-      */
-      /*
-      $(navigation).on('click', function (event) {
-        switch (true) {
-          case event.target.classList.contains('cleared'):
-            navigationToggle(event, 375);
-            safetyToggle('block', event, 0);
-            safetyToggle('clear', event, 375);
-            break;
-        }
-      });
-      */
-      /*
-      const navigationToggle = (event: HTMLHeadElement | any, milliseconds: number) => {
-        let visible: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .visible`);
-        let hidden: HTMLSpanElement = document.querySelector(`header[class*='${titleName}-title'] .hidden`);
-
-        let sectionName: string = $(event.target).find('>:first-child').text();
-        hidden.innerHTML = `<h1>${sectionName}</h1>
-                            <h6>${sectionName}</h6>`;
-
-        setTimeout(() => {
-          visible.className = '';
-          visible.className = 'hidden';
-          setTimeout(() => {
-            visible.innerHTML = `<h1>${sectionName}</h1>
-                                 <h6>${sectionName}</h6>`;
-          }, milliseconds);
-
-          hidden.className = '';
-          hidden.className = 'visible';
-        }, milliseconds);
-      };
-      */
-    }
   }
 
+  //--|🠋| 03. Employment |🠋|--//
+  namespace MainEmployment {
+    export function description(MainSections: 'home' | 'skills' | 'employment' | 'contact') {
+      const mainSection: string = `#main-${MainSections} .scalable-main`;
+      const description: string = `${mainSection} article section footer[class*="description"]`;
+      const descriptionBackground: HTMLElement = document.querySelector(`${mainSection} article section aside[class*="description-background"]`);
+      $(description)
+        .on('mouseover', function () {
+          console.log(descriptionBackground);
+          $(descriptionBackground).css('clip-path', 'inset(0 0% 0 0)');
+          // Gradually change the clip-path to inset(0 75% 0 0)
+          $(descriptionBackground).animate(
+            {
+              'clip-path': 'inset(0 75% 0 0)',
+            },
+            7500
+          ); // Adjust the duration as needed
+        })
+        .on('mouseleave', function () {
+          // Change clip-path to inset(0 100% 0 0) immediately on mouse leave
+          $(descriptionBackground).css('clip-path', 'inset(0 100% 0 0)');
+        });
+    }
+  }
   //--|🠋| 03. Employment |🠋|--//
 
   //--|🠋| 04. Contact |🠋|--//
