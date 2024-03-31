@@ -145,7 +145,13 @@ export namespace DefaultMain {
       let sections: Array<string>;
       let carousel: HTMLElement = document.querySelector(`#${titleName}-carousel #${titleName}-skills`);
       let navigation: HTMLElement = document.querySelector(`#${titleName}-carousel .navigation-${titleName}`);
-      let containers: Array<string> = ['first-container', 'second-container', 'third-container', 'fourth-container', 'fifth-container'];
+      let containers: Array<string> = [
+        'first-container',
+        'second-container',
+        'third-container',
+        'fourth-container',
+        'fifth-container',
+      ];
 
       switch (titleName) {
         case 'producer':
@@ -169,8 +175,12 @@ export namespace DefaultMain {
           break;
         case false:
           //--|🠋| This is for Testing |🠋|--//
-          let producerIcons: NodeListOf<HTMLLIElement> = document.querySelectorAll('#producer-carousel #producer-skills ul[class*="container"] li');
-          let developerIcons: NodeListOf<HTMLLIElement> = document.querySelectorAll('#developer-carousel #developer-skills ul[class*="container"] li');
+          let producerIcons: NodeListOf<HTMLLIElement> = document.querySelectorAll(
+            '#producer-carousel #producer-skills ul[class*="container"] li'
+          );
+          let developerIcons: NodeListOf<HTMLLIElement> = document.querySelectorAll(
+            '#developer-carousel #developer-skills ul[class*="container"] li'
+          );
           for (let i = 0; i < Info.Resume.carousel().length; i++) {
             var info = Info.Resume.carousel()[i];
 
@@ -306,7 +316,12 @@ export namespace DefaultMain {
         targetSlide.classList.add('visible');
         targetSlide.classList.remove('hidden');
       };
-      const toggleArrows = (slides: HTMLElement[], prevButton: HTMLButtonElement, nextButton: HTMLButtonElement, targetIndex: Number) => {
+      const toggleArrows = (
+        slides: HTMLElement[],
+        prevButton: HTMLButtonElement,
+        nextButton: HTMLButtonElement,
+        targetIndex: Number
+      ) => {
         if (targetIndex === 0) {
           prevButton.classList.add('hidden');
           nextButton.classList.remove('hidden');
@@ -416,6 +431,7 @@ export namespace DefaultMain {
   //--|🠋| 03. Employment |🠋|--//
   namespace MainEmployment {
     export function description(MainSections: 'home' | 'skills' | 'employment' | 'contact') {
+      /*
       const mainSection: string = `#main-${MainSections} .scalable-main`;
       const description: string = `${mainSection} article section footer[class*="description"]`;
       const descriptionBackground: HTMLElement = document.querySelector(`${mainSection} article section aside[class*="description-background"]`);
@@ -435,6 +451,7 @@ export namespace DefaultMain {
           // Change clip-path to inset(0 100% 0 0) immediately on mouse leave
           $(descriptionBackground).css('clip-path', 'inset(0 100% 0 0)');
         });
+        */
     }
   }
   //--|🠋| 03. Employment |🠋|--//
