@@ -5,7 +5,7 @@
   //--|🠋| 03. Employment |🠋|--//
   #main-employment {
     //--🠊 display: block; 🠈--//
-    @mixin styling {
+    @mixin aside-styling {
       //--🠉 <aside> HTML </aside> 🠉--//
       //--🠊 display: flex; 🠈--//
       &.logo-foreground {
@@ -16,7 +16,7 @@
         img {
           width: 50%;
           height: auto;
-          filter: drop-shadow(0 0 1rem white); //--🠈 Horizontal Offset / Vertical Offset / Blur Radius / Color 🠈--//
+          // filter: drop-shadow(0 0 1rem white); //--🠈 Horizontal Offset / Vertical Offset / Blur Radius / Color 🠈--//
         }
       }
       &.logo-background {
@@ -119,7 +119,6 @@
             z-index: 1;
             position: relative;
             grid-area: 2 / 2 / 3 / 4; //--🠈 row-start / col-start / row-end / col-end 🠈--//
-
             p {
               color: white;
               line-height: 1.25;
@@ -141,49 +140,41 @@
           //--🠋 Styling 🠋--//
           aside {
             display: flex;
-            @include styling;
             align-items: center;
+            @include aside-styling;
           }
           &:hover {
             .description-background {
               clip-path: inset(0 0% 0 0);
             }
           }
-        }
 
-        // section[class*='container']:hover {
-        //   .description-background {
-        //     clip-path: inset(0 0% 0 0);
-        //   }
-        // }
-
-        /*
-        section {  
-          &.first-container {
-            background: rgba($green-neon, 0.25);
+          //--🠋 Exceptions 🠋--//
+          &#tshwane-university-of-technology {
+            //--🠊 display: grid; 🠈--//
+            .logo-foreground {
+              filter: drop-shadow(0 0 1rem white);
+            }
           }
-          &.second-container {
-            height: 75%;
-            background: rgba($pink-neon, 0.25);
+          &#south-african-broadcasting-corporation {
+            //--🠊 display: grid; 🠈--//
+            .logo-foreground {
+              filter: drop-shadow(0 0 0.75rem white) drop-shadow(0 0 1rem white);
+            }
           }
-          &.third-container {
-            height: 75%;
-            background: rgba($yellow-neon, 0.25);
+          &#clinton-lubbe-productions {
+            //--🠊 display: grid; 🠈--//
+            .logo-foreground {
+              filter: drop-shadow(0 0 0.5rem white) drop-shadow(0 0 1rem white) drop-shadow(0 0 1.5rem white);
+            }
           }
-          &.fourth-container {
-            height: 75%;
-            background: rgba($orange-neon, 0.25);
-          }
-          &.fifth-container {
-            height: 75%;
-            background: rgba($blue-neon, 0.25);
-          }
-          &.sixth-container {
-            height: 75%;
-            background: rgba($purple-neon, 0.25);
+          &#green-planet-productions {
+            //--🠊 display: grid; 🠈--//
+            .logo-foreground {
+              filter: drop-shadow(0 0 0.75rem black) drop-shadow(0 0 1rem black) drop-shadow(0 0 1.25rem black);
+            }
           }
         }
-        */
       }
 
       div[class*='foreground'] {
