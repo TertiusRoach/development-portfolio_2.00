@@ -60,6 +60,56 @@
       margin: 1rem 5% 1rem 0;
       border-radius: 0 1rem 1rem 0;
     }
+
+    @mixin section-exceptions {
+      &#tshwane-university-of-technology {
+        //--🠊 display: grid; 🠈--//
+        .logo-foreground {
+          filter: drop-shadow(0 0 1rem white);
+        }
+      }
+      &#south-african-broadcasting-corporation {
+        //--🠊 display: grid; 🠈--//
+        .logo-foreground {
+          filter: drop-shadow(0 0 0.75rem white) drop-shadow(0 0 1rem white);
+        }
+      }
+      &#clinton-lubbe-productions {
+        //--🠊 display: grid; 🠈--//
+        .logo-foreground {
+          filter: drop-shadow(0 0 0.5rem white) drop-shadow(0 0 1rem white) drop-shadow(0 0 1.5rem white);
+        }
+      }
+      &#green-planet-productions {
+        //--🠊 display: grid; 🠈--//
+        .logo-foreground {
+          filter: drop-shadow(0 0 0.75rem black) drop-shadow(0 0 1rem black) drop-shadow(0 0 1.25rem black);
+        }
+      }
+      &#akademia {
+        //--🠊 display: grid; 🠈--//
+        .logo-foreground {
+          filter: drop-shadow(0 0 1rem white) drop-shadow(0 0 2rem white);
+        }
+      }
+      &#supersport {
+        //--🠊 display: grid; 🠈--//
+        .logo-foreground {
+          filter: drop-shadow(0 0 1rem white);
+        }
+      }
+      &#us-embassy {
+        //--🠊 display: grid; 🠈--//
+        .logo-foreground {
+          filter: drop-shadow(0 0 0.75rem white) drop-shadow(0 0 1rem white);
+        }
+      }
+
+      &#akademia .description p,
+      &#us-embassy .description p {
+        color: black;
+      }
+    }
     div {
       //--🠊 display: grid; 🠈--//
       grid-template: 25px 1fr 25px / 25px 1fr 25px; //--🠈 grid-template-rows / grid-template-columns 🠈--//
@@ -150,56 +200,7 @@
           }
 
           //--🠋 Exceptions 🠋--//
-          &#tshwane-university-of-technology {
-            //--🠊 display: grid; 🠈--//
-            .logo-foreground {
-              filter: drop-shadow(0 0 1rem white);
-            }
-          }
-          &#south-african-broadcasting-corporation {
-            //--🠊 display: grid; 🠈--//
-            .logo-foreground {
-              filter: drop-shadow(0 0 0.75rem white) drop-shadow(0 0 1rem white);
-            }
-          }
-          &#clinton-lubbe-productions {
-            //--🠊 display: grid; 🠈--//
-            .logo-foreground {
-              filter: drop-shadow(0 0 0.5rem white) drop-shadow(0 0 1rem white) drop-shadow(0 0 1.5rem white);
-            }
-          }
-          &#green-planet-productions {
-            //--🠊 display: grid; 🠈--//
-            .logo-foreground {
-              filter: drop-shadow(0 0 0.75rem black) drop-shadow(0 0 1rem black) drop-shadow(0 0 1.25rem black);
-            }
-          }
-          &#akademia {
-            //--🠊 display: grid; 🠈--//
-            .logo-foreground {
-              filter: drop-shadow(0 0 1rem white) drop-shadow(0 0 2rem white);
-            }
-          }
-          &#supersport {
-            //--🠊 display: grid; 🠈--//
-            .logo-foreground {
-              filter: drop-shadow(0 0 1rem white);
-            }
-          }
-
-          &#us-embassy {
-            //--🠊 display: grid; 🠈--//
-            .logo-foreground {
-              filter: drop-shadow(0 0 0.75rem white) drop-shadow(0 0 1rem white);
-            }
-          }
-
-          &#akademia,
-          &#us-embassy {
-            .description p {
-              color: black;
-            }
-          }
+          @include section-exceptions;
         }
       }
 
