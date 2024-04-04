@@ -171,8 +171,13 @@
           &#green-planet-productions {
             //--🠊 display: grid; 🠈--//
             .logo-foreground {
-              filter: drop-shadow(0 0 0.75rem white) drop-shadow(0 0 1rem white) drop-shadow(0 0 1.25rem white)
-                drop-shadow(0 0 1.5rem white);
+              filter: drop-shadow(0 0 0.75rem black) drop-shadow(0 0 1rem black) drop-shadow(0 0 1.25rem black);
+            }
+          }
+          &#supersport {
+            //--🠊 display: grid; 🠈--//
+            .logo-foreground {
+              filter: drop-shadow(0 0 1rem white) drop-shadow(0 0 2rem white);
             }
           }
         }
