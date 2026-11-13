@@ -1,0 +1,34 @@
+{
+  "name": "development-portfolio_2.00",
+  "version": "2.0.0",
+  "description": "My first portfolio architecture: every page is built from eight named blocks, loaded by name and styled per orientation.",
+  "author": "Tertius Roach",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "index": "gulp copyIndex --gulpfile src/gulpfile.js --cwd .",
+    "resume": "gulp copyRésumé --gulpfile src/gulpfile.js --cwd .",
+    "scale": "gulp copyScale --gulpfile src/gulpfile.js --cwd .",
+    "clean": "gulp cleanDist --gulpfile src/gulpfile.js --cwd ."
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.29",
+    "gulp": "^4.0.2",
+    "gulp-append-prepend": "^1.0.9",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-delete-file": "^1.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-ignore": "^3.0.0",
+    "gulp-remove-html-comments": "^1.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-string-replace": "^1.1.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.3"
+  }
+}
