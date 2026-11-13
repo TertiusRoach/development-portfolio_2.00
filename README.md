@@ -60,6 +60,8 @@ npm start
 
 ## How a Page Is Built
 
+The full walkthrough, from clone to website, is in [src/front-end/utilities/document/PROCESS.md](src/front-end/utilities/document/PROCESS.md). The short version:
+
 Every page is made from eight blocks. Each block has a lettered folder, and the letter follows the stacking order, back to front:
 
 > A-body **→** B-overlay **→** C-header **→** D-footer **→** E-leftbar **→** F-rightbar **→** G-main **→** H-data

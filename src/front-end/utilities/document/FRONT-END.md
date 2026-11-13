@@ -1,5 +1,7 @@
 # [Front-end Documentation](https://github.com/TertiusRoach/development-portfolio_2.00)
 
+> Written in 2024 and kept in its own words. For the whole process from clone to website, read [PROCESS.md](PROCESS.md).
+
 This directory functions as the [User Interface](https://en.wikipedia.org/wiki/User_interface) component of the application. The purpose of this documentation is to offer a detailed insight into the organization of files and folders, with the goal of promoting clarity to support smooth scalability in projects. The structure is meticulously crafted to reduce the chances of introducing errors in the code. Files are arranged strategically to minimize unnecessary code and ensure a clear understanding of each document's role. The categorization of files is designed to be intuitive, making it easier for both novice and experienced developers to comprehend, particularly as the project's complexity grows.
 
 ---
@@ -19,18 +21,10 @@ This directory functions as the [User Interface](https://en.wikipedia.org/wiki/U
             </ul>
         </li>
         <li>
-            <a href="#utilities-folder">Utilities Folder</a>
-            <ul>
-               <li>
-                    <a href="#tools-folder">Tools Folder</a>
-                </li>
-            </ul>
+            <a href="#utilities-directory">Utilities Directory</a>
         </li>
         <li>
             <a href="#vendors-folder">Vendors Folder</a>
-        </li>
-        <li>
-            <a href="#subject-here">Subject Here</a>
         </li>
         <li>
             <a href="#my-checklist">My Checklist</a>
@@ -48,7 +42,7 @@ This specifically concerns the [front-end](https://github.com/TertiusRoach/devel
 
 ## Utilities Directory
 
-[Main.ts](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/utilities/Main.ts) which calls the first page.
+[Main.ts](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/utilities/Main.ts) which calls the first page. [Load.ts](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/utilities/Load.ts) fetches each block, [Page.ts](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/utilities/Page.ts) knows where every block lives, and [Info.ts](https://github.com/TertiusRoach/development-portfolio_2.00/blob/main/src/front-end/utilities/Info.ts) holds the skills table. This folder (document/) holds the documentation.
 
 ---
 
@@ -64,7 +58,7 @@ Dedicated to grid placements for child elements. The rest is a combination of CS
 
 ### Content
 
-Within the [~content](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/index/~content) directory is a repository designed to empower designers. The tilde (~) prefix at the beginning of the folder signifies its nature, expanding beyond front-end development into the field of graphics. This interdisciplinary approach requires additional proficiency, covering skills from image manipulation to visual effects and drawing. Displayed below are various graphical files, including ico, gif, svg, jpg, png, mp3, psd, and mp4, stored in this location. Each format contributes to a specific purpose, shaping the ultimate outcome of the final page.
+Within the [~content](https://github.com/TertiusRoach/development-portfolio_2.00/tree/main/src/front-end/pages/resume/~content) directory is a repository designed to empower designers. The tilde (~) prefix at the beginning of the folder signifies its nature, expanding beyond front-end development into the field of graphics. This interdisciplinary approach requires additional proficiency, covering skills from image manipulation to visual effects and drawing. Displayed below are various graphical files, including ico, gif, svg, jpg, png, mp3 and mp4, stored in this location. Each format contributes to a specific purpose, shaping the ultimate outcome of the final page.
 
 > 🠋 ICO Files
 
@@ -94,13 +88,12 @@ Placeholder Specifications = **1920x1080 (1080p)**: Excellent for video content,
 
 ## Vendors Folder
 
-Description Here
+Other people's code, kept as files so the site works without a CDN. Gulp copies exactly four of them into `dist/front-end/vendors/`:
 
----
-
-## Subject Here
-
-Description Here
+- `bootstrap/5.3.2/css/bootstrap.min.css`, put at the top of every page's `style.css`
+- `jquery/3.7.1/3.7.1.min.js`
+- `requirejs/require-2.3.6.js`, the module loader
+- `font-awesome/5.13.0/js/all.min.js`, the icons
 
 ---
 
@@ -115,10 +108,9 @@ Description Here
 - [x] Re-organize Utilities to import everything in index.js
 - [x] Create Scalable sections that are pixel perfect inside default-main
 - [x] Animate "Tertius Roach" logo for loading screen
-- [ ] Build [Résumé](https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLejxfgwRYhwC0ffw3dtP-p-lKD2mYkD2r&index=1&t=128s): `<script>` = resume
-
-- [ ] Place each element inside default-body.html
-- [ ] Animate each element inside global-styling.scss
+- [x] Build [Résumé](https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLejxfgwRYhwC0ffw3dtP-p-lKD2mYkD2r&index=1&t=128s): `<script>` = resume
+- [x] Build the index as a timeline of every version (2026)
+- [x] Turn the per-pixel tables into formulas (2026)
 
 ---
 
