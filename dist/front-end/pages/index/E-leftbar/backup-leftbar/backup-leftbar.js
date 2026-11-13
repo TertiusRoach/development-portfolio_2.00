@@ -1,1 +1,1 @@
-define(["require","exports"],function(e,t){"use strict";var o;Object.defineProperty(t,"__esModule",{value:!0}),t.BackupLeftbar=void 0,(o||(t.BackupLeftbar={})).events=function(){console.log("backup-leftbar.js Loaded!")}});
+define(["require","exports"],function(e,o){var a;Object.defineProperty(o,"__esModule",{value:!0}),o.BackupLeftbar=void 0,(a||(o.BackupLeftbar={})).events=function(){console.log("backup-leftbar.js Loaded!")}});

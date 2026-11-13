@@ -1,9 +1,27 @@
 .default-body {
   display: grid;
-  //--▼ Desktop (Landscape) ▼--//
+  height: 100vh;
+  background: $primary-dark;
+  grid-template: 75px 1fr 50px / 25px 1fr 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+
+  //--🠋 Stacking order: header over footer over main 🠋--//
+  .default-header {
+    z-index: 2;
+    grid-area: 1 / 1 / 2 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+  }
+  .default-footer {
+    z-index: 1;
+    grid-area: 3 / 1 / 4 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+  }
+  .default-main {
+    z-index: 0;
+    grid-area: 1 / 1 / 4 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+  }
+
+  //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
   }
-  //--▼ Mobile (Portrait) ▼--//
+  //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
   }
 }

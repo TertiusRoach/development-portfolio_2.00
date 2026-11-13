@@ -1,9 +1,47 @@
 .default-header {
-  display: none;
-  //--▼ Desktop (Landscape) ▼--//
-  @media screen and (orientation: landscape) {
+  display: grid;
+  background: linear-gradient(180deg, rgba($primary-dark, 0.95) 40%, rgba($primary-dark, 0) 100%);
+  .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    grid-area: 1 / 2 / 2 / 3; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+    filter: drop-shadow(0 0 4px black);
+    img {
+      height: 50%;
+    }
   }
-  //--▼ Mobile (Portrait) ▼--//
+  #header-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(1rem, 3vw, 3rem);
+    grid-area: 1 / 3 / 2 / 4; //--🠊 row-start / col-start / row-end / col-end 🠈--//
+    a {
+      text-decoration: none;
+      color: $primary-light;
+      transition: 0.25s ease-in-out;
+      &:hover {
+        color: $secondary-light;
+      }
+      h6 {
+        cursor: pointer;
+        font-weight: 400;
+        font-size: clamp(1rem, 0.75rem + 0.75vw, 1.75rem);
+        filter: drop-shadow(0 0 4px black);
+      }
+    }
+  }
+
+  //--🠋 Desktop (Landscape) 🠋--//
+  @media screen and (orientation: landscape) {
+    grid-template: 75px / 25px auto 1fr 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+  }
+  //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
+    grid-template: 75px / 25px auto 1fr 25px; //--🠊 grid-template-rows / grid-template-columns 🠈--//
+    .header-logo img {
+      height: 40%;
+    }
   }
 }

@@ -6,19 +6,13 @@ export namespace Main {
 
   switch (pageName) {
     case 'index':
-      // Load.index('default-body');
+      Load.page('default-body');
       break;
     case 'resume':
-      Load.resume('default-body');
+      Load.page('default-body');
       break;
     case 'scale':
-      // Load.resume('backup-body');
-      break;
-    case 'ticket':
-      // Load.ticket('default-body');
-      break;
-    case 'university':
-      // Load.university('default-body');
+      // Load.page('default-body');
       break;
   }
 

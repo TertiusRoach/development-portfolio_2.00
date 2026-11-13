@@ -1,1 +1,1 @@
-define(["require","exports","utilities/Load"],function(e,i,t){"use strict";switch(Object.defineProperty(i,"__esModule",{value:!0}),i.Main=void 0,i.Main={},window.location.pathname.split("/").pop().split(".")[0]||"index"){case"index":break;case"resume":t.Load.resume("default-body")}});
+define(["require","exports","utilities/Load"],function(e,i,a){switch(Object.defineProperty(i,"__esModule",{value:!0}),i.Main=void 0,i.Main={},window.location.pathname.split("/").pop().split(".")[0]||"index"){case"index":case"resume":a.Load.page("default-body")}});

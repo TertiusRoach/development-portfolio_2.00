@@ -1,1 +1,1 @@
-define(["require","exports"],function(e,t){"use strict";var r;Object.defineProperty(t,"__esModule",{value:!0}),t.DefaultHeader=void 0,(r||(t.DefaultHeader={})).events=function(){console.log("default-header.js Detected!")}});
+define(["require","exports"],function(e,r){var t;Object.defineProperty(r,"__esModule",{value:!0}),r.DefaultHeader=void 0,(t||(r.DefaultHeader={})).events=function(){}});

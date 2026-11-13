@@ -1,9 +1,17 @@
 .default-footer {
-  display: none;
-  //--▼ Desktop (Landscape) ▼--//
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, rgba($primary-dark, 0.95) 40%, rgba($primary-dark, 0) 100%);
+  p {
+    cursor: default;
+    color: rgba($primary-light, 0.6);
+    font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.95rem);
+  }
+  //--🠋 Desktop (Landscape) 🠋--//
   @media screen and (orientation: landscape) {
   }
-  //--▼ Mobile (Portrait) ▼--//
+  //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
   }
 }
