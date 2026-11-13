@@ -85,6 +85,8 @@ This version was finished two and a half years later. The original ideas stayed;
 - **`package.json` is tracked.** It used to be in `.gitignore`, so nobody could clone and build this project.
 - **No password in the code.** The MongoDB study reads its address from `MONGO_URI`.
 - **Photoshop files removed.** They're still in the original release.
+- **Pruned.** Old Bootstrap, jQuery and Font Awesome versions, spare logo colours and sample files the pages never loaded.
+- **Documented.** [`src/front-end/utilities/document/`](src/front-end/utilities/document/PROCESS.md) explains the whole process, next to the 2024 notes.
 
 ## Pages
 
@@ -93,6 +95,16 @@ This version was finished two and a half years later. The original ideas stayed;
 | Index   | http://localhost:2000/              | [tertiusroach.github.io/development-portfolio_2.00](https://tertiusroach.github.io/development-portfolio_2.00/) |
 | Résumé  | http://localhost:2000/resume.html   | [/resume](https://tertiusroach.github.io/development-portfolio_2.00/resume)                      |
 | Scale   | http://localhost:2000/scale.html    | [/scale](https://tertiusroach.github.io/development-portfolio_2.00/scale)                        |
+
+## Other Versions
+
+| Version | Stack | Link |
+| ------- | ----- | ---- |
+| **2.00** | gulp, RequireJS, TypeScript, jQuery | You're here |
+| 3.00 | webpack, React, TypeScript | [Repository](https://github.com/TertiusRoach/development-portfolio_3.00) · [Website](https://tertiusroach.github.io/development-portfolio_3.00/public/index.html) |
+| 4.00 | React, Express, MongoDB | [Repository](https://github.com/TertiusRoach/development-portfolio_4.00) |
+
+Contact: tertius.roach@outlook.com · [GitHub](https://github.com/TertiusRoach)
 
 ---
 
