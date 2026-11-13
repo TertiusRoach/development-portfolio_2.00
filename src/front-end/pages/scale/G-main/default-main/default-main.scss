@@ -1,9 +1,115 @@
 .default-main {
-  display: none;
-  //--▼ Desktop (Landscape) ▼--//
-  @media screen and (orientation: landscape) {
+  display: block;
+  overflow-y: auto;
+
+  //--🠋 Remove Scrollbar 🠋--//
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0;
   }
-  //--▼ Mobile (Portrait) ▼--//
+
+  #main-scale {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 110px 25px 90px 25px;
+  }
+
+  //--🠋 Labels use <span>, so scale-text.scss never touches them 🠋--//
+  .scale-intro {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    .intro-title {
+      font-weight: 700;
+      color: $primary-light;
+      font-size: clamp(2rem, 1.25rem + 3vw, 4.5rem);
+      filter: drop-shadow(0 0 4px black);
+    }
+    .intro-text {
+      max-width: 60ch;
+      line-height: 1.5;
+      color: rgba($primary-light, 0.75);
+      font-size: clamp(1rem, 0.9rem + 0.4vw, 1.3rem);
+    }
+    .intro-readout {
+      align-self: flex-start;
+      border-radius: 999px;
+      padding: 0.4rem 1.1rem;
+      color: $secondary-light;
+      border: 1px solid rgba($secondary-light, 0.4);
+      font-size: clamp(0.85rem, 0.8rem + 0.2vw, 1rem);
+    }
+  }
+
+  //--🠋 Specimens: the h1-p tags keep the sizes from scale-text.scss 🠋--//
+  .specimen-row {
+    display: grid;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba($primary-light, 0.12);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      line-height: 1.15;
+      color: $primary-light;
+      overflow-wrap: anywhere;
+    }
+    .specimen-label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      font-size: clamp(0.8rem, 0.75rem + 0.2vw, 1rem);
+      .label-tag {
+        font-weight: 600;
+        color: $secondary-light;
+      }
+      .label-size {
+        color: $primary-light;
+        font-variant-numeric: tabular-nums;
+      }
+      .label-formula {
+        color: rgba($primary-light, 0.55);
+      }
+    }
+  }
+
+  .scale-history {
+    margin-top: 3rem;
+    padding-left: 1rem;
+    border-left: 3px solid $tertiary-medium;
+    span {
+      display: block;
+      max-width: 70ch;
+      line-height: 1.5;
+      font-style: italic;
+      color: $tertiary-light;
+      font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.15rem);
+    }
+  }
+
+  //--🠋 Desktop (Landscape) 🠋--//
+  @media screen and (orientation: landscape) {
+    .specimen-row {
+      gap: 2rem;
+      grid-template-columns: 14rem 1fr;
+    }
+  }
+  //--🠋 Mobile (Portrait) 🠋--//
   @media screen and (orientation: portrait) {
+    .specimen-row {
+      gap: 0.5rem;
+      grid-template-columns: 1fr;
+      .specimen-label {
+        gap: 0.75rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
   }
 }

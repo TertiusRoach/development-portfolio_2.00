@@ -1,6 +1,7 @@
 import { Page } from 'utilities/Page';
 import { Index } from 'pages/index/index';
 import { Resume } from 'pages/resume/resume';
+import { Scale } from 'pages/scale/scale';
 
 export namespace Load {
   //--|🠋| One loader for every page: fetch the block, place it, then run its events |🠋|--//
@@ -24,6 +25,9 @@ export namespace Load {
             break;
           case 'resume':
             Resume.run(blockName);
+            break;
+          case 'scale':
+            Scale.run(blockName);
             break;
         }
       })

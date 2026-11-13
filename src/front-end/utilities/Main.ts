@@ -12,7 +12,7 @@ export namespace Main {
       Load.page('default-body');
       break;
     case 'scale':
-      // Load.page('default-body');
+      Load.page('default-body');
       break;
   }
 

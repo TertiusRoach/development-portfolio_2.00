@@ -16,7 +16,7 @@ import { BackupRightbar } from '../scale/F-rightbar/backup-rightbar/backup-right
 import { BackupMain } from '../scale/G-main/backup-main/backup-main';
 import { BackupData } from '../scale/H-data/backup-data/backup-data';
 
-export namespace Index {
+export namespace Scale {
   export function run(blockName: String) {
     switch (blockName) {
       //--|🠋| Body |🠋|--//
