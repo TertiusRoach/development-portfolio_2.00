@@ -302,3 +302,37 @@ gulp.task('cleanDist', function (done) {
     done(err); // Pass the error to the callback
   }
 });
+
+//--|🠋| Local server: npm start builds every page, then serves, watches and reloads |🠋|--//
+const browserSync = require('browser-sync').create();
+gulp.task('serve', (done) => {
+  //--🠋 Serve the root folder on the same port Live Server used 🠋--//
+  browserSync.init({
+    port: 5500,
+    open: 'local',
+    notify: false,
+    ui: false,
+    server: { baseDir: './' },
+    //--| Reload the browser when a built file changes |--//
+    files: ['*.html', 'dist/**/*.{html,css,js}'],
+    //--| One build writes many files, so wait for the last one |--//
+    reloadDebounce: 2000,
+  });
+
+  //--🠋 Rebuild only the page whose source changed 🠋--//
+  gulp.watch('src/front-end/pages/index/**/*.{html,scss,ts}', gulp.task('copyIndex'));
+  gulp.watch('src/front-end/pages/resume/**/*.{html,scss,ts}', gulp.task('copyRésumé'));
+  gulp.watch('src/front-end/pages/scale/**/*.{html,scss,ts}', gulp.task('copyScale'));
+
+  //--🠋 Shared files touch every page, so rebuild them one after another 🠋--//
+  //--🠊 The page tasks finish on timers (7.5 seconds), and they share style.scss, so they can't run at the same time 🠈--//
+  gulp.watch(['src/front-end/utilities/**/*.ts', 'src/front-end/pages/*.scss'], (finished) => {
+    gulp.task('copyIndex')();
+    setTimeout(gulp.task('copyRésumé'), 9000);
+    setTimeout(gulp.task('copyScale'), 18000);
+    finished();
+  });
+
+  console.log('|🠊 Serving on http://localhost:5500 (Ctrl+C to stop)');
+  done();
+});

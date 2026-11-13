@@ -6,6 +6,8 @@
   "license": "ISC",
   "private": true,
   "scripts": {
+    "start": "npm run build && gulp serve --gulpfile src/gulpfile.js --cwd .",
+    "build": "npm run index && npm run resume && npm run scale",
     "index": "gulp copyIndex --gulpfile src/gulpfile.js --cwd .",
     "resume": "gulp copyRésumé --gulpfile src/gulpfile.js --cwd .",
     "scale": "gulp copyScale --gulpfile src/gulpfile.js --cwd .",
@@ -13,6 +15,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.29",
+    "browser-sync": "^3.0.4",
     "gulp": "^4.0.2",
     "gulp-append-prepend": "^1.0.9",
     "gulp-clean": "^0.4.0",

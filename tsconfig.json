@@ -12,6 +12,7 @@
     "noEmitOnError": true,
     "declaration": true,
     "lib": ["es5", "dom", "scripthost", "es2015"],
+    "types": ["jquery"],
     "strictNullChecks": false
   }
 }
