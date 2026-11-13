@@ -308,7 +308,7 @@ const browserSync = require('browser-sync').create();
 gulp.task('serve', (done) => {
   //--🠋 Serve the root folder on the same port Live Server used 🠋--//
   browserSync.init({
-    port: 5500,
+    port: 2000, //--🠈 2000 for version 2.00 🠈--//
     open: 'local',
     notify: false,
     ui: false,
@@ -333,6 +333,6 @@ gulp.task('serve', (done) => {
     finished();
   });
 
-  console.log('|🠊 Serving on http://localhost:5500 (Ctrl+C to stop)');
+  console.log('|🠊 Serving on http://localhost:2000 (Ctrl+C to stop)');
   done();
 });

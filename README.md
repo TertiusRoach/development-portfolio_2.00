@@ -45,7 +45,7 @@ npm install
 npm start
 ```
 
-`npm start` builds every page, opens your browser on http://localhost:5500 and rebuilds whichever page you save. Press **Ctrl + C** to stop it.
+`npm start` builds every page, opens your browser on http://localhost:2000 and rebuilds whichever page you save. Press **Ctrl + C** to stop it.
 
 | Command          | What it does                       |
 | ---------------- | ---------------------------------- |
@@ -88,9 +88,9 @@ This version was finished two and a half years later. The original ideas stayed;
 
 | Page    | Offline (`npm start`)               | Website                                                                                          |
 | ------- | ----------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Index   | http://localhost:5500/              | [tertiusroach.github.io/development-portfolio_2.00](https://tertiusroach.github.io/development-portfolio_2.00/) |
-| Résumé  | http://localhost:5500/resume.html   | [/resume](https://tertiusroach.github.io/development-portfolio_2.00/resume)                      |
-| Scale   | http://localhost:5500/scale.html    | [/scale](https://tertiusroach.github.io/development-portfolio_2.00/scale)                        |
+| Index   | http://localhost:2000/              | [tertiusroach.github.io/development-portfolio_2.00](https://tertiusroach.github.io/development-portfolio_2.00/) |
+| Résumé  | http://localhost:2000/resume.html   | [/resume](https://tertiusroach.github.io/development-portfolio_2.00/resume)                      |
+| Scale   | http://localhost:2000/scale.html    | [/scale](https://tertiusroach.github.io/development-portfolio_2.00/scale)                        |
 
 ---
 
